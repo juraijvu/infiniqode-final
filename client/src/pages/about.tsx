@@ -4,6 +4,7 @@ import { SEOHead } from "@/components/seo-head";
 import { GlassCard } from "@/components/glass-card";
 import { TeamSection } from "@/components/team-section";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { Trophy, Users, Rocket, Target, Heart, Lightbulb, Shield, Award } from "lucide-react";
 
