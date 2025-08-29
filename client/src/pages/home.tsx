@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/navigation";
+import { FloatingParticles } from "@/components/floating-particles";
 import { HeroSection } from "@/components/hero-section";
 import { ServicesSection } from "@/components/services-section";
 import { PortfolioSection } from "@/components/portfolio-section";
@@ -60,6 +61,7 @@ export default function Home() {
 
   return (
     <>
+      <FloatingParticles count={15} />
       <SEOHead
         title="Home"
         description="DigitalCraft is a premium digital agency specializing in React TypeScript development, Python Flask backends, and cutting-edge digital marketing solutions. Transform your business with our world-class solutions."

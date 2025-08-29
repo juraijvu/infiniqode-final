@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { logoAnimation, slideInFromLeft, slideInFromRight } from "@/lib/animations";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -7,6 +8,21 @@ import { Menu, Code } from "lucide-react";
 export function Navigation() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const navLinksRef = useRef<HTMLDivElement>(null);
+  const ctaButtonRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (logoRef.current) {
+      logoAnimation(logoRef.current);
+    }
+    if (navLinksRef.current) {
+      slideInFromLeft(navLinksRef.current, { delay: 0.3 });
+    }
+    if (ctaButtonRef.current) {
+      slideInFromRight(ctaButtonRef.current, { delay: 0.5 });
+    }
+  }, []);
 
   const navItems = [
     { href: "/", label: "Home" },
@@ -39,20 +55,20 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <Link href="/">
             <a className="flex items-center space-x-2" data-testid="logo">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+              <div ref={logoRef} className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
                 <Code className="w-4 h-4 text-white" />
               </div>
               <span className="text-xl font-bold gradient-text">DigitalCraft</span>
             </a>
           </Link>
           
-          <div className="hidden md:flex items-center space-x-8">
+          <div ref={navLinksRef} className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
           </div>
 
-          <div className="hidden md:block">
+          <div ref={ctaButtonRef} className="hidden md:block">
             <Link href="/contact">
               <Button className="glass-button text-white font-medium" data-testid="button-get-started">
                 Get Started

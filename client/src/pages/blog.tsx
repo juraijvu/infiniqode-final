@@ -1,7 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { morphCards, textReveal, staggerIn } from "@/lib/animations";
 import { Link } from "wouter";
 import { Navigation } from "@/components/navigation";
+import { FloatingParticles } from "@/components/floating-particles";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
 import { GlassCard } from "@/components/glass-card";
@@ -14,6 +16,25 @@ import type { BlogPost } from "@shared/schema";
 export default function Blog() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const heroRef = useRef<HTMLHeadingElement>(null);
+  const categoriesRef = useRef<HTMLDivElement>(null);
+  const postsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (heroRef.current) {
+      textReveal(heroRef.current);
+    }
+    if (categoriesRef.current) {
+      setTimeout(() => {
+        morphCards(categoriesRef.current?.children || []);
+      }, 500);
+    }
+    if (postsRef.current) {
+      setTimeout(() => {
+        staggerIn(postsRef.current?.children || [], { delay: 0.8 });
+      }, 800);
+    }
+  }, []);
 
   const { data: posts = [], isLoading } = useQuery<BlogPost[]>({
     queryKey: ["/api/blog"],
@@ -37,6 +58,7 @@ export default function Blog() {
 
   return (
     <>
+      <FloatingParticles count={10} />
       <SEOHead
         title="Blog"
         description="Stay updated with the latest insights on web development, digital marketing, and technology trends. Expert tips and in-depth articles from the DigitalCraft team."
@@ -50,7 +72,7 @@ export default function Blog() {
         <div className="hero-glow bottom-20 right-20 animation-delay-2s"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 ref={heroRef} className="text-5xl md:text-6xl font-bold mb-6">
             Our <span className="gradient-text">Blog</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
@@ -62,7 +84,7 @@ export default function Blog() {
       {/* Blog Categories */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div ref={categoriesRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <Link href="/blog/technical">
               <GlassCard className="glass-blog-card p-8 text-center hover:scale-105 transition-all duration-300 cursor-pointer" data-testid="card-technical-blog">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
