@@ -13,6 +13,10 @@ import Portfolio from "@/pages/portfolio";
 import About from "@/pages/about";
 import Blog from "@/pages/blog";
 import BlogPost from "@/pages/blog-post";
+import TechnicalBlog from "@/pages/technical-blog";
+import GeneralBlog from "@/pages/general-blog";
+import MarketingBlog from "@/pages/marketing-blog";
+import NewsBlog from "@/pages/news-blog";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
 
@@ -28,6 +32,10 @@ function Router() {
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/about" component={About} />
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/technical/:slug" component={TechnicalBlog} />
+      <Route path="/blog/general/:slug" component={GeneralBlog} />
+      <Route path="/blog/marketing/:slug" component={MarketingBlog} />
+      <Route path="/blog/news/:slug" component={NewsBlog} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
