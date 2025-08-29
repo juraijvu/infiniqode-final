@@ -32,10 +32,10 @@ function Router() {
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/about" component={About} />
       <Route path="/blog" component={Blog} />
-      <Route path="/blog/technical/:slug" component={TechnicalBlog} />
-      <Route path="/blog/general/:slug" component={GeneralBlog} />
-      <Route path="/blog/marketing/:slug" component={MarketingBlog} />
-      <Route path="/blog/news/:slug" component={NewsBlog} />
+      <Route path="/blog/technical" component={TechnicalBlog} />
+      <Route path="/blog/general" component={GeneralBlog} />
+      <Route path="/blog/marketing" component={MarketingBlog} />
+      <Route path="/blog/news" component={NewsBlog} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />

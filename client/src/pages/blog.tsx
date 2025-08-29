@@ -59,9 +59,52 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Search and Filters */}
+      {/* Blog Categories */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <Link href="/blog/technical">
+              <GlassCard className="glass-blog-card p-8 text-center hover:scale-105 transition-all duration-300 cursor-pointer" data-testid="card-technical-blog">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Technical</h3>
+                <p className="text-muted-foreground text-sm">Code examples, tutorials, and technical insights</p>
+              </GlassCard>
+            </Link>
+            
+            <Link href="/blog/general">
+              <GlassCard className="glass-blog-card p-8 text-center hover:scale-105 transition-all duration-300 cursor-pointer" data-testid="card-general-blog">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-2xl">📝</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">General</h3>
+                <p className="text-muted-foreground text-sm">Industry insights and thought leadership</p>
+              </GlassCard>
+            </Link>
+            
+            <Link href="/blog/marketing">
+              <GlassCard className="glass-blog-card p-8 text-center hover:scale-105 transition-all duration-300 cursor-pointer" data-testid="card-marketing-blog">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-2xl">📈</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Marketing</h3>
+                <p className="text-muted-foreground text-sm">Growth strategies and marketing insights</p>
+              </GlassCard>
+            </Link>
+            
+            <Link href="/blog/news">
+              <GlassCard className="glass-blog-card p-8 text-center hover:scale-105 transition-all duration-300 cursor-pointer" data-testid="card-news-blog">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-2xl">📰</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">News</h3>
+                <p className="text-muted-foreground text-sm">Latest industry news and updates</p>
+              </GlassCard>
+            </Link>
+          </div>
+
+          {/* Search and Filters */}
           <div className="flex flex-col lg:flex-row gap-6 items-center justify-between mb-12">
             {/* Search */}
             <div className="relative w-full lg:w-96">

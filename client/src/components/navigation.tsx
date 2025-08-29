@@ -34,7 +34,7 @@ export function Navigation() {
   );
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass-card border-b border-border">
+    <nav className="fixed top-0 w-full z-50 glass-nav border-b border-border">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/">

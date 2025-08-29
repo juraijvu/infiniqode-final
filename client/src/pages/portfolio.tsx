@@ -189,7 +189,7 @@ export default function Portfolio() {
             {filteredItems.map((item) => (
               <GlassCard 
                 key={item.id} 
-                className="overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105"
+                className="glass-project-card overflow-hidden cursor-pointer"
                 onClick={() => setSelectedProject(item.id)}
               >
                 <div className="relative group">
