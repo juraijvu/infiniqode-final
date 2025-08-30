@@ -62,7 +62,13 @@
   
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background: radial-gradient(ellipse at top, #1e1b4b 0%, #0f0f23 50%, #000000 100%);
+    background: radial-gradient(circle at 50% 50%,
+      #1a0632 0%,
+      #140426 25%,
+      #0c021a 50%,
+      #06020e 75%,
+      #020108 100%
+    );
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     font-optical-sizing: auto;
     letter-spacing: -0.01em;

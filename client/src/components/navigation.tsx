@@ -35,8 +35,8 @@ export function Navigation() {
 
   const NavLink = ({ href, label }: { href: string; label: string }) => (
     <Link href={href}>
-      <a
-        className={`transition-colors ${
+      <span
+        className={`transition-colors cursor-pointer ${
           location === href 
             ? "text-foreground" 
             : "text-muted-foreground hover:text-accent"
@@ -45,7 +45,7 @@ export function Navigation() {
         data-testid={`nav-${label.toLowerCase()}`}
       >
         {label}
-      </a>
+      </span>
     </Link>
   );
 
@@ -54,12 +54,12 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <a className="flex items-center space-x-2" data-testid="logo">
+            <div className="flex items-center space-x-2 cursor-pointer" data-testid="logo">
               <div ref={logoRef} className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
                 <Code className="w-4 h-4 text-white" />
               </div>
               <span className="text-xl font-bold gradient-text">DigitalCraft</span>
-            </a>
+            </div>
           </Link>
           
           <div ref={navLinksRef} className="hidden md:flex items-center space-x-8">
