@@ -6,7 +6,7 @@ import { TextPlugin } from 'gsap/TextPlugin';
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-// Optimized animation configurations for smooth performance
+// Optimized animation configurations for Lenis smooth performance
 export const animationConfig = {
   ease: "power2.out", // Faster, smoother easing
   duration: 0.5, // Faster animations
@@ -16,7 +16,9 @@ export const animationConfig = {
     end: "bottom 15%",
     toggleActions: "play none none reverse",
     fastScrollEnd: true, // Better performance on fast scrolling
-    preventOverlaps: true
+    preventOverlaps: true,
+    scroller: window, // Ensure Lenis compatibility
+    normalizeScroll: true // Work with Lenis normalization
   }
 };
 
@@ -214,24 +216,29 @@ export const useHoverAnimation = () => {
   return ref;
 };
 
-// Optimized global animation setup
+// Optimized global animation setup for Lenis integration
 export const initializeGSAP = () => {
   gsap.defaults({
     ease: "power2.out",
     duration: 0.5
   });
 
-  // Enhanced performance settings
+  // Enhanced performance settings for Lenis
   gsap.config({
     force3D: true, // Force hardware acceleration
-    nullTargetWarn: false
+    nullTargetWarn: false,
+    autoSleep: 60 // Better performance with Lenis
   });
 
   ScrollTrigger.config({
     limitCallbacks: true, // Better performance
-    syncInterval: 120 // Smoother sync
+    syncInterval: 60, // Sync with Lenis smooth scrolling
+    ignoreMobileResize: true // Better mobile performance
   });
 
+  // Enhanced ScrollTrigger for Lenis integration
+  ScrollTrigger.normalizeScroll(true);
+  
   // Set up scroll refresh
   ScrollTrigger.refresh();
 

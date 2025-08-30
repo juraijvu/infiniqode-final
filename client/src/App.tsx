@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { FloatingParticles } from "@/components/floating-particles";
+import { useLenis } from "@/hooks/use-lenis";
 import Home from "@/pages/home";
 import Services from "@/pages/services";
 import ServiceDetail from "@/pages/service-detail";
@@ -47,6 +48,14 @@ function Router() {
 }
 
 function App() {
+  // Initialize Lenis smooth scroll
+  const lenis = useLenis();
+
+  // Expose lenis globally for utility functions
+  if (lenis && typeof window !== 'undefined') {
+    window.lenis = lenis;
+  }
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
