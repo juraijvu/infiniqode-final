@@ -145,14 +145,14 @@ export default function EnhancedBlog() {
         title={`${post.title} - Enhanced Guide`}
         description={post.excerpt}
         keywords={`${post.tags.join(', ')}, enhanced tutorial, comprehensive guide, advanced techniques`}
-        ogImage={post.featuredImage}
+        ogImage={post.featuredImage || undefined}
         structuredData={structuredData}
       />
       <Navigation />
       
       {/* Hero Section with Syntax-Highlighted Code */}
       <section className="relative pt-20 pb-8 bg-gradient-to-r from-slate-900 via-purple-900/20 to-slate-800">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-full mx-auto px-6">
           <Link href="/blog">
             <Button variant="ghost" className="mb-8 text-white hover:bg-white/10" data-testid="button-back-to-blog">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -235,7 +235,7 @@ export default function EnhancedBlog() {
 
       {/* Author Bio with Enhanced Features */}
       <section className="py-8 bg-muted/10">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <GlassCard className="p-8">
             <div className="flex items-start gap-6">
               <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center flex-shrink-0">
@@ -272,7 +272,7 @@ export default function EnhancedBlog() {
 
       {/* Interactive Terminal/Code Playground */}
       <section className="py-12">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <GlassCard className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Terminal className="h-6 w-6 text-accent" />
@@ -312,7 +312,7 @@ export default function EnhancedBlog() {
 
       {/* Auto-Generated Table of Contents */}
       <section className="py-8 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <GlassCard className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <BookOpen className="h-5 w-5 text-primary" />
@@ -338,7 +338,7 @@ export default function EnhancedBlog() {
 
       {/* Main Content with Drop-Cap and Interactive Elements */}
       <section className="py-12" id="introduction">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <div className="prose prose-lg max-w-none">
             {/* Drop-Cap First Paragraph */}
             <p className="text-xl leading-relaxed mb-8">
@@ -419,7 +419,7 @@ export default function EnhancedBlog() {
 
       {/* Interactive ROI Calculator */}
       <section className="py-16 bg-muted/5" id="optimization">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <GlassCard className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Calculator className="h-6 w-6 text-accent" />
@@ -466,7 +466,7 @@ export default function EnhancedBlog() {
 
       {/* API Documentation Cards with Copy Buttons */}
       <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <h2 className="text-3xl font-bold mb-8 text-center">API Documentation</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -544,7 +544,7 @@ export default function EnhancedBlog() {
 
       {/* Error/Solution Accordion */}
       <section className="py-16 bg-muted/5" id="troubleshooting">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <h2 className="text-3xl font-bold mb-8">Common Issues & Solutions</h2>
           
           <Accordion type="single" collapsible className="space-y-4">
@@ -646,7 +646,7 @@ export default function EnhancedBlog() {
 
       {/* Performance Benchmark Tables */}
       <section className="py-16" id="benchmarks">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <h2 className="text-3xl font-bold mb-8 text-center">Performance Benchmarks</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -719,7 +719,7 @@ export default function EnhancedBlog() {
 
       {/* Before/After Comparison Sliders */}
       <section className="py-16 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <h2 className="text-3xl font-bold mb-8 text-center">Implementation Results</h2>
           
           <GlassCard className="p-8">
@@ -775,7 +775,7 @@ export default function EnhancedBlog() {
 
       {/* A/B Test Result Toggles */}
       <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <h2 className="text-3xl font-bold mb-8 text-center">A/B Test Results</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -818,7 +818,7 @@ export default function EnhancedBlog() {
 
       {/* Tool Integration Badges & Version History */}
       <section className="py-16 bg-muted/5">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-3xl font-bold mb-8">Compatible Tools & Technologies</h2>
@@ -872,7 +872,7 @@ export default function EnhancedBlog() {
 
       {/* Case Study Cards */}
       <section className="py-16" id="case-studies">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <h2 className="text-3xl font-bold mb-8 text-center">Real-World Case Studies</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -927,7 +927,7 @@ export default function EnhancedBlog() {
 
       {/* Newsletter Signup with Download CTA */}
       <section className="py-16 bg-gradient-to-r from-primary/10 to-accent/10">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="w-full mx-auto px-6 text-center">
           <div className="flex items-center justify-center gap-4 mb-6">
             <Download className="h-12 w-12 text-primary" />
             <Lightbulb className="h-12 w-12 text-accent" />
@@ -957,7 +957,7 @@ export default function EnhancedBlog() {
 
       {/* Related Articles Carousel */}
       <section className="py-16 bg-muted/5">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <h2 className="text-3xl font-bold mb-8 text-center">Related Reading</h2>
           
           {relatedPosts.length > 0 && (
@@ -997,7 +997,7 @@ export default function EnhancedBlog() {
 
       {/* Enhanced Author Signature */}
       <section className="py-16">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <Separator className="mb-12" />
           
           <GlassCard className="p-8">
@@ -1057,7 +1057,7 @@ export default function EnhancedBlog() {
 
       {/* Share & Comment Section */}
       <section className="py-16 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-full mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <GlassCard className="p-8 text-center">
               <Share2 className="h-12 w-12 text-primary mx-auto mb-4" />
