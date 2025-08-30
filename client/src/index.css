@@ -78,6 +78,26 @@
     backface-visibility: hidden;
   }
   
+  /* Optimize mobile menu and pop-up animations */
+  [data-radix-dialog-overlay],
+  [data-radix-dialog-content],
+  [data-state="open"],
+  [data-state="closed"],
+  .transform-gpu {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+  
+  /* Reduce animation complexity for better performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
   body {
     @apply font-sans antialiased bg-background text-foreground;
     background: radial-gradient(circle at 50% 50%,
