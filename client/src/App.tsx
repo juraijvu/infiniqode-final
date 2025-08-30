@@ -22,6 +22,8 @@ import NewsBlog from "@/pages/news-blog";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
 import PortfolioDetailStatic from "@/pages/portfolio-detail-static";
+import { PageBuilderPage } from "@/pages/PageBuilderPage";
+import { AdminDashboard } from "@/pages/AdminDashboard";
 
 function Router() {
   return (
@@ -42,6 +44,8 @@ function Router() {
       <Route path="/blog/news" component={NewsBlog} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/contact" component={Contact} />
+      <Route path="/admin" component={AdminDashboard} />
+      <Route path="/admin/page-builder/:templateId?" component={PageBuilderPage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -10,9 +10,35 @@ import {
   type ContactInquiry,
   type InsertContactInquiry,
   type Testimonial,
-  type InsertTestimonial
+  type InsertTestimonial,
+  type PageTemplate,
+  type InsertPageTemplate,
+  type Page,
+  type InsertPage,
+  type SeoSettings,
+  type InsertSeoSettings,
+  type ThemeSettings,
+  type InsertThemeSettings,
+  type PageBuilderComponent,
+  type InsertPageBuilderComponent,
+  type SiteSettings,
+  type InsertSiteSettings,
+  users,
+  services,
+  blogPosts,
+  portfolioItems,
+  contactInquiries,
+  testimonials,
+  pageTemplates,
+  pages,
+  seoSettings,
+  themeSettings,
+  pageBuilderComponents,
+  siteSettings
 } from "@shared/schema";
-import { randomUUID } from "crypto";
+import { drizzle } from 'drizzle-orm/neon-http';
+import { neon } from '@neondatabase/serverless';
+import { eq, and, desc } from 'drizzle-orm';
 
 export interface IStorage {
   // Users
@@ -49,492 +75,649 @@ export interface IStorage {
   getTestimonials(): Promise<Testimonial[]>;
   getActiveTestimonials(): Promise<Testimonial[]>;
   createTestimonial(testimonial: InsertTestimonial): Promise<Testimonial>;
+
+  // CMS - Page Templates
+  getPageTemplates(): Promise<PageTemplate[]>;
+  getPageTemplateById(id: string): Promise<PageTemplate | undefined>;
+  createPageTemplate(template: InsertPageTemplate): Promise<PageTemplate>;
+  updatePageTemplate(id: string, template: InsertPageTemplate): Promise<PageTemplate | undefined>;
+  deletePageTemplate(id: string): Promise<boolean>;
+
+  // CMS - Pages
+  getPages(filters?: { status?: string; type?: string }): Promise<Page[]>;
+  getPageBySlug(slug: string): Promise<Page | undefined>;
+  createPage(page: InsertPage): Promise<Page>;
+  updatePage(id: string, page: InsertPage): Promise<Page | undefined>;
+  publishPage(id: string): Promise<Page | undefined>;
+  deletePage(id: string): Promise<boolean>;
+
+  // CMS - SEO Settings
+  getSeoSettings(entityType: string, entityId: string): Promise<SeoSettings | undefined>;
+  createOrUpdateSeoSettings(settings: InsertSeoSettings): Promise<SeoSettings>;
+
+  // CMS - Theme Settings
+  getThemes(): Promise<ThemeSettings[]>;
+  getActiveTheme(): Promise<ThemeSettings | undefined>;
+  createTheme(theme: InsertThemeSettings): Promise<ThemeSettings>;
+  updateTheme(id: string, theme: InsertThemeSettings): Promise<ThemeSettings | undefined>;
+  activateTheme(id: string): Promise<ThemeSettings | undefined>;
+
+  // CMS - Page Builder Components
+  getPageBuilderComponents(category?: string): Promise<PageBuilderComponent[]>;
+  createPageBuilderComponent(component: InsertPageBuilderComponent): Promise<PageBuilderComponent>;
+
+  // CMS - Site Settings
+  getSiteSettings(): Promise<SiteSettings | undefined>;
+  createOrUpdateSiteSettings(settings: InsertSiteSettings): Promise<SiteSettings>;
+
+  // SEO - Sitemap
+  generateSitemap(): Promise<string>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-  private services: Map<string, Service>;
-  private blogPosts: Map<string, BlogPost>;
-  private portfolioItems: Map<string, PortfolioItem>;
-  private contactInquiries: Map<string, ContactInquiry>;
-  private testimonials: Map<string, Testimonial>;
+// Initialize database connection
+const sql = neon(process.env.DATABASE_URL!);
+const db = drizzle(sql);
 
+export class DatabaseStorage implements IStorage {
   constructor() {
-    this.users = new Map();
-    this.services = new Map();
-    this.blogPosts = new Map();
-    this.portfolioItems = new Map();
-    this.contactInquiries = new Map();
-    this.testimonials = new Map();
-    
     this.seedData();
   }
 
-  private seedData() {
-    // Seed services
-    const services = [
-      {
-        id: randomUUID(),
-        name: "Web Development",
-        slug: "web-development",
-        description: "Custom React TypeScript applications with modern architecture, responsive design, and optimal performance.",
-        fullDescription: "Our web development service delivers cutting-edge React TypeScript applications built with modern architecture principles. We focus on creating responsive, performant, and scalable web solutions that provide exceptional user experiences across all devices.",
-        features: ["React TypeScript Apps", "Responsive Design", "Performance Optimization", "SEO Ready"],
-        technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
-        pricing: "Starting at $15,000",
-        icon: "fas fa-code",
-        isActive: true,
-        createdAt: new Date(),
-      },
-      {
-        id: randomUUID(),
-        name: "Backend Development",
-        slug: "backend-development",
-        description: "Robust Python Flask APIs with SQL databases, scalable architecture, and comprehensive documentation.",
-        fullDescription: "Our backend development expertise ensures your applications have solid foundations. We build robust Python Flask APIs with carefully designed SQL databases, implementing scalable architecture patterns and providing comprehensive documentation for long-term maintainability.",
-        features: ["Python Flask APIs", "SQL Database Design", "Authentication & Security", "API Documentation"],
-        technologies: ["Python", "Flask", "PostgreSQL", "Redis"],
-        pricing: "Starting at $12,000",
-        icon: "fas fa-server",
-        isActive: true,
-        createdAt: new Date(),
-      },
-      {
-        id: randomUUID(),
-        name: "Digital Marketing",
-        slug: "digital-marketing",
-        description: "Data-driven marketing strategies, SEO optimization, and comprehensive analytics to grow your business.",
-        fullDescription: "Transform your digital presence with our comprehensive marketing strategies. We combine data-driven approaches with creative excellence to deliver measurable results across all digital channels, from SEO and content marketing to social media and paid advertising.",
-        features: ["SEO & SEM", "Social Media Marketing", "Analytics & Reporting", "Content Strategy"],
-        technologies: ["Google Analytics", "SEMrush", "HubSpot", "Google Ads"],
-        pricing: "Starting at $5,000/month",
-        icon: "fas fa-chart-line",
-        isActive: true,
-        createdAt: new Date(),
-      },
-      {
-        id: randomUUID(),
-        name: "SaaS Development",
-        slug: "saas-development",
-        description: "Complete SaaS applications with subscription management, user dashboards, and scalable infrastructure.",
-        fullDescription: "Build your software-as-a-service platform with our end-to-end SaaS development service. We handle everything from multi-tenant architecture and subscription management to user dashboards and payment integration, ensuring your SaaS is ready to scale.",
-        features: ["Multi-tenant Architecture", "Subscription Management", "User Dashboards", "Payment Integration"],
-        technologies: ["React", "Node.js", "Stripe", "Docker"],
-        pricing: "Starting at $25,000",
-        icon: "fas fa-cloud",
-        isActive: true,
-        createdAt: new Date(),
-      }
-    ];
+  private async seedData() {
+    try {
+      // Check if data already exists
+      const existingServices = await db.select().from(services).limit(1);
+      if (existingServices.length > 0) return;
 
-    services.forEach(service => {
-      this.services.set(service.id, service);
-    });
+      // Seed services
+      await db.insert(services).values([
+        {
+          name: "SaaS Solutions",
+          slug: "saas-solutions",
+          description: "Custom Software as a Service development with scalable architecture",
+          fullDescription: "We specialize in building comprehensive SaaS platforms that grow with your business. Our solutions include user management, subscription billing, multi-tenancy, and enterprise-grade security.",
+          features: ["Multi-tenant Architecture", "Subscription Management", "API Development", "Cloud Deployment", "Analytics Dashboard"],
+          technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Docker"],
+          pricing: "Starting from $15,000",
+          icon: "🚀",
+        },
+        {
+          name: "Web Development",
+          slug: "web-development",
+          description: "Modern, responsive websites built with the latest technologies",
+          fullDescription: "From simple landing pages to complex web applications, we create digital experiences that convert. Our websites are built for performance, accessibility, and search engine optimization.",
+          features: ["Responsive Design", "SEO Optimization", "Performance Optimization", "CMS Integration", "E-commerce Solutions"],
+          technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vercel"],
+          pricing: "Starting from $5,000",
+          icon: "💻",
+        },
+        {
+          name: "Digital Marketing",
+          slug: "digital-marketing",
+          description: "Data-driven marketing strategies to grow your online presence",
+          fullDescription: "Comprehensive digital marketing services including SEO, content marketing, social media management, and paid advertising campaigns designed to increase your ROI.",
+          features: ["SEO Strategy", "Content Marketing", "Social Media Management", "PPC Campaigns", "Analytics & Reporting"],
+          technologies: ["Google Analytics", "SEMrush", "HubSpot", "Facebook Ads", "Google Ads"],
+          pricing: "Starting from $2,000/month",
+          icon: "📈",
+        }
+      ]);
 
-    // Seed blog posts with diverse categories
-    const blogPosts = [
-      // Technical Blog Posts
-      {
-        id: randomUUID(),
-        title: "The Future of React TypeScript Development",
-        slug: "future-react-typescript-development",
-        excerpt: "Explore the latest features and best practices for building scalable applications with React and TypeScript.",
-        content: "React TypeScript development continues to evolve rapidly, bringing new possibilities for building scalable, maintainable applications. This comprehensive guide covers the latest patterns, performance optimizations, and architectural decisions that will shape the future of React development.\n\nKey topics include: Advanced TypeScript patterns in React, performance optimization with React 18 features, state management evolution, and modern build tools that are transforming the development experience. We'll also explore how AI-powered development tools are changing the way we write and maintain React applications.",
-        author: "Sarah Chen",
-        authorImage: "https://images.unsplash.com/photo-1494790108755-2616b112371c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["React", "TypeScript", "Web Development", "Technical"],
-        readTime: 5,
-        isPublished: true,
-        publishedAt: new Date("2024-12-15"),
-        createdAt: new Date("2024-12-15"),
-        updatedAt: new Date("2024-12-15"),
-      },
-      {
-        id: randomUUID(),
-        title: "Building Scalable APIs with Python Flask",
-        slug: "building-scalable-apis-python-flask",
-        excerpt: "Learn how to create robust, scalable backend systems using Python Flask and SQL databases.",
-        content: "Flask provides an excellent foundation for building scalable APIs. In this comprehensive guide, we'll explore best practices for creating enterprise-grade backend systems that can handle millions of requests.\n\nThis deep-dive covers: Database optimization strategies, caching implementations, security patterns, monitoring and logging, containerization with Docker, and deployment strategies. We'll also examine real-world case studies of Flask applications scaling from startup to enterprise levels.",
-        author: "Marcus Rivera",
-        authorImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["Python", "Flask", "Backend Development", "Technical"],
-        readTime: 8,
-        isPublished: true,
-        publishedAt: new Date("2024-12-10"),
-        createdAt: new Date("2024-12-10"),
-        updatedAt: new Date("2024-12-10"),
-      },
-      {
-        id: randomUUID(),
-        title: "Microservices Architecture: A Complete Guide",
-        slug: "microservices-architecture-complete-guide",
-        excerpt: "Master the art of designing and implementing microservices that scale with modern DevOps practices.",
-        content: "Microservices architecture has revolutionized how we build and deploy applications. This comprehensive guide covers everything from design principles to production deployment strategies.\n\nWe'll explore: Service decomposition strategies, inter-service communication patterns, data management in distributed systems, testing strategies for microservices, monitoring and observability, and handling failures gracefully. Real examples from successful microservices implementations showcase practical solutions to common challenges.",
-        author: "Dr. Alex Thompson",
-        authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["Microservices", "Architecture", "DevOps", "Technical"],
-        readTime: 12,
-        isPublished: true,
-        publishedAt: new Date("2024-12-12"),
-        createdAt: new Date("2024-12-12"),
-        updatedAt: new Date("2024-12-12"),
-      },
+      // Seed blog posts
+      await db.insert(blogPosts).values([
+        {
+          title: "The Future of SaaS Development",
+          slug: "future-of-saas-development",
+          excerpt: "Exploring emerging trends and technologies shaping the Software as a Service landscape",
+          content: "<p>SaaS development continues to evolve with new technologies and methodologies...</p>",
+          author: "Alex Johnson",
+          authorImage: "/images/team/alex.jpg",
+          featuredImage: "/images/blog/saas-future.jpg",
+          tags: ["SaaS", "Technology", "Development"],
+          readTime: 8,
+          isPublished: true,
+          publishedAt: new Date(),
+        },
+        {
+          title: "Building Scalable Web Applications",
+          slug: "building-scalable-web-applications",
+          excerpt: "Best practices for creating web applications that can handle growth and high traffic",
+          content: "<p>Scalability is crucial for modern web applications...</p>",
+          author: "Sarah Chen",
+          authorImage: "/images/team/sarah.jpg",
+          featuredImage: "/images/blog/scalable-apps.jpg",
+          tags: ["Web Development", "Scalability", "Architecture"],
+          readTime: 12,
+          isPublished: true,
+          publishedAt: new Date(),
+        }
+      ]);
 
-      // Marketing Blog Posts
-      {
-        id: randomUUID(),
-        title: "Advanced SEO Strategies for 2024",
-        slug: "advanced-seo-strategies-2024",
-        excerpt: "Discover the latest SEO techniques that will help your website rank higher on Google and Bing.",
-        content: "Search engine optimization continues to evolve, with new algorithms and ranking factors emerging regularly. This comprehensive guide reveals the most effective SEO strategies for 2024 and beyond.\n\nKey strategies include: Core Web Vitals optimization, E-A-T (Expertise, Authoritativeness, Trustworthiness) implementation, AI-powered content optimization, local SEO tactics, and voice search optimization. We'll also cover the latest Google algorithm updates and how to future-proof your SEO strategy.",
-        author: "Emma Wilson",
-        authorImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["SEO", "Digital Marketing", "Search Engines", "Marketing"],
-        readTime: 7,
-        isPublished: true,
-        publishedAt: new Date("2024-12-08"),
-        createdAt: new Date("2024-12-08"),
-        updatedAt: new Date("2024-12-08"),
-      },
-      {
-        id: randomUUID(),
-        title: "Social Media Marketing Trends That Drive Results",
-        slug: "social-media-marketing-trends-2024",
-        excerpt: "Leverage the power of social media with proven strategies that increase engagement and drive conversions.",
-        content: "Social media marketing has evolved far beyond simple posting. Today's successful brands use sophisticated strategies that combine creativity with data-driven insights to achieve measurable results.\n\nThis guide covers: Platform-specific content strategies, influencer partnership models, social commerce implementation, community building techniques, and analytics that matter. We'll examine successful campaigns from leading brands and provide actionable templates you can implement immediately.",
-        author: "Jessica Martinez",
-        authorImage: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["Social Media", "Marketing", "Digital Strategy", "Marketing"],
-        readTime: 6,
-        isPublished: true,
-        publishedAt: new Date("2024-12-05"),
-        createdAt: new Date("2024-12-05"),
-        updatedAt: new Date("2024-12-05"),
-      },
-      {
-        id: randomUUID(),
-        title: "Email Marketing Automation: Complete Playbook",
-        slug: "email-marketing-automation-playbook",
-        excerpt: "Build powerful email sequences that nurture leads and drive sales with advanced automation strategies.",
-        content: "Email marketing remains one of the highest ROI channels when done correctly. This comprehensive playbook reveals how to create automated email sequences that convert prospects into loyal customers.\n\nTopics covered: Segmentation strategies that increase relevance, behavioral trigger setup, personalization at scale, A/B testing methodologies, deliverability optimization, and integration with other marketing channels. Includes ready-to-use templates and workflows for different business types.",
-        author: "Michael Chang",
-        authorImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["Email Marketing", "Automation", "Lead Generation", "Marketing"],
-        readTime: 9,
-        isPublished: true,
-        publishedAt: new Date("2024-12-03"),
-        createdAt: new Date("2024-12-03"),
-        updatedAt: new Date("2024-12-03"),
-      },
+      // Seed portfolio items
+      await db.insert(portfolioItems).values([
+        {
+          title: "EcomerceHub Platform",
+          slug: "ecommercehub-platform",
+          description: "Multi-vendor marketplace with advanced analytics",
+          fullDescription: "A comprehensive e-commerce platform supporting multiple vendors with real-time analytics, inventory management, and automated marketing tools.",
+          technologies: ["React", "Node.js", "PostgreSQL", "Redis", "AWS"],
+          category: "SaaS",
+          clientName: "RetailTech Inc",
+          projectUrl: "https://ecommercehub.example.com",
+          images: ["/images/portfolio/ecommercehub-1.jpg", "/images/portfolio/ecommercehub-2.jpg"],
+        }
+      ]);
 
-      // News Blog Posts
-      {
-        id: randomUUID(),
-        title: "AI Revolution: How Machine Learning is Transforming Business",
-        slug: "ai-revolution-transforming-business-2024",
-        excerpt: "Explore how artificial intelligence and machine learning are reshaping industries and creating new opportunities.",
-        content: "The AI revolution is no longer a future concept—it's happening now. From small startups to Fortune 500 companies, businesses are leveraging artificial intelligence to gain competitive advantages and drive innovation.\n\nThis analysis covers: Current AI adoption trends across industries, practical implementation strategies, ROI measurement frameworks, ethical considerations, and future predictions. We'll examine real case studies of successful AI implementations and discuss what this means for the future of work and business strategy.",
-        author: "Dr. Patricia Kim",
-        authorImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["AI", "Machine Learning", "Business", "News"],
-        readTime: 8,
-        isPublished: true,
-        publishedAt: new Date("2024-12-14"),
-        createdAt: new Date("2024-12-14"),
-        updatedAt: new Date("2024-12-14"),
-      },
-      {
-        id: randomUUID(),
-        title: "Cybersecurity Threats: What Businesses Need to Know",
-        slug: "cybersecurity-threats-business-guide-2024",
-        excerpt: "Stay ahead of evolving cyber threats with comprehensive security strategies and best practices.",
-        content: "Cybersecurity threats continue to evolve, targeting businesses of all sizes with increasingly sophisticated attacks. This essential guide provides actionable insights for protecting your organization in 2024.\n\nKey areas covered: Latest threat landscape analysis, zero-trust security implementation, employee training strategies, incident response planning, and regulatory compliance requirements. We'll also explore emerging security technologies and provide a practical security assessment framework.",
-        author: "Robert Johnson",
-        authorImage: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["Cybersecurity", "Business Security", "Risk Management", "News"],
-        readTime: 7,
-        isPublished: true,
-        publishedAt: new Date("2024-12-11"),
-        createdAt: new Date("2024-12-11"),
-        updatedAt: new Date("2024-12-11"),
-      },
-      {
-        id: randomUUID(),
-        title: "Remote Work Technology Trends Shaping the Future",
-        slug: "remote-work-technology-trends-2024",
-        excerpt: "Discover the latest technologies and tools that are making remote work more productive and collaborative.",
-        content: "Remote work has permanently changed how businesses operate. This comprehensive analysis explores the technology trends that are shaping the future of distributed teams and hybrid work environments.\n\nTrends analyzed: Virtual reality collaboration platforms, AI-powered productivity tools, advanced video conferencing solutions, digital workspace platforms, and cybersecurity for remote teams. We'll also examine productivity metrics and employee satisfaction data from leading remote-first companies.",
-        author: "Amanda Foster",
-        authorImage: "https://images.unsplash.com/photo-1494790108755-2616b112371c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["Remote Work", "Technology", "Collaboration", "News"],
-        readTime: 6,
-        isPublished: true,
-        publishedAt: new Date("2024-12-09"),
-        createdAt: new Date("2024-12-09"),
-        updatedAt: new Date("2024-12-09"),
-      },
+      // Seed testimonials
+      await db.insert(testimonials).values([
+        {
+          name: "Michael Rodriguez",
+          company: "TechStart Solutions",
+          position: "CEO",
+          content: "DigitalCraft transformed our vision into a powerful SaaS platform. Their expertise and attention to detail exceeded our expectations.",
+          rating: 5,
+          image: "/images/testimonials/michael.jpg",
+        }
+      ]);
 
-      // General Blog Posts
-      {
-        id: randomUUID(),
-        title: "Digital Transformation: A CEO's Guide to Success",
-        slug: "digital-transformation-ceo-guide",
-        excerpt: "Navigate the complexities of digital transformation with proven strategies from industry leaders.",
-        content: "Digital transformation is no longer optional—it's essential for business survival and growth. This executive guide provides practical frameworks and strategies for leading successful digital transformation initiatives.\n\nThis comprehensive guide covers: Strategic planning methodologies, change management best practices, technology selection frameworks, ROI measurement strategies, and common pitfalls to avoid. Features insights from CEOs who have successfully led digital transformations across various industries.",
-        author: "David Chen",
-        authorImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["Digital Transformation", "Leadership", "Strategy", "General"],
-        readTime: 10,
-        isPublished: true,
-        publishedAt: new Date("2024-12-13"),
-        createdAt: new Date("2024-12-13"),
-        updatedAt: new Date("2024-12-13"),
-      },
-      {
-        id: randomUUID(),
-        title: "Building High-Performance Teams in the Digital Age",
-        slug: "building-high-performance-teams-digital-age",
-        excerpt: "Learn how to create and manage teams that thrive in today's fast-paced digital environment.",
-        content: "High-performance teams are the backbone of successful organizations. This guide explores how to build, manage, and motivate teams that consistently deliver exceptional results in the digital age.\n\nKey topics include: Team formation strategies, communication frameworks, performance measurement systems, remote team management, conflict resolution techniques, and creating psychological safety. Includes practical tools and templates for team leaders and managers.",
-        author: "Rachel Green",
-        authorImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["Team Building", "Management", "Leadership", "General"],
-        readTime: 8,
-        isPublished: true,
-        publishedAt: new Date("2024-12-07"),
-        createdAt: new Date("2024-12-07"),
-        updatedAt: new Date("2024-12-07"),
-      },
-      {
-        id: randomUUID(),
-        title: "Customer Experience Excellence in the Digital Era",
-        slug: "customer-experience-excellence-digital-era",
-        excerpt: "Create exceptional customer experiences that drive loyalty and growth in an increasingly digital world.",
-        content: "Customer experience has become the primary differentiator in today's competitive marketplace. This comprehensive guide reveals how to create exceptional experiences that turn customers into advocates.\n\nTopics covered: Customer journey mapping, omnichannel experience design, personalization strategies, feedback collection and analysis, customer success frameworks, and measuring experience impact on business results. Features case studies from companies known for exceptional customer experience.",
-        author: "Lisa Park",
-        authorImage: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-        featuredImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-        tags: ["Customer Experience", "Digital Strategy", "Business Growth", "General"],
-        readTime: 9,
-        isPublished: true,
-        publishedAt: new Date("2024-12-06"),
-        createdAt: new Date("2024-12-06"),
-        updatedAt: new Date("2024-12-06"),
-      }
-    ];
+      // Seed default page builder components
+      await db.insert(pageBuilderComponents).values([
+        {
+          name: "Hero Section",
+          category: "hero",
+          componentType: "layout",
+          defaultProps: {
+            title: "Welcome to Our Platform",
+            subtitle: "Transform your business with our solutions",
+            backgroundImage: "",
+            buttonText: "Get Started",
+            buttonLink: "#contact"
+          },
+          schema: {
+            title: { type: "string", required: true },
+            subtitle: { type: "string", required: false },
+            backgroundImage: { type: "image", required: false },
+            buttonText: { type: "string", required: true },
+            buttonLink: { type: "string", required: true }
+          },
+        },
+        {
+          name: "Feature Grid",
+          category: "content",
+          componentType: "grid",
+          defaultProps: {
+            title: "Our Features",
+            features: [
+              { title: "Fast Performance", description: "Lightning fast load times", icon: "⚡" },
+              { title: "Secure", description: "Enterprise-grade security", icon: "🔒" },
+              { title: "Scalable", description: "Grows with your business", icon: "📈" }
+            ]
+          },
+          schema: {
+            title: { type: "string", required: true },
+            features: { 
+              type: "array", 
+              items: {
+                title: { type: "string", required: true },
+                description: { type: "string", required: true },
+                icon: { type: "string", required: false }
+              }
+            }
+          },
+        }
+      ]);
 
-    blogPosts.forEach(post => {
-      this.blogPosts.set(post.id, post);
-    });
+      // Seed default theme
+      await db.insert(themeSettings).values([
+        {
+          name: "Default Glass Theme",
+          isActive: true,
+          colors: {
+            primary: "#3B82F6",
+            secondary: "#8B5CF6",
+            accent: "#F59E0B",
+            background: "#0F172A",
+            surface: "rgba(255, 255, 255, 0.1)",
+            text: "#FFFFFF"
+          },
+          fonts: {
+            heading: "Inter",
+            body: "Inter",
+            sizes: { xs: "12px", sm: "14px", base: "16px", lg: "18px", xl: "20px" }
+          },
+          spacing: {
+            xs: "4px", sm: "8px", md: "16px", lg: "24px", xl: "32px", "2xl": "48px"
+          },
+          borderRadius: {
+            sm: "4px", md: "8px", lg: "12px", xl: "16px", "2xl": "24px"
+          },
+          shadows: {
+            sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+            md: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+            lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
+          },
+          animations: {
+            duration: { fast: "0.15s", normal: "0.3s", slow: "0.5s" },
+            easing: "cubic-bezier(0.4, 0, 0.2, 1)"
+          },
+          layout: {
+            maxWidth: "1280px",
+            containerPadding: "1rem",
+            headerHeight: "80px"
+          }
+        }
+      ]);
 
-    // Seed testimonials
-    const testimonials = [
-      {
-        id: randomUUID(),
-        name: "John Mitchell",
-        company: "TechVenture Inc",
-        position: "CEO",
-        content: "DigitalCraft transformed our e-commerce platform completely. The React TypeScript frontend is blazing fast and the Flask backend handles our traffic perfectly.",
-        rating: 5,
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50",
-        isActive: true,
-        createdAt: new Date(),
-      },
-      {
-        id: randomUUID(),
-        name: "Lisa Rodriguez",
-        company: "StartupHub",
-        position: "Founder",
-        content: "Their digital marketing expertise increased our online presence by 400%. The SEO optimization work was particularly impressive.",
-        rating: 5,
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50",
-        isActive: true,
-        createdAt: new Date(),
-      },
-      {
-        id: randomUUID(),
-        name: "David Park",
-        company: "Enterprise Solutions",
-        position: "CTO",
-        content: "The SaaS platform they built for us is exactly what we envisioned. The architecture is solid and scales beautifully with our growth.",
-        rating: 5,
-        image: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50",
-        isActive: true,
-        createdAt: new Date(),
-      }
-    ];
-
-    testimonials.forEach(testimonial => {
-      this.testimonials.set(testimonial.id, testimonial);
-    });
+      console.log("Database seeded successfully");
+    } catch (error) {
+      console.error("Error seeding database:", error);
+    }
   }
 
-  // User methods
+  // ========== USER METHODS ==========
   async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+    const result = await db.select().from(users).where(eq(users.id, id)).limit(1);
+    return result[0];
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(user => user.username === username);
+    const result = await db.select().from(users).where(eq(users.username, username)).limit(1);
+    return result[0];
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { 
-      ...insertUser, 
-      id, 
-      role: "user", 
-      createdAt: new Date() 
-    };
-    this.users.set(id, user);
-    return user;
+  async createUser(user: InsertUser): Promise<User> {
+    const result = await db.insert(users).values(user).returning();
+    return result[0];
   }
 
-  // Service methods
+  // ========== SERVICE METHODS ==========
   async getServices(): Promise<Service[]> {
-    return Array.from(this.services.values()).filter(service => service.isActive);
+    return await db.select().from(services).where(eq(services.isActive, true));
   }
 
   async getService(id: string): Promise<Service | undefined> {
-    return this.services.get(id);
+    const result = await db.select().from(services).where(eq(services.id, id)).limit(1);
+    return result[0];
   }
 
   async getServiceBySlug(slug: string): Promise<Service | undefined> {
-    return Array.from(this.services.values()).find(service => service.slug === slug);
+    const result = await db.select().from(services).where(eq(services.slug, slug)).limit(1);
+    return result[0];
   }
 
-  async createService(insertService: InsertService): Promise<Service> {
-    const id = randomUUID();
-    const service: Service = { 
-      ...insertService, 
-      id, 
-      isActive: true, 
-      createdAt: new Date(),
-      pricing: insertService.pricing ?? null
-    };
-    this.services.set(id, service);
-    return service;
+  async createService(service: InsertService): Promise<Service> {
+    const result = await db.insert(services).values(service).returning();
+    return result[0];
   }
 
-  // Blog post methods
+  // ========== BLOG POST METHODS ==========
   async getBlogPosts(): Promise<BlogPost[]> {
-    return Array.from(this.blogPosts.values());
+    return await db.select().from(blogPosts).orderBy(desc(blogPosts.createdAt));
   }
 
   async getPublishedBlogPosts(): Promise<BlogPost[]> {
-    return Array.from(this.blogPosts.values()).filter(post => post.isPublished);
+    return await db.select().from(blogPosts)
+      .where(eq(blogPosts.isPublished, true))
+      .orderBy(desc(blogPosts.publishedAt));
   }
 
   async getBlogPost(id: string): Promise<BlogPost | undefined> {
-    return this.blogPosts.get(id);
+    const result = await db.select().from(blogPosts).where(eq(blogPosts.id, id)).limit(1);
+    return result[0];
   }
 
   async getBlogPostBySlug(slug: string): Promise<BlogPost | undefined> {
-    return Array.from(this.blogPosts.values()).find(post => post.slug === slug);
+    const result = await db.select().from(blogPosts).where(eq(blogPosts.slug, slug)).limit(1);
+    return result[0];
   }
 
-  async createBlogPost(insertPost: InsertBlogPost): Promise<BlogPost> {
-    const id = randomUUID();
-    const post: BlogPost = { 
-      ...insertPost, 
-      id, 
-      isPublished: false,
-      publishedAt: null,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      authorImage: insertPost.authorImage ?? null,
-      featuredImage: insertPost.featuredImage ?? null
-    };
-    this.blogPosts.set(id, post);
-    return post;
+  async createBlogPost(post: InsertBlogPost): Promise<BlogPost> {
+    const result = await db.insert(blogPosts).values(post).returning();
+    return result[0];
   }
 
-  // Portfolio methods
+  // ========== PORTFOLIO METHODS ==========
   async getPortfolioItems(): Promise<PortfolioItem[]> {
-    return Array.from(this.portfolioItems.values());
+    return await db.select().from(portfolioItems).orderBy(desc(portfolioItems.createdAt));
   }
 
   async getActivePortfolioItems(): Promise<PortfolioItem[]> {
-    return Array.from(this.portfolioItems.values()).filter(item => item.isActive);
+    return await db.select().from(portfolioItems)
+      .where(eq(portfolioItems.isActive, true))
+      .orderBy(desc(portfolioItems.createdAt));
   }
 
   async getPortfolioItem(id: string): Promise<PortfolioItem | undefined> {
-    return this.portfolioItems.get(id);
+    const result = await db.select().from(portfolioItems).where(eq(portfolioItems.id, id)).limit(1);
+    return result[0];
   }
 
   async getPortfolioItemBySlug(slug: string): Promise<PortfolioItem | undefined> {
-    return Array.from(this.portfolioItems.values()).find(item => item.slug === slug);
+    const result = await db.select().from(portfolioItems).where(eq(portfolioItems.slug, slug)).limit(1);
+    return result[0];
   }
 
-  async createPortfolioItem(insertItem: InsertPortfolioItem): Promise<PortfolioItem> {
-    const id = randomUUID();
-    const item: PortfolioItem = { 
-      ...insertItem, 
-      id, 
-      isActive: true, 
-      createdAt: new Date(),
-      clientName: insertItem.clientName ?? null,
-      projectUrl: insertItem.projectUrl ?? null,
-      githubUrl: insertItem.githubUrl ?? null
-    };
-    this.portfolioItems.set(id, item);
-    return item;
+  async createPortfolioItem(item: InsertPortfolioItem): Promise<PortfolioItem> {
+    const result = await db.insert(portfolioItems).values(item).returning();
+    return result[0];
   }
 
-  // Contact inquiry methods
+  // ========== CONTACT INQUIRY METHODS ==========
   async getContactInquiries(): Promise<ContactInquiry[]> {
-    return Array.from(this.contactInquiries.values());
+    return await db.select().from(contactInquiries).orderBy(desc(contactInquiries.createdAt));
   }
 
   async getContactInquiry(id: string): Promise<ContactInquiry | undefined> {
-    return this.contactInquiries.get(id);
+    const result = await db.select().from(contactInquiries).where(eq(contactInquiries.id, id)).limit(1);
+    return result[0];
   }
 
-  async createContactInquiry(insertInquiry: InsertContactInquiry): Promise<ContactInquiry> {
-    const id = randomUUID();
-    const inquiry: ContactInquiry = { 
-      ...insertInquiry, 
-      id, 
-      status: "new", 
-      createdAt: new Date(),
-      budget: insertInquiry.budget ?? null
-    };
-    this.contactInquiries.set(id, inquiry);
-    return inquiry;
+  async createContactInquiry(inquiry: InsertContactInquiry): Promise<ContactInquiry> {
+    const result = await db.insert(contactInquiries).values(inquiry).returning();
+    return result[0];
   }
 
-  // Testimonial methods
+  // ========== TESTIMONIAL METHODS ==========
   async getTestimonials(): Promise<Testimonial[]> {
-    return Array.from(this.testimonials.values());
+    return await db.select().from(testimonials).orderBy(desc(testimonials.createdAt));
   }
 
   async getActiveTestimonials(): Promise<Testimonial[]> {
-    return Array.from(this.testimonials.values()).filter(testimonial => testimonial.isActive);
+    return await db.select().from(testimonials)
+      .where(eq(testimonials.isActive, true))
+      .orderBy(desc(testimonials.createdAt));
   }
 
-  async createTestimonial(insertTestimonial: InsertTestimonial): Promise<Testimonial> {
-    const id = randomUUID();
-    const testimonial: Testimonial = { 
-      ...insertTestimonial, 
-      id, 
-      isActive: true, 
-      createdAt: new Date(),
-      image: insertTestimonial.image ?? null
-    };
-    this.testimonials.set(id, testimonial);
-    return testimonial;
+  async createTestimonial(testimonial: InsertTestimonial): Promise<Testimonial> {
+    const result = await db.insert(testimonials).values(testimonial).returning();
+    return result[0];
+  }
+
+  // ========== CMS PAGE TEMPLATE METHODS ==========
+  async getPageTemplates(): Promise<PageTemplate[]> {
+    return await db.select().from(pageTemplates)
+      .where(eq(pageTemplates.isActive, true))
+      .orderBy(desc(pageTemplates.createdAt));
+  }
+
+  async getPageTemplateById(id: string): Promise<PageTemplate | undefined> {
+    const result = await db.select().from(pageTemplates).where(eq(pageTemplates.id, id)).limit(1);
+    return result[0];
+  }
+
+  async createPageTemplate(template: InsertPageTemplate): Promise<PageTemplate> {
+    const result = await db.insert(pageTemplates).values(template).returning();
+    return result[0];
+  }
+
+  async updatePageTemplate(id: string, template: InsertPageTemplate): Promise<PageTemplate | undefined> {
+    const result = await db.update(pageTemplates)
+      .set({ ...template, updatedAt: new Date() })
+      .where(eq(pageTemplates.id, id))
+      .returning();
+    return result[0];
+  }
+
+  async deletePageTemplate(id: string): Promise<boolean> {
+    const result = await db.delete(pageTemplates).where(eq(pageTemplates.id, id));
+    return result.rowCount > 0;
+  }
+
+  // ========== CMS PAGE METHODS ==========
+  async getPages(filters?: { status?: string; type?: string }): Promise<Page[]> {
+    if (filters?.status && filters?.type) {
+      return await db.select().from(pages)
+        .where(and(eq(pages.status, filters.status), eq(pages.type, filters.type)))
+        .orderBy(desc(pages.createdAt));
+    } else if (filters?.status) {
+      return await db.select().from(pages)
+        .where(eq(pages.status, filters.status))
+        .orderBy(desc(pages.createdAt));
+    } else if (filters?.type) {
+      return await db.select().from(pages)
+        .where(eq(pages.type, filters.type))
+        .orderBy(desc(pages.createdAt));
+    }
+    
+    return await db.select().from(pages).orderBy(desc(pages.createdAt));
+  }
+
+  async getPageBySlug(slug: string): Promise<Page | undefined> {
+    const result = await db.select().from(pages).where(eq(pages.slug, slug)).limit(1);
+    return result[0];
+  }
+
+  async createPage(page: InsertPage): Promise<Page> {
+    const result = await db.insert(pages).values(page).returning();
+    return result[0];
+  }
+
+  async updatePage(id: string, page: InsertPage): Promise<Page | undefined> {
+    const result = await db.update(pages)
+      .set({ ...page, updatedAt: new Date() })
+      .where(eq(pages.id, id))
+      .returning();
+    return result[0];
+  }
+
+  async publishPage(id: string): Promise<Page | undefined> {
+    const result = await db.update(pages)
+      .set({ status: "published", publishedAt: new Date(), updatedAt: new Date() })
+      .where(eq(pages.id, id))
+      .returning();
+    return result[0];
+  }
+
+  async deletePage(id: string): Promise<boolean> {
+    const result = await db.delete(pages).where(eq(pages.id, id));
+    return result.rowCount > 0;
+  }
+
+  // ========== SEO SETTINGS METHODS ==========
+  async getSeoSettings(entityType: string, entityId: string): Promise<SeoSettings | undefined> {
+    let result: SeoSettings[];
+    
+    switch (entityType) {
+      case 'page':
+        result = await db.select().from(seoSettings).where(eq(seoSettings.pageId, entityId)).limit(1);
+        break;
+      case 'service':
+        result = await db.select().from(seoSettings).where(eq(seoSettings.serviceId, entityId)).limit(1);
+        break;
+      case 'blog':
+        result = await db.select().from(seoSettings).where(eq(seoSettings.blogPostId, entityId)).limit(1);
+        break;
+      case 'portfolio':
+        result = await db.select().from(seoSettings).where(eq(seoSettings.portfolioItemId, entityId)).limit(1);
+        break;
+      default:
+        return undefined;
+    }
+    
+    return result[0];
+  }
+
+  async createOrUpdateSeoSettings(settings: InsertSeoSettings): Promise<SeoSettings> {
+    // Try to find existing settings
+    let existing: SeoSettings[] = [];
+    
+    if (settings.pageId) {
+      existing = await db.select().from(seoSettings).where(eq(seoSettings.pageId, settings.pageId)).limit(1);
+    } else if (settings.serviceId) {
+      existing = await db.select().from(seoSettings).where(eq(seoSettings.serviceId, settings.serviceId)).limit(1);
+    } else if (settings.blogPostId) {
+      existing = await db.select().from(seoSettings).where(eq(seoSettings.blogPostId, settings.blogPostId)).limit(1);
+    } else if (settings.portfolioItemId) {
+      existing = await db.select().from(seoSettings).where(eq(seoSettings.portfolioItemId, settings.portfolioItemId)).limit(1);
+    }
+    
+    if (existing.length > 0) {
+      // Update existing
+      const result = await db.update(seoSettings)
+        .set({ ...settings, updatedAt: new Date() })
+        .where(eq(seoSettings.id, existing[0].id))
+        .returning();
+      return result[0];
+    } else {
+      // Create new
+      const result = await db.insert(seoSettings).values(settings).returning();
+      return result[0];
+    }
+  }
+
+  // ========== THEME SETTINGS METHODS ==========
+  async getThemes(): Promise<ThemeSettings[]> {
+    return await db.select().from(themeSettings).orderBy(desc(themeSettings.createdAt));
+  }
+
+  async getActiveTheme(): Promise<ThemeSettings | undefined> {
+    const result = await db.select().from(themeSettings)
+      .where(eq(themeSettings.isActive, true))
+      .limit(1);
+    return result[0];
+  }
+
+  async createTheme(theme: InsertThemeSettings): Promise<ThemeSettings> {
+    const result = await db.insert(themeSettings).values(theme).returning();
+    return result[0];
+  }
+
+  async updateTheme(id: string, theme: InsertThemeSettings): Promise<ThemeSettings | undefined> {
+    const result = await db.update(themeSettings)
+      .set({ ...theme, updatedAt: new Date() })
+      .where(eq(themeSettings.id, id))
+      .returning();
+    return result[0];
+  }
+
+  async activateTheme(id: string): Promise<ThemeSettings | undefined> {
+    // Deactivate all themes first
+    await db.update(themeSettings).set({ isActive: false });
+    
+    // Activate the selected theme
+    const result = await db.update(themeSettings)
+      .set({ isActive: true, updatedAt: new Date() })
+      .where(eq(themeSettings.id, id))
+      .returning();
+    return result[0];
+  }
+
+  // ========== PAGE BUILDER COMPONENT METHODS ==========
+  async getPageBuilderComponents(category?: string): Promise<PageBuilderComponent[]> {
+    if (category) {
+      return await db.select().from(pageBuilderComponents)
+        .where(and(eq(pageBuilderComponents.isActive, true), eq(pageBuilderComponents.category, category)))
+        .orderBy(pageBuilderComponents.name);
+    }
+    
+    return await db.select().from(pageBuilderComponents)
+      .where(eq(pageBuilderComponents.isActive, true))
+      .orderBy(pageBuilderComponents.name);
+  }
+
+  async createPageBuilderComponent(component: InsertPageBuilderComponent): Promise<PageBuilderComponent> {
+    const result = await db.insert(pageBuilderComponents).values(component).returning();
+    return result[0];
+  }
+
+  // ========== SITE SETTINGS METHODS ==========
+  async getSiteSettings(): Promise<SiteSettings | undefined> {
+    const result = await db.select().from(siteSettings).limit(1);
+    return result[0];
+  }
+
+  async createOrUpdateSiteSettings(settings: InsertSiteSettings): Promise<SiteSettings> {
+    const existing = await this.getSiteSettings();
+    
+    if (existing) {
+      // Update existing
+      const result = await db.update(siteSettings)
+        .set({ ...settings, updatedAt: new Date() })
+        .where(eq(siteSettings.id, existing.id))
+        .returning();
+      return result[0];
+    } else {
+      // Create new
+      const result = await db.insert(siteSettings).values(settings).returning();
+      return result[0];
+    }
+  }
+
+  // ========== SEO SITEMAP METHODS ==========
+  async generateSitemap(): Promise<string> {
+    const siteSettings = await this.getSiteSettings();
+    const baseUrl = process.env.REPLIT_DOMAINS ? `https://${process.env.REPLIT_DOMAINS.split(',')[0]}` : 'https://localhost:5000';
+    
+    // Get all published content
+    const publishedPages = await db.select().from(pages).where(eq(pages.status, 'published'));
+    const publishedBlogPosts = await this.getPublishedBlogPosts();
+    const activeServices = await this.getServices();
+    const activePortfolioItems = await this.getActivePortfolioItems();
+    
+    let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
+    // Add static pages
+    sitemap += `
+  <url>
+    <loc>${baseUrl}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>`;
+
+    // Add CMS pages
+    for (const page of publishedPages) {
+      const seo = await this.getSeoSettings('page', page.id);
+      sitemap += `
+  <url>
+    <loc>${baseUrl}/${page.slug}</loc>
+    <lastmod>${page.updatedAt?.toISOString()}</lastmod>
+    <changefreq>${seo?.changeFreq || 'monthly'}</changefreq>
+    <priority>${(seo?.priority || 5) / 10}</priority>
+  </url>`;
+    }
+
+    // Add blog posts
+    for (const post of publishedBlogPosts) {
+      const seo = await this.getSeoSettings('blog', post.id);
+      sitemap += `
+  <url>
+    <loc>${baseUrl}/blog/${post.slug}</loc>
+    <lastmod>${post.updatedAt?.toISOString()}</lastmod>
+    <changefreq>${seo?.changeFreq || 'monthly'}</changefreq>
+    <priority>${(seo?.priority || 7) / 10}</priority>
+  </url>`;
+    }
+
+    // Add services
+    for (const service of activeServices) {
+      const seo = await this.getSeoSettings('service', service.id);
+      sitemap += `
+  <url>
+    <loc>${baseUrl}/services/${service.slug}</loc>
+    <lastmod>${service.createdAt?.toISOString()}</lastmod>
+    <changefreq>${seo?.changeFreq || 'monthly'}</changefreq>
+    <priority>${(seo?.priority || 8) / 10}</priority>
+  </url>`;
+    }
+
+    // Add portfolio items
+    for (const item of activePortfolioItems) {
+      const seo = await this.getSeoSettings('portfolio', item.id);
+      sitemap += `
+  <url>
+    <loc>${baseUrl}/portfolio/${item.slug}</loc>
+    <lastmod>${item.createdAt?.toISOString()}</lastmod>
+    <changefreq>${seo?.changeFreq || 'monthly'}</changefreq>
+    <priority>${(seo?.priority || 6) / 10}</priority>
+  </url>`;
+    }
+
+    sitemap += `
+</urlset>`;
+
+    return sitemap;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
