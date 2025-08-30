@@ -124,8 +124,8 @@ export default function NewsBlog() {
             <Badge className="bg-red-600 text-white">
               Breaking News
             </Badge>
-            {post.tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="bg-primary/20 text-accent">
+            {post.tags?.map((tag, index) => (
+              <Badge key={`${tag}-${index}`} variant="secondary" className="bg-primary/20 text-accent">
                 {tag}
               </Badge>
             ))}

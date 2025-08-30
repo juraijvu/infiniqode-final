@@ -71,7 +71,7 @@ export default function GeneralBlog() {
   }
 
   const relatedPosts = allPosts
-    .filter(p => p.id !== post.id && p.tags.some(tag => post.tags.includes(tag)))
+    .filter(p => p.id !== post.id && p.tags?.some(tag => post.tags?.includes(tag)))
     .slice(0, 3);
 
   const structuredData = {
