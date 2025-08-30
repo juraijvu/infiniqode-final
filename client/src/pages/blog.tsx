@@ -86,7 +86,7 @@ export default function Blog() {
         <div className="max-w-7xl mx-auto px-6">
           <div ref={categoriesRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <Link href="/blog/technical">
-              <GlassCard className="glass-blog-card p-8 text-center hover:scale-105 transition-all duration-300 cursor-pointer" data-testid="card-technical-blog">
+              <GlassCard className="glass-blog-card p-8 text-center hover:bg-white/5 transition-colors duration-200 cursor-pointer will-change-auto" data-testid="card-technical-blog">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl">⚡</span>
                 </div>
@@ -96,7 +96,7 @@ export default function Blog() {
             </Link>
             
             <Link href="/blog/general">
-              <GlassCard className="glass-blog-card p-8 text-center hover:scale-105 transition-all duration-300 cursor-pointer" data-testid="card-general-blog">
+              <GlassCard className="glass-blog-card p-8 text-center hover:bg-white/5 transition-colors duration-200 cursor-pointer will-change-auto" data-testid="card-general-blog">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl">📝</span>
                 </div>
@@ -106,7 +106,7 @@ export default function Blog() {
             </Link>
             
             <Link href="/blog/marketing">
-              <GlassCard className="glass-blog-card p-8 text-center hover:scale-105 transition-all duration-300 cursor-pointer" data-testid="card-marketing-blog">
+              <GlassCard className="glass-blog-card p-8 text-center hover:bg-white/5 transition-colors duration-200 cursor-pointer will-change-auto" data-testid="card-marketing-blog">
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl">📈</span>
                 </div>
@@ -116,7 +116,7 @@ export default function Blog() {
             </Link>
             
             <Link href="/blog/news">
-              <GlassCard className="glass-blog-card p-8 text-center hover:scale-105 transition-all duration-300 cursor-pointer" data-testid="card-news-blog">
+              <GlassCard className="glass-blog-card p-8 text-center hover:bg-white/5 transition-colors duration-200 cursor-pointer will-change-auto" data-testid="card-news-blog">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl">📰</span>
                 </div>
@@ -180,7 +180,7 @@ export default function Blog() {
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-3xl font-bold mb-8 gradient-text">Featured Article</h2>
             <Link href={`/blog/${featuredPost.slug}`}>
-              <GlassCard className="overflow-hidden hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+              <GlassCard className="overflow-hidden hover:bg-white/5 transition-colors duration-200 cursor-pointer will-change-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   {featuredPost.featuredImage && (
                     <div className="relative h-64 lg:h-auto">

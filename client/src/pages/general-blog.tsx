@@ -97,7 +97,7 @@ export default function GeneralBlog() {
         title={post.title}
         description={post.excerpt}
         keywords={`${post.tags.join(', ')}, blog, insights`}
-        ogImage={post.featuredImage}
+        ogImage={post.featuredImage || undefined}
         structuredData={structuredData}
       />
       <Navigation />

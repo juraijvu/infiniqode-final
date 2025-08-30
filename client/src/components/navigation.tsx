@@ -44,7 +44,7 @@ export function Navigation() {
   const NavLink = ({ href, label, icon: Icon }: { href: string; label: string; icon?: any }) => (
     <Link href={href}>
       <span
-        className={`transition-all duration-300 cursor-pointer flex items-center gap-2 hover:scale-105 ${
+        className={`transition-colors duration-200 cursor-pointer flex items-center gap-2 will-change-auto ${
           location === href 
             ? "text-foreground" 
             : "text-muted-foreground hover:text-accent"
@@ -61,7 +61,7 @@ export function Navigation() {
   const MobileNavLink = ({ href, label, icon: Icon }: { href: string; label: string; icon?: any }) => (
     <Link href={href}>
       <div
-        className={`group flex items-center gap-4 p-4 rounded-xl transition-all duration-300 cursor-pointer ${
+        className={`group flex items-center gap-4 p-4 rounded-xl transition-colors duration-200 cursor-pointer will-change-auto ${
           location === href
             ? "bg-primary/20 text-primary border border-primary/30"
             : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
@@ -69,7 +69,7 @@ export function Navigation() {
         onClick={() => setIsOpen(false)}
       >
         {Icon && (
-          <div className={`p-2 rounded-lg transition-all duration-300 ${
+          <div className={`p-2 rounded-lg transition-colors duration-200 will-change-auto ${
             location === href
               ? "bg-primary/30"
               : "bg-white/10 group-hover:bg-white/20"
@@ -110,12 +110,12 @@ export function Navigation() {
                   <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-80 glass-card border-border/50" sideOffset={8}>
+              <DropdownMenuContent className="w-80 glass-card border-border/50 z-[60]" sideOffset={8}>
                 <div className="p-2 space-y-1">
                   {servicesItems.map((service) => (
                     <Link key={service.href} href={service.href}>
-                      <DropdownMenuItem className="flex items-start gap-3 p-3 rounded-lg cursor-pointer hover:bg-white/5 transition-colors group">
-                        <div className="p-2 rounded-lg bg-primary/20 group-hover:bg-primary/30 transition-colors">
+                      <DropdownMenuItem className="flex items-start gap-3 p-3 rounded-lg cursor-pointer hover:bg-white/5 transition-colors duration-200 group will-change-auto">
+                        <div className="p-2 rounded-lg bg-primary/20 group-hover:bg-primary/30 transition-colors duration-200 will-change-auto">
                           <service.icon className="w-4 h-4 text-primary" />
                         </div>
                         <div className="flex-1">
@@ -186,10 +186,10 @@ export function Navigation() {
                     {servicesItems.map((service) => (
                       <Link key={service.href} href={service.href}>
                         <div
-                          className="group flex items-center gap-4 p-4 rounded-xl transition-all duration-300 cursor-pointer hover:bg-white/5 hover:text-foreground text-muted-foreground"
+                          className="group flex items-center gap-4 p-4 rounded-xl transition-colors duration-200 cursor-pointer hover:bg-white/5 hover:text-foreground text-muted-foreground will-change-auto"
                           onClick={() => setIsOpen(false)}
                         >
-                          <div className="p-2 rounded-lg bg-white/10 group-hover:bg-white/20 transition-all duration-300">
+                          <div className="p-2 rounded-lg bg-white/10 group-hover:bg-white/20 transition-colors duration-200 will-change-auto">
                             <service.icon className="w-5 h-5" />
                           </div>
                           <div className="flex-1">
