@@ -1,0 +1,81 @@
+Enhanced Technical Blog Structure
+
+Hero: Syntax-highlighted code snippet
+Title: Article Title + Category Badge (Tech)
+Metadata: Publish date, read time, tags
+Author: Name, avatar, bio, GitHub/LinkedIn links, expertise badges
+Opener: Interactive terminal/code playground
+TOC: Auto-generated, clickable
+Main Content:
+
+Intro with problem statement
+Steps with expandable diagrams
+API doc cards with copy buttons
+Error/solution accordion
+Benchmark tables
+
+
+Supporting: Tool badges, version history, newsletter signup
+Closing: Summary, related carousel, author signature, "Fork on GitHub" CTA
+Footer: Share buttons, comments, breadcrumbs
+
+Enhanced Marketing Blog Structure
+
+Hero: ROI metric badge/animated growth chart
+Title: Article Title + Growth-Chart Badge
+Metadata: Date, read time, conversion tags
+Author: Name, avatar, bio, social proof
+Opener: ROI calculator/quiz widget
+TOC: Clickable links
+Main Content:
+
+Intro with stats
+Before/after sliders
+Conversion funnel visuals
+Social proof cards
+A/B test toggles
+
+
+Supporting: Case study cards, inline CTAs, newsletter signup
+Closing: Takeaways, downloadable report CTA, related carousel, author signature
+Footer: Share buttons, comments, site map links
+
+Enhanced General Blog Structure
+
+Hero: Full-width image
+Title: Article Title + Minimal Category Badge
+Metadata: Date, read time, tags
+Author: Name, avatar, bio, social links
+Opener: Drop-cap paragraph
+TOC: Sidebar/sticky
+Main Content:
+
+Narrative intro
+Pull-quote sidebars
+Expandable sections
+Serif typography
+
+
+Supporting: Related carousel, newsletter signup
+Closing: Summary pull-quote, author signature, "Subscribe" CTA
+Footer: Share buttons, comments, category links
+
+Enhanced News Blog Structure
+
+Hero: Breaking news banner
+Title: Article Title + Dateline
+Metadata: Timestamp, update log
+Author: Name, avatar, journalist credentials
+Opener: Source citations list
+TOC: Jump links
+Main Content:
+
+Lead with 5Ws
+Fact-check accordion
+Event timeline slider
+Expert commentary
+
+
+Supporting: Live update feed, submit tip form, disclaimers
+Closing: Recap, related news carousel, "Follow" CTA
+Footer: Share buttons, comments, archive links
