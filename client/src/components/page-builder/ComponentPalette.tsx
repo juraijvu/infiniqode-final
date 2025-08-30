@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useDraggable } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
-import { Search, Grid, Type, Image, Button, Layout, Users } from 'lucide-react';
+import { Search, Grid, Type, Image, Square, Layout, Users } from 'lucide-react';
 import { Input } from '../ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
 
@@ -80,7 +80,7 @@ const getIconForComponentType = (type: string): React.ReactNode => {
   const iconMap: Record<string, React.ReactNode> = {
     'text': <Type size={16} />,
     'image': <Image size={16} />,
-    'button': <Button size={16} />,
+    'button': <Square size={16} />,
     'grid': <Grid size={16} />,
     'layout': <Layout size={16} />,
     'form': <Users size={16} />,

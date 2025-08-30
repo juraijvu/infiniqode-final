@@ -115,6 +115,11 @@ export interface IStorage {
 }
 
 // Initialize database connection
+// Handle SSL certificate issues in development
+if (process.env.NODE_ENV === 'development') {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+}
+
 const sql = neon(process.env.DATABASE_URL!);
 const db = drizzle(sql);
 
