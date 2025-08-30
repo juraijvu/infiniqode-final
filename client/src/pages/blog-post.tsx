@@ -59,7 +59,7 @@ export default function BlogPost() {
   }
 
   const relatedPosts = allPosts
-    .filter(p => p.id !== post.id && p.tags.some(tag => post.tags.includes(tag)))
+    .filter(p => p.id !== post.id && p.tags?.some(tag => post.tags?.includes(tag)))
     .slice(0, 3);
 
   const structuredData = {
@@ -89,7 +89,7 @@ export default function BlogPost() {
       <SEOHead
         title={post.title}
         description={post.excerpt}
-        keywords={post.tags.join(', ')}
+        keywords={post.tags?.join(', ') || ''}
         ogImage={post.featuredImage}
         structuredData={structuredData}
       />
@@ -107,8 +107,8 @@ export default function BlogPost() {
           
           <div className="mb-8">
             <div className="flex flex-wrap gap-2 mb-6">
-              {post.tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="bg-primary/20 text-accent">
+              {post.tags?.map((tag, index) => (
+                <Badge key={`${tag}-${index}`} variant="secondary" className="bg-primary/20 text-accent">
                   {tag}
                 </Badge>
               ))}
