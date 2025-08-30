@@ -11,6 +11,8 @@ export function FloatingParticles({ className }: FloatingParticlesProps) {
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const particleSystemsRef = useRef<THREE.Points[]>([]);
   const animationIdRef = useRef<number | null>(null);
+  const mouseRef = useRef(new THREE.Vector3(0, 0, 0));
+  const targetMouseRef = useRef(new THREE.Vector3(0, 0, 0));
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -40,29 +42,30 @@ export function FloatingParticles({ className }: FloatingParticlesProps) {
 
     containerRef.current.appendChild(renderer.domElement);
 
-    // Particle systems configuration
+    // Particle systems configuration - faded white stars
     const particleConfigs = [
       {
-        count: 15000,
-        size: 0.4,
-        colorRange: { hue: [0.75, 0.9], sat: [0.7, 1], light: [0.5, 0.8] },
-        rotationSpeed: 0.001,
-        radius: { min: 10, max: 120 }
+        count: 8000,  // Reduced count to be less intrusive
+        size: 0.15,   // Smaller size
+        opacity: 0.3, // Faded opacity
+        rotationSpeed: 0.0005,
+        radius: { min: 20, max: 150 }
       },
       {
-        count: 20000,
-        size: 0.2,
-        colorRange: { hue: [0.45, 0.65], sat: [0.6, 0.9], light: [0.4, 0.7] },
-        rotationSpeed: 0.0008,
-        radius: { min: 5, max: 140 }
+        count: 5000,  // Reduced count
+        size: 0.1,    // Very small
+        opacity: 0.2, // Very faded
+        rotationSpeed: 0.0003,
+        radius: { min: 10, max: 120 }
       }
     ];
 
-    // Create particle systems
+    // Create particle systems with faded white color
     particleConfigs.forEach(config => {
       const geometry = new THREE.BufferGeometry();
       const positions = new Float32Array(config.count * 3);
       const colors = new Float32Array(config.count * 3);
+      const basePositions = new Float32Array(config.count * 3);
 
       for (let i = 0; i < config.count; i++) {
         const i3 = i * 3;
@@ -80,16 +83,16 @@ export function FloatingParticles({ className }: FloatingParticlesProps) {
         positions[i3 + 1] = y;
         positions[i3 + 2] = z;
 
-        // Color based on distance
-        const dist = Math.sqrt(x * x + y * y + z * z) / config.radius.max;
-        const hue = THREE.MathUtils.lerp(config.colorRange.hue[0], config.colorRange.hue[1], dist);
-        const sat = THREE.MathUtils.lerp(config.colorRange.sat[0], config.colorRange.sat[1], dist);
-        const light = THREE.MathUtils.lerp(config.colorRange.light[0], config.colorRange.light[1], dist);
+        // Store base positions for mouse interaction
+        basePositions[i3] = x;
+        basePositions[i3 + 1] = y;
+        basePositions[i3 + 2] = z;
 
-        const color = new THREE.Color().setHSL(hue, sat, light);
-        colors[i3] = color.r;
-        colors[i3 + 1] = color.g;
-        colors[i3 + 2] = color.b;
+        // Light white color with subtle variation
+        const brightness = 0.8 + Math.random() * 0.2; // 0.8 to 1.0
+        colors[i3] = brightness;     // R
+        colors[i3 + 1] = brightness; // G
+        colors[i3 + 2] = brightness; // B
       }
 
       geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -99,36 +102,114 @@ export function FloatingParticles({ className }: FloatingParticlesProps) {
         size: config.size,
         vertexColors: true,
         transparent: true,
-        opacity: 0.8,
+        opacity: config.opacity,
         blending: THREE.AdditiveBlending,
         depthWrite: false,
         sizeAttenuation: true,
       });
 
       const points = new THREE.Points(geometry, material);
-      points.userData = { rotationSpeed: config.rotationSpeed };
+      points.userData = { 
+        rotationSpeed: config.rotationSpeed,
+        basePositions,
+        velocities: new Float32Array(config.count * 3)
+      };
       
       scene.add(points);
       particleSystemsRef.current.push(points);
     });
 
+    // Purple light effect that follows cursor
+    const lightGeometry = new THREE.PlaneGeometry(30, 30);
+    const lightMaterial = new THREE.MeshBasicMaterial({
+      color: 0x7c3aed, // Purple color
+      transparent: true,
+      opacity: 0.15,
+      blending: THREE.AdditiveBlending,
+    });
+    const purpleLight = new THREE.Mesh(lightGeometry, lightMaterial);
+    scene.add(purpleLight);
+
     // Animation variables
     let time = 0;
+    const mouseRadius = 25;
+
+    // Mouse move handler
+    const handleMouseMove = (event: MouseEvent) => {
+      // Convert mouse coordinates to 3D space
+      targetMouseRef.current.x = (event.clientX / window.innerWidth) * 2 - 1;
+      targetMouseRef.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      
+      const vector = new THREE.Vector3(targetMouseRef.current.x, targetMouseRef.current.y, 0.5);
+      vector.unproject(camera);
+      const dir = vector.sub(camera.position).normalize();
+      const distance = -camera.position.z / dir.z;
+      const pos = camera.position.clone().add(dir.multiplyScalar(distance));
+      targetMouseRef.current.copy(pos);
+    };
 
     // Animation loop
     const animate = () => {
       animationIdRef.current = requestAnimationFrame(animate);
       time += 0.01;
 
-      // Rotate particle systems
+      // Smooth mouse following
+      mouseRef.current.lerp(targetMouseRef.current, 0.05);
+
+      // Update purple light position to follow cursor
+      purpleLight.position.copy(mouseRef.current);
+      purpleLight.position.z = 0;
+
+      // Rotate particle systems slowly
       particleSystemsRef.current.forEach(system => {
+        const positions = system.geometry.attributes.position.array as Float32Array;
+        const { basePositions, velocities } = system.userData;
+        const totalParticles = positions.length / 3;
+
+        // Update particle positions based on mouse proximity
+        for (let i = 0; i < totalParticles; i++) {
+          const i3 = i * 3;
+          const px = positions[i3];
+          const py = positions[i3 + 1];
+          const pz = positions[i3 + 2];
+
+          // Mouse interaction - gentle push away
+          const mouseDist = mouseRef.current.distanceTo(new THREE.Vector3(px, py, pz));
+          if (mouseDist < mouseRadius) {
+            const forceStrength = (1 - mouseDist / mouseRadius) * 0.02; // Very gentle
+            const forceDirection = new THREE.Vector3(px, py, pz).sub(mouseRef.current).normalize();
+            
+            velocities[i3] += forceDirection.x * forceStrength;
+            velocities[i3 + 1] += forceDirection.y * forceStrength;
+            velocities[i3 + 2] += forceDirection.z * forceStrength;
+          }
+
+          // Return to base position
+          const returnForce = 0.01;
+          velocities[i3] += (basePositions[i3] - px) * returnForce;
+          velocities[i3 + 1] += (basePositions[i3 + 1] - py) * returnForce;
+          velocities[i3 + 2] += (basePositions[i3 + 2] - pz) * returnForce;
+
+          // Damping
+          const damping = 0.95;
+          velocities[i3] *= damping;
+          velocities[i3 + 1] *= damping;
+          velocities[i3 + 2] *= damping;
+
+          // Update positions
+          positions[i3] += velocities[i3];
+          positions[i3 + 1] += velocities[i3 + 1];
+          positions[i3 + 2] += velocities[i3 + 2];
+        }
+
+        system.geometry.attributes.position.needsUpdate = true;
         system.rotation.y += system.userData.rotationSpeed;
-        system.rotation.x = Math.sin(time * 0.1) * 0.05;
+        system.rotation.x = Math.sin(time * 0.1) * 0.02;
       });
 
-      // Camera movement
-      camera.position.x = Math.sin(time * 0.15) * 3;
-      camera.position.y = Math.cos(time * 0.2) * 2;
+      // Gentle camera movement
+      camera.position.x = Math.sin(time * 0.1) * 1;
+      camera.position.y = Math.cos(time * 0.15) * 1;
       camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
@@ -142,11 +223,13 @@ export function FloatingParticles({ className }: FloatingParticlesProps) {
     };
 
     window.addEventListener('resize', handleResize);
+    window.addEventListener('mousemove', handleMouseMove);
     animate();
 
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
       
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
@@ -164,6 +247,8 @@ export function FloatingParticles({ className }: FloatingParticlesProps) {
         }
       });
       
+      lightMaterial.dispose();
+      lightGeometry.dispose();
       renderer.dispose();
     };
   }, []);
