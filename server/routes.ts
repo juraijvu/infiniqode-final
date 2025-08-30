@@ -16,6 +16,35 @@ import {
 } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Authentication middleware
+  const requireAuth = (req: any, res: any, next: any) => {
+    // For now, we'll use a simple check. In production, use proper session management
+    const authHeader = req.headers.authorization;
+    if (authHeader === 'Bearer admin-token') {
+      next();
+    } else {
+      res.status(401).json({ error: 'Unauthorized' });
+    }
+  };
+
+  // Login endpoint
+  app.post("/api/auth/login", async (req, res) => {
+    try {
+      const { username, password } = req.body;
+      
+      if (username === 'admin' && password === 'password') {
+        res.json({ 
+          success: true, 
+          token: 'admin-token',
+          user: { username: 'admin', role: 'admin' }
+        });
+      } else {
+        res.status(401).json({ error: 'Invalid credentials' });
+      }
+    } catch (error) {
+      res.status(500).json({ error: 'Login failed' });
+    }
+  });
   // Services API
   app.get("/api/services", async (req, res) => {
     try {

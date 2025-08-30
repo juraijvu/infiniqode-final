@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { useQuery } from '@tanstack/react-query';
-import { Plus, Edit, Eye, Layout, FileText, Briefcase } from 'lucide-react';
+import { Plus, Edit, Eye, Layout, FileText, Briefcase, LogOut } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
+import { ProtectedRoute } from '../components/protected-route';
 
 interface PageTemplate {
   id: string;
@@ -43,7 +44,14 @@ const getCategoryColor = (category: string) => {
   return colors[category] || 'bg-gray-100 text-gray-800';
 };
 
-export function AdminDashboard() {
+function AdminDashboardContent() {
+  const [, setLocation] = useLocation();
+
+  const handleLogout = () => {
+    localStorage.removeItem('admin-token');
+    localStorage.removeItem('admin-user');
+    setLocation('/login');
+  };
   const { data: templates, isLoading, error } = useQuery({
     queryKey: ['page-templates'],
     queryFn: async () => {
@@ -110,6 +118,10 @@ export function AdminDashboard() {
                   New Page
                 </Button>
               </Link>
+              <Button variant="outline" size="sm" onClick={handleLogout}>
+                <LogOut className="w-4 h-4 mr-2" />
+                Logout
+              </Button>
             </div>
           </div>
         </div>
@@ -267,5 +279,13 @@ export function AdminDashboard() {
         ) : null}
       </div>
     </div>
+  );
+}
+
+export function AdminDashboard() {
+  return (
+    <ProtectedRoute>
+      <AdminDashboardContent />
+    </ProtectedRoute>
   );
 }
