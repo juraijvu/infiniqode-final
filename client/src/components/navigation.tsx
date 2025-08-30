@@ -4,7 +4,8 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ContactPopup } from "@/components/contact-popup";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Code } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Menu, Code, ChevronDown, Globe, Server, TrendingUp, Cloud, X, Home, Briefcase, User, FileText, Mail } from "lucide-react";
 
 export function Navigation() {
   const [location] = useLocation();
@@ -26,18 +27,24 @@ export function Navigation() {
   }, []);
 
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/portfolio", label: "Portfolio" },
-    { href: "/about", label: "About" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
+    { href: "/", label: "Home", icon: Home },
+    { href: "/portfolio", label: "Portfolio", icon: Briefcase },
+    { href: "/about", label: "About", icon: User },
+    { href: "/blog", label: "Blog", icon: FileText },
+    { href: "/contact", label: "Contact", icon: Mail },
   ];
 
-  const NavLink = ({ href, label }: { href: string; label: string }) => (
+  const servicesItems = [
+    { href: "/services/web-development", label: "Web Development", icon: Globe, description: "React TypeScript applications" },
+    { href: "/services/backend-development", label: "Backend Development", icon: Server, description: "Python Flask APIs" },
+    { href: "/services/digital-marketing", label: "Digital Marketing", icon: TrendingUp, description: "SEO & analytics" },
+    { href: "/services/saas-development", label: "SaaS Development", icon: Cloud, description: "Complete SaaS platforms" },
+  ];
+
+  const NavLink = ({ href, label, icon: Icon }: { href: string; label: string; icon?: any }) => (
     <Link href={href}>
       <span
-        className={`transition-colors cursor-pointer ${
+        className={`transition-all duration-300 cursor-pointer flex items-center gap-2 hover:scale-105 ${
           location === href 
             ? "text-foreground" 
             : "text-muted-foreground hover:text-accent"
@@ -45,8 +52,35 @@ export function Navigation() {
         onClick={() => setIsOpen(false)}
         data-testid={`nav-${label.toLowerCase()}`}
       >
+        {Icon && <Icon className="w-4 h-4" />}
         {label}
       </span>
+    </Link>
+  );
+
+  const MobileNavLink = ({ href, label, icon: Icon }: { href: string; label: string; icon?: any }) => (
+    <Link href={href}>
+      <div
+        className={`group flex items-center gap-4 p-4 rounded-xl transition-all duration-300 cursor-pointer ${
+          location === href
+            ? "bg-primary/20 text-primary border border-primary/30"
+            : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
+        }`}
+        onClick={() => setIsOpen(false)}
+      >
+        {Icon && (
+          <div className={`p-2 rounded-lg transition-all duration-300 ${
+            location === href
+              ? "bg-primary/30"
+              : "bg-white/10 group-hover:bg-white/20"
+          }`}>
+            <Icon className="w-5 h-5" />
+          </div>
+        )}
+        <div className="flex-1">
+          <span className="text-base font-medium">{label}</span>
+        </div>
+      </div>
     </Link>
   );
 
@@ -67,6 +101,40 @@ export function Navigation() {
             {navItems.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
+            
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="flex items-center gap-1 hover:text-accent transition-colors">
+                  Services
+                  <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-80 glass-card border-border/50" sideOffset={8}>
+                <div className="p-2 space-y-1">
+                  {servicesItems.map((service) => (
+                    <Link key={service.href} href={service.href}>
+                      <DropdownMenuItem className="flex items-start gap-3 p-3 rounded-lg cursor-pointer hover:bg-white/5 transition-colors group">
+                        <div className="p-2 rounded-lg bg-primary/20 group-hover:bg-primary/30 transition-colors">
+                          <service.icon className="w-4 h-4 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-medium text-foreground">{service.label}</div>
+                          <div className="text-sm text-muted-foreground">{service.description}</div>
+                        </div>
+                      </DropdownMenuItem>
+                    </Link>
+                  ))}
+                  <div className="border-t border-border/50 mt-2 pt-2">
+                    <Link href="/services">
+                      <DropdownMenuItem className="justify-center p-3 rounded-lg cursor-pointer hover:bg-white/5 transition-colors">
+                        <span className="text-sm font-medium text-primary">View All Services</span>
+                      </DropdownMenuItem>
+                    </Link>
+                  </div>
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           <div ref={ctaButtonRef} className="hidden md:block">
@@ -83,24 +151,72 @@ export function Navigation() {
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden" data-testid="button-mobile-menu">
-                <Menu className="h-6 w-6" />
+              <Button variant="ghost" size="icon" className="md:hidden relative z-10" data-testid="button-mobile-menu">
+                <div className="relative w-6 h-6">
+                  <Menu className={`absolute inset-0 transition-all duration-300 ${isOpen ? 'opacity-0 rotate-45' : 'opacity-100 rotate-0'}`} />
+                  <X className={`absolute inset-0 transition-all duration-300 ${isOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-45'}`} />
+                </div>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="glass-card border-border">
-              <div className="flex flex-col space-y-6 mt-8">
-                {navItems.map((item) => (
-                  <NavLink key={item.href} {...item} />
-                ))}
-                <ContactPopup 
-                  trigger={
-                    <Button className="glass-button text-white font-medium w-full mt-6" data-testid="button-mobile-get-started">
-                      Get Started
-                    </Button>
-                  }
-                  title="Let's Start Your Project"
-                  description="Ready to transform your business with a custom digital solution? Tell us about your project and we'll create a tailored proposal."
-                />
+            <SheetContent 
+              side="right" 
+              className="w-full sm:w-[400px] glass-card border-border/30 p-0 backdrop-blur-xl"
+            >
+              {/* Mobile Menu Header */}
+              <div className="flex items-center justify-between p-6 border-b border-border/30">
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                    <Code className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-lg font-bold gradient-text">DigitalCraft</span>
+                </div>
+              </div>
+
+              {/* Mobile Menu Content */}
+              <div className="flex flex-col h-full">
+                <div className="flex-1 px-6 py-4 space-y-2">
+                  {/* Main Navigation */}
+                  {navItems.map((item) => (
+                    <MobileNavLink key={item.href} {...item} />
+                  ))}
+                  
+                  {/* Services Section */}
+                  <div className="pt-4">
+                    <div className="text-sm font-medium text-muted-foreground mb-3 px-4">Services</div>
+                    {servicesItems.map((service) => (
+                      <Link key={service.href} href={service.href}>
+                        <div
+                          className="group flex items-center gap-4 p-4 rounded-xl transition-all duration-300 cursor-pointer hover:bg-white/5 hover:text-foreground text-muted-foreground"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <div className="p-2 rounded-lg bg-white/10 group-hover:bg-white/20 transition-all duration-300">
+                            <service.icon className="w-5 h-5" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="text-base font-medium">{service.label}</div>
+                            <div className="text-sm text-muted-foreground/80">{service.description}</div>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Mobile Menu Footer */}
+                <div className="p-6 border-t border-border/30 space-y-4">
+                  <ContactPopup 
+                    trigger={
+                      <Button className="glass-button text-white font-medium w-full h-12 text-base" data-testid="button-mobile-get-started">
+                        Get Started
+                      </Button>
+                    }
+                    title="Let's Start Your Project"
+                    description="Ready to transform your business with a custom digital solution? Tell us about your project and we'll create a tailored proposal."
+                  />
+                  <div className="text-center text-sm text-muted-foreground">
+                    Ready to transform your business?
+                  </div>
+                </div>
               </div>
             </SheetContent>
           </Sheet>

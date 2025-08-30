@@ -164,44 +164,74 @@
 }
 
 @layer components {
-  /* BetterStack-inspired glass effects */
+  /* Premium glass morphism cards with realistic depth */
   .glass-card {
-    background: rgba(139, 92, 246, 0.08);
-    backdrop-filter: blur(32px);
-    -webkit-backdrop-filter: blur(32px);
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    border-radius: 16px;
+    background: linear-gradient(145deg, 
+      rgba(139, 92, 246, 0.12) 0%,
+      rgba(139, 92, 246, 0.08) 25%,
+      rgba(139, 92, 246, 0.10) 50%,
+      rgba(139, 92, 246, 0.06) 100%
+    );
+    backdrop-filter: blur(28px) saturate(1.6) brightness(1.05);
+    -webkit-backdrop-filter: blur(28px) saturate(1.6) brightness(1.05);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 20px;
     box-shadow: 
-      0 1px 0 0 rgba(255, 255, 255, 0.1) inset,
+      0 1px 0 0 rgba(255, 255, 255, 0.15) inset,
       0 2px 0 0 rgba(139, 92, 246, 0.3) inset,
-      0 8px 32px rgba(139, 92, 246, 0.15),
-      0 16px 64px rgba(0, 0, 0, 0.4);
-    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      0 8px 32px rgba(139, 92, 246, 0.18),
+      0 16px 64px rgba(0, 0, 0, 0.3),
+      0 0 80px rgba(139, 92, 246, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
+    will-change: transform, box-shadow, background;
   }
 
   .glass-card::before {
     content: '';
     position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .glass-card::after {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.4), transparent);
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(139, 92, 246, 0.6) 25%, 
+      rgba(168, 85, 247, 0.8) 50%, 
+      rgba(139, 92, 246, 0.6) 75%, 
+      transparent 100%
+    );
+    z-index: 2;
   }
 
   .glass-card:hover {
-    background: rgba(139, 92, 246, 0.12);
-    border-color: rgba(139, 92, 246, 0.35);
+    background: linear-gradient(145deg, 
+      rgba(139, 92, 246, 0.18) 0%,
+      rgba(139, 92, 246, 0.12) 25%,
+      rgba(139, 92, 246, 0.15) 50%,
+      rgba(139, 92, 246, 0.10) 100%
+    );
+    border-color: rgba(139, 92, 246, 0.4);
     box-shadow: 
-      0 1px 0 0 rgba(255, 255, 255, 0.15) inset,
-      0 2px 0 0 rgba(139, 92, 246, 0.4) inset,
-      0 16px 64px rgba(139, 92, 246, 0.25),
-      0 32px 128px rgba(0, 0, 0, 0.5),
-      0 0 100px rgba(139, 92, 246, 0.3);
-    transform: translateY(-8px) scale(1.02);
-    animation: cardGlow 2s ease-in-out infinite alternate;
+      0 1px 0 0 rgba(255, 255, 255, 0.2) inset,
+      0 2px 0 0 rgba(139, 92, 246, 0.5) inset,
+      0 16px 64px rgba(139, 92, 246, 0.3),
+      0 32px 128px rgba(0, 0, 0, 0.4),
+      0 0 120px rgba(139, 92, 246, 0.4),
+      0 0 200px rgba(139, 92, 246, 0.2);
+    transform: translateY(-6px) scale(1.01);
+    animation: cardGlow 3s ease-in-out infinite alternate;
   }
 
   @keyframes cardGlow {
@@ -322,15 +352,31 @@
     );
   }
 
-  /* Enhanced navigation with stronger glass effect */
+  /* Enhanced navigation with premium glass morphism */
   .glass-nav {
-    background: rgba(139, 92, 246, 0.05);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
-    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+    background: linear-gradient(135deg, 
+      rgba(139, 92, 246, 0.12) 0%,
+      rgba(139, 92, 246, 0.08) 25%,
+      rgba(139, 92, 246, 0.10) 50%,
+      rgba(139, 92, 246, 0.06) 100%
+    );
+    backdrop-filter: blur(32px) saturate(1.8) brightness(1.1);
+    -webkit-backdrop-filter: blur(32px) saturate(1.8) brightness(1.1);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.25);
     box-shadow: 
-      0 1px 0 0 rgba(255, 255, 255, 0.05) inset,
-      0 8px 32px rgba(139, 92, 246, 0.1);
+      0 1px 0 0 rgba(255, 255, 255, 0.12) inset,
+      0 8px 32px rgba(139, 92, 246, 0.15),
+      0 4px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .glass-nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    pointer-events: none;
   }
 
   /* Project cards with enhanced glass effect */

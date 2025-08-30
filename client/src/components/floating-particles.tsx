@@ -157,64 +157,86 @@ export function FloatingParticles({ className }: FloatingParticlesProps) {
     let time = 0;
     const mouseRadius = 25;
 
-    // Mouse move handler
+    // Optimized mouse move handler with debouncing
+    let mouseMoveTimer: number | null = null;
     const handleMouseMove = (event: MouseEvent) => {
-      // Convert mouse coordinates to 3D space
-      targetMouseRef.current.x = (event.clientX / window.innerWidth) * 2 - 1;
-      targetMouseRef.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      if (mouseMoveTimer) return; // Skip if previous calculation still pending
       
-      const vector = new THREE.Vector3(targetMouseRef.current.x, targetMouseRef.current.y, 0.5);
-      vector.unproject(camera);
-      const dir = vector.sub(camera.position).normalize();
-      const distance = -camera.position.z / dir.z;
-      const pos = camera.position.clone().add(dir.multiplyScalar(distance));
-      targetMouseRef.current.copy(pos);
+      mouseMoveTimer = requestAnimationFrame(() => {
+        // Convert mouse coordinates to 3D space
+        targetMouseRef.current.x = (event.clientX / window.innerWidth) * 2 - 1;
+        targetMouseRef.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        
+        const vector = new THREE.Vector3(targetMouseRef.current.x, targetMouseRef.current.y, 0.5);
+        vector.unproject(camera);
+        const dir = vector.sub(camera.position).normalize();
+        const distance = -camera.position.z / dir.z;
+        const pos = camera.position.clone().add(dir.multiplyScalar(distance));
+        targetMouseRef.current.copy(pos);
+        mouseMoveTimer = null;
+      });
     };
 
-    // Animation loop
-    const animate = () => {
+    // Animation loop - optimized for smooth performance
+    let lastTime = 0;
+    const targetFPS = 60;
+    const frameTime = 1000 / targetFPS;
+    
+    const animate = (currentTime: number) => {
       animationIdRef.current = requestAnimationFrame(animate);
-      time += 0.01;
+      
+      // Throttle to target FPS for consistency
+      if (currentTime - lastTime < frameTime) return;
+      lastTime = currentTime;
+      
+      time += 0.016; // Fixed timestep for smooth motion
 
-      // Smooth mouse following
-      mouseRef.current.lerp(targetMouseRef.current, 0.05);
+      // Smooth mouse following with easing
+      mouseRef.current.lerp(targetMouseRef.current, 0.08);
 
-      // Update purple light position to follow cursor
+      // Update purple light position
       purpleLight.position.copy(mouseRef.current);
       purpleLight.position.z = 0;
 
-      // Rotate particle systems slowly
-      particleSystemsRef.current.forEach(system => {
+      // Optimized particle updates - only update visible particles
+      particleSystemsRef.current.forEach((system, systemIndex) => {
         const positions = system.geometry.attributes.position.array as Float32Array;
         const { basePositions, velocities } = system.userData;
         const totalParticles = positions.length / 3;
 
-        // Update particle positions based on mouse proximity
-        for (let i = 0; i < totalParticles; i++) {
+        // Only update every Nth particle per frame for performance
+        const updateStep = Math.max(1, Math.floor(totalParticles / 500));
+        const frameOffset = (currentTime * 0.01) % updateStep;
+        
+        for (let i = Math.floor(frameOffset); i < totalParticles; i += updateStep) {
           const i3 = i * 3;
           const px = positions[i3];
           const py = positions[i3 + 1];
           const pz = positions[i3 + 2];
 
-          // Mouse interaction - gentle push away
-          const mouseDist = mouseRef.current.distanceTo(new THREE.Vector3(px, py, pz));
-          if (mouseDist < mouseRadius) {
-            const forceStrength = (1 - mouseDist / mouseRadius) * 0.02; // Very gentle
-            const forceDirection = new THREE.Vector3(px, py, pz).sub(mouseRef.current).normalize();
+          // Optimized mouse interaction - pre-calculate mouse position
+          const dx = px - mouseRef.current.x;
+          const dy = py - mouseRef.current.y;
+          const dz = pz - mouseRef.current.z;
+          const mouseDist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+          
+          if (mouseDist < mouseRadius && mouseDist > 0) {
+            const forceStrength = (1 - mouseDist / mouseRadius) * 0.03;
+            const invDist = 1 / mouseDist;
             
-            velocities[i3] += forceDirection.x * forceStrength;
-            velocities[i3 + 1] += forceDirection.y * forceStrength;
-            velocities[i3 + 2] += forceDirection.z * forceStrength;
+            velocities[i3] += dx * invDist * forceStrength;
+            velocities[i3 + 1] += dy * invDist * forceStrength;
+            velocities[i3 + 2] += dz * invDist * forceStrength;
           }
 
-          // Return to base position
-          const returnForce = 0.01;
+          // Return to base position with smooth interpolation
+          const returnForce = 0.015;
           velocities[i3] += (basePositions[i3] - px) * returnForce;
           velocities[i3 + 1] += (basePositions[i3 + 1] - py) * returnForce;
           velocities[i3 + 2] += (basePositions[i3 + 2] - pz) * returnForce;
 
-          // Damping
-          const damping = 0.95;
+          // Apply damping
+          const damping = 0.96;
           velocities[i3] *= damping;
           velocities[i3 + 1] *= damping;
           velocities[i3 + 2] *= damping;
@@ -225,14 +247,15 @@ export function FloatingParticles({ className }: FloatingParticlesProps) {
           positions[i3 + 2] += velocities[i3 + 2];
         }
 
+        // Smoother rotation
+        system.rotation.y += system.userData.rotationSpeed * 1.5;
+        system.rotation.x = Math.sin(time * 0.2) * 0.01;
         system.geometry.attributes.position.needsUpdate = true;
-        system.rotation.y += system.userData.rotationSpeed;
-        system.rotation.x = Math.sin(time * 0.1) * 0.02;
       });
 
-      // Gentle camera movement
-      camera.position.x = Math.sin(time * 0.1) * 1;
-      camera.position.y = Math.cos(time * 0.15) * 1;
+      // Smoother camera movement
+      camera.position.x = Math.sin(time * 0.15) * 0.8;
+      camera.position.y = Math.cos(time * 0.2) * 0.8;
       camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
@@ -247,7 +270,7 @@ export function FloatingParticles({ className }: FloatingParticlesProps) {
 
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
-    animate();
+    animate(0);
 
     // Cleanup
     return () => {

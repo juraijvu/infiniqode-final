@@ -6,15 +6,17 @@ import { TextPlugin } from 'gsap/TextPlugin';
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-// Animation configurations
+// Optimized animation configurations for smooth performance
 export const animationConfig = {
-  ease: "power3.out",
-  duration: 0.8,
-  stagger: 0.1,
+  ease: "power2.out", // Faster, smoother easing
+  duration: 0.5, // Faster animations
+  stagger: 0.08, // Quicker stagger
   scrollTrigger: {
-    start: "top 80%",
-    end: "bottom 20%",
-    toggleActions: "play none none reverse"
+    start: "top 85%",
+    end: "bottom 15%",
+    toggleActions: "play none none reverse",
+    fastScrollEnd: true, // Better performance on fast scrolling
+    preventOverlaps: true
   }
 };
 
@@ -174,13 +176,17 @@ export const useHoverAnimation = () => {
   useEffect(() => {
     if (ref.current) {
       const element = ref.current;
+      
+      // Add will-change for better performance
+      element.style.willChange = 'transform';
 
       const handleMouseEnter = () => {
         gsap.to(element, {
-          scale: 1.05,
-          y: -4,
-          duration: 0.3,
-          ease: "power2.out"
+          scale: 1.03, // Slightly reduced for smoother effect
+          y: -3,
+          duration: 0.25, // Faster response
+          ease: "power1.out", // Lighter easing
+          force3D: true
         });
       };
 
@@ -188,8 +194,9 @@ export const useHoverAnimation = () => {
         gsap.to(element, {
           scale: 1,
           y: 0,
-          duration: 0.3,
-          ease: "power2.out"
+          duration: 0.25,
+          ease: "power1.out",
+          force3D: true
         });
       };
 
@@ -197,6 +204,7 @@ export const useHoverAnimation = () => {
       element.addEventListener('mouseleave', handleMouseLeave);
 
       return () => {
+        element.style.willChange = 'auto';
         element.removeEventListener('mouseenter', handleMouseEnter);
         element.removeEventListener('mouseleave', handleMouseLeave);
       };
@@ -206,11 +214,22 @@ export const useHoverAnimation = () => {
   return ref;
 };
 
-// Global animation setup
+// Optimized global animation setup
 export const initializeGSAP = () => {
   gsap.defaults({
-    ease: "power3.out",
-    duration: 0.8
+    ease: "power2.out",
+    duration: 0.5
+  });
+
+  // Enhanced performance settings
+  gsap.config({
+    force3D: true, // Force hardware acceleration
+    nullTargetWarn: false
+  });
+
+  ScrollTrigger.config({
+    limitCallbacks: true, // Better performance
+    syncInterval: 120 // Smoother sync
   });
 
   // Set up scroll refresh
