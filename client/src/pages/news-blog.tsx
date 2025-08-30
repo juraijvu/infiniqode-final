@@ -97,7 +97,7 @@ export default function NewsBlog() {
       {/* Breaking News Banner */}
       <section className="relative pt-20">
         <div className="bg-red-600 text-white py-3">
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="w-[95%] mx-auto px-3">
             <div className="flex items-center justify-center gap-3">
               <AlertTriangle className="h-5 w-5 animate-pulse" />
               <span className="font-semibold">BREAKING NEWS</span>
@@ -112,7 +112,7 @@ export default function NewsBlog() {
 
       {/* Article Header */}
       <section className="py-12">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <Link href="/blog">
             <Button variant="ghost" className="mb-8" data-testid="button-back-to-blog">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -172,7 +172,7 @@ export default function NewsBlog() {
 
       {/* Official Source Citations */}
       <section className="py-8 bg-blue-50/50 dark:bg-blue-950/20">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <div className="flex items-start gap-4 p-6 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-blue-500">
             <ExternalLink className="h-6 w-6 text-blue-500 flex-shrink-0 mt-1" />
             <div>
@@ -190,7 +190,7 @@ export default function NewsBlog() {
 
       {/* Main Content with Fact-Check Verification */}
       <section className="py-12">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed font-medium">
               {post.excerpt}
@@ -226,7 +226,7 @@ export default function NewsBlog() {
 
       {/* Timeline of Events */}
       <section className="py-16 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8 text-center">Timeline of Events</h2>
           
           <div className="relative">
@@ -281,7 +281,7 @@ export default function NewsBlog() {
 
       {/* Expert Commentary Section */}
       <section className="py-16">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8 text-center">Expert Commentary</h2>
           
           <div className="space-y-8">
@@ -338,7 +338,7 @@ export default function NewsBlog() {
 
       {/* Key Facts Summary */}
       <section className="py-16 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8 text-center">Key Facts</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -371,7 +371,7 @@ export default function NewsBlog() {
 
       {/* Related Coverage */}
       <section className="py-16">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8 text-center">Related Coverage</h2>
           
           <div className="space-y-4">

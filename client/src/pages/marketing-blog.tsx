@@ -110,7 +110,7 @@ export default function MarketingBlog() {
       
       {/* Header with ROI Metric Badge */}
       <section className="relative pt-20 pb-8 bg-gradient-to-r from-green-900/20 to-emerald-900/20">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <Link href="/blog">
             <Button variant="ghost" className="mb-8 hover:bg-white/10" data-testid="button-back-to-blog">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -193,7 +193,7 @@ export default function MarketingBlog() {
 
       {/* Interactive ROI Calculator Widget */}
       <section className="py-12 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <GlassCard className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Calculator className="h-6 w-6 text-accent" />
@@ -237,7 +237,7 @@ export default function MarketingBlog() {
 
       {/* Main Content with Before/After Comparison */}
       <section className="py-12">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <div className="prose prose-lg max-w-none mb-12">
             <div className="text-muted-foreground leading-relaxed space-y-6">
               {post.content.split('\n').slice(0, 2).map((paragraph, index) => (
@@ -311,7 +311,7 @@ export default function MarketingBlog() {
 
       {/* Conversion Funnel Visualization */}
       <section className="py-12 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8 text-center">Conversion Funnel Analysis</h2>
           
           <div className="space-y-6">
@@ -345,7 +345,7 @@ export default function MarketingBlog() {
 
       {/* Social Proof Metrics */}
       <section className="py-12">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8 text-center">Proven Results</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -371,7 +371,7 @@ export default function MarketingBlog() {
 
       {/* A/B Test Result Toggles */}
       <section className="py-12 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8 text-center">A/B Test Results</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -414,7 +414,7 @@ export default function MarketingBlog() {
 
       {/* Case Study Teaser Cards */}
       <section className="py-12">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8 text-center">Success Stories</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

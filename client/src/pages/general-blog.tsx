@@ -115,7 +115,7 @@ export default function GeneralBlog() {
           <div className="absolute inset-0 bg-black/40"></div>
           
           <div className="absolute bottom-8 left-0 right-0">
-            <div className="max-w-4xl mx-auto px-6">
+            <div className="w-[95%] mx-auto px-3">
               <Link href="/blog">
                 <Button variant="ghost" className="mb-4 text-white hover:bg-white/10" data-testid="button-back-to-blog">
                   <ArrowLeft className="mr-2 h-4 w-4" />
@@ -138,7 +138,7 @@ export default function GeneralBlog() {
 
       {/* Article Meta & Drop-Cap Content */}
       <section className="py-12">
-        <div className="max-w-3xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           {/* Author Byline */}
           <div className="flex items-center gap-6 mb-8 pb-8 border-b border-muted">
             <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
@@ -236,7 +236,7 @@ export default function GeneralBlog() {
 
       {/* Related Reading Carousel */}
       <section className="py-16 bg-muted/5">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8 text-center">Related Reading</h2>
           
           {relatedPosts.length > 0 && (
@@ -276,7 +276,7 @@ export default function GeneralBlog() {
 
       {/* Author Signature Block */}
       <section className="py-16">
-        <div className="max-w-3xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <Separator className="mb-12" />
           
           <GlassCard className="p-8">
@@ -312,7 +312,7 @@ export default function GeneralBlog() {
 
       {/* Comments Section */}
       <section className="py-16 bg-muted/5">
-        <div className="max-w-3xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <div className="flex items-center gap-3 mb-8">
             <MessageCircle className="h-6 w-6 text-primary" />
             <h2 className="text-2xl font-bold">Join the Discussion</h2>

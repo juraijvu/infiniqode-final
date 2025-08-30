@@ -90,14 +90,14 @@ export default function BlogPost() {
         title={post.title}
         description={post.excerpt}
         keywords={post.tags?.join(', ') || ''}
-        ogImage={post.featuredImage}
+        ogImage={post.featuredImage || undefined}
         structuredData={structuredData}
       />
       <Navigation />
       
       {/* Hero Section */}
       <section className="relative pt-20 pb-12">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <Link href="/blog">
             <Button variant="ghost" className="mb-8" data-testid="button-back-to-blog">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -170,7 +170,7 @@ export default function BlogPost() {
 
       {/* Article Content */}
       <section className="pb-20">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-3">
@@ -323,7 +323,7 @@ export default function BlogPost() {
 
       {/* Newsletter CTA */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <GlassCard className="p-12 text-center">
             <h2 className="text-3xl font-bold mb-6 gradient-text">
               Enjoyed this article?

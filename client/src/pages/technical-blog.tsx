@@ -98,7 +98,7 @@ export default function TechnicalBlog() {
       
       {/* Header with Syntax-Highlighted Code Block */}
       <section className="relative pt-20 pb-8 bg-gradient-to-r from-slate-900 to-slate-800">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <Link href="/blog">
             <Button variant="ghost" className="mb-8 text-white hover:bg-white/10" data-testid="button-back-to-blog">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -161,7 +161,7 @@ export default function TechnicalBlog() {
 
       {/* Interactive Terminal Example */}
       <section className="py-12 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <GlassCard className="p-8">
             <div className="flex items-center gap-3 mb-6">
               <Terminal className="h-6 w-6 text-accent" />
@@ -188,7 +188,7 @@ export default function TechnicalBlog() {
 
       {/* Main Content with Architecture Diagrams */}
       <section className="py-12">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <div className="prose prose-lg max-w-none mb-12">
             <p className="text-xl text-muted-foreground leading-relaxed">
               {post.excerpt}
@@ -260,7 +260,7 @@ export default function TechnicalBlog() {
 
       {/* Error/Solution Accordion */}
       <section className="py-12 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8">Common Issues & Solutions</h2>
           
           <Accordion type="single" collapsible className="space-y-4">
@@ -312,7 +312,7 @@ export default function TechnicalBlog() {
 
       {/* Performance Benchmarks */}
       <section className="py-12">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8">Performance Benchmarks</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -339,7 +339,7 @@ export default function TechnicalBlog() {
 
       {/* Tool Integration Badges */}
       <section className="py-12 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <h2 className="text-3xl font-bold mb-8">Compatible Tools & Technologies</h2>
           
           <div className="flex flex-wrap gap-3">
@@ -354,7 +354,7 @@ export default function TechnicalBlog() {
 
       {/* Version Control History */}
       <section className="py-12">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="w-[95%] mx-auto px-3">
           <div className="flex items-center gap-3 mb-8">
             <GitBranch className="h-6 w-6 text-accent" />
             <h2 className="text-3xl font-bold">Article Updates</h2>
