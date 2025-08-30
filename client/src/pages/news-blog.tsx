@@ -89,7 +89,7 @@ export default function NewsBlog() {
       <SEOHead
         title={`${post.title} - Breaking News`}
         description={post.excerpt}
-        keywords={`${post.tags.join(', ')}, breaking news, technology news, industry updates`}
+        keywords={`${post.tags?.join(', ') || ''}, breaking news, technology news, industry updates`}
         structuredData={structuredData}
       />
       <Navigation />

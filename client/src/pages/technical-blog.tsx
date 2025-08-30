@@ -91,7 +91,7 @@ export default function TechnicalBlog() {
       <SEOHead
         title={`${post.title} - Technical Guide`}
         description={post.excerpt}
-        keywords={`${post.tags.join(', ')}, technical tutorial, development guide`}
+        keywords={`${post.tags?.join(', ') || ''}, technical tutorial, development guide`}
         structuredData={structuredData}
       />
       <Navigation />

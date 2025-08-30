@@ -96,7 +96,7 @@ export default function GeneralBlog() {
       <SEOHead
         title={post.title}
         description={post.excerpt}
-        keywords={`${post.tags.join(', ')}, blog, insights`}
+        keywords={`${post.tags?.join(', ') || ''}, blog, insights`}
         ogImage={post.featuredImage || undefined}
         structuredData={structuredData}
       />

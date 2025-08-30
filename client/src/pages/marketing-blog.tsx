@@ -103,7 +103,7 @@ export default function MarketingBlog() {
       <SEOHead
         title={`${post.title} - Marketing Insights`}
         description={post.excerpt}
-        keywords={`${post.tags.join(', ')}, marketing, ROI, growth, conversion`}
+        keywords={`${post.tags?.join(', ') || ''}, marketing, ROI, growth, conversion`}
         structuredData={structuredData}
       />
       <Navigation />
