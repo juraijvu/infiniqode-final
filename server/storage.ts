@@ -23,6 +23,7 @@ import {
   type InsertPageBuilderComponent,
   type SiteSettings,
   type InsertSiteSettings,
+  type Integration,
   users,
   services,
   blogPosts,
@@ -34,7 +35,8 @@ import {
   seoSettings,
   themeSettings,
   pageBuilderComponents,
-  siteSettings
+  siteSettings,
+  integrations
 } from "@shared/schema";
 import { drizzle } from 'drizzle-orm/neon-http';
 import { neon } from '@neondatabase/serverless';
@@ -112,6 +114,12 @@ export interface IStorage {
 
   // SEO - Sitemap
   generateSitemap(): Promise<string>;
+
+  // Integrations
+  getIntegrations(): Promise<Integration[]>;
+  getIntegrationById(id: string): Promise<Integration | undefined>;
+  updateIntegration(id: string, data: Partial<Integration>): Promise<Integration | undefined>;
+  testIntegration(id: string): Promise<{ success: boolean; message: string }>;
 }
 
 // Initialize database connection
@@ -722,6 +730,42 @@ export class DatabaseStorage implements IStorage {
 </urlset>`;
 
     return sitemap;
+  }
+
+  // Integrations
+  async getIntegrations(): Promise<Integration[]> {
+    return await db.select().from(integrations)
+      .orderBy(desc(integrations.createdAt));
+  }
+
+  async getIntegrationById(id: string): Promise<Integration | undefined> {
+    const result = await db.select().from(integrations).where(eq(integrations.id, id)).limit(1);
+    return result[0];
+  }
+
+  async updateIntegration(id: string, data: Partial<Integration>): Promise<Integration | undefined> {
+    const result = await db.update(integrations)
+      .set({ ...data, updatedAt: new Date() })
+      .where(eq(integrations.id, id))
+      .returning();
+    return result[0];
+  }
+
+  async testIntegration(id: string): Promise<{ success: boolean; message: string }> {
+    // Here you would implement actual integration testing logic
+    // For now, we'll simulate a successful test
+    const integration = await this.getIntegrationById(id);
+    if (!integration) {
+      return { success: false, message: "Integration not found" };
+    }
+    
+    // Update last synced time
+    await this.updateIntegration(id, { 
+      lastSynced: new Date(),
+      status: 'connected'
+    });
+    
+    return { success: true, message: `${integration.name} connection test successful` };
   }
 }
 

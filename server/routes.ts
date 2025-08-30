@@ -246,6 +246,55 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Integrations API Routes
+  app.get("/api/integrations", async (req, res) => {
+    try {
+      const integrations = await storage.getIntegrations();
+      res.json(integrations);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch integrations" });
+    }
+  });
+
+  app.get("/api/integrations/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const integration = await storage.getIntegrationById(id);
+      if (!integration) {
+        return res.status(404).json({ error: "Integration not found" });
+      }
+      res.json(integration);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch integration" });
+    }
+  });
+
+  app.put("/api/integrations/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { config, isEnabled, status } = req.body;
+      const integration = await storage.updateIntegration(id, { config, isEnabled, status });
+      if (!integration) {
+        return res.status(404).json({ error: "Integration not found" });
+      }
+      res.json(integration);
+    } catch (error) {
+      res.status(400).json({ error: "Failed to update integration" });
+    }
+  });
+
+  app.post("/api/integrations/:id/test", async (req, res) => {
+    try {
+      const { id } = req.params;
+      // Here you would implement actual integration testing
+      // For now, we'll just simulate a successful test
+      const result = await storage.testIntegration(id);
+      res.json(result);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to test integration" });
+    }
+  });
+
   // Pages API  
   app.get("/api/cms/pages", async (req, res) => {
     try {

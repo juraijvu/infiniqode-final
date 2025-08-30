@@ -32,6 +32,7 @@ import { Textarea } from '../components/ui/textarea';
 import { ProtectedRoute } from '../components/protected-route';
 import { ProfileSection } from '../components/admin/ProfileSection';
 import { ServicesSection } from '../components/admin/ServicesSection';
+import { IntegrationsSection } from '../components/admin/IntegrationsSection';
 
 interface PageTemplate {
   id: string;
@@ -118,6 +119,11 @@ function AdminDashboardContent() {
         { id: 'contact', label: 'Contact Us', icon: <Phone className="w-4 h-4" /> },
         { id: 'about', label: 'About Us', icon: <Info className="w-4 h-4" /> },
       ]
+    },
+    {
+      id: 'integrations',
+      label: 'Integrations',
+      icon: <Globe className="w-4 h-4" />,
     },
     {
       id: 'seo',
@@ -274,6 +280,8 @@ function AdminDashboardContent() {
         return renderPortfolioSection();
       case 'pages':
         return renderPagesSection();
+      case 'integrations':
+        return <IntegrationsSection />;
       case 'seo':
         return renderSEOSection();
       case 'settings':

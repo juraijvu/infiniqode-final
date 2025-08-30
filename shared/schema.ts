@@ -165,6 +165,20 @@ export const pageBuilderComponents = pgTable("page_builder_components", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+// Marketing and Analytics Integrations
+export const integrations = pgTable("integrations", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: text("name").notNull(),
+  type: text("type").notNull(), // 'analytics', 'social', 'search', 'seo'
+  provider: text("provider").notNull(), // 'google', 'facebook', 'microsoft', etc.
+  config: json("config").notNull(), // Integration-specific configuration
+  isEnabled: boolean("is_enabled").notNull().default(false),
+  status: text("status").notNull().default("disconnected"), // 'connected', 'disconnected', 'error'
+  lastSynced: timestamp("last_synced"),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
 export const siteSettings = pgTable("site_settings", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   siteName: text("site_name").notNull(),
@@ -341,3 +355,5 @@ export type PageBuilderComponent = typeof pageBuilderComponents.$inferSelect;
 
 export type InsertSiteSettings = z.infer<typeof insertSiteSettingsSchema>;
 export type SiteSettings = typeof siteSettings.$inferSelect;
+
+export type Integration = typeof integrations.$inferSelect;
