@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
 import { GlassCard } from "@/components/glass-card";
 import { TeamSection } from "@/components/team-section";
+import { ContactPopup } from "@/components/contact-popup";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
@@ -87,12 +88,16 @@ export default function About() {
             We're a passionate team of developers, designers, and digital strategists 
             dedicated to crafting exceptional digital experiences that drive real business results.
           </p>
-          <Link href="/contact">
-            <Button className="glass-button px-8 py-4 text-lg" data-testid="button-work-with-us">
-              <Heart className="mr-2 h-5 w-5" />
-              Work With Us
-            </Button>
-          </Link>
+          <ContactPopup 
+            trigger={
+              <Button className="glass-button px-8 py-4 text-lg" data-testid="button-work-with-us">
+                <Heart className="mr-2 h-5 w-5" />
+                Work With Us
+              </Button>
+            }
+            title="Let's Work Together"
+            description="Ready to partner with our passionate team? Let's discuss how we can help achieve your digital goals."
+          />
         </div>
       </section>
 

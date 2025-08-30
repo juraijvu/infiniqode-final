@@ -119,14 +119,37 @@ export function FloatingParticles({ className }: FloatingParticlesProps) {
       particleSystemsRef.current.push(points);
     });
 
-    // Purple light effect that follows cursor
-    const lightGeometry = new THREE.PlaneGeometry(30, 30);
+    // Purple light effect that follows cursor - using a plane with radial gradient texture
+    const lightGeometry = new THREE.PlaneGeometry(40, 40);
+    
+    // Create a texture for the light effect
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d')!;
+    
+    // Create radial gradient for soft, blurred light effect
+    const gradient = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+    gradient.addColorStop(0, 'rgba(124, 58, 237, 0.8)');     // Bright purple center
+    gradient.addColorStop(0.2, 'rgba(124, 58, 237, 0.6)');   // Strong purple
+    gradient.addColorStop(0.4, 'rgba(124, 58, 237, 0.3)');   // Medium purple
+    gradient.addColorStop(0.7, 'rgba(124, 58, 237, 0.1)');   // Faded purple
+    gradient.addColorStop(1, 'rgba(124, 58, 237, 0)');       // Transparent edges
+    
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 256, 256);
+    
+    const lightTexture = new THREE.CanvasTexture(canvas);
+    
     const lightMaterial = new THREE.MeshBasicMaterial({
-      color: 0x7c3aed, // Purple color
+      map: lightTexture,
       transparent: true,
-      opacity: 0.15,
+      opacity: 1.0,
       blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      side: THREE.DoubleSide,
     });
+    
     const purpleLight = new THREE.Mesh(lightGeometry, lightMaterial);
     scene.add(purpleLight);
 

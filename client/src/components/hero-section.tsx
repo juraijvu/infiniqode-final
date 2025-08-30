@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { ContactPopup } from "@/components/contact-popup";
 import { Rocket, Play, Code, Palette, Lightbulb } from "lucide-react";
 
 export function HeroSection() {
@@ -20,12 +21,16 @@ export function HeroSection() {
             Python Flask backends, and cutting-edge digital marketing solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/contact">
-              <Button className="glass-button px-8 py-4 text-lg" data-testid="button-start-project">
-                <Rocket className="mr-2 h-5 w-5" />
-                Start Your Project
-              </Button>
-            </Link>
+            <ContactPopup 
+              trigger={
+                <Button className="glass-button px-8 py-4 text-lg" data-testid="button-start-project">
+                  <Rocket className="mr-2 h-5 w-5" />
+                  Start Your Project
+                </Button>
+              }
+              title="Ready to Transform Your Digital Presence?"
+              description="Tell us about your project goals and let's create something amazing together. Get a free consultation and custom proposal."
+            />
             <Link href="/portfolio">
               <Button 
                 variant="outline" 

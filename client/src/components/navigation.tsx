@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { logoAnimation, slideInFromLeft, slideInFromRight } from "@/lib/animations";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import { ContactPopup } from "@/components/contact-popup";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Code } from "lucide-react";
 
@@ -69,11 +70,15 @@ export function Navigation() {
           </div>
 
           <div ref={ctaButtonRef} className="hidden md:block">
-            <Link href="/contact">
-              <Button className="glass-button text-white font-medium" data-testid="button-get-started">
-                Get Started
-              </Button>
-            </Link>
+            <ContactPopup 
+              trigger={
+                <Button className="glass-button text-white font-medium" data-testid="button-get-started">
+                  Get Started
+                </Button>
+              }
+              title="Let's Start Your Project"
+              description="Ready to transform your business with a custom digital solution? Tell us about your project and we'll create a tailored proposal."
+            />
           </div>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -87,11 +92,15 @@ export function Navigation() {
                 {navItems.map((item) => (
                   <NavLink key={item.href} {...item} />
                 ))}
-                <Link href="/contact">
-                  <Button className="glass-button text-white font-medium w-full mt-6" data-testid="button-mobile-get-started">
-                    Get Started
-                  </Button>
-                </Link>
+                <ContactPopup 
+                  trigger={
+                    <Button className="glass-button text-white font-medium w-full mt-6" data-testid="button-mobile-get-started">
+                      Get Started
+                    </Button>
+                  }
+                  title="Let's Start Your Project"
+                  description="Ready to transform your business with a custom digital solution? Tell us about your project and we'll create a tailored proposal."
+                />
               </div>
             </SheetContent>
           </Sheet>

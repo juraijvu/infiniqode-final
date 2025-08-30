@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
 import { GlassCard } from "@/components/glass-card";
+import { ContactPopup } from "@/components/contact-popup";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, ArrowLeft, Rocket, Users, Clock, Shield } from "lucide-react";
@@ -99,12 +100,17 @@ export default function ServiceDetail() {
             </Badge>
           )}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button className="glass-button px-8 py-4 text-lg" data-testid="button-get-quote">
-                <Rocket className="mr-2 h-5 w-5" />
-                Get Quote
-              </Button>
-            </Link>
+            <ContactPopup 
+              trigger={
+                <Button className="glass-button px-8 py-4 text-lg" data-testid="button-get-quote">
+                  <Rocket className="mr-2 h-5 w-5" />
+                  Get Quote
+                </Button>
+              }
+              title={`Get a Quote for ${service.name}`}
+              description={`Interested in our ${service.name.toLowerCase()} services? Let's discuss your project requirements and provide a tailored quote.`}
+              defaultService={service.name}
+            />
             <Link href="/services">
               <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-8 py-4 text-lg" data-testid="button-view-all-services">
                 View All Services
@@ -212,11 +218,16 @@ export default function ServiceDetail() {
                 <p className="text-muted-foreground mb-6">
                   Let's discuss your project requirements and how we can help you achieve your goals.
                 </p>
-                <Link href="/contact">
-                  <Button className="glass-button w-full mb-3" data-testid="button-start-project">
-                    Start Your Project
-                  </Button>
-                </Link>
+                <ContactPopup 
+                  trigger={
+                    <Button className="glass-button w-full mb-3" data-testid="button-start-project">
+                      Start Your Project
+                    </Button>
+                  }
+                  title={`Start Your ${service.name} Project`}
+                  description={`Ready to begin your ${service.name.toLowerCase()} project? Let's discuss your vision and create a solution that exceeds your expectations.`}
+                  defaultService={service.name}
+                />
                 <Link href="/portfolio">
                   <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black w-full" data-testid="button-view-portfolio">
                     View Portfolio

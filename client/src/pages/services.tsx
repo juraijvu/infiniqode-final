@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
 import { GlassCard } from "@/components/glass-card";
+import { ContactPopup } from "@/components/contact-popup";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, ArrowRight, Rocket } from "lucide-react";
@@ -35,12 +36,16 @@ export default function Services() {
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
             Comprehensive digital solutions to transform your business and drive real results
           </p>
-          <Link href="/contact">
-            <Button className="glass-button px-8 py-4 text-lg" data-testid="button-get-started">
-              <Rocket className="mr-2 h-5 w-5" />
-              Get Started Today
-            </Button>
-          </Link>
+          <ContactPopup 
+            trigger={
+              <Button className="glass-button px-8 py-4 text-lg" data-testid="button-get-started">
+                <Rocket className="mr-2 h-5 w-5" />
+                Get Started Today
+              </Button>
+            }
+            title="Ready to Transform Your Business?"
+            description="Let's discuss your digital transformation goals and create a solution that drives real results."
+          />
         </div>
       </section>
 
@@ -117,11 +122,16 @@ export default function Services() {
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </Link>
-                    <Link href="/contact">
-                      <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black flex-1" data-testid={`button-get-quote-${service.slug}`}>
-                        Get Quote
-                      </Button>
-                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black flex-1" data-testid={`button-get-quote-${service.slug}`}>
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for ${service.name}`}
+                      description={`Interested in our ${service.name.toLowerCase()} services? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService={service.name}
+                    />
                   </div>
                 </GlassCard>
               ))}

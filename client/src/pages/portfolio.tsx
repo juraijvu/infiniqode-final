@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
@@ -11,6 +12,7 @@ import { ExternalLink, Github, Search, Filter } from "lucide-react";
 const portfolioItems = [
   {
     id: "1",
+    slug: "ecommerce-platform",
     title: "E-commerce Platform Revolution",
     description: "Complete e-commerce transformation with React TypeScript frontend and Flask backend, featuring real-time inventory management and advanced analytics.",
     fullDescription: "This comprehensive e-commerce platform revolutionized our client's online presence with a modern React TypeScript frontend and robust Python Flask backend. The solution includes real-time inventory management, advanced customer analytics, payment processing integration, and a responsive admin dashboard. Built for scalability, the platform now handles 10x more traffic than the previous solution.",
@@ -27,6 +29,7 @@ const portfolioItems = [
   },
   {
     id: "2",
+    slug: "analytics-saas",
     title: "Analytics SaaS Dashboard",
     description: "Comprehensive analytics platform with real-time data visualization, custom reporting, and multi-tenant architecture.",
     fullDescription: "A powerful SaaS analytics platform that transforms raw data into actionable insights. Features include real-time dashboards, custom report generation, advanced data visualization with D3.js, multi-tenant architecture, and comprehensive API for third-party integrations. The platform serves thousands of users with sub-second query performance.",
@@ -42,6 +45,7 @@ const portfolioItems = [
   },
   {
     id: "3",
+    slug: "mobile-experience", 
     title: "Cross-Platform Mobile Experience",
     description: "Feature-rich mobile application with native performance, offline capabilities, and seamless synchronization.",
     fullDescription: "A sophisticated cross-platform mobile application built with React Native, delivering native performance across iOS and Android. Features include offline capabilities, real-time synchronization, push notifications, biometric authentication, and advanced caching strategies. The app has been downloaded over 100k times with a 4.8-star rating.",
@@ -105,6 +109,7 @@ export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [, setLocation] = useLocation();
 
   const filteredItems = portfolioItems.filter(item => {
     const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
@@ -187,11 +192,13 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item) => (
-              <GlassCard 
+              <div 
                 key={item.id} 
-                className="glass-project-card overflow-hidden cursor-pointer"
-                onClick={() => setSelectedProject(item.id)}
+                className="cursor-pointer"
+                onClick={() => setLocation(`/portfolio/${item.slug}`)}
+                data-testid={`card-project-${item.slug}`}
               >
+                <GlassCard className="glass-project-card overflow-hidden h-full hover:scale-105 transition-transform">
                 <div className="relative group">
                   <img 
                     src={item.image} 
@@ -233,7 +240,8 @@ export default function Portfolio() {
                     <ExternalLink className="w-4 h-4 text-accent" />
                   </div>
                 </div>
-              </GlassCard>
+                </GlassCard>
+              </div>
             ))}
           </div>
 

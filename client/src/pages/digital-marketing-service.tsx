@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
 import { GlassCard } from "@/components/glass-card";
+import { ContactPopup } from "@/components/contact-popup";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -149,12 +150,21 @@ export default function DigitalMarketingService() {
             to maximize your ROI and accelerate business growth across all digital channels.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-            <Button className="glass-button px-12 py-6 text-xl" data-testid="button-boost-marketing">
-              Boost Marketing Now
-            </Button>
-            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-12 py-6 text-xl" data-testid="button-view-case-studies">
-              View Case Studies
-            </Button>
+            <ContactPopup 
+              trigger={
+                <Button className="glass-button px-12 py-6 text-xl" data-testid="button-boost-marketing">
+                  Boost Marketing Now
+                </Button>
+              }
+              title="Ready to Accelerate Your Marketing?"
+              description="Let's create a data-driven marketing strategy that delivers measurable results and grows your business."
+              defaultService="Digital Marketing"
+            />
+            <Link href="/portfolio">
+              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-12 py-6 text-xl" data-testid="button-view-case-studies">
+                View Case Studies
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -285,9 +295,16 @@ export default function DigitalMarketingService() {
                     </li>
                   ))}
                 </ul>
-                <Button className={`w-full ${plan.popular ? 'glass-button' : ''}`} data-testid={`button-select-${plan.name.toLowerCase()}`}>
-                  Get Started
-                </Button>
+                <ContactPopup 
+                  trigger={
+                    <Button className={`w-full ${plan.popular ? 'glass-button' : ''}`} data-testid={`button-select-${plan.name.toLowerCase()}`}>
+                      Get Started
+                    </Button>
+                  }
+                  title={`Get Started with ${plan.name} Plan`}
+                  description={`Ready to begin your marketing growth journey with our ${plan.name} plan? Let's discuss your specific requirements.`}
+                  defaultService="Digital Marketing"
+                />
               </GlassCard>
             ))}
           </div>

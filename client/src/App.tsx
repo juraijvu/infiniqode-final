@@ -20,6 +20,7 @@ import MarketingBlog from "@/pages/marketing-blog";
 import NewsBlog from "@/pages/news-blog";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
+import PortfolioDetailStatic from "@/pages/portfolio-detail-static";
 
 function Router() {
   return (
@@ -31,6 +32,7 @@ function Router() {
       <Route path="/services/saas-solutions" component={SaaSSolutionsService} />
       <Route path="/services/:slug" component={ServiceDetail} />
       <Route path="/portfolio" component={Portfolio} />
+      <Route path="/portfolio/:slug" component={PortfolioDetailStatic} />
       <Route path="/about" component={About} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/technical" component={TechnicalBlog} />

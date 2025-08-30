@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
 import { GlassCard } from "@/components/glass-card";
+import { ContactPopup } from "@/components/contact-popup";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -150,12 +151,21 @@ export default function SaaSSolutionsService() {
             user experiences while driving sustainable recurring revenue growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-            <Button className="glass-button px-12 py-6 text-xl" data-testid="button-get-saas-proposal">
-              Get SaaS Proposal
-            </Button>
-            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-12 py-6 text-xl" data-testid="button-view-saas-portfolio">
-              View SaaS Portfolio
-            </Button>
+            <ContactPopup 
+              trigger={
+                <Button className="glass-button px-12 py-6 text-xl" data-testid="button-get-saas-proposal">
+                  Get SaaS Proposal
+                </Button>
+              }
+              title="Ready to Build Your SaaS Platform?"
+              description="Let's discuss your SaaS vision and create a scalable platform that drives recurring revenue."
+              defaultService="SaaS Solutions"
+            />
+            <Link href="/portfolio">
+              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-12 py-6 text-xl" data-testid="button-view-saas-portfolio">
+                View SaaS Portfolio
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -286,9 +296,16 @@ export default function SaaSSolutionsService() {
                     </li>
                   ))}
                 </ul>
-                <Button className={`w-full ${plan.popular ? 'glass-button' : ''}`} data-testid={`button-select-${plan.name.toLowerCase()}`}>
-                  Get Started
-                </Button>
+                <ContactPopup 
+                  trigger={
+                    <Button className={`w-full ${plan.popular ? 'glass-button' : ''}`} data-testid={`button-select-${plan.name.toLowerCase()}`}>
+                      Get Started
+                    </Button>
+                  }
+                  title={`Get Started with ${plan.name} Plan`}
+                  description={`Ready to begin your SaaS development project with our ${plan.name} plan? Let's discuss your specific requirements.`}
+                  defaultService="SaaS Solutions"
+                />
               </GlassCard>
             ))}
           </div>
