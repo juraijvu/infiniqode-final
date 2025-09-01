@@ -72,7 +72,7 @@ export function PortfolioSection() {
   return (
     <section id="portfolio" className="py-1.5 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-2">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Portfolio</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Explore our latest projects and see how we've helped businesses achieve their goals
@@ -80,7 +80,7 @@ export function PortfolioSection() {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-2">
           {categories.map((category) => (
             <Button
               key={category}
@@ -127,7 +127,7 @@ export function PortfolioSection() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-2">
           <Link href="/portfolio">
             <Button className="glass-button px-8 py-4 text-lg" data-testid="button-view-all-projects">
               View All Projects

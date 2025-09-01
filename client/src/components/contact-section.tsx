@@ -59,7 +59,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-1.5 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-2">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Get In Touch</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Ready to start your digital transformation? Let's discuss your project

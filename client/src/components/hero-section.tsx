@@ -5,7 +5,7 @@ import { Rocket, Play, Code, Palette, Lightbulb } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-2">
       <div className="hero-glow top-20 left-20"></div>
       <div className="hero-glow bottom-20 right-20 animation-delay-2s"></div>
       

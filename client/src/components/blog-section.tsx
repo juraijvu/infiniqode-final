@@ -15,7 +15,7 @@ export function BlogSection() {
     return (
       <section id="blog" className="py-1.5 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-2">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Latest Insights</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -47,7 +47,7 @@ export function BlogSection() {
   return (
     <section id="blog" className="py-1.5 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-2">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Latest Insights</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Stay updated with the latest trends in web development and digital marketing
@@ -94,7 +94,7 @@ export function BlogSection() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-2">
           <Link href="/blog">
             <Button className="glass-button px-8 py-4 text-lg" data-testid="button-view-all-posts">
               View All Posts

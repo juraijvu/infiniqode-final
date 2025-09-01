@@ -12,7 +12,7 @@ export function TestimonialsSection() {
     return (
       <section className="py-1.5 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-2">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Client Testimonials</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -44,7 +44,7 @@ export function TestimonialsSection() {
   return (
     <section className="py-1.5 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-2">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Client Testimonials</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             See what our clients say about working with us

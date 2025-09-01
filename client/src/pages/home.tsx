@@ -74,9 +74,9 @@ export default function Home() {
       </div>
       
       {/* Enhanced Stats Section with Depth */}
-      <section className="py-32 relative" ref={statsRef as any}>
+      <section className="py-2 relative" ref={statsRef as any}>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-3">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Proven Excellence</h2>
             <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Numbers that speak louder than words. Our track record of success spans across industries and technologies, 
@@ -84,7 +84,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-3">
             <div className="stat-item depth-card p-8 text-center group hover:scale-105 transition-all duration-500" data-testid="stat-projects">
               <div className="mb-4">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
@@ -160,9 +160,9 @@ export default function Home() {
       </section>
 
       {/* Technology Stack Deep Dive */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-2 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-3">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Our Technology Mastery</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We leverage cutting-edge technologies and proven frameworks to build scalable, 
@@ -170,7 +170,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20" ref={featuresRef as any}>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-3" ref={featuresRef as any}>
             <div className="feature-item depth-card p-8 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4">
@@ -277,9 +277,9 @@ export default function Home() {
       <ServicesSection />
 
       {/* Our Methodology - Deep Content */}
-      <section className="py-32 relative">
+      <section className="py-2 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-3">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Our Proven Methodology</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Every successful project follows a carefully crafted process. Our methodology combines 
@@ -287,7 +287,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20" ref={methodologyRef as any}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-3" ref={methodologyRef as any}>
             <div className="methodology-step depth-card p-10 group hover:scale-105 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
@@ -416,9 +416,9 @@ export default function Home() {
       </section>
       
       {/* About Section */}
-      <section id="about" className="py-32 relative">
+      <section id="about" className="py-2 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-3">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">About DigitalCraft</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We're a team of passionate developers, designers, and digital strategists who believe in 
@@ -426,7 +426,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-3">
             <div>
               <div className="space-y-8">
                 <div className="flex items-start space-x-6">
@@ -503,7 +503,7 @@ export default function Home() {
           </div>
           
           {/* Company Values Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-3">
             <div className="depth-card p-8 text-center group hover:scale-105 transition-all duration-500">
               <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                 <Shield className="w-8 h-8 text-white" />
@@ -548,9 +548,9 @@ export default function Home() {
       </section>
 
       {/* Case Studies Deep Dive */}
-      <section className="py-32 relative">
+      <section className="py-2 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-3">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Success Stories</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Real results for real businesses. See how we've helped companies transform their digital presence 
@@ -558,7 +558,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-3">
             <div className="depth-card p-10 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="flex items-center space-x-3 mb-4">
@@ -645,9 +645,9 @@ export default function Home() {
       <TestimonialsSection />
       
       {/* Industry Expertise Section */}
-      <section className="py-32 relative">
+      <section className="py-2 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-3">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Industry Expertise</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We've worked across diverse industries, bringing specialized knowledge and proven solutions 
@@ -722,9 +722,9 @@ export default function Home() {
       <BlogSection />
       
       {/* Resources & Knowledge Hub */}
-      <section className="py-32 relative">
+      <section className="py-2 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-3">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Knowledge Hub</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Stay ahead with our comprehensive resources, whitepapers, and technical insights 
@@ -732,7 +732,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-3">
             <div className="depth-card p-8 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
@@ -787,7 +787,7 @@ export default function Home() {
       <ContactSection />
 
       {/* Enhanced CTA Section */}
-      <section className="py-32 relative">
+      <section className="py-2 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="depth-card p-20 text-center relative overflow-hidden">
             <div className="hero-glow top-0 left-1/2 transform -translate-x-1/2"></div>
