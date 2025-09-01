@@ -10,7 +10,7 @@ export function GlassCard({ children, className, hover = false }: GlassCardProps
   return (
     <div
       className={cn(
-        "glass-card rounded-xl beam-border",
+        "glass-card rounded-xl",
         className
       )}
     >

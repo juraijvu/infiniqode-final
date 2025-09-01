@@ -34,7 +34,7 @@ export function PartnersSection() {
               {[...partners.slice(0, 6), ...partners.slice(0, 6)].map((partner, index) => (
                 <div
                   key={`row1-${index}`}
-                  className="partner-card glass-card rounded-lg beam-border"
+                  className="partner-card glass-card rounded-lg"
                 >
                   <img
                     src={partner.logo}
@@ -52,7 +52,7 @@ export function PartnersSection() {
               {[...partners.slice(6), ...partners.slice(6)].map((partner, index) => (
                 <div
                   key={`row2-${index}`}
-                  className="partner-card glass-card rounded-lg beam-border"
+                  className="partner-card glass-card rounded-lg"
                 >
                   <img
                     src={partner.logo}

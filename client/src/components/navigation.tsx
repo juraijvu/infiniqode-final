@@ -85,7 +85,7 @@ export function Navigation() {
   );
 
   return (
-    <nav className="fixed top-2 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl z-50 glass-nav border border-border rounded-2xl hanging-nav beam-border">
+    <nav className="fixed top-2 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl z-50 glass-nav border border-border rounded-2xl hanging-nav">
       <div className="mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/">
