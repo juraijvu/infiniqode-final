@@ -85,7 +85,7 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-3">
-            <div className="stat-item depth-card p-8 text-center group hover:scale-105 transition-all duration-500" data-testid="stat-projects">
+            <div className="stat-item depth-card border-beam p-8 text-center group hover:scale-105 transition-all duration-500" data-testid="stat-projects">
               <div className="mb-4">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
                   <Trophy className="w-8 h-8 text-white" />
@@ -96,7 +96,7 @@ export default function Home() {
               <div className="text-sm text-muted-foreground/70">Across 25+ Industries</div>
             </div>
             
-            <div className="stat-item depth-card p-8 text-center group hover:scale-105 transition-all duration-500" data-testid="stat-satisfaction">
+            <div className="stat-item depth-card border-beam p-8 text-center group hover:scale-105 transition-all duration-500" data-testid="stat-satisfaction">
               <div className="mb-4">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
                   <Star className="w-8 h-8 text-white" />
@@ -107,7 +107,7 @@ export default function Home() {
               <div className="text-sm text-muted-foreground/70">Average Rating: 4.9/5</div>
             </div>
             
-            <div className="stat-item depth-card p-8 text-center group hover:scale-105 transition-all duration-500" data-testid="stat-experience">
+            <div className="stat-item depth-card border-beam p-8 text-center group hover:scale-105 transition-all duration-500" data-testid="stat-experience">
               <div className="mb-4">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
                   <TrendingUp className="w-8 h-8 text-white" />
@@ -118,7 +118,7 @@ export default function Home() {
               <div className="text-sm text-muted-foreground/70">Since 2019</div>
             </div>
             
-            <div className="stat-item depth-card p-8 text-center group hover:scale-105 transition-all duration-500" data-testid="stat-support">
+            <div className="stat-item depth-card border-beam p-8 text-center group hover:scale-105 transition-all duration-500" data-testid="stat-support">
               <div className="mb-4">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
                   <Shield className="w-8 h-8 text-white" />
@@ -132,7 +132,7 @@ export default function Home() {
           
           {/* Status Indicators inspired by BetterStack */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="depth-card p-6">
+            <div className="depth-card border-beam p-6">
               <div className="flex items-center space-x-3 mb-3">
                 <div className="status-indicator status-operational">Operational</div>
                 <span className="font-heading text-lg">Development Pipeline</span>
@@ -140,7 +140,7 @@ export default function Home() {
               <p className="font-body text-muted-foreground text-sm">All systems running optimally with 99.9% uptime</p>
             </div>
             
-            <div className="depth-card p-6">
+            <div className="depth-card border-beam p-6">
               <div className="flex items-center space-x-3 mb-3">
                 <div className="status-indicator status-operational">Operational</div>
                 <span className="font-heading text-lg">Client Support</span>
@@ -148,7 +148,7 @@ export default function Home() {
               <p className="font-body text-muted-foreground text-sm">Response time: &lt; 2 hours during business hours</p>
             </div>
             
-            <div className="depth-card p-6">
+            <div className="depth-card border-beam p-6">
               <div className="flex items-center space-x-3 mb-3">
                 <div className="status-indicator status-operational">Operational</div>
                 <span className="font-heading text-lg">Infrastructure</span>
@@ -171,7 +171,7 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-3" ref={featuresRef as any}>
-            <div className="feature-item depth-card p-8 group hover:scale-105 transition-all duration-500">
+            <div className="feature-item depth-card border-beam p-8 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4">
                   <Code className="w-10 h-10 text-white" />
@@ -198,7 +198,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="feature-item depth-card p-8 group hover:scale-105 transition-all duration-500">
+            <div className="feature-item depth-card border-beam p-8 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4">
                   <Server className="w-10 h-10 text-white" />
@@ -225,7 +225,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="feature-item depth-card p-8 group hover:scale-105 transition-all duration-500">
+            <div className="feature-item depth-card border-beam p-8 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4">
                   <Cloud className="w-10 h-10 text-white" />
@@ -263,7 +263,7 @@ export default function Home() {
               { name: 'PostgreSQL', icon: <Database className="w-8 h-8" />, color: 'from-blue-500 to-indigo-600' },
               { name: 'AWS', icon: <Cloud className="w-8 h-8" />, color: 'from-orange-500 to-orange-600' }
             ].map((tech, index) => (
-              <div key={tech.name} className="depth-card p-6 text-center group hover:scale-110 transition-all duration-300">
+              <div key={tech.name} className="depth-card border-beam p-6 text-center group hover:scale-110 transition-all duration-300">
                 <div className={`w-16 h-16 mx-auto bg-gradient-to-br ${tech.color} rounded-xl flex items-center justify-center mb-3 text-white`}>
                   {tech.icon}
                 </div>
@@ -274,7 +274,13 @@ export default function Home() {
         </div>
       </section>
       
+      {/* Section Divider */}
+      <div className="beam-divider my-4"></div>
+      
       <ServicesSection />
+      
+      {/* Section Divider */}
+      <div className="beam-divider my-4"></div>
 
       {/* Our Methodology - Deep Content */}
       <section className="py-2 relative">
@@ -288,7 +294,7 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-3" ref={methodologyRef as any}>
-            <div className="methodology-step depth-card p-10 group hover:scale-105 transition-all duration-500">
+            <div className="methodology-step depth-card border-beam p-10 group hover:scale-105 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white font-bold text-2xl">
@@ -319,7 +325,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="methodology-step depth-card p-10 group hover:scale-105 transition-all duration-500">
+            <div className="methodology-step depth-card border-beam p-10 group hover:scale-105 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white font-bold text-2xl">
@@ -350,7 +356,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="methodology-step depth-card p-10 group hover:scale-105 transition-all duration-500">
+            <div className="methodology-step depth-card border-beam p-10 group hover:scale-105 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white font-bold text-2xl">
@@ -381,7 +387,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="methodology-step depth-card p-10 group hover:scale-105 transition-all duration-500">
+            <div className="methodology-step depth-card border-beam p-10 group hover:scale-105 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white font-bold text-2xl">
@@ -414,6 +420,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Section Divider */}
+      <div className="beam-divider my-4"></div>
       
       {/* About Section */}
       <section id="about" className="py-2 relative">
@@ -640,9 +649,23 @@ export default function Home() {
         </div>
       </section>
       
+      {/* Section Divider */}
+      <div className="beam-divider my-4"></div>
+      
       <PortfolioSection />
+      
+      {/* Section Divider */}
+      <div className="beam-divider my-4"></div>
+      
       <TeamSection />
+      
+      {/* Section Divider */}
+      <div className="beam-divider my-4"></div>
+      
       <TestimonialsSection />
+      
+      {/* Section Divider */}
+      <div className="beam-divider my-4"></div>
       
       {/* Industry Expertise Section */}
       <section className="py-2 relative">
@@ -700,7 +723,7 @@ export default function Home() {
                 color: 'from-pink-500 to-pink-600'
               }
             ].map((industry, index) => (
-              <div key={industry.title} className="depth-card p-8 group hover:scale-105 transition-all duration-500">
+              <div key={industry.title} className="depth-card border-beam p-8 group hover:scale-105 transition-all duration-500">
                 <div className="mb-6">
                   <div className={`w-16 h-16 bg-gradient-to-br ${industry.color} rounded-xl flex items-center justify-center mb-4 text-white`}>
                     {industry.icon}
@@ -721,6 +744,9 @@ export default function Home() {
       
       <BlogSection />
       
+      {/* Section Divider */}
+      <div className="beam-divider my-4"></div>
+      
       {/* Resources & Knowledge Hub */}
       <section className="py-2 relative">
         <div className="max-w-7xl mx-auto px-6">
@@ -733,7 +759,7 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-3">
-            <div className="depth-card p-8 group hover:scale-105 transition-all duration-500">
+            <div className="depth-card border-beam p-8 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                   <Code className="w-8 h-8 text-white" />
@@ -749,7 +775,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="depth-card p-8 group hover:scale-105 transition-all duration-500">
+            <div className="depth-card border-beam p-8 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
                   <BarChart3 className="w-8 h-8 text-white" />
@@ -765,7 +791,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="depth-card p-8 group hover:scale-105 transition-all duration-500">
+            <div className="depth-card border-beam p-8 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
                   <PlayCircle className="w-8 h-8 text-white" />
@@ -784,12 +810,15 @@ export default function Home() {
         </div>
       </section>
       
+      {/* Section Divider */}
+      <div className="beam-divider my-4"></div>
+      
       <ContactSection />
 
       {/* Enhanced CTA Section */}
       <section className="py-2 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="depth-card p-20 text-center relative overflow-hidden">
+          <div className="depth-card border-beam p-20 text-center relative overflow-hidden">
             <div className="hero-glow top-0 left-1/2 transform -translate-x-1/2"></div>
             <div className="relative z-10">
               <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-text">
@@ -855,6 +884,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="beam-divider my-4"></div>
+      
       {/* Final Stats Banner */}
       <section className="py-16 relative">
         <div className="max-w-7xl mx-auto px-6">
@@ -881,6 +913,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Section Divider */}
+      <div className="beam-divider my-4"></div>
       
       <Footer />
     </>
