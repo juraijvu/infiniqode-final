@@ -433,12 +433,14 @@
     opacity: 1;
   }
 
-  .team-card:hover .team-image {
-    transform: scale(1.1);
-  }
-
-  .portfolio-item:hover .portfolio-overlay {
-    opacity: 1;
+  /* Disable hover effects on mobile for performance */
+  @media (min-width: 768px) {
+    .team-card:hover .team-image {
+      transform: scale(1.05);
+    }
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
   }
 }
 
@@ -451,68 +453,7 @@
     animation-delay: 4s;
   }
 
-  /* Beam light divider */
-  .beam-divider {
-    position: relative;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.2) 20%, rgba(139, 92, 246, 0.8) 50%, rgba(139, 92, 246, 0.2) 80%, transparent 100%);
-    overflow: hidden;
-  }
 
-  .beam-divider::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.8) 50%, transparent 100%);
-    animation: beamSlide 3s ease-in-out infinite;
-  }
-
-  @keyframes beamSlide {
-    0% {
-      left: -100%;
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      left: 100%;
-      opacity: 0;
-    }
-  }
-
-  /* Border beam animation */
-  .border-beam {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .border-beam::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 2px;
-    background: linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.8) 50%, transparent 70%);
-    border-radius: inherit;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: xor;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    animation: borderBeam 3s linear infinite;
-  }
-
-  @keyframes borderBeam {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 200% 50%;
-    }
-  }
 }
 
 @keyframes float {
