@@ -55,8 +55,8 @@ export function MovingBorderCard({
       {/* Content */}
       <div
         className={cn(
-          "relative flex h-full w-full backdrop-blur-xl border border-white/10",
-          "bg-gradient-to-br from-white/5 to-white/[0.02]",
+          "relative flex h-full w-full backdrop-blur-xl",
+          "bg-black/20",
           className,
         )}
         style={{

@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { GlassCard } from "./glass-card";
+import { SectionHeader } from "./section-header";
 import { Star } from "lucide-react";
 import type { Testimonial } from "@shared/schema";
 
@@ -12,9 +13,7 @@ export function TestimonialsSection() {
     return (
       <section className="py-1.5 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-2">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Client Testimonials</h2>
-          </div>
+          <SectionHeader title="Client Testimonials" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[...Array(3)].map((_, i) => (
               <GlassCard key={i} className="p-8 animate-pulse">
@@ -44,12 +43,10 @@ export function TestimonialsSection() {
   return (
     <section className="py-1.5 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-2">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Client Testimonials</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            See what our clients say about working with us
-          </p>
-        </div>
+        <SectionHeader 
+          title="Client Testimonials" 
+          subtitle="See what our clients say about working with us"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (

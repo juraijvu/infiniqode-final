@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { apiRequest } from "@/lib/queryClient";
 import { insertContactInquirySchema } from "@shared/schema";
 import { GlassCard } from "./glass-card";
+import { SectionHeader } from "./section-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -59,12 +60,10 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-3 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-2">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Get In Touch</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to start your digital transformation? Let's discuss your project
-          </p>
-        </div>
+        <SectionHeader 
+          title="Get In Touch" 
+          subtitle="Ready to start your digital transformation? Let's discuss your project"
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Information */}

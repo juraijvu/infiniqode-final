@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { GlassCard } from "./glass-card";
+import { SectionHeader } from "./section-header";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -72,6 +73,10 @@ export function PortfolioSection() {
   return (
     <section id="portfolio" className="py-1.5 relative">
       <div className="max-w-7xl mx-auto px-6">
+        <SectionHeader 
+          title="Our Portfolio" 
+          subtitle="Explore our latest projects and see how we've helped businesses achieve their digital goals"
+        />
         <div className="text-center mb-2">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Portfolio</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

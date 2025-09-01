@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { GlassCard } from "./glass-card";
+import { SectionHeader } from "./section-header";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
 import type { Service } from "@shared/schema";
@@ -14,9 +15,7 @@ export function ServicesSection() {
     return (
       <section id="services" className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-4">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Services</h2>
-          </div>
+          <SectionHeader title="Our Services" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[...Array(6)].map((_, i) => (
               <GlassCard key={i} className="p-8 animate-pulse">
@@ -39,12 +38,10 @@ export function ServicesSection() {
   return (
     <section id="services" className="py-3 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-2">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Services</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We offer comprehensive digital solutions to transform your business
-          </p>
-        </div>
+        <SectionHeader 
+          title="Our Services" 
+          subtitle="We offer comprehensive digital solutions to transform your business"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (

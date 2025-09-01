@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { GlassCard } from "./glass-card";
+import { SectionHeader } from "./section-header";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Clock } from "lucide-react";
@@ -15,9 +16,7 @@ export function BlogSection() {
     return (
       <section id="blog" className="py-1.5 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-2">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Latest Insights</h2>
-          </div>
+          <SectionHeader title="Latest Insights" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[...Array(3)].map((_, i) => (
               <GlassCard key={i} className="overflow-hidden animate-pulse">
@@ -47,12 +46,10 @@ export function BlogSection() {
   return (
     <section id="blog" className="py-1.5 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-2">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Latest Insights</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Stay updated with the latest trends in web development and digital marketing
-          </p>
-        </div>
+        <SectionHeader 
+          title="Latest Insights" 
+          subtitle="Stay updated with the latest trends in web development and digital marketing"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {latestPosts.map((post) => (

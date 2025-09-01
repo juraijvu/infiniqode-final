@@ -65,6 +65,12 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <PlasmaBackground 
+          color="#8b5cf6" 
+          speed={0.8} 
+          opacity={0.3}
+          mouseInteractive={true}
+        />
         <Toaster />
         <Router />
       </TooltipProvider>

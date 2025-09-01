@@ -1,4 +1,5 @@
 import { GlassCard } from "./glass-card";
+import { SectionHeader } from "./section-header";
 import { Linkedin, Twitter, Github, Dribbble } from "lucide-react";
 
 const teamMembers = [
@@ -52,12 +53,10 @@ export function TeamSection() {
   return (
     <section className="py-1.5 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-2">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Meet Our Team</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            The talented individuals behind our success
-          </p>
-        </div>
+        <SectionHeader 
+          title="Meet Our Team" 
+          subtitle="The talented individuals behind our success"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member) => (
