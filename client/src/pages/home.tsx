@@ -62,13 +62,7 @@ export default function Home() {
 
   return (
     <>
-      <PlasmaBackground 
-        color="#8b5cf6" 
-        speed={0.8}
-        scale={1.2}
-        opacity={0.4}
-        mouseInteractive={true}
-      />
+      {/* Removed PlasmaBackground for better performance */}
       <SEOHead
         title="Home"
         description="DigitalCraft is a premium digital agency specializing in React TypeScript development, Python Flask backends, and cutting-edge digital marketing solutions. Transform your business with our world-class solutions."
@@ -92,7 +86,7 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-4">
-            <div className="stat-item depth-card border-beam p-8 text-center group hover:scale-105 transition-all duration-500" data-testid="stat-projects">
+            <div className="stat-item depth-card beam-border p-8 text-center group" data-testid="stat-projects">
               <div className="mb-4">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
                   <Trophy className="w-8 h-8 text-white" />

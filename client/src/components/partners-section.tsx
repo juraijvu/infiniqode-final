@@ -1,4 +1,5 @@
-import { ThreeDScrollTriggerContainer, ThreeDScrollTriggerRow } from "./scroll-trigger";
+// Simple CSS-only animation for better performance
+import { cn } from "@/lib/utils";
 
 const partners = [
   { name: "Microsoft", logo: "https://via.placeholder.com/120x60/2F3349/FFFFFF?text=Microsoft" },
@@ -26,39 +27,43 @@ export function PartnersSection() {
           </p>
         </div>
         
-        <ThreeDScrollTriggerContainer className="space-y-8">
-          {/* First row - moving right */}
-          <ThreeDScrollTriggerRow baseVelocity={2} direction={1}>
-            {partners.slice(0, 6).map((partner, index) => (
-              <div
-                key={`row1-${index}`}
-                className="flex items-center justify-center mx-8 p-4 glass-card rounded-lg min-w-[140px] h-20"
-              >
-                <img
-                  src={partner.logo}
-                  alt={`${partner.name} logo`}
-                  className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity"
-                />
-              </div>
-            ))}
-          </ThreeDScrollTriggerRow>
+        <div className="space-y-8">
+          {/* First row - simple CSS animation */}
+          <div className="partners-scroll-right overflow-hidden">
+            <div className="partners-track">
+              {[...partners.slice(0, 6), ...partners.slice(0, 6)].map((partner, index) => (
+                <div
+                  key={`row1-${index}`}
+                  className="partner-card glass-card rounded-lg beam-border"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="max-w-full max-h-full object-contain opacity-70"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
 
-          {/* Second row - moving left */}
-          <ThreeDScrollTriggerRow baseVelocity={2} direction={-1}>
-            {partners.slice(6).map((partner, index) => (
-              <div
-                key={`row2-${index}`}
-                className="flex items-center justify-center mx-8 p-4 glass-card rounded-lg min-w-[140px] h-20"
-              >
-                <img
-                  src={partner.logo}
-                  alt={`${partner.name} logo`}
-                  className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity"
-                />
-              </div>
-            ))}
-          </ThreeDScrollTriggerRow>
-        </ThreeDScrollTriggerContainer>
+          {/* Second row - opposite direction */}
+          <div className="partners-scroll-left overflow-hidden">
+            <div className="partners-track">
+              {[...partners.slice(6), ...partners.slice(6)].map((partner, index) => (
+                <div
+                  key={`row2-${index}`}
+                  className="partner-card glass-card rounded-lg beam-border"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="max-w-full max-h-full object-contain opacity-70"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

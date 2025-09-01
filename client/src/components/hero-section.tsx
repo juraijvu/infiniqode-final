@@ -45,16 +45,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 glass-card rounded-full flex items-center justify-center animate-float">
-        <Code className="text-accent text-2xl" />
-      </div>
-      <div className="absolute bottom-40 right-20 w-16 h-16 glass-card rounded-full flex items-center justify-center animate-float animation-delay-2s">
-        <Palette className="text-accent text-xl" />
-      </div>
-      <div className="absolute top-1/2 left-20 w-12 h-12 glass-card rounded-full flex items-center justify-center animate-float animation-delay-4s">
-        <Lightbulb className="text-accent" />
-      </div>
+      {/* Removed floating elements for better performance */}
     </section>
   );
 }
