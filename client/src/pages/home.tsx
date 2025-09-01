@@ -893,26 +893,33 @@ export default function Home() {
       {/* Final Stats Banner */}
       <section className="py-16 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center">
-            <h3 className="font-heading text-3xl font-bold mb-8 gradient-text">Why Choose DigitalCraft?</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="font-heading text-4xl font-bold gradient-text mb-4">150+</div>
-                <div className="font-body text-muted-foreground text-sm">Successful Projects</div>
-              </div>
-              <div className="text-center">
-                <div className="font-heading text-4xl font-bold gradient-text mb-4">25+</div>
-                <div className="font-body text-muted-foreground text-sm">Expert Developers</div>
-              </div>
-              <div className="text-center">
-                <div className="font-heading text-4xl font-bold gradient-text mb-4">15</div>
-                <div className="font-body text-muted-foreground text-sm">Countries Served</div>
-              </div>
-              <div className="text-center">
-                <div className="font-heading text-4xl font-bold gradient-text mb-4">5+</div>
-                <div className="font-body text-muted-foreground text-sm">Years Excellence</div>
-              </div>
-            </div>
+          <div className="text-center mb-12">
+            <h3 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Why Choose DigitalCraft?</h3>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              We deliver exceptional results that drive your business forward
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <GlassCard className="text-center p-8 hover" hover>
+              <div className="text-5xl font-bold gradient-text mb-4">150+</div>
+              <h4 className="text-lg font-semibold mb-2">Successful Projects</h4>
+              <p className="text-muted-foreground text-sm">Delivered with excellence and precision</p>
+            </GlassCard>
+            <GlassCard className="text-center p-8 hover" hover>
+              <div className="text-5xl font-bold gradient-text mb-4">25+</div>
+              <h4 className="text-lg font-semibold mb-2">Expert Developers</h4>
+              <p className="text-muted-foreground text-sm">Skilled professionals at your service</p>
+            </GlassCard>
+            <GlassCard className="text-center p-8 hover" hover>
+              <div className="text-5xl font-bold gradient-text mb-4">15</div>
+              <h4 className="text-lg font-semibold mb-2">Countries Served</h4>
+              <p className="text-muted-foreground text-sm">Global reach and local expertise</p>
+            </GlassCard>
+            <GlassCard className="text-center p-8 hover" hover>
+              <div className="text-5xl font-bold gradient-text mb-4">5+</div>
+              <h4 className="text-lg font-semibold mb-2">Years Excellence</h4>
+              <p className="text-muted-foreground text-sm">Proven track record of success</p>
+            </GlassCard>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 // Simple CSS-only animation for better performance
 import { cn } from "@/lib/utils";
+import { GlassCard } from "./glass-card";
 
 const partners = [
   { name: "Microsoft", logo: "https://via.placeholder.com/120x60/2F3349/FFFFFF?text=Microsoft" },
@@ -21,8 +22,8 @@ export function PartnersSection() {
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Our Partners</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Partners</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Trusted by leading companies worldwide to deliver exceptional digital experiences
           </p>
         </div>
@@ -32,16 +33,17 @@ export function PartnersSection() {
           <div className="partners-scroll-right overflow-hidden">
             <div className="partners-track">
               {[...partners.slice(0, 6), ...partners.slice(0, 6)].map((partner, index) => (
-                <div
+                <GlassCard
                   key={`row1-${index}`}
-                  className="partner-card glass-card rounded-lg"
+                  className="partner-card p-4 hover"
+                  hover
                 >
                   <img
                     src={partner.logo}
                     alt={`${partner.name} logo`}
-                    className="max-w-full max-h-full object-contain opacity-70"
+                    className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
                   />
-                </div>
+                </GlassCard>
               ))}
             </div>
           </div>
@@ -50,16 +52,17 @@ export function PartnersSection() {
           <div className="partners-scroll-left overflow-hidden">
             <div className="partners-track">
               {[...partners.slice(6), ...partners.slice(6)].map((partner, index) => (
-                <div
+                <GlassCard
                   key={`row2-${index}`}
-                  className="partner-card glass-card rounded-lg"
+                  className="partner-card p-4 hover"
+                  hover
                 >
                   <img
                     src={partner.logo}
                     alt={`${partner.name} logo`}
-                    className="max-w-full max-h-full object-contain opacity-70"
+                    className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
                   />
-                </div>
+                </GlassCard>
               ))}
             </div>
           </div>
