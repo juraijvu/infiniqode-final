@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { MovingBorderCard } from "@/components/ui/moving-border";
 
 interface GlassCardProps {
   children: React.ReactNode;
@@ -9,13 +8,13 @@ interface GlassCardProps {
 
 export function GlassCard({ children, className, hover = false }: GlassCardProps) {
   return (
-    <MovingBorderCard
-      className={cn("p-6", className)}
-      containerClassName="rounded-xl"
-      borderRadius="0.75rem"
-      duration={3000}
+    <div
+      className={cn(
+        "glass-card rounded-xl p-6",
+        className
+      )}
     >
       {children}
-    </MovingBorderCard>
+    </div>
   );
 }
