@@ -7,6 +7,7 @@ import { TeamSection } from "@/components/team-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { BlogSection } from "@/components/blog-section";
 import { ContactSection } from "@/components/contact-section";
+import { PartnersSection } from "@/components/partners-section";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
 import { GlassCard } from "@/components/glass-card";
@@ -669,6 +670,8 @@ export default function Home() {
       <div className="beam-divider my-4"></div>
       
       <TestimonialsSection />
+      
+      <PartnersSection />
       
       {/* Section Divider */}
       <div className="beam-divider my-4"></div>
