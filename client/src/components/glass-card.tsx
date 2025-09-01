@@ -10,11 +10,10 @@ interface GlassCardProps {
 export function GlassCard({ children, className, hover = false }: GlassCardProps) {
   return (
     <MovingBorderCard
-      className={cn("p-4", className)}
-      borderClassName="from-blue-500 to-purple-500"
+      className={cn("p-6", className)}
       containerClassName="rounded-xl"
       borderRadius="0.75rem"
-      duration={4000}
+      duration={3000}
     >
       {children}
     </MovingBorderCard>

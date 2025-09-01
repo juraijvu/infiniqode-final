@@ -1,8 +1,5 @@
 "use client";
 import React from "react";
-import {
-  motion,
-} from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export function MovingBorderCard({
@@ -27,7 +24,7 @@ export function MovingBorderCard({
   return (
     <Component
       className={cn(
-        "relative overflow-hidden bg-transparent p-[1px]",
+        "relative overflow-hidden bg-transparent p-[2px]",
         containerClassName,
       )}
       style={{
@@ -35,32 +32,24 @@ export function MovingBorderCard({
       }}
       {...otherProps}
     >
-      {/* Animated border */}
-      <div className="absolute inset-0 rounded-inherit">
-        <div 
-          className="absolute inset-0 rounded-inherit"
-          style={{
-            background: `conic-gradient(from 0deg, transparent, rgb(59, 130, 246), rgb(139, 92, 246), transparent)`,
-            animation: `spin ${duration}ms linear infinite`,
-          }}
-        />
-        <div 
-          className="absolute inset-[1px] rounded-inherit backdrop-blur-xl border border-white/10"
-          style={{
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
-          }}
-        />
-      </div>
+      {/* Simple animated border */}
+      <div 
+        className="absolute inset-0 rounded-inherit opacity-75"
+        style={{
+          background: `conic-gradient(from 0deg, transparent, #3b82f6, #8b5cf6, transparent)`,
+          animation: `spin ${duration}ms linear infinite`,
+        }}
+      />
 
-      {/* Content */}
+      {/* Clean content area */}
       <div
         className={cn(
-          "relative flex h-full w-full backdrop-blur-xl",
-          "bg-black/20",
+          "relative h-full w-full backdrop-blur-xl border border-white/10",
+          "bg-gradient-to-br from-white/5 to-white/[0.02]",
           className,
         )}
         style={{
-          borderRadius: `calc(${borderRadius} * 0.96)`,
+          borderRadius: `calc(${borderRadius} * 0.9)`,
         }}
       >
         {children}
