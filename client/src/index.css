@@ -71,22 +71,10 @@
     touch-action: manipulation; /* Better touch performance */
   }
   
-  /* Hardware acceleration for animated elements */
-  [data-scroll], [data-gsap], .animate {
-    will-change: transform, opacity;
-    transform: translateZ(0); /* Force GPU layer */
-    backface-visibility: hidden;
-  }
-  
-  /* Optimize mobile menu and pop-up animations */
+  /* Optimize mobile menu and pop-up animations only */
   [data-radix-dialog-overlay],
-  [data-radix-dialog-content],
-  [data-state="open"],
-  [data-state="closed"],
-  .transform-gpu {
-    transform: translateZ(0);
+  [data-radix-dialog-content] {
     will-change: transform, opacity;
-    backface-visibility: hidden;
   }
   
   /* Reduce animation complexity for better performance */
@@ -113,71 +101,14 @@
     overflow-x: hidden;
     position: relative;
     
-    /* Lenis smooth scroll optimizations */
-    scroll-behavior: auto; /* Let Lenis handle smooth scrolling */
-    overscroll-behavior: none; /* Prevent scroll chaining */
-    touch-action: pan-y; /* Better touch performance */
+    /* Mobile scroll optimizations */
+    scroll-behavior: auto;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
   }
 
-  /* Enhanced Galaxy Stars Background with Deep Space Feel */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 300%;
-    height: 300%;
-    background-image: 
-      radial-gradient(2px 2px at 20% 30%, #fff, transparent),
-      radial-gradient(2px 2px at 40% 70%, rgba(255,255,255,0.9), transparent),
-      radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.7), transparent),
-      radial-gradient(1px 1px at 50% 10%, #fff, transparent),
-      radial-gradient(3px 3px at 10% 60%, rgba(139, 92, 246, 0.9), transparent),
-      radial-gradient(2px 2px at 80% 80%, rgba(139, 92, 246, 0.7), transparent),
-      radial-gradient(1px 1px at 30% 20%, rgba(168, 85, 247, 0.6), transparent),
-      radial-gradient(2px 2px at 70% 50%, rgba(196, 181, 253, 0.5), transparent),
-      radial-gradient(1px 1px at 60% 90%, rgba(167, 139, 250, 0.4), transparent);
-    background-size: 600px 600px, 500px 500px, 400px 400px, 700px 700px, 450px 450px, 550px 550px, 350px 350px, 650px 650px, 300px 300px;
-    animation: galaxyMove 30s linear infinite, galaxyPulse 15s ease-in-out infinite;
-    z-index: -2;
-    opacity: 0.8;
-  }
 
-  /* Additional layer for depth */
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 400%;
-    height: 400%;
-    background-image: 
-      radial-gradient(1px 1px at 15% 25%, rgba(255,255,255,0.3), transparent),
-      radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.2), transparent),
-      radial-gradient(1px 1px at 45% 85%, rgba(139, 92, 246, 0.3), transparent),
-      radial-gradient(1px 1px at 25% 65%, rgba(168, 85, 247, 0.2), transparent);
-    background-size: 800px 800px, 900px 900px, 1000px 1000px, 750px 750px;
-    animation: galaxyMove 45s linear infinite reverse, nebulaDrift 25s ease-in-out infinite;
-    z-index: -1;
-    opacity: 0.4;
-  }
 
-  @keyframes galaxyMove {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(-100px, -100px) rotate(360deg); }
-  }
-
-  @keyframes galaxyPulse {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 0.9; }
-  }
-
-  @keyframes nebulaDrift {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(50px, -30px) scale(1.05); }
-    50% { transform: translate(-20px, 40px) scale(0.95); }
-    75% { transform: translate(-40px, -20px) scale(1.02); }
-  }
   
   .font-display {
     font-family: var(--font-display);

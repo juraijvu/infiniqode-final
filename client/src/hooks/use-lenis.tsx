@@ -10,20 +10,20 @@ export const useLenis = () => {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    // Initialize Lenis with optimized settings
+    // Initialize Lenis with mobile-optimized settings
     const lenis = new Lenis({
-      duration: 1.2, // Smooth scroll duration
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing
-      gestureDirection: 'vertical', // Allow vertical gestures
+      duration: 0.8, // Faster scroll duration for better responsiveness
+      easing: (t) => 1 - Math.pow(1 - t, 3), // Simple cubic easing for better performance
+      gestureDirection: 'vertical',
       smooth: true,
-      smoothTouch: false, // Disable on touch devices for better performance
-      touchMultiplier: 2, // Touch scroll speed multiplier
-      infinite: false, // Disable infinite scrolling
-      autoResize: true, // Auto resize on window resize
-      wrapper: window, // Use window as wrapper
-      content: document.documentElement, // Use document as content
-      wheelMultiplier: 1, // Mouse wheel speed multiplier
-      normalizeWheel: true, // Normalize wheel delta
+      smoothTouch: false, // Keep disabled for native mobile scrolling
+      touchMultiplier: 1, // Reduced for more natural feel
+      infinite: false,
+      autoResize: true,
+      wrapper: window,
+      content: document.documentElement,
+      wheelMultiplier: 0.8, // Slightly reduced for smoother desktop scrolling
+      normalizeWheel: true,
     });
 
     lenisRef.current = lenis;
