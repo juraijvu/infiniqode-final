@@ -12,7 +12,7 @@ export function ServicesSection() {
 
   if (isLoading) {
     return (
-      <section id="services" className="py-20 relative">
+      <section id="services" className="py-1.5 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Services</h2>
@@ -37,7 +37,7 @@ export function ServicesSection() {
   }
 
   return (
-    <section id="services" className="py-20 relative">
+    <section id="services" className="py-1.5 relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Services</h2>
