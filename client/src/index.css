@@ -140,131 +140,48 @@
 @layer components {
   /* Premium glass morphism cards with realistic depth */
   .glass-card {
-    background: linear-gradient(145deg, 
-      rgba(139, 92, 246, 0.12) 0%,
-      rgba(139, 92, 246, 0.08) 25%,
-      rgba(139, 92, 246, 0.10) 50%,
-      rgba(139, 92, 246, 0.06) 100%
-    );
-    backdrop-filter: blur(28px) saturate(1.6) brightness(1.05);
-    -webkit-backdrop-filter: blur(28px) saturate(1.6) brightness(1.05);
-    border: 1px solid rgba(139, 92, 246, 0.25);
-    border-radius: 20px;
-    box-shadow: 
-      0 1px 0 0 rgba(255, 255, 255, 0.15) inset,
-      0 2px 0 0 rgba(139, 92, 246, 0.3) inset,
-      0 8px 32px rgba(139, 92, 246, 0.18),
-      0 16px 64px rgba(0, 0, 0, 0.3),
-      0 0 80px rgba(139, 92, 246, 0.1);
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.1);
     position: relative;
     overflow: hidden;
-    will-change: transform, box-shadow, background;
   }
 
-  .glass-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-    mix-blend-mode: overlay;
-    pointer-events: none;
-    z-index: 1;
-  }
 
-  .glass-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, 
-      transparent 0%, 
-      rgba(139, 92, 246, 0.6) 25%, 
-      rgba(168, 85, 247, 0.8) 50%, 
-      rgba(139, 92, 246, 0.6) 75%, 
-      transparent 100%
-    );
-    z-index: 2;
-  }
 
-  .glass-card:hover {
-    background: linear-gradient(145deg, 
-      rgba(139, 92, 246, 0.18) 0%,
-      rgba(139, 92, 246, 0.12) 25%,
-      rgba(139, 92, 246, 0.15) 50%,
-      rgba(139, 92, 246, 0.10) 100%
-    );
-    border-color: rgba(139, 92, 246, 0.4);
-    box-shadow: 
-      0 1px 0 0 rgba(255, 255, 255, 0.2) inset,
-      0 2px 0 0 rgba(139, 92, 246, 0.5) inset,
-      0 16px 64px rgba(139, 92, 246, 0.3),
-      0 32px 128px rgba(0, 0, 0, 0.4),
-      0 0 120px rgba(139, 92, 246, 0.4),
-      0 0 200px rgba(139, 92, 246, 0.2);
-    transform: translateY(-6px) scale(1.01);
-    animation: cardGlow 3s ease-in-out infinite alternate;
-  }
-
-  @keyframes cardGlow {
-    0% {
-      box-shadow: 
-        0 1px 0 0 rgba(255, 255, 255, 0.15) inset,
-        0 2px 0 0 rgba(139, 92, 246, 0.4) inset,
-        0 16px 64px rgba(139, 92, 246, 0.25),
-        0 32px 128px rgba(0, 0, 0, 0.5),
-        0 0 100px rgba(139, 92, 246, 0.3);
+  /* Simplified hover effects for mobile performance */
+  @media (min-width: 768px) {
+    .glass-card {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: all 0.2s ease;
     }
-    100% {
-      box-shadow: 
-        0 1px 0 0 rgba(255, 255, 255, 0.2) inset,
-        0 2px 0 0 rgba(139, 92, 246, 0.5) inset,
-        0 16px 64px rgba(139, 92, 246, 0.35),
-        0 32px 128px rgba(0, 0, 0, 0.5),
-        0 0 120px rgba(139, 92, 246, 0.4);
+    .glass-card:hover {
+      background: rgba(139, 92, 246, 0.12);
+      border-color: rgba(139, 92, 246, 0.3);
+      box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+      transform: translateY(-2px);
     }
   }
+
 
   .glass-button {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(139, 92, 246, 0.6));
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    box-shadow: 
-      0 1px 0 0 rgba(255, 255, 255, 0.3) inset,
-      0 8px 32px rgba(139, 92, 246, 0.3),
-      0 4px 16px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    background: rgba(139, 92, 246, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.2);
+    transition: all 0.2s ease;
     position: relative;
-    overflow: hidden;
   }
 
-  .glass-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-  }
 
-  .glass-button:hover::before {
-    left: 100%;
-  }
-
-  .glass-button:hover {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(139, 92, 246, 0.7));
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 
-      0 1px 0 0 rgba(255, 255, 255, 0.4) inset,
-      0 16px 64px rgba(139, 92, 246, 0.4),
-      0 8px 32px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
+  @media (min-width: 768px) {
+    .glass-button:hover {
+      background: rgba(139, 92, 246, 0.9);
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
+      transform: translateY(-1px);
+    }
   }
 
   /* Status indicators inspired by BetterStack */
@@ -392,12 +309,18 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 30%, #C084FC 60%, #DDD6FE 100%);
+    background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 50%, #C084FC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    background-size: 200% 200%;
-    animation: gradientShift 3s ease-in-out infinite;
+  }
+  
+  /* Only animate on desktop */
+  @media (min-width: 768px) {
+    .gradient-text {
+      background-size: 200% 200%;
+      animation: gradientShift 4s ease-in-out infinite;
+    }
   }
 
   @keyframes gradientShift {
@@ -409,38 +332,30 @@
     }
   }
 
-  .hero-glow {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(168, 85, 247, 0.2) 40%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(120px);
-    animation: float 8s ease-in-out infinite, glowPulse 6s ease-in-out infinite;
+  /* Disable hero glow on mobile for performance */
+  @media (min-width: 768px) {
+    .hero-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: glowPulse 8s ease-in-out infinite;
+    }
   }
 
-  /* Magical floating particles */
-  .particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: particleFloat 15s linear infinite;
-    opacity: 0;
-  }
-
-  .particle:nth-child(odd) {
-    animation-duration: 18s;
-    animation-delay: -2s;
-  }
-
-  .particle:nth-child(3n) {
-    width: 2px;
-    height: 2px;
-    background: radial-gradient(circle, rgba(196, 181, 253, 0.6) 0%, transparent 70%);
-    animation-duration: 20s;
-    animation-delay: -5s;
+  /* Disable particles on mobile */
+  @media (min-width: 768px) {
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(139, 92, 246, 0.4);
+      border-radius: 50%;
+      animation: particleFloat 20s linear infinite;
+      opacity: 0;
+    }
   }
 
   @keyframes particleFloat {

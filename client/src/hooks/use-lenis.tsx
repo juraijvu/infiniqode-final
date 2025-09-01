@@ -10,52 +10,45 @@ export const useLenis = () => {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    // Initialize Lenis with mobile-optimized settings
+    // Check if device is mobile for performance optimization
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+    
+    if (isMobile) {
+      // For mobile, use native scrolling for best performance
+      return;
+    }
+
+    // Initialize Lenis only for desktop
     const lenis = new Lenis({
-      duration: 0.8, // Faster scroll duration for better responsiveness
-      easing: (t) => 1 - Math.pow(1 - t, 3), // Simple cubic easing for better performance
+      duration: 0.6,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
       gestureDirection: 'vertical',
       smooth: true,
-      smoothTouch: false, // Keep disabled for native mobile scrolling
-      touchMultiplier: 1, // Reduced for more natural feel
+      smoothTouch: false,
+      touchMultiplier: 1,
       infinite: false,
       autoResize: true,
       wrapper: window,
       content: document.documentElement,
-      wheelMultiplier: 0.8, // Slightly reduced for smoother desktop scrolling
+      wheelMultiplier: 0.8,
       normalizeWheel: true,
     });
 
     lenisRef.current = lenis;
 
-    // Update ScrollTrigger on scroll
-    lenis.on('scroll', (e) => {
-      ScrollTrigger.update();
-    });
-
-    // Request animation frame loop for Lenis
+    // Minimal ScrollTrigger integration for performance
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-
-    // Start the loop
-    requestAnimationFrame(raf);
-
-    // Refresh ScrollTrigger when Lenis is ready
-    ScrollTrigger.refresh();
-
-    // Handle resize
-    const handleResize = () => {
-      lenis.resize();
-      ScrollTrigger.refresh();
-    };
-
-    window.addEventListener('resize', handleResize);
+    rafId = requestAnimationFrame(raf);
 
     // Cleanup
     return () => {
-      window.removeEventListener('resize', handleResize);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
       lenis.destroy();
       lenisRef.current = null;
     };
