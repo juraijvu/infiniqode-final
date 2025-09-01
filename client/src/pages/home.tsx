@@ -80,9 +80,9 @@ export default function Home() {
       </div>
       
       {/* Enhanced Stats Section with Depth */}
-      <section className="py-2 relative" ref={statsRef as any}>
+      <section className="py-3 relative" ref={statsRef as any}>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-3">
+          <div className="text-center mb-4">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Proven Excellence</h2>
             <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Numbers that speak louder than words. Our track record of success spans across industries and technologies, 
@@ -90,15 +90,15 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-4">
             <div className="stat-item depth-card border-beam p-8 text-center group hover:scale-105 transition-all duration-500" data-testid="stat-projects">
               <div className="mb-4">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
                   <Trophy className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <div ref={projectsCountRef as any} className="text-5xl md:text-6xl font-display font-bold gradient-text mb-3">0+</div>
-              <div className="font-body text-muted-foreground text-lg mb-2">Projects Completed</div>
+              <div ref={projectsCountRef as any} className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">0+</div>
+              <div className="font-body text-muted-foreground text-lg mb-4">Projects Completed</div>
               <div className="text-sm text-muted-foreground/70">Across 25+ Industries</div>
             </div>
             
@@ -108,8 +108,8 @@ export default function Home() {
                   <Star className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <div ref={satisfactionCountRef as any} className="text-5xl md:text-6xl font-display font-bold gradient-text mb-3">0%</div>
-              <div className="font-body text-muted-foreground text-lg mb-2">Client Satisfaction</div>
+              <div ref={satisfactionCountRef as any} className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">0%</div>
+              <div className="font-body text-muted-foreground text-lg mb-4">Client Satisfaction</div>
               <div className="text-sm text-muted-foreground/70">Average Rating: 4.9/5</div>
             </div>
             
@@ -119,8 +119,8 @@ export default function Home() {
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <div ref={experienceCountRef as any} className="text-5xl md:text-6xl font-display font-bold gradient-text mb-3">0+</div>
-              <div className="font-body text-muted-foreground text-lg mb-2">Years Experience</div>
+              <div ref={experienceCountRef as any} className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">0+</div>
+              <div className="font-body text-muted-foreground text-lg mb-4">Years Experience</div>
               <div className="text-sm text-muted-foreground/70">Since 2019</div>
             </div>
             
@@ -130,8 +130,8 @@ export default function Home() {
                   <Shield className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <div className="text-5xl md:text-6xl font-display font-bold gradient-text mb-3">24/7</div>
-              <div className="font-body text-muted-foreground text-lg mb-2">Support Available</div>
+              <div className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">24/7</div>
+              <div className="font-body text-muted-foreground text-lg mb-4">Support Available</div>
               <div className="text-sm text-muted-foreground/70">Global Coverage</div>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function Home() {
           {/* Status Indicators inspired by BetterStack */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="depth-card border-beam p-6">
-              <div className="flex items-center space-x-3 mb-3">
+              <div className="flex items-center space-x-3 mb-4">
                 <div className="status-indicator status-operational">Operational</div>
                 <span className="font-heading text-lg">Development Pipeline</span>
               </div>
@@ -147,7 +147,7 @@ export default function Home() {
             </div>
             
             <div className="depth-card border-beam p-6">
-              <div className="flex items-center space-x-3 mb-3">
+              <div className="flex items-center space-x-3 mb-4">
                 <div className="status-indicator status-operational">Operational</div>
                 <span className="font-heading text-lg">Client Support</span>
               </div>
@@ -155,7 +155,7 @@ export default function Home() {
             </div>
             
             <div className="depth-card border-beam p-6">
-              <div className="flex items-center space-x-3 mb-3">
+              <div className="flex items-center space-x-3 mb-4">
                 <div className="status-indicator status-operational">Operational</div>
                 <span className="font-heading text-lg">Infrastructure</span>
               </div>
@@ -166,9 +166,9 @@ export default function Home() {
       </section>
 
       {/* Technology Stack Deep Dive */}
-      <section className="py-2 relative overflow-hidden">
+      <section className="py-3 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-3">
+          <div className="text-center mb-4">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Our Technology Mastery</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We leverage cutting-edge technologies and proven frameworks to build scalable, 
@@ -176,13 +176,13 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-3" ref={featuresRef as any}>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-4" ref={featuresRef as any}>
             <div className="feature-item depth-card border-beam p-8 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4">
                   <Code className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading text-2xl font-bold mb-3">Frontend Excellence</h3>
+                <h3 className="font-heading text-2xl font-bold mb-4">Frontend Excellence</h3>
               </div>
               <p className="font-body text-muted-foreground mb-6 leading-relaxed">
                 React TypeScript, Next.js, Vue.js, Angular with modern state management, 
@@ -209,7 +209,7 @@ export default function Home() {
                 <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4">
                   <Server className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading text-2xl font-bold mb-3">Backend Mastery</h3>
+                <h3 className="font-heading text-2xl font-bold mb-4">Backend Mastery</h3>
               </div>
               <p className="font-body text-muted-foreground mb-6 leading-relaxed">
                 Python Flask, Node.js, Express, FastAPI with microservices architecture, 
@@ -236,7 +236,7 @@ export default function Home() {
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4">
                   <Cloud className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading text-2xl font-bold mb-3">Cloud Infrastructure</h3>
+                <h3 className="font-heading text-2xl font-bold mb-4">Cloud Infrastructure</h3>
               </div>
               <p className="font-body text-muted-foreground mb-6 leading-relaxed">
                 AWS, Google Cloud, Azure with Docker, Kubernetes, CI/CD pipelines, 
@@ -270,7 +270,7 @@ export default function Home() {
               { name: 'AWS', icon: <Cloud className="w-8 h-8" />, color: 'from-orange-500 to-orange-600' }
             ].map((tech, index) => (
               <div key={tech.name} className="depth-card border-beam p-6 text-center group hover:scale-110 transition-all duration-300">
-                <div className={`w-16 h-16 mx-auto bg-gradient-to-br ${tech.color} rounded-xl flex items-center justify-center mb-3 text-white`}>
+                <div className={`w-16 h-16 mx-auto bg-gradient-to-br ${tech.color} rounded-xl flex items-center justify-center mb-4 text-white`}>
                   {tech.icon}
                 </div>
                 <h4 className="font-heading font-semibold">{tech.name}</h4>
@@ -289,9 +289,9 @@ export default function Home() {
       <div className="beam-divider my-4"></div>
 
       {/* Our Methodology - Deep Content */}
-      <section className="py-2 relative">
+      <section className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-3">
+          <div className="text-center mb-4">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Our Proven Methodology</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Every successful project follows a carefully crafted process. Our methodology combines 
@@ -299,7 +299,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-3" ref={methodologyRef as any}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-4" ref={methodologyRef as any}>
             <div className="methodology-step depth-card border-beam p-10 group hover:scale-105 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
@@ -431,9 +431,9 @@ export default function Home() {
       <div className="beam-divider my-4"></div>
       
       {/* About Section */}
-      <section id="about" className="py-2 relative">
+      <section id="about" className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-3">
+          <div className="text-center mb-4">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">About DigitalCraft</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We're a team of passionate developers, designers, and digital strategists who believe in 
@@ -441,7 +441,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-3">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-4">
             <div>
               <div className="space-y-8">
                 <div className="flex items-start space-x-6">
@@ -449,7 +449,7 @@ export default function Home() {
                     <Trophy className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-2xl font-bold mb-3">Award-Winning Solutions</h3>
+                    <h3 className="font-heading text-2xl font-bold mb-4">Award-Winning Solutions</h3>
                     <p className="font-body text-muted-foreground leading-relaxed">
                       Our work has been recognized by industry leaders and has helped businesses 
                       achieve their digital transformation goals with measurable ROI improvements 
@@ -463,7 +463,7 @@ export default function Home() {
                     <Users className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-2xl font-bold mb-3">Expert Team</h3>
+                    <h3 className="font-heading text-2xl font-bold mb-4">Expert Team</h3>
                     <p className="font-body text-muted-foreground leading-relaxed">
                       Our diverse team of 25+ specialists brings years of experience in cutting-edge 
                       technologies and proven methodologies. Each team member is certified in their 
@@ -477,7 +477,7 @@ export default function Home() {
                     <Rocket className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-2xl font-bold mb-3">Innovation First</h3>
+                    <h3 className="font-heading text-2xl font-bold mb-4">Innovation First</h3>
                     <p className="font-body text-muted-foreground leading-relaxed">
                       We stay ahead of the curve by adopting the latest technologies and best practices 
                       to deliver future-proof solutions. Our R&D team dedicates 20% of time to 
@@ -518,12 +518,12 @@ export default function Home() {
           </div>
           
           {/* Company Values Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-4">
             <div className="depth-card p-8 text-center group hover:scale-105 transition-all duration-500">
               <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-heading text-xl font-bold mb-3">Security First</h3>
+              <h3 className="font-heading text-xl font-bold mb-4">Security First</h3>
               <p className="font-body text-muted-foreground text-sm leading-relaxed">
                 Every solution is built with enterprise-grade security, ensuring your data and users are protected.
               </p>
@@ -533,7 +533,7 @@ export default function Home() {
               <div className="w-16 h-16 mx-auto bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
                 <Zap className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-heading text-xl font-bold mb-3">Performance</h3>
+              <h3 className="font-heading text-xl font-bold mb-4">Performance</h3>
               <p className="font-body text-muted-foreground text-sm leading-relaxed">
                 Optimized for speed and efficiency, our solutions consistently achieve top performance scores.
               </p>
@@ -543,7 +543,7 @@ export default function Home() {
               <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
                 <Globe className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-heading text-xl font-bold mb-3">Global Scale</h3>
+              <h3 className="font-heading text-xl font-bold mb-4">Global Scale</h3>
               <p className="font-body text-muted-foreground text-sm leading-relaxed">
                 Built to scale globally with multi-region deployment and localization capabilities.
               </p>
@@ -553,7 +553,7 @@ export default function Home() {
               <div className="w-16 h-16 mx-auto bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-heading text-xl font-bold mb-3">Excellence</h3>
+              <h3 className="font-heading text-xl font-bold mb-4">Excellence</h3>
               <p className="font-body text-muted-foreground text-sm leading-relaxed">
                 Committed to delivering exceptional quality that exceeds expectations and industry standards.
               </p>
@@ -563,9 +563,9 @@ export default function Home() {
       </section>
 
       {/* Case Studies Deep Dive */}
-      <section className="py-2 relative">
+      <section className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-3">
+          <div className="text-center mb-4">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Success Stories</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Real results for real businesses. See how we've helped companies transform their digital presence 
@@ -573,7 +573,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-3">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-4">
             <div className="depth-card p-10 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="flex items-center space-x-3 mb-4">
@@ -674,9 +674,9 @@ export default function Home() {
       <div className="beam-divider my-4"></div>
       
       {/* Industry Expertise Section */}
-      <section className="py-2 relative">
+      <section className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-3">
+          <div className="text-center mb-4">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Industry Expertise</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We've worked across diverse industries, bringing specialized knowledge and proven solutions 
@@ -734,8 +734,8 @@ export default function Home() {
                   <div className={`w-16 h-16 bg-gradient-to-br ${industry.color} rounded-xl flex items-center justify-center mb-4 text-white`}>
                     {industry.icon}
                   </div>
-                  <h3 className="font-heading text-xl font-bold mb-2">{industry.title}</h3>
-                  <div className="flex items-center space-x-2 mb-3">
+                  <h3 className="font-heading text-xl font-bold mb-4">{industry.title}</h3>
+                  <div className="flex items-center space-x-2 mb-4">
                     <span className="font-body text-sm font-medium text-primary">{industry.projects} Projects</span>
                   </div>
                 </div>
@@ -754,9 +754,9 @@ export default function Home() {
       <div className="beam-divider my-4"></div>
       
       {/* Resources & Knowledge Hub */}
-      <section className="py-2 relative">
+      <section className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-3">
+          <div className="text-center mb-4">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Knowledge Hub</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Stay ahead with our comprehensive resources, whitepapers, and technical insights 
@@ -764,13 +764,13 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-4">
             <div className="depth-card border-beam p-8 group hover:scale-105 transition-all duration-500">
               <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                   <Code className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-heading text-xl font-bold mb-2">Technical Guides</h3>
+                <h3 className="font-heading text-xl font-bold mb-4">Technical Guides</h3>
               </div>
               <p className="font-body text-muted-foreground mb-4 text-sm leading-relaxed">
                 In-depth tutorials on React, TypeScript, Python, and modern development practices.
@@ -786,7 +786,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-heading text-xl font-bold mb-2">Whitepapers</h3>
+                <h3 className="font-heading text-xl font-bold mb-4">Whitepapers</h3>
               </div>
               <p className="font-body text-muted-foreground mb-4 text-sm leading-relaxed">
                 Research papers on emerging technologies, best practices, and industry trends.
@@ -802,7 +802,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
                   <PlayCircle className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-heading text-xl font-bold mb-2">Video Tutorials</h3>
+                <h3 className="font-heading text-xl font-bold mb-4">Video Tutorials</h3>
               </div>
               <p className="font-body text-muted-foreground mb-4 text-sm leading-relaxed">
                 Step-by-step video content covering development workflows and tool usage.
@@ -822,7 +822,7 @@ export default function Home() {
       <ContactSection />
 
       {/* Enhanced CTA Section */}
-      <section className="py-2 relative">
+      <section className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="depth-card border-beam p-20 text-center relative overflow-hidden">
             <div className="hero-glow top-0 left-1/2 transform -translate-x-1/2"></div>
@@ -840,21 +840,21 @@ export default function Home() {
                   <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
                     <Calendar className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-heading text-lg font-bold mb-2">Free Consultation</h3>
+                  <h3 className="font-heading text-lg font-bold mb-4">Free Consultation</h3>
                   <p className="font-body text-muted-foreground text-sm">30-minute strategy session</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
                     <Target className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-heading text-lg font-bold mb-2">Custom Proposal</h3>
+                  <h3 className="font-heading text-lg font-bold mb-4">Custom Proposal</h3>
                   <p className="font-body text-muted-foreground text-sm">Tailored to your needs</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
                     <Rocket className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-heading text-lg font-bold mb-2">Fast Delivery</h3>
+                  <h3 className="font-heading text-lg font-bold mb-4">Fast Delivery</h3>
                   <p className="font-body text-muted-foreground text-sm">2-4 week typical timeline</p>
                 </div>
               </div>
@@ -900,19 +900,19 @@ export default function Home() {
             <h3 className="font-heading text-3xl font-bold mb-8 gradient-text">Why Choose DigitalCraft?</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="font-heading text-4xl font-bold gradient-text mb-2">150+</div>
+                <div className="font-heading text-4xl font-bold gradient-text mb-4">150+</div>
                 <div className="font-body text-muted-foreground text-sm">Successful Projects</div>
               </div>
               <div className="text-center">
-                <div className="font-heading text-4xl font-bold gradient-text mb-2">25+</div>
+                <div className="font-heading text-4xl font-bold gradient-text mb-4">25+</div>
                 <div className="font-body text-muted-foreground text-sm">Expert Developers</div>
               </div>
               <div className="text-center">
-                <div className="font-heading text-4xl font-bold gradient-text mb-2">15</div>
+                <div className="font-heading text-4xl font-bold gradient-text mb-4">15</div>
                 <div className="font-body text-muted-foreground text-sm">Countries Served</div>
               </div>
               <div className="text-center">
-                <div className="font-heading text-4xl font-bold gradient-text mb-2">5+</div>
+                <div className="font-heading text-4xl font-bold gradient-text mb-4">5+</div>
                 <div className="font-body text-muted-foreground text-sm">Years Excellence</div>
               </div>
             </div>

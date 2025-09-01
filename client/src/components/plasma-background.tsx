@@ -98,10 +98,10 @@ void main() {
 export const PlasmaBackground = forwardRef<HTMLDivElement, PlasmaBackgroundProps>(({
   className,
   color = "#8b5cf6", // Default to theme purple
-  speed = 0.8,
-  direction = "forward",
-  scale = 1.2,
-  opacity = 0.6,
+  speed = 0.6,
+  direction = "forward", 
+  scale = 1.0,
+  opacity = 0.4,
   mouseInteractive = true,
   ...props
 }, ref) => {
@@ -117,11 +117,19 @@ export const PlasmaBackground = forwardRef<HTMLDivElement, PlasmaBackgroundProps
     const customColorRgb = color ? hexToRgb(color) : [1, 1, 1];
     const directionMultiplier = direction === "reverse" ? -1.0 : 1.0;
 
+    // Responsive DPR based on device performance
+    const getDPR = () => {
+      const dpr = window.devicePixelRatio || 1;
+      // Reduce DPR on mobile and lower-end devices for better performance
+      if (window.innerWidth <= 768) return Math.min(dpr, 1.5);
+      return Math.min(dpr, 2);
+    };
+
     const renderer = new Renderer({
       webgl: 2,
       alpha: true,
       antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2),
+      dpr: getDPR(),
     });
 
     const gl = renderer.gl;
@@ -140,7 +148,7 @@ export const PlasmaBackground = forwardRef<HTMLDivElement, PlasmaBackgroundProps
         iResolution: { value: new Float32Array([1, 1]) },
         uCustomColor: { value: new Float32Array(customColorRgb) },
         uUseCustomColor: { value: useCustomColor },
-        uSpeed: { value: speed * 0.4 },
+        uSpeed: { value: speed * 0.3 },
         uDirection: { value: directionMultiplier },
         uScale: { value: scale },
         uOpacity: { value: opacity },
