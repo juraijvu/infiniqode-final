@@ -10,37 +10,39 @@ export const useLenis = () => {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    // Enhanced mobile detection for performance optimization
-    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
-                    window.innerWidth < 768 || 
-                    'ontouchstart' in window || 
-                    navigator.maxTouchPoints > 0;
+    // More conservative mobile detection - only disable on actual mobile devices
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && window.innerWidth < 768;
     
-    // Also check for reduced motion preference
+    // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
-    if (isMobile || prefersReducedMotion) {
-      // For mobile and reduced motion, use native scrolling for best performance
-      // Add smooth scroll behavior to body for better UX
+    if (isMobile) {
+      // For mobile, ensure native scrolling works properly
+      document.documentElement.style.scrollBehavior = 'auto';
       document.body.style.scrollBehavior = 'auto';
+      document.body.style.overflowY = 'auto';
+      document.documentElement.style.overflowY = 'auto';
+      return;
+    }
+    
+    if (prefersReducedMotion) {
+      // For reduced motion, use simpler Lenis config
+      document.body.style.scrollBehavior = 'smooth';
       return;
     }
 
-    // Initialize Lenis only for desktop with optimized settings
+    // Initialize Lenis for desktop only
     const lenis = new Lenis({
-      duration: 0.8, // Slightly slower for better feel
-      easing: (t) => 1 - Math.pow(1 - t, 4), // Smoother easing
-      gestureDirection: 'vertical',
-      smooth: true,
-      smoothTouch: false, // Always disable touch smooth scrolling
-      touchMultiplier: 0, // Disable touch multiplier completely
+      duration: 0.6,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      smoothTouch: false,
+      touchMultiplier: 1,
       infinite: false,
       autoResize: true,
       wrapper: window,
       content: document.documentElement,
-      wheelMultiplier: 0.7, // Slightly reduce for smoother feel
+      wheelMultiplier: 0.8,
       normalizeWheel: true,
-      syncTouch: false, // Disable touch sync
     });
 
     lenisRef.current = lenis;
