@@ -58,6 +58,10 @@
 @layer base {
   * {
     @apply border-border;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   /* Performance optimizations for smooth scrolling */
@@ -65,10 +69,22 @@
     box-sizing: border-box;
   }
   
-  /* Optimized for Lenis smooth scrolling */
+  /* Enhanced scroll optimizations */
   html {
-    scroll-behavior: auto; /* Disable native smooth scrolling */
-    touch-action: manipulation; /* Better touch performance */
+    scroll-behavior: auto;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Mobile touch improvements */
+  @media (max-width: 768px) {
+    html {
+      touch-action: pan-y pinch-zoom;
+    }
   }
   
   /* Optimize mobile menu and pop-up animations only */
@@ -100,14 +116,67 @@
     letter-spacing: -0.01em;
     overflow-x: hidden;
     position: relative;
+    height: 100%;
     
-    /* Mobile scroll optimizations */
+    /* Enhanced mobile scroll optimizations */
     scroll-behavior: auto;
     overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
+    transform: translateZ(0); /* Force hardware acceleration */
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
-
-
+  
+  /* Mobile-specific performance optimizations */
+  @media (max-width: 768px) {
+    body {
+      /* Use simpler background on mobile */
+      background: linear-gradient(180deg, #1a0632 0%, #0c021a 50%, #020108 100%);
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Disable expensive effects on mobile */
+    .glass-card,
+    .glass-nav,
+    .glass-project-card,
+    .glass-blog-card {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    /* Disable hover animations on mobile */
+    .glass-card:hover,
+    .glass-project-card:hover,
+    .glass-blog-card:hover {
+      transform: none !important;
+      box-shadow: inherit !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+    }
+    
+    /* Optimize animations for mobile */
+    * {
+      will-change: auto !important;
+      transition-duration: 0.15s !important;
+    }
+    
+    /* Disable complex animations */
+    .gradient-text {
+      animation: none !important;
+      background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Optimize scroll containers */
+    .scroll-container {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      will-change: scroll-position;
+    }
+  }
 
   
   .font-display {
@@ -154,8 +223,8 @@
 
 
 
-  /* Enhanced 3D hover effects */
-  @media (min-width: 768px) {
+  /* Enhanced 3D hover effects - Desktop only */
+  @media (min-width: 769px) {
     .glass-card {
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
@@ -180,8 +249,8 @@
     position: relative;
   }
 
-
-  @media (min-width: 768px) {
+  /* Desktop only hover effects */
+  @media (min-width: 769px) {
     .glass-button:hover {
       background: rgba(139, 92, 246, 0.9);
       box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
@@ -285,14 +354,16 @@
     overflow: hidden;
   }
 
-
-  .glass-project-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.18);
-    box-shadow: 
-      0 1px 0 0 rgba(255, 255, 255, 0.15) inset,
-      0 20px 60px rgba(0, 0, 0, 0.5);
-    transform: translateY(-4px);
+  /* Desktop only hover effects */
+  @media (min-width: 769px) {
+    .glass-project-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 
+        0 1px 0 0 rgba(255, 255, 255, 0.15) inset,
+        0 20px 60px rgba(0, 0, 0, 0.5);
+      transform: translateY(-4px);
+    }
   }
 
   .gradient-text {
@@ -303,7 +374,7 @@
   }
   
   /* Only animate on desktop */
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     .gradient-text {
       background-size: 200% 200%;
       animation: gradientShift 4s ease-in-out infinite;
@@ -319,11 +390,12 @@
     }
   }
 
-
-
-  .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  /* Desktop only hover effects */
+  @media (min-width: 769px) {
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
   }
 
   /* Blog category cards */
@@ -341,19 +413,17 @@
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-
-  .glass-blog-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 
-      0 1px 0 0 rgba(255, 255, 255, 0.15) inset,
-      0 16px 48px rgba(0, 0, 0, 0.4);
-    transform: translateY(-2px);
-  }
-
-
-  /* Disable hover effects on mobile for performance */
-  @media (min-width: 768px) {
+  /* Desktop only hover effects */
+  @media (min-width: 769px) {
+    .glass-blog-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 
+        0 1px 0 0 rgba(255, 255, 255, 0.15) inset,
+        0 16px 48px rgba(0, 0, 0, 0.4);
+      transform: translateY(-2px);
+    }
+    
     .team-card:hover .team-image {
       transform: scale(1.05);
     }
@@ -361,7 +431,6 @@
       opacity: 1;
     }
   }
-
 
   /* Hanging navigation style */
   .hanging-nav {
@@ -403,6 +472,15 @@
     0% { transform: translateX(-50%); }
     100% { transform: translateX(0); }
   }
+
+  /* Mobile performance optimizations */
+  @media (max-width: 768px) {
+    /* Pause animations on mobile for better performance */
+    .partners-scroll-right .partners-track,
+    .partners-scroll-left .partners-track {
+      animation-play-state: paused;
+    }
+  }
 }
 
 @layer utilities {
@@ -413,12 +491,9 @@
   .animation-delay-4s {
     animation-delay: 4s;
   }
-
-
 }
 
 /* Removed heavy float animation for performance */
-
 
 @keyframes slideUp {
   from { 
@@ -446,5 +521,61 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Performance-based utility classes */
+.disable-animations * {
+  animation: none !important;
+  transition: none !important;
+}
+
+.disable-backdrop-filter .glass-card,
+.disable-backdrop-filter .glass-nav,
+.disable-backdrop-filter .glass-project-card,
+.disable-backdrop-filter .glass-blog-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.mobile-device {
+  /* Enhanced mobile scroll optimization */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: auto;
+  overscroll-behavior: none;
+}
+
+.mobile-device * {
+  /* Disable pointer events on scrolling for better performance */
+  pointer-events: auto;
+  will-change: auto;
+}
+
+.simple-background {
+  background: linear-gradient(180deg, #1a0632 0%, #0c021a 50%, #020108 100%) !important;
+}
+
+/* Smooth scroll utilities */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  .smooth-scroll {
+    scroll-behavior: auto;
+  }
+  
+  /* Additional mobile scroll optimizations */
+  .smooth-scroll {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+}
+
+/* Intersection observer optimization for mobile */
+@media (max-width: 768px) {
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

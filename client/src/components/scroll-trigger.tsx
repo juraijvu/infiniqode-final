@@ -34,13 +34,36 @@ export function ThreeDScrollTriggerContainer({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
+  // Check if device is mobile to disable heavy animations
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsMobile(mobile);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
+  
+  // Use lighter spring settings for mobile
   const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400,
+    damping: isMobile ? 80 : 50, // Higher damping for mobile
+    stiffness: isMobile ? 200 : 400, // Lower stiffness for mobile
   });
+  
   const velocityFactor = useTransform(smoothVelocity, (v) => {
+    if (isMobile) {
+      // Reduce intensity on mobile
+      const sign = v < 0 ? -1 : 1;
+      const magnitude = Math.min(2, (Math.abs(v) / 2000) * 2);
+      return sign * magnitude;
+    }
     const sign = v < 0 ? -1 : 1;
     const magnitude = Math.min(5, (Math.abs(v) / 1000) * 5);
     return sign * magnitude;
