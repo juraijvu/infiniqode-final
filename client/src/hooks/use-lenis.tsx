@@ -10,59 +10,57 @@ export const useLenis = () => {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    // More conservative mobile detection - only disable on actual mobile devices
-    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && window.innerWidth < 768;
+    // EMERGENCY FIX: Ensure basic scrolling always works
+    document.documentElement.style.overflow = 'auto';
+    document.body.style.overflow = 'auto';
+    document.documentElement.style.overflowY = 'auto';
+    document.body.style.overflowY = 'auto';
+    document.documentElement.style.scrollBehavior = 'auto';
+    document.body.style.scrollBehavior = 'auto';
     
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Check if device is mobile for performance optimization
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
     
     if (isMobile) {
-      // For mobile, ensure native scrolling works properly
-      document.documentElement.style.scrollBehavior = 'auto';
-      document.body.style.scrollBehavior = 'auto';
-      document.body.style.overflowY = 'auto';
-      document.documentElement.style.overflowY = 'auto';
-      return;
-    }
-    
-    if (prefersReducedMotion) {
-      // For reduced motion, use simpler Lenis config
-      document.body.style.scrollBehavior = 'smooth';
+      // For mobile, use native scrolling only
       return;
     }
 
-    // Initialize Lenis for desktop only
-    const lenis = new Lenis({
-      duration: 0.6,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-      smoothTouch: false,
-      touchMultiplier: 1,
-      infinite: false,
-      autoResize: true,
-      wrapper: window,
-      content: document.documentElement,
-      wheelMultiplier: 0.8,
-      normalizeWheel: true,
-    });
+    // Initialize Lenis only for desktop with minimal config
+    try {
+      const lenis = new Lenis({
+        duration: 0.6,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+        touchMultiplier: 1,
+        infinite: false,
+        wrapper: window,
+        content: document.documentElement,
+        wheelMultiplier: 0.8,
+      });
 
-    lenisRef.current = lenis;
+      lenisRef.current = lenis;
 
-    // Minimal ScrollTrigger integration for performance
-    let rafId: number;
-    function raf(time: number) {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    }
-    rafId = requestAnimationFrame(raf);
-
-    // Cleanup
-    return () => {
-      if (rafId) {
-        cancelAnimationFrame(rafId);
+      // Minimal ScrollTrigger integration for performance
+      let rafId: number;
+      function raf(time: number) {
+        lenis.raf(time);
+        rafId = requestAnimationFrame(raf);
       }
-      lenis.destroy();
-      lenisRef.current = null;
-    };
+      rafId = requestAnimationFrame(raf);
+
+      // Cleanup
+      return () => {
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+        }
+        lenis.destroy();
+        lenisRef.current = null;
+      };
+    } catch (error) {
+      // If Lenis fails, ensure native scrolling works
+      console.warn('Lenis initialization failed, using native scroll:', error);
+      return;
+    }
   }, []);
 
   // Return Lenis instance for manual control if needed
