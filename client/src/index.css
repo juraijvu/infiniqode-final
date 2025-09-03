@@ -69,16 +69,12 @@
     box-sizing: border-box;
   }
   
-  /* EMERGENCY: Ensure scrolling always works */
+  /* Restore normal browser scrolling */
   html {
-    scroll-behavior: auto !important;
     touch-action: manipulation;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    height: 100%;
-    overflow: auto !important;
-    overflow-y: auto !important;
     overflow-x: hidden;
   }
   
@@ -86,6 +82,10 @@
   @media (max-width: 768px) {
     html {
       touch-action: pan-y pinch-zoom;
+    }
+    
+    body {
+      -webkit-overflow-scrolling: touch;
     }
   }
   
@@ -118,14 +118,6 @@
     letter-spacing: -0.01em;
     overflow-x: hidden;
     position: relative;
-    height: 100%;
-    
-    /* EMERGENCY: Force scrolling to work */
-    overflow: auto !important;
-    overflow-y: auto !important;
-    scroll-behavior: auto !important;
-    overscroll-behavior: none;
-    -webkit-overflow-scrolling: touch;
   }
   
   /* Mobile-specific performance optimizations */
@@ -156,12 +148,6 @@
       background: rgba(255, 255, 255, 0.08) !important;
     }
     
-    /* Optimize animations for mobile */
-    * {
-      will-change: auto !important;
-      transition-duration: 0.15s !important;
-    }
-    
     /* Disable complex animations */
     .gradient-text {
       animation: none !important;
@@ -169,13 +155,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-    }
-    
-    /* Optimize scroll containers */
-    .scroll-container {
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-      will-change: scroll-position;
     }
   }
 
@@ -525,58 +504,3 @@
   }
 }
 
-/* Performance-based utility classes */
-.disable-animations * {
-  animation: none !important;
-  transition: none !important;
-}
-
-.disable-backdrop-filter .glass-card,
-.disable-backdrop-filter .glass-nav,
-.disable-backdrop-filter .glass-project-card,
-.disable-backdrop-filter .glass-blog-card {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-.mobile-device {
-  /* Enhanced mobile scroll optimization */
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: auto;
-  overscroll-behavior: none;
-}
-
-.mobile-device * {
-  /* Disable pointer events on scrolling for better performance */
-  pointer-events: auto;
-  will-change: auto;
-}
-
-.simple-background {
-  background: linear-gradient(180deg, #1a0632 0%, #0c021a 50%, #020108 100%) !important;
-}
-
-/* Smooth scroll utilities */
-.smooth-scroll {
-  scroll-behavior: smooth;
-}
-
-@media (max-width: 768px) {
-  .smooth-scroll {
-    scroll-behavior: auto;
-  }
-  
-  /* Additional mobile scroll optimizations */
-  .smooth-scroll {
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: none;
-  }
-}
-
-/* Intersection observer optimization for mobile */
-@media (max-width: 768px) {
-  [data-animate] {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}

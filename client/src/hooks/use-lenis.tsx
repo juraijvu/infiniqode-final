@@ -10,61 +10,21 @@ export const useLenis = () => {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    // EMERGENCY FIX: Ensure basic scrolling always works
-    document.documentElement.style.overflow = 'auto';
-    document.body.style.overflow = 'auto';
-    document.documentElement.style.overflowY = 'auto';
-    document.body.style.overflowY = 'auto';
-    document.documentElement.style.scrollBehavior = 'auto';
-    document.body.style.scrollBehavior = 'auto';
+    // DISABLE ALL CUSTOM SCROLLING - Use native browser scrolling only
+    // Remove any scroll blocking styles
+    document.documentElement.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow-y');
+    document.documentElement.style.removeProperty('scroll-behavior');
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('overflow-y');
+    document.body.style.removeProperty('scroll-behavior');
     
-    // Check if device is mobile for performance optimization
-    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
-    
-    if (isMobile) {
-      // For mobile, use native scrolling only
-      return;
-    }
-
-    // Initialize Lenis only for desktop with minimal config
-    try {
-      const lenis = new Lenis({
-        duration: 0.6,
-        easing: (t) => 1 - Math.pow(1 - t, 3),
-        touchMultiplier: 1,
-        infinite: false,
-        wrapper: window,
-        content: document.documentElement,
-        wheelMultiplier: 0.8,
-      });
-
-      lenisRef.current = lenis;
-
-      // Minimal ScrollTrigger integration for performance
-      let rafId: number;
-      function raf(time: number) {
-        lenis.raf(time);
-        rafId = requestAnimationFrame(raf);
-      }
-      rafId = requestAnimationFrame(raf);
-
-      // Cleanup
-      return () => {
-        if (rafId) {
-          cancelAnimationFrame(rafId);
-        }
-        lenis.destroy();
-        lenisRef.current = null;
-      };
-    } catch (error) {
-      // If Lenis fails, ensure native scrolling works
-      console.warn('Lenis initialization failed, using native scroll:', error);
-      return;
-    }
+    // Do not initialize Lenis at all - just use native scrolling
+    return;
   }, []);
 
-  // Return Lenis instance for manual control if needed
-  return lenisRef.current;
+  // Return null since we're not using Lenis
+  return null;
 };
 
 // Utility functions for scroll control
