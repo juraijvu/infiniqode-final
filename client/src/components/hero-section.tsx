@@ -33,7 +33,7 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4">
             <ContactPopup 
               trigger={
-                <Button className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-4 text-lg rounded-full transition-colors" data-testid="button-start-project">
+                <Button className="glass-button px-8 py-4 text-lg rounded-full" data-testid="button-start-project">
                   Get Started
                 </Button>
               }
@@ -42,7 +42,7 @@ export function HeroSection() {
             />
             <Button 
               variant="outline" 
-              className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-4 text-lg rounded-full transition-colors"
+              className="glass-button border-purple-400 text-white px-8 py-4 text-lg rounded-full"
               data-testid="button-consultation"
             >
               Free Consultation
