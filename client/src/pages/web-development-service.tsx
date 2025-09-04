@@ -161,9 +161,12 @@ export default function WebDevelopmentService() {
         </div>
       </section>
 
-      {/* What Our Service Includes - Two Column Layout */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-muted/5 to-background"></div>
+      {/* What Our Service Includes - Glass Background */}
+      <section className="py-20 relative overflow-hidden">
+        {/* Glass Morphism Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-muted/20 via-background/80 to-muted/10 backdrop-blur-3xl"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-accent/5"></div>
+        <div className="absolute inset-0 backdrop-blur-sm border-y border-white/10"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -181,14 +184,14 @@ export default function WebDevelopmentService() {
                 drive real business value.
               </p>
               
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {[
                   { title: "Needs Assessment & Strategy", desc: "We analyze your business processes and identify opportunities where technology can create the most impact." },
                   { title: "Custom Development & Implementation", desc: "We analyze your business processes and identify opportunities where technology can create the most impact." },
                   { title: "Testing & Quality Assurance", desc: "We analyze your business processes and identify opportunities where technology can create the most impact." },
                   { title: "Deployment & Maintenance", desc: "We analyze your business processes and identify opportunities where technology can create the most impact." }
                 ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4 p-4 rounded-2xl backdrop-blur-sm bg-background/30 border border-white/10">
+                  <div key={index} className="flex items-start space-x-4">
                     <CheckCircle className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
@@ -199,23 +202,36 @@ export default function WebDevelopmentService() {
               </div>
             </div>
             
-            {/* Right Statistics - Image Area */}
-            <div className="flex flex-col justify-center items-center space-y-16 lg:pl-8">
-              <div className="glass-card p-12 text-center backdrop-blur-xl bg-gradient-to-br from-primary/10 to-accent/10 border border-white/20 shadow-2xl rounded-3xl">
-                <div className="text-7xl font-bold gradient-text mb-4">70%+</div>
-                <p className="text-muted-foreground text-xl mb-6">Search Popularity</p>
-                <div className="flex items-center justify-center space-x-3">
-                  <div className="text-4xl font-bold text-accent">4.5x</div>
-                  <p className="text-muted-foreground">Interactive</p>
+            {/* Right Statistics - Image Area with Placeholder */}
+            <div className="flex flex-col justify-center items-center space-y-12 lg:pl-8">
+              {/* Image Placeholder Area */}
+              <div className="w-full h-48 glass-card backdrop-blur-xl bg-gradient-to-br from-primary/20 to-accent/20 border border-white/30 shadow-2xl rounded-3xl flex items-center justify-center">
+                <div className="text-center space-y-2">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto">
+                    <Globe className="text-white text-2xl" />
+                  </div>
+                  <p className="text-muted-foreground text-sm">Web Development Showcase</p>
                 </div>
               </div>
               
-              <div className="glass-card p-12 text-center backdrop-blur-xl bg-gradient-to-br from-accent/10 to-primary/10 border border-white/20 shadow-2xl rounded-3xl">
-                <div className="text-7xl font-bold gradient-text mb-4">100%</div>
-                <p className="text-muted-foreground text-xl mb-6">User Oriented App</p>
-                <div className="flex items-center justify-center space-x-3">
-                  <div className="text-4xl font-bold text-accent">5x</div>
-                  <p className="text-muted-foreground">Higher Intent</p>
+              {/* Statistics Row */}
+              <div className="grid grid-cols-2 gap-8 w-full">
+                <div className="glass-card p-8 text-center backdrop-blur-xl bg-gradient-to-br from-primary/10 to-accent/10 border border-white/20 shadow-2xl rounded-2xl">
+                  <div className="text-5xl font-bold gradient-text mb-2">70%+</div>
+                  <p className="text-muted-foreground text-sm mb-3">Search Popularity</p>
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="text-2xl font-bold text-accent">4.5x</div>
+                    <p className="text-xs text-muted-foreground">Interactive</p>
+                  </div>
+                </div>
+                
+                <div className="glass-card p-8 text-center backdrop-blur-xl bg-gradient-to-br from-accent/10 to-primary/10 border border-white/20 shadow-2xl rounded-2xl">
+                  <div className="text-5xl font-bold gradient-text mb-2">100%</div>
+                  <p className="text-muted-foreground text-sm mb-3">User Oriented App</p>
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="text-2xl font-bold text-accent">5x</div>
+                    <p className="text-xs text-muted-foreground">Higher Intent</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -260,43 +276,52 @@ export default function WebDevelopmentService() {
         </div>
       </section>
 
-      {/* Service Details */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-background to-muted/5"></div>
+      {/* Service Details - Glass Background */}
+      <section className="py-20 relative overflow-hidden">
+        {/* Glass Morphism Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background backdrop-blur-3xl"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-primary/5"></div>
+        <div className="absolute inset-0 backdrop-blur-sm border-y border-white/10"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-16">
           <h2 className="text-3xl md:text-4xl font-bold gradient-text">Service Details:</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="glass-card p-8 backdrop-blur-sm bg-background/30 border border-white/10 rounded-2xl">
-              <p className="text-muted-foreground leading-relaxed">
+          {/* Description Text - PDF Style Layout */}
+          <div className="space-y-8">
+            <div className="glass-card p-8 backdrop-blur-xl bg-background/40 border border-white/20 rounded-2xl shadow-2xl">
+              <p className="text-muted-foreground leading-relaxed text-justify">
                 Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
                 technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
                 development service combines cutting-edge technology with sleek aesthetics to
               </p>
             </div>
-            <div className="glass-card p-8 backdrop-blur-sm bg-background/30 border border-white/10 rounded-2xl">
-              <p className="text-muted-foreground leading-relaxed">
+            
+            <div className="glass-card p-8 backdrop-blur-xl bg-background/40 border border-white/20 rounded-2xl shadow-2xl">
+              <p className="text-muted-foreground leading-relaxed text-justify">
                 Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
                 technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
                 development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek
                 aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines
                 cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our
-                premium web development service combines cutting-edge technology with sleek aesthetics to
+                premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
+                technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
+                development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek
+                aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines
+                cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to
               </p>
             </div>
           </div>
           
-          {/* Feature Icons */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {/* Feature Icons Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
             {[
               { icon: Palette, title: "Custom", subtitle: "Responsive Design" },
               { icon: Users, title: "Interactive", subtitle: "Unique Design" },
               { icon: Smartphone, title: "User Friendly", subtitle: "Design Element" },
               { icon: Zap, title: "New", subtitle: "Generation Theme" }
             ].map((item, index) => (
-              <div key={index} className="text-center space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto shadow-xl border border-white/20">
+              <div key={index} className="text-center space-y-4 group">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto shadow-xl border border-white/20 group-hover:scale-110 transition-transform duration-300">
                   <item.icon className="text-white text-2xl" />
                 </div>
                 <div>
