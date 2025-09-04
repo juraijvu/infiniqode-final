@@ -138,38 +138,43 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Strategic Process Section */}
-      <section className="py-32 relative bg-gradient-to-b from-background/95 via-muted/5 to-background/95">
-        {/* Clean Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-background/80 to-accent/5 backdrop-blur-sm"></div>
+      <section className="py-32 relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950">
+        {/* Purple Background Continuity */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Settings, title: "Build Strategy Consulting", step: "Step 1", desc: "Strategic planning and technical consultation to define project requirements and architecture." },
-              { icon: Palette, title: "Design Interactive Layouts", step: "Step 2", desc: "User-centered design process creating intuitive and engaging user experiences." },
-              { icon: Code, title: "Development Web Application", step: "Step 3", desc: "Full-stack development using modern technologies and best practices." },
-              { icon: Globe, title: "Deployment & Launching", step: "Step 4", desc: "Seamless deployment with testing, optimization, and performance monitoring." }
+              { icon: Settings, title: "Build Strategy Consulting", step: "Step 1", desc: "AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting" },
+              { icon: Palette, title: "Design Interactive Layouts", step: "Step 2", desc: "AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting" },
+              { icon: Code, title: "Development Web Application", step: "Step 3", desc: "AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting" },
+              { icon: Globe, title: "Deployment & Launching", step: "Step 4", desc: "AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting" }
             ].map((item, index) => (
               <div key={index} className="group">
-                {/* Glass Card */}
-                <div className="relative h-full p-8 rounded-3xl bg-gradient-to-br from-background/80 to-muted/20 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl"></div>
+                {/* Purple Glass Card */}
+                <div className="relative h-full p-6 rounded-2xl bg-gradient-to-br from-purple-700/60 via-purple-600/40 to-purple-800/60 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
                   
-                  <div className="relative z-10 text-center space-y-6">
-                    {/* Strategic Icon */}
-                    <div className="w-20 h-20 mx-auto bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center shadow-xl border border-white/20">
-                      <item.icon className="text-white text-3xl" />
+                  <div className="relative z-10 space-y-4">
+                    {/* Icon */}
+                    <div className="w-12 h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-xl flex items-center justify-center border border-white/20">
+                      <item.icon className="text-white text-xl" />
                     </div>
                     
-                    <h3 className="text-xl font-bold text-foreground leading-tight">{item.title}</h3>
+                    <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
                     
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                    <p className="text-sm text-purple-100/80 leading-relaxed line-clamp-4">{item.desc}</p>
                     
                     {/* Step Badge */}
-                    <div className="pt-4">
-                      <Badge className="bg-gradient-to-r from-primary/20 to-accent/20 text-primary border border-primary/30 font-semibold">
+                    <div className="pt-2">
+                      <Badge className="bg-purple-800/60 text-purple-100 border border-purple-500/30 text-xs font-medium">
                         {item.step}
                       </Badge>
+                    </div>
+                    
+                    {/* Arrow */}
+                    <div className="flex justify-end pt-2">
+                      <ArrowRight className="text-purple-300 text-lg" />
                     </div>
                   </div>
                 </div>
@@ -180,80 +185,91 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Strategic Service Includes Section */}
-      <section className="py-32 relative bg-gradient-to-br from-background/98 via-muted/8 to-background/98">
-        {/* Clean Glass Background */}
-        <div className="absolute inset-0 backdrop-blur-sm border-y border-white/5"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/8 via-background/60 to-accent/8"></div>
+      <section className="py-32 relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950">
+        {/* Purple Background Continuity */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            {/* Strategic Content */}
-            <div className="space-y-10">
-              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight">
-                What Our Web Development Integration<br />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                What Our UI/UX Integration<br />
                 Service Includes
               </h2>
               
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Our comprehensive web development service is designed to help businesses of all
-                sizes harness the power of modern technology. We work closely with your
-                team to understand your unique challenges and implement web solutions that
+              <p className="text-lg text-purple-100/90 leading-relaxed">
+                Our comprehensive UI integration service is designed to help businesses of all
+                sizes harness the power of artificial intelligence. We work closely with your
+                team to understand your unique challenges and implement AI solutions that
                 drive real business value.
               </p>
               
-              {/* Strategic Features */}
-              <div className="space-y-8">
+              {/* Service Features */}
+              <div className="space-y-6">
                 {[
-                  { title: "Needs Assessment & Strategy", desc: "We analyze your business processes and identify opportunities where technology can create the most impact.", icon: Target },
-                  { title: "Custom Development & Implementation", desc: "Tailored solutions built with modern frameworks and cutting-edge technologies for optimal performance.", icon: Code },
-                  { title: "Testing & Quality Assurance", desc: "Comprehensive testing protocols ensuring reliability, security, and exceptional user experience.", icon: Shield },
-                  { title: "Deployment & Maintenance", desc: "Seamless deployment with ongoing support, monitoring, and optimization for continuous improvement.", icon: TrendingUp }
+                  "Needs Assessment & Strategy",
+                  "Needs Assessment & Strategy", 
+                  "Needs Assessment & Strategy",
+                  "Needs Assessment & Strategy"
                 ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-6 p-6 rounded-2xl bg-gradient-to-r from-background/60 to-muted/10 backdrop-blur-sm border border-white/10 hover:border-primary/20 transition-all duration-300">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center flex-shrink-0">
-                      <item.icon className="text-white text-xl" />
-                    </div>
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-foreground mb-3">{item.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        We analyze your business processes and identify 
+                        opportunities where AI can create the most impact.
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
             
-            {/* Strategic Stats & Visual */}
-            <div className="space-y-8">
-              {/* Image Placeholder */}
-              <div className="relative h-64 rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+            {/* Right Content - 3D Illustration & Stats */}
+            <div className="relative">
+              {/* 3D Illustration Area */}
+              <div className="relative h-80 rounded-2xl bg-gradient-to-br from-purple-700/30 to-purple-600/20 backdrop-blur-sm border border-purple-400/20 overflow-hidden mb-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                
+                {/* Mock 3D Elements */}
                 <div className="relative z-10 h-full flex items-center justify-center">
                   <div className="text-center space-y-4">
-                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto">
-                      <Globe className="text-white text-3xl" />
+                    {/* Laptop Mock */}
+                    <div className="w-32 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-xl mx-auto flex items-center justify-center border border-blue-300/30">
+                      <div className="w-24 h-14 bg-white/20 rounded-sm flex items-center justify-center">
+                        <Palette className="text-white text-2xl" />
+                      </div>
                     </div>
-                    <p className="text-muted-foreground font-medium">Web Development Showcase</p>
+                    
+                    {/* Floating Elements */}
+                    <div className="flex justify-center space-x-4">
+                      <div className="w-8 h-8 bg-cyan-400 rounded-full shadow-lg"></div>
+                      <div className="w-6 h-6 bg-green-400 rounded-md shadow-lg"></div>
+                      <div className="w-10 h-6 bg-orange-400 rounded-lg shadow-lg"></div>
+                    </div>
                   </div>
                 </div>
               </div>
               
-              {/* Strategic Statistics */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-8 rounded-3xl bg-gradient-to-br from-background/80 to-primary/5 backdrop-blur-xl border border-white/10 shadow-xl">
-                  <div className="text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-3">70%+</div>
-                  <p className="text-muted-foreground mb-4">Search Popularity</p>
-                  <div className="flex items-center justify-center space-x-2">
-                    <div className="text-2xl font-bold text-primary">4.5x</div>
-                    <p className="text-sm text-muted-foreground">Interactive</p>
+              {/* Statistics Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-sm border border-purple-400/20">
+                  <div className="text-3xl font-bold text-white mb-1">70%+</div>
+                  <p className="text-purple-100/80 text-sm">Search Popularity</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">4.5x</div>
+                    <p className="text-xs text-purple-100/60">Interactive</p>
                   </div>
                 </div>
                 
-                <div className="text-center p-8 rounded-3xl bg-gradient-to-br from-background/80 to-accent/5 backdrop-blur-xl border border-white/10 shadow-xl">
-                  <div className="text-5xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent mb-3">100%</div>
-                  <p className="text-muted-foreground mb-4">User Oriented App</p>
-                  <div className="flex items-center justify-center space-x-2">
-                    <div className="text-2xl font-bold text-accent">5x</div>
-                    <p className="text-sm text-muted-foreground">Higher Intent</p>
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-sm border border-purple-400/20">
+                  <div className="text-3xl font-bold text-white mb-1">100%</div>
+                  <p className="text-purple-100/80 text-sm">User Oriented App</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">5x</div>
+                    <p className="text-xs text-purple-100/60">Higher Intent</p>
                   </div>
                 </div>
               </div>
@@ -263,13 +279,13 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-32 bg-gradient-to-b from-background/95 via-muted/8 to-background/95 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-background/70 to-primary/5"></div>
+      <section className="py-32 bg-gradient-to-b from-purple-900 via-purple-800 to-purple-950 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 space-y-6">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">All Web Development Usecase</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-5xl font-bold text-white">All Web Development Usecase</h2>
+            <p className="text-xl text-purple-100/90 max-w-3xl mx-auto">
               Discover how our web development services have transformed businesses
               across various industries.
             </p>
@@ -278,19 +294,19 @@ export default function WebDevelopmentService() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[1, 2, 3].map((item, index) => (
               <div key={index} className="group">
-                <div className="h-full p-8 rounded-3xl bg-gradient-to-br from-background/90 to-muted/20 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-6">
+                <div className="h-full p-8 rounded-3xl bg-gradient-to-br from-purple-700/60 to-purple-600/40 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-6">
                   <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-foreground">Leads Productivity</h3>
-                    <p className="text-primary font-semibold">
+                    <h3 className="text-xl font-bold text-white">Leads Productivity</h3>
+                    <p className="text-purple-200 font-semibold">
                       Leads Generation and Quality of Leads
                     </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-purple-100/80 leading-relaxed">
                       Using modern web technologies to create conversion-focused
                       websites, increasing lead generation by 45% while
                       improving user engagement and retention.
                     </p>
                   </div>
-                  <Button variant="outline" className="w-full border-primary/30 text-primary hover:bg-primary/10 group-hover:border-primary/50 transition-all duration-300">
+                  <Button variant="outline" className="w-full border-purple-400/30 text-purple-200 hover:bg-purple-600/20 group-hover:border-purple-400/50 transition-all duration-300">
                     View Case Study
                   </Button>
                 </div>
@@ -301,25 +317,25 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Service Details Section */}
-      <section className="py-32 relative bg-gradient-to-br from-background/98 via-muted/6 to-background/98">
-        <div className="absolute inset-0 backdrop-blur-sm border-y border-white/5"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/6 via-background/70 to-primary/6"></div>
+      <section className="py-32 relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950">
+        <div className="absolute inset-0 backdrop-blur-sm border-y border-purple-400/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-20">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Service Details:</h2>
+          <h2 className="text-4xl font-bold text-white">Service Details:</h2>
           
           {/* Strategic Content Layout */}
           <div className="space-y-12">
-            <div className="p-10 rounded-3xl bg-gradient-to-br from-background/80 to-muted/20 backdrop-blur-xl border border-white/10 shadow-2xl">
-              <p className="text-muted-foreground leading-relaxed text-lg">
+            <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+              <p className="text-purple-100/90 leading-relaxed text-lg">
                 Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
                 technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
                 development service combines cutting-edge technology with sleek aesthetics to
               </p>
             </div>
             
-            <div className="p-10 rounded-3xl bg-gradient-to-br from-background/80 to-muted/20 backdrop-blur-xl border border-white/10 shadow-2xl">
-              <p className="text-muted-foreground leading-relaxed text-lg">
+            <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+              <p className="text-purple-100/90 leading-relaxed text-lg">
                 Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
                 technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
                 development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek
@@ -352,9 +368,9 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-32 bg-gradient-to-b from-background/95 via-muted/6 to-background/95">
+      <section className="py-32 bg-gradient-to-b from-purple-900 via-purple-800 to-purple-950">
         <div className="max-w-6xl mx-auto px-6 space-y-20">
-          <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Technologies We Use</h2>
+          <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {[
@@ -364,10 +380,10 @@ export default function WebDevelopmentService() {
               { icon: SiTailwindcss, name: "Styling Framework" }
             ].map((tech, index) => (
               <div key={index} className="text-center space-y-6 group">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-3xl flex items-center justify-center mx-auto shadow-2xl border border-white/20 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-purple-500 rounded-3xl flex items-center justify-center mx-auto shadow-2xl border border-purple-400/30 group-hover:scale-110 transition-transform duration-300">
                   <tech.icon className="text-white text-4xl" />
                 </div>
-                <span className="text-lg font-semibold text-foreground">{tech.name}</span>
+                <span className="text-lg font-semibold text-white">{tech.name}</span>
               </div>
             ))}
           </div>
@@ -375,14 +391,14 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Strategic Pricing Section */}
-      <section className="py-32 relative bg-gradient-to-br from-background/98 via-muted/8 to-background/98">
-        <div className="absolute inset-0 backdrop-blur-sm border-y border-white/5"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-background/80 to-accent/5"></div>
+      <section className="py-32 relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950">
+        <div className="absolute inset-0 backdrop-blur-sm border-y border-purple-400/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-20">
           <div className="text-center space-y-8">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Our Web Development Packages</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-5xl font-bold text-white">Our Web Development Packages</h2>
+            <p className="text-xl text-purple-100/90 max-w-3xl mx-auto">
               Discover how our web development services have transformed businesses across various industries.
             </p>
             <Badge className="bg-gradient-to-r from-primary to-accent text-white px-8 py-3 text-lg font-semibold shadow-xl">
@@ -393,13 +409,13 @@ export default function WebDevelopmentService() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Starter Package */}
             <div className="group">
-              <div className="h-full p-10 rounded-3xl bg-gradient-to-br from-background/90 to-muted/20 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
+              <div className="h-full p-10 rounded-3xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
                 <div className="text-center space-y-4">
-                  <h3 className="text-2xl font-bold text-foreground">Starter</h3>
-                  <p className="text-muted-foreground">Perfect for small projects and startups</p>
+                  <h3 className="text-2xl font-bold text-white">Starter</h3>
+                  <p className="text-purple-100/80">Perfect for small projects and startups</p>
                   <div className="space-y-2">
-                    <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">INR 4,500</div>
-                    <p className="text-muted-foreground">/Project</p>
+                    <div className="text-4xl font-bold text-white">INR 4,500</div>
+                    <p className="text-purple-100/80">/Project</p>
                   </div>
                 </div>
                 
@@ -414,14 +430,14 @@ export default function WebDevelopmentService() {
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{feature}</span>
+                      <span className="text-sm text-purple-100/80">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 
                 <ContactPopup 
                   trigger={
-                    <Button className="w-full bg-gradient-to-r from-background to-muted border border-primary/30 text-primary hover:bg-primary/10" data-testid="button-select-starter">
+                    <Button className="w-full bg-gradient-to-r from-purple-700/50 to-purple-600/30 border border-purple-400/30 text-white hover:bg-purple-600/40" data-testid="button-select-starter">
                       Get Started
                     </Button>
                   }
@@ -459,7 +475,7 @@ export default function WebDevelopmentService() {
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{feature}</span>
+                      <span className="text-sm text-purple-100/80">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -479,7 +495,7 @@ export default function WebDevelopmentService() {
 
             {/* Enterprise Package */}
             <div className="group">
-              <div className="h-full p-10 rounded-3xl bg-gradient-to-br from-background/90 to-muted/20 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
+              <div className="h-full p-10 rounded-3xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
                 <div className="text-center space-y-4">
                   <h3 className="text-2xl font-bold text-foreground">Enterprise</h3>
                   <p className="text-muted-foreground">Perfect for Big projects and Professional Enterprises</p>
@@ -500,7 +516,7 @@ export default function WebDevelopmentService() {
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{feature}</span>
+                      <span className="text-sm text-purple-100/80">{feature}</span>
                     </li>
                   ))}
                 </ul>
