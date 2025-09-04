@@ -118,9 +118,9 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Strategic Process Section */}
-      <section className="py-32 relative bg-gradient-to-b from-muted/5 to-background">
+      <section className="py-32 relative bg-gradient-to-b from-background/95 via-muted/5 to-background/95">
         {/* Clean Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-muted/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-background/80 to-accent/5 backdrop-blur-sm"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -160,10 +160,10 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Strategic Service Includes Section */}
-      <section className="py-32 relative bg-gradient-to-br from-background to-muted/5">
+      <section className="py-32 relative bg-gradient-to-br from-background/98 via-muted/8 to-background/98">
         {/* Clean Glass Background */}
-        <div className="absolute inset-0 backdrop-blur-3xl"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/2 via-transparent to-accent/2"></div>
+        <div className="absolute inset-0 backdrop-blur-sm border-y border-white/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/8 via-background/60 to-accent/8"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -243,8 +243,8 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-32 bg-gradient-to-b from-muted/5 to-background relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/2 to-transparent"></div>
+      <section className="py-32 bg-gradient-to-b from-background/95 via-muted/8 to-background/95 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-background/70 to-primary/5"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 space-y-6">
@@ -281,9 +281,9 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Service Details Section */}
-      <section className="py-32 relative bg-gradient-to-br from-background to-muted/10">
-        <div className="absolute inset-0 backdrop-blur-3xl"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/2 via-transparent to-primary/2"></div>
+      <section className="py-32 relative bg-gradient-to-br from-background/98 via-muted/6 to-background/98">
+        <div className="absolute inset-0 backdrop-blur-sm border-y border-white/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/6 via-background/70 to-primary/6"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-4xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Service Details:</h2>
@@ -332,7 +332,7 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-32 bg-gradient-to-b from-muted/5 to-background">
+      <section className="py-32 bg-gradient-to-b from-background/95 via-muted/6 to-background/95">
         <div className="max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Technologies We Use</h2>
           
@@ -355,8 +355,9 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Strategic Pricing Section */}
-      <section className="py-32 relative bg-gradient-to-br from-background to-muted/10">
-        <div className="absolute inset-0 backdrop-blur-3xl"></div>
+      <section className="py-32 relative bg-gradient-to-br from-background/98 via-muted/8 to-background/98">
+        <div className="absolute inset-0 backdrop-blur-sm border-y border-white/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-background/80 to-accent/5"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-20">
           <div className="text-center space-y-8">
