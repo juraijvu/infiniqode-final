@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import { morphCards, textReveal, staggerIn } from "@/lib/animations";
 import { Link } from "wouter";
 import { Navigation } from "@/components/navigation";
-import { PlasmaBackground } from "@/components/plasma-background";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
 import { GlassCard } from "@/components/glass-card";
@@ -26,12 +25,12 @@ export default function Blog() {
     }
     if (categoriesRef.current) {
       setTimeout(() => {
-        morphCards(categoriesRef.current?.children || []);
+        morphCards(Array.from(categoriesRef.current?.children || []) as HTMLElement[]);
       }, 500);
     }
     if (postsRef.current) {
       setTimeout(() => {
-        staggerIn(postsRef.current?.children || [], { delay: 0.8 });
+        staggerIn(Array.from(postsRef.current?.children || []) as HTMLElement[], { delay: 0.8 });
       }, 800);
     }
   }, []);
@@ -58,13 +57,6 @@ export default function Blog() {
 
   return (
     <>
-      <PlasmaBackground 
-        color="#8b5cf6" 
-        speed={0.5}
-        scale={1.3}
-        opacity={0.35}
-        mouseInteractive={true}
-      />
       <SEOHead
         title="Blog"
         description="Stay updated with the latest insights on web development, digital marketing, and technology trends. Expert tips and in-depth articles from the DigitalCraft team."
