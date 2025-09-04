@@ -1,5 +1,4 @@
 import { Navigation } from "@/components/navigation";
-import { PlasmaBackground } from "@/components/plasma-background";
 import { HeroSection } from "@/components/hero-section";
 import { ServicesSection } from "@/components/services-section";
 import { PortfolioSection } from "@/components/portfolio-section";
@@ -62,7 +61,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Removed PlasmaBackground for better performance */}
       <SEOHead
         title="Home"
         description="DigitalCraft is a premium digital agency specializing in React TypeScript development, Python Flask backends, and cutting-edge digital marketing solutions. Transform your business with our world-class solutions."
@@ -275,13 +273,13 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Section Divider */}
-      <div className="beam-divider my-4"></div>
+      {/* Simple section divider for mobile performance */}
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
       
       <ServicesSection />
       
-      {/* Section Divider */}
-      <div className="beam-divider my-4"></div>
+      {/* Simple section divider for mobile performance */}
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
 
       {/* Our Methodology - Deep Content */}
       <section className="py-3 relative">
@@ -422,8 +420,8 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Section Divider */}
-      <div className="beam-divider my-4"></div>
+      {/* Simple section divider for mobile performance */}
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
       
       {/* About Section */}
       <section id="about" className="py-3 relative">
@@ -650,25 +648,25 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Section Divider */}
-      <div className="beam-divider my-4"></div>
+      {/* Simple section divider for mobile performance */}
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
       
       <PortfolioSection />
       
-      {/* Section Divider */}
-      <div className="beam-divider my-4"></div>
+      {/* Simple section divider for mobile performance */}
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
       
       <TeamSection />
       
-      {/* Section Divider */}
-      <div className="beam-divider my-4"></div>
+      {/* Simple section divider for mobile performance */}
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
       
       <TestimonialsSection />
       
       <PartnersSection />
       
-      {/* Section Divider */}
-      <div className="beam-divider my-4"></div>
+      {/* Simple section divider for mobile performance */}
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
       
       {/* Industry Expertise Section */}
       <section className="py-3 relative">
@@ -747,8 +745,8 @@ export default function Home() {
       
       <BlogSection />
       
-      {/* Section Divider */}
-      <div className="beam-divider my-4"></div>
+      {/* Simple section divider for mobile performance */}
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
       
       {/* Resources & Knowledge Hub */}
       <section className="py-3 relative">
@@ -813,8 +811,8 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Section Divider */}
-      <div className="beam-divider my-4"></div>
+      {/* Simple section divider for mobile performance */}
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
       
       <ContactSection />
 
@@ -822,7 +820,6 @@ export default function Home() {
       <section className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="depth-card  p-20 text-center relative overflow-hidden">
-            <div className="hero-glow top-0 left-1/2 transform -translate-x-1/2"></div>
             <div className="relative z-10">
               <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-text">
                 Ready to Transform Your Business?
@@ -887,8 +884,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section Divider */}
-      <div className="beam-divider my-4"></div>
+      {/* Simple section divider for mobile performance */}
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
       
       {/* Final Stats Banner */}
       <section className="py-16 relative">
@@ -924,8 +921,8 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Section Divider */}
-      <div className="beam-divider my-4"></div>
+      {/* Simple section divider for mobile performance */}
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
       
       <Footer />
     </>
