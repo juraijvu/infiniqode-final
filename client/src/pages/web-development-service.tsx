@@ -50,68 +50,88 @@ export default function WebDevelopmentService() {
       />
       <Navigation />
       
-      {/* Hero Section - Clean & Strategic */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-muted/10 overflow-hidden">
-        {/* Clean Background Effects */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-accent/15 to-primary/15 rounded-full blur-3xl"></div>
+      {/* Hero Section - Reference Design Match */}
+      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950 overflow-hidden">
+        {/* Dark Purple Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
+        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-purple-800/30 via-transparent to-purple-900/40"></div>
         
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center">
-          <div className="space-y-12">
-            {/* Strategic Title */}
-            <div className="space-y-6">
-              <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent leading-tight">
-                Web Development<br />
-                Services
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto leading-relaxed">
-                At DigitalCraft, we believe in the transformative power of digital solutions. Our team  
-                of experts is dedicated to helping businesses like yours thrive in the fast-paced 
-                digital landscape. From captivating web design to data-driven development 
-                strategies, we are committed to delivering results that exceed expectations.
-              </p>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content - Text Section */}
+            <div className="space-y-8">
+              {/* Main Title */}
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                  Web Development<br />
+                  <span className="text-purple-300">Services</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
+                  At INFINIQODE, we believe in the transformative power of digital solutions. Our team 
+                  of experts is dedicated to helping businesses like yours thrive in the fast-paced 
+                  digital landscape. From captivating web design to data-driven development 
+                  strategies, we are committed to delivering results that exceed expectations.
+                </p>
+              </div>
+              
+              {/* Service Badges */}
+              <div className="flex flex-wrap gap-4">
+                {[
+                  "Frontend Development",
+                  "Backend Development", 
+                  "Full Stack Solutions",
+                  "Mobile Optimization"
+                ].map((service, index) => (
+                  <div key={index} className="px-6 py-3 bg-purple-700/50 backdrop-blur-sm border border-purple-500/30 rounded-full">
+                    <span className="text-purple-100 font-medium text-sm">{service}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                <ContactPopup 
+                  trigger={
+                    <Button className="px-8 py-4 text-lg font-semibold bg-purple-600 hover:bg-purple-500 text-white border-0 shadow-xl rounded-full" data-testid="button-start-project">
+                      Get Started
+                    </Button>
+                  }
+                  title="Ready to Start Your Web Development Project?"
+                  description="Let's discuss your web development needs and create a custom solution that drives results."
+                  defaultService="Web Development"
+                />
+                <Button className="px-8 py-4 text-lg font-semibold bg-transparent border-2 border-purple-400/60 text-purple-100 hover:bg-purple-600/20 rounded-full" data-testid="button-schedule-call">
+                  Schedule a Call
+                </Button>
+              </div>
             </div>
             
-            {/* Strategic Feature Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto py-16">
-              {[
-                { icon: Database, title: "Backend Development", desc: "Scalable server architecture" },
-                { icon: Palette, title: "Frontend Design", desc: "User-centered interfaces" },
-                { icon: Globe, title: "Web Applications", desc: "Full-stack solutions" },
-                { icon: Smartphone, title: "Mobile Optimization", desc: "Responsive experiences" }
-              ].map((feature, index) => (
-                <div key={index} className="group text-center space-y-4">
-                  {/* Glass Icon Container */}
-                  <div className="relative mx-auto w-20 h-20 md:w-24 md:h-24">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl backdrop-blur-xl border border-white/20 shadow-xl group-hover:scale-110 transition-transform duration-300"></div>
-                    <div className="relative z-10 w-full h-full flex items-center justify-center">
-                      <feature.icon className="text-primary text-2xl md:text-3xl" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Strategic CTA */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <ContactPopup 
-                trigger={
-                  <Button className="px-12 py-6 text-lg font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white shadow-2xl" data-testid="button-start-project">
-                    Get Started
-                  </Button>
-                }
-                title="Ready to Start Your Web Development Project?"
-                description="Let's discuss your web development needs and create a custom solution that drives results."
-                defaultService="Web Development"
-              />
-              <Button variant="outline" className="px-12 py-6 text-lg font-semibold border-2 border-primary/30 text-primary hover:bg-primary/10" data-testid="button-schedule-call">
-                Schedule a Call
-              </Button>
+            {/* Right Content - 3D Graphics */}
+            <div className="relative flex items-center justify-center lg:justify-end">
+              {/* Floating 3D Elements */}
+              <div className="relative w-full max-w-md h-96">
+                {/* Large Blue Cube */}
+                <div className="absolute top-16 right-8 w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300 opacity-80"></div>
+                
+                {/* Green Diamond */}
+                <div className="absolute top-32 left-4 w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 transform rotate-45 shadow-xl hover:rotate-12 transition-transform duration-300 opacity-90"></div>
+                
+                {/* Purple Hexagon */}
+                <div className="absolute top-8 left-16 w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl shadow-2xl transform rotate-6 hover:-rotate-6 transition-transform duration-300 opacity-75"></div>
+                
+                {/* Light Blue Cube */}
+                <div className="absolute bottom-24 right-16 w-18 h-18 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg shadow-xl transform -rotate-12 hover:rotate-3 transition-transform duration-300 opacity-85"></div>
+                
+                {/* Yellow Square */}
+                <div className="absolute bottom-8 left-8 w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-md shadow-lg transform rotate-45 hover:rotate-90 transition-transform duration-300 opacity-70"></div>
+                
+                {/* Large Glass Prism */}
+                <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-white/20 via-purple-300/30 to-blue-400/40 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300"></div>
+                
+                {/* Small Transparent Cube */}
+                <div className="absolute bottom-16 left-20 w-12 h-12 bg-gradient-to-br from-white/10 via-purple-200/20 to-transparent backdrop-blur-sm border border-white/10 rounded-lg shadow-xl transform -rotate-6 hover:rotate-12 transition-transform duration-300"></div>
+              </div>
             </div>
           </div>
         </div>
