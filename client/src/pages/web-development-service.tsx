@@ -150,37 +150,59 @@ export default function WebDevelopmentService() {
         <div className="hero-glow bottom-20 right-20 animation-delay-2s"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-8">
-            <Code className="text-white text-4xl" />
-          </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-8 gradient-text">
-            Web Development
+            Web Development<br />
+            Services
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-            We create responsive websites and powerful web applications that drive business growth. 
-            Our expert team combines cutting-edge technology with stunning design to deliver 
-            digital experiences that engage users and convert visitors into customers.
+            At DigitalCraft, we believe in the transformative power of digital solutions. Our team  
+            of experts is dedicated to helping businesses like yours thrive in the fast-paced 
+            digital landscape. From captivating web design to data-driven development 
+            strategies, we are committed to delivering results that exceed expectations.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+          
+          {/* Key Features */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Database className="text-white text-2xl" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Backend Development</h3>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Palette className="text-white text-2xl" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Frontend Design</h3>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Globe className="text-white text-2xl" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Web Applications</h3>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Smartphone className="text-white text-2xl" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Mobile Optimization</h3>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <ContactPopup 
               trigger={
                 <Button className="glass-button px-12 py-6 text-xl" data-testid="button-start-project">
-                  Start Your Project
+                  Get Started
                 </Button>
               }
               title="Ready to Start Your Web Development Project?"
               description="Let's discuss your web development needs and create a custom solution that drives results."
               defaultService="Web Development"
             />
-            <Link href="/portfolio">
-              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-12 py-6 text-xl" data-testid="button-view-portfolio">
-                View Our Work
-              </Button>
-            </Link>
-          </div>
-          <div className="flex items-center justify-center gap-2">
-            <Shield className="w-5 h-5 text-accent" />
-            <span className="text-accent font-semibold">6 Months Free Support</span>
+            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-12 py-6 text-xl" data-testid="button-schedule-call">
+              Schedule a Call
+            </Button>
           </div>
         </div>
       </section>
@@ -202,127 +224,295 @@ export default function WebDevelopmentService() {
         </div>
       </section>
 
-      {/* Key Features */}
+      {/* All Web Development Use Cases */}
       <section className="py-20 bg-muted/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 gradient-text">Key Features</h2>
+            <h2 className="text-4xl font-bold mb-6 gradient-text">All Web Development Usecase</h2>
             <p className="text-xl text-muted-foreground">
-              Everything you need for a successful web presence
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {keyFeatures.map((feature, index) => (
-              <Card key={index} className="glass-card p-8 text-center hover:scale-105 transition-transform">
-                <div className="flex justify-center mb-6">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tech Stack */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 gradient-text">Tech Stack</h2>
-          <p className="text-xl text-muted-foreground mb-12">
-            We use industry-leading technologies to build your digital solutions
-          </p>
-          <div className="flex justify-center items-center gap-16 flex-wrap">
-            <div className="flex flex-col items-center group cursor-pointer">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <SiReact className="text-white text-3xl" />
-              </div>
-              <span className="text-lg font-semibold">React</span>
-            </div>
-            <div className="flex flex-col items-center group cursor-pointer">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <SiWordpress className="text-white text-3xl" />
-              </div>
-              <span className="text-lg font-semibold">WordPress</span>
-            </div>
-            <div className="flex flex-col items-center group cursor-pointer">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <SiShopify className="text-white text-3xl" />
-              </div>
-              <span className="text-lg font-semibold">Shopify</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Steps */}
-      <section className="py-20 bg-muted/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 gradient-text">Our Process</h2>
-            <p className="text-xl text-muted-foreground">
-              From concept to launch, here's how we bring your vision to life
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative">
-                <GlassCard className="p-6 text-center h-full">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold">{step.step}</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm">{step.description}</p>
-                </GlassCard>
-                {index < processSteps.length - 1 && (
-                  <ArrowRight className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-accent w-8 h-8" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Model */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 gradient-text">Pricing Plans</h2>
-            <p className="text-xl text-muted-foreground">
-              Choose the perfect plan for your business needs
+              Discover how our web development services have transformed businesses
+              across various industries.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <GlassCard key={index} className={`p-8 text-center relative ${plan.popular ? 'border-2 border-accent' : ''}`}>
-                {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-black">
-                    Most Popular
-                  </Badge>
-                )}
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="text-4xl font-bold mb-2 gradient-text">{plan.price}</div>
-                <p className="text-muted-foreground mb-8">{plan.description}</p>
-                <ul className="space-y-3 mb-8 text-left">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <ContactPopup 
-                  trigger={
-                    <Button className={`w-full ${plan.popular ? 'glass-button' : ''}`} data-testid={`button-select-${plan.name.toLowerCase()}`}>
-                      Get Started
-                    </Button>
-                  }
-                  title={`Get Started with ${plan.name} Plan`}
-                  description={`Ready to begin your web development project with our ${plan.name} plan? Let's discuss your specific requirements.`}
-                  defaultService="Web Development"
-                />
-              </GlassCard>
-            ))}
+            <GlassCard className="p-8">
+              <h3 className="text-xl font-bold mb-4">Leads Productivity</h3>
+              <p className="text-muted-foreground mb-4">
+                Leads Generation and Quality of
+                Leads
+              </p>
+              <p className="text-sm text-muted-foreground mb-6">
+                Using modern web technologies to create conversion-focused
+                websites, increasing lead generation by 45% while
+                improving user engagement and retention.
+              </p>
+              <Button variant="outline" className="text-accent border-accent hover:bg-accent hover:text-black">
+                View Case Study
+              </Button>
+            </GlassCard>
+            
+            <GlassCard className="p-8">
+              <h3 className="text-xl font-bold mb-4">E-commerce Growth</h3>
+              <p className="text-muted-foreground mb-4">
+                Online Store Optimization and
+                Sales Conversion
+              </p>
+              <p className="text-sm text-muted-foreground mb-6">
+                Implementing advanced e-commerce solutions with payment
+                integration, reducing cart abandonment by 32% while
+                improving customer satisfaction and sales.
+              </p>
+              <Button variant="outline" className="text-accent border-accent hover:bg-accent hover:text-black">
+                View Case Study
+              </Button>
+            </GlassCard>
+            
+            <GlassCard className="p-8">
+              <h3 className="text-xl font-bold mb-4">Mobile Performance</h3>
+              <p className="text-muted-foreground mb-4">
+                Mobile-First Design and
+                Responsive Development
+              </p>
+              <p className="text-sm text-muted-foreground mb-6">
+                Creating responsive web applications optimized for mobile,
+                improving mobile traffic conversion by 60% while
+                enhancing user experience across all devices.
+              </p>
+              <Button variant="outline" className="text-accent border-accent hover:bg-accent hover:text-black">
+                View Case Study
+              </Button>
+            </GlassCard>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Details */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-8 gradient-text">Service Details:</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div>
+              <p className="text-muted-foreground leading-relaxed">
+                Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
+                technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
+                development service combines cutting-edge technology with sleek aesthetics to
+              </p>
+            </div>
+            <div>
+              <p className="text-muted-foreground leading-relaxed">
+                Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
+                technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
+                development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek
+                aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to
+              </p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Palette className="text-white text-2xl" />
+              </div>
+              <h3 className="text-lg font-semibold">Custom</h3>
+              <p className="text-sm text-muted-foreground">Responsive Design</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Users className="text-white text-2xl" />
+              </div>
+              <h3 className="text-lg font-semibold">Interactive</h3>
+              <p className="text-sm text-muted-foreground">Unique Design</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Smartphone className="text-white text-2xl" />
+              </div>
+              <h3 className="text-lg font-semibold">User Friendly</h3>
+              <p className="text-sm text-muted-foreground">Design Element</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Zap className="text-white text-2xl" />
+              </div>
+              <h3 className="text-lg font-semibold">New</h3>
+              <p className="text-sm text-muted-foreground">Generation Theme</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies We Use */}
+      <section className="py-20 bg-muted/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-12 text-center gradient-text">Technologies We Use</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <SiReact className="text-white text-3xl" />
+              </div>
+              <span className="text-lg font-semibold">React Development</span>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Database className="text-white text-3xl" />
+              </div>
+              <span className="text-lg font-semibold">Database Design</span>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Globe className="text-white text-3xl" />
+              </div>
+              <span className="text-lg font-semibold">API Integration</span>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Shield className="text-white text-3xl" />
+              </div>
+              <span className="text-lg font-semibold">Security Testing</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Our Web Development Packages */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 gradient-text">Our Web Development Packages</h2>
+            <p className="text-xl text-muted-foreground">
+              Discover how our web development services have transformed businesses across various industries.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <GlassCard className="p-8 text-center relative">
+              <h3 className="text-2xl font-bold mb-4">Starter</h3>
+              <p className="text-muted-foreground mb-6">Perfect for small projects and startups</p>
+              <div className="text-4xl font-bold mb-6 gradient-text">INR 4,500 <span className="text-lg text-muted-foreground">/Project</span></div>
+              <ul className="space-y-3 mb-8 text-left">
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Frontend Development & Design</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Responsive layouts for up to 5 key pages</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Basic functionality implementation</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Basic SEO setup</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Contact form integration</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>1 month support</span>
+                </li>
+              </ul>
+              <ContactPopup 
+                trigger={
+                  <Button className="w-full" data-testid="button-select-starter">
+                    Get Started
+                  </Button>
+                }
+                title="Get Started with Starter Plan"
+                description="Ready to begin your web development project with our Starter plan? Let's discuss your specific requirements."
+                defaultService="Web Development"
+              />
+            </GlassCard>
+
+            <GlassCard className="p-8 text-center relative border-2 border-accent">
+              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-black">
+                Most Popular
+              </Badge>
+              <h3 className="text-2xl font-bold mb-4">Professional</h3>
+              <p className="text-muted-foreground mb-6">Perfect for Mid Range projects and Ecommerce</p>
+              <div className="text-4xl font-bold mb-6 gradient-text">INR 10,500 <span className="text-lg text-muted-foreground">/Project</span></div>
+              <ul className="space-y-3 mb-8 text-left">
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Advanced Frontend & Backend Development</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Responsive design for up to 15 pages</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Advanced functionality & animations</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Database integration</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>E-commerce functionality</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>3 months support</span>
+                </li>
+              </ul>
+              <ContactPopup 
+                trigger={
+                  <Button className="w-full glass-button" data-testid="button-select-professional">
+                    Get Started
+                  </Button>
+                }
+                title="Get Started with Professional Plan"
+                description="Ready to begin your web development project with our Professional plan? Let's discuss your specific requirements."
+                defaultService="Web Development"
+              />
+            </GlassCard>
+
+            <GlassCard className="p-8 text-center relative">
+              <h3 className="text-2xl font-bold mb-4">Enterprise</h3>
+              <p className="text-muted-foreground mb-6">Perfect for Big projects and Professional Enterprises</p>
+              <div className="text-4xl font-bold mb-6 gradient-text">INR 21,500 <span className="text-lg text-muted-foreground">/Project</span></div>
+              <ul className="space-y-3 mb-8 text-left">
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Full-stack development & architecture</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Unlimited pages & custom features</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Advanced API integrations</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Performance optimization</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Security hardening</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>6 months support</span>
+                </li>
+              </ul>
+              <ContactPopup 
+                trigger={
+                  <Button className="w-full" data-testid="button-select-enterprise">
+                    Get Started
+                  </Button>
+                }
+                title="Get Started with Enterprise Plan"
+                description="Ready to begin your web development project with our Enterprise plan? Let's discuss your specific requirements."
+                defaultService="Web Development"
+              />
+            </GlassCard>
           </div>
         </div>
       </section>
