@@ -31,10 +31,10 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
   
   return (
-    <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 group hover:bg-white/10 transition-all duration-300">
+    <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 group hover:bg-purple-500/25 transition-all duration-300">
       <div className="flex items-start justify-between cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
         <p className="text-white font-medium leading-relaxed pr-4">{question}</p>
-        <div className="w-8 h-8 bg-purple-500/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/50 transition-all duration-300">
+        <div className="w-8 h-8 bg-purple-500/40 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/60 transition-all duration-300">
           <span className={`text-white text-lg transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}>+</span>
         </div>
       </div>
@@ -156,7 +156,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Process Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -168,7 +168,7 @@ export default function WebDevelopmentService() {
             ].map((item, index) => (
               <div key={index} className="group">
                 {/* Glass Card */}
-                <div className="relative h-full p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                <div className="relative h-full p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-sm border border-purple-400/30 shadow-2xl group-hover:shadow-3xl transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
                   
                   <div className="relative z-10 space-y-4">
@@ -202,7 +202,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Service Includes Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -245,7 +245,7 @@ export default function WebDevelopmentService() {
             {/* Right Content - 3D Illustration & Stats */}
             <div className="relative">
               {/* 3D Illustration Area */}
-              <div className="relative h-80 rounded-2xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 overflow-hidden mb-8">
+              <div className="relative h-80 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 overflow-hidden mb-8">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
                 
                 {/* Mock 3D Elements */}
@@ -295,7 +295,7 @@ export default function WebDevelopmentService() {
 
       {/* Use Cases Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 space-y-6">
@@ -356,7 +356,7 @@ export default function WebDevelopmentService() {
 
       {/* Service Details Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-4xl font-bold text-white">Service Details:</h2>
@@ -397,7 +397,7 @@ export default function WebDevelopmentService() {
 
       {/* Technologies Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
         <div className="max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
@@ -409,7 +409,7 @@ export default function WebDevelopmentService() {
               { icon: SiTailwindcss, name: "Styling Framework" }
             ].map((tech, index) => (
               <div key={index} className="text-center space-y-6 group">
-                <div className="w-24 h-24 bg-white/10 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto shadow-2xl border border-white/20 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-24 h-24 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs rounded-3xl flex items-center justify-center mx-auto shadow-2xl border border-purple-400/30 group-hover:scale-110 transition-transform duration-300">
                   <tech.icon className="text-white text-4xl" />
                 </div>
                 <span className="text-lg font-semibold text-white">{tech.name}</span>
@@ -421,7 +421,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Pricing Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-20">
           <div className="text-center space-y-8">
@@ -567,7 +567,7 @@ export default function WebDevelopmentService() {
 
       {/* Contact Form Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -587,17 +587,17 @@ export default function WebDevelopmentService() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm text-purple-100/80 mb-2">Full Name</label>
-                    <input type="text" placeholder="Full Name" className="w-full px-4 py-3 bg-white/10 border border-purple-400/30 rounded-lg text-white placeholder-purple-200/60 backdrop-blur-sm focus:border-purple-400/60 focus:outline-none" />
+                    <input type="text" placeholder="Full Name" className="w-full px-4 py-3 bg-gradient-to-br from-purple-500/15 to-purple-700/10 border border-purple-400/40 rounded-lg text-white placeholder-purple-200/60 backdrop-blur-xs focus:border-purple-400/70 focus:outline-none" />
                   </div>
                   <div>
                     <label className="block text-sm text-purple-100/80 mb-2">Email</label>
-                    <input type="email" placeholder="example@email.com" className="w-full px-4 py-3 bg-white/10 border border-purple-400/30 rounded-lg text-white placeholder-purple-200/60 backdrop-blur-sm focus:border-purple-400/60 focus:outline-none" />
+                    <input type="email" placeholder="example@email.com" className="w-full px-4 py-3 bg-gradient-to-br from-purple-500/15 to-purple-700/10 border border-purple-400/40 rounded-lg text-white placeholder-purple-200/60 backdrop-blur-xs focus:border-purple-400/70 focus:outline-none" />
                   </div>
                 </div>
                 
                 <div>
                   <label className="block text-sm text-purple-100/80 mb-2">Service Interested In</label>
-                  <select className="w-full px-4 py-3 bg-white/10 border border-purple-400/30 rounded-lg text-white backdrop-blur-sm focus:border-purple-400/60 focus:outline-none">
+                  <select className="w-full px-4 py-3 bg-gradient-to-br from-purple-500/15 to-purple-700/10 border border-purple-400/40 rounded-lg text-white backdrop-blur-xs focus:border-purple-400/70 focus:outline-none">
                     <option value="" className="bg-purple-900">Select Service</option>
                     <option value="web-development" className="bg-purple-900">Web Development</option>
                     <option value="saas-solutions" className="bg-purple-900">SaaS Solutions</option>
@@ -607,7 +607,7 @@ export default function WebDevelopmentService() {
                 
                 <div>
                   <label className="block text-sm text-purple-100/80 mb-2">Project Query</label>
-                  <textarea rows={4} placeholder="Tell us about your project requirements..." className="w-full px-4 py-3 bg-white/10 border border-purple-400/30 rounded-lg text-white placeholder-purple-200/60 backdrop-blur-sm focus:border-purple-400/60 focus:outline-none resize-none"></textarea>
+                  <textarea rows={4} placeholder="Tell us about your project requirements..." className="w-full px-4 py-3 bg-gradient-to-br from-purple-500/15 to-purple-700/10 border border-purple-400/40 rounded-lg text-white placeholder-purple-200/60 backdrop-blur-xs focus:border-purple-400/70 focus:outline-none resize-none"></textarea>
                 </div>
                 
                 <Button className="w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white py-3 rounded-lg font-semibold hover:from-purple-500 hover:to-purple-400 transition-all duration-300">
@@ -618,8 +618,8 @@ export default function WebDevelopmentService() {
             
             {/* Right Side - Contact Info */}
             <div className="grid grid-cols-2 gap-6">
-              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 text-center space-y-3">
-                <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto">
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 text-center space-y-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-purple-700/20 rounded-xl flex items-center justify-center mx-auto">
                   <span className="text-2xl">📞</span>
                 </div>
                 <div>
@@ -628,8 +628,8 @@ export default function WebDevelopmentService() {
                 </div>
               </div>
               
-              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 text-center space-y-3">
-                <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto">
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 text-center space-y-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-purple-700/20 rounded-xl flex items-center justify-center mx-auto">
                   <span className="text-2xl">💬</span>
                 </div>
                 <div>
@@ -638,8 +638,8 @@ export default function WebDevelopmentService() {
                 </div>
               </div>
               
-              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 text-center space-y-3">
-                <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto">
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 text-center space-y-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-purple-700/20 rounded-xl flex items-center justify-center mx-auto">
                   <span className="text-2xl">📍</span>
                 </div>
                 <div>
@@ -648,8 +648,8 @@ export default function WebDevelopmentService() {
                 </div>
               </div>
               
-              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 text-center space-y-3">
-                <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto">
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 text-center space-y-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-purple-700/20 rounded-xl flex items-center justify-center mx-auto">
                   <span className="text-2xl">✉️</span>
                 </div>
                 <div>
@@ -664,7 +664,7 @@ export default function WebDevelopmentService() {
 
       {/* FAQ Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -710,7 +710,7 @@ export default function WebDevelopmentService() {
 
       {/* Testimonials Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -775,7 +775,7 @@ export default function WebDevelopmentService() {
 
       {/* Final CTA Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
