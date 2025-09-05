@@ -356,7 +356,7 @@ export default function WebDevelopmentService() {
 
       {/* Service Details Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
+        <div className="absolute inset-2 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[40px] border border-purple-400/40 rounded-3xl p-8"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-4xl font-bold text-white">Service Details:</h2>
@@ -421,7 +421,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Pricing Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
+        <div className="absolute inset-2 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[40px] border border-purple-400/40 rounded-3xl p-8"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-20">
           <div className="text-center space-y-8">
@@ -567,7 +567,7 @@ export default function WebDevelopmentService() {
 
       {/* Contact Form Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
+        <div className="absolute inset-2 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[40px] border border-purple-400/40 rounded-3xl p-8"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -664,7 +664,7 @@ export default function WebDevelopmentService() {
 
       {/* FAQ Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
+        <div className="absolute inset-2 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[40px] border border-purple-400/40 rounded-3xl p-8"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -710,7 +710,7 @@ export default function WebDevelopmentService() {
 
       {/* Testimonials Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
+        <div className="absolute inset-2 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[40px] border border-purple-400/40 rounded-3xl p-8"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -775,7 +775,7 @@ export default function WebDevelopmentService() {
 
       {/* Final CTA Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
+        <div className="absolute inset-2 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[40px] border border-purple-400/40 rounded-3xl p-8"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
