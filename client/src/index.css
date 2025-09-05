@@ -132,15 +132,19 @@
       -webkit-overflow-scrolling: touch;
     }
     
-    /* Optimize glass effects on mobile with purple theme */
+    /* Optimize glass effects on mobile with purple theme - more compact */
     .glass-card,
     .glass-nav,
     .glass-project-card,
     .glass-blog-card {
-      backdrop-filter: none !important;
-      -webkit-backdrop-filter: none !important;
-      background: rgba(139, 92, 246, 0.15) !important;
-      border: 1px solid rgba(139, 92, 246, 0.25) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      background: rgba(139, 92, 246, 0.18) !important;
+      border: 1px solid rgba(139, 92, 246, 0.3) !important;
+      border-radius: 12px !important;
+      /* Compact mobile size */
+      padding: 1rem !important;
+      margin: 0.5rem 0 !important;
     }
     
     /* Disable hover animations on mobile */
@@ -149,7 +153,7 @@
     .glass-blog-card:hover {
       transform: none !important;
       box-shadow: inherit !important;
-      background: rgba(139, 92, 246, 0.15) !important;
+      background: rgba(139, 92, 246, 0.18) !important;
     }
     
     /* Disable complex animations */
@@ -195,13 +199,15 @@
   .glass-card {
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
     border: 1px solid rgba(139, 92, 246, 0.3);
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: 
       0 8px 32px rgba(0, 0, 0, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
     transform: translateZ(0);
+    /* Compact size adjustments */
+    max-width: 100%;
   }
 
 
@@ -209,8 +215,8 @@
   /* Enhanced 3D hover effects - Desktop only */
   @media (min-width: 769px) {
     .glass-card {
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(16px) saturate(1.2);
+      -webkit-backdrop-filter: blur(16px) saturate(1.2);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .glass-card:hover {
@@ -218,7 +224,9 @@
       box-shadow: 
         0 12px 40px rgba(0, 0, 0, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
-      transform: translateY(-4px) translateZ(0) scale(1.02);
+      transform: translateY(-2px) translateZ(0) scale(1.01);
+      backdrop-filter: blur(20px) saturate(1.3);
+      -webkit-backdrop-filter: blur(20px) saturate(1.3);
     }
   }
 
@@ -325,13 +333,13 @@
   /* Project cards with enhanced glass effect */
   .glass-project-card {
     background: rgba(139, 92, 246, 0.12);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(20px) saturate(1.1);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
     border: 1px solid rgba(139, 92, 246, 0.25);
-    border-radius: 20px;
+    border-radius: 16px;
     box-shadow: 
       0 1px 0 0 rgba(139, 92, 246, 0.15) inset,
-      0 12px 40px rgba(0, 0, 0, 0.4);
+      0 8px 24px rgba(0, 0, 0, 0.3);
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
@@ -384,15 +392,15 @@
   /* Blog category cards */
   .glass-blog-card {
     background: rgba(139, 92, 246, 0.1);
-    backdrop-filter: blur(36px);
-    -webkit-backdrop-filter: blur(36px);
+    backdrop-filter: blur(18px) saturate(1.1);
+    -webkit-backdrop-filter: blur(18px) saturate(1.1);
     border: 1px solid rgba(139, 92, 246, 0.2);
-    border-radius: 18px;
+    border-radius: 16px;
     position: relative;
     overflow: hidden;
     box-shadow: 
       0 1px 0 0 rgba(139, 92, 246, 0.15) inset,
-      0 8px 24px rgba(0, 0, 0, 0.3);
+      0 6px 20px rgba(0, 0, 0, 0.25);
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
@@ -473,6 +481,58 @@
 
   .animation-delay-4s {
     animation-delay: 4s;
+  }
+
+  /* Ensure all icons are white */
+  .icon-white,
+  .icon-white svg,
+  .icon-white path {
+    color: white !important;
+    fill: white !important;
+    stroke: white !important;
+  }
+
+  /* Glass effect improvements for different screen sizes */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .glass-card {
+      backdrop-filter: blur(12px) saturate(1.1);
+      -webkit-backdrop-filter: blur(12px) saturate(1.1);
+      padding: 1.25rem;
+      margin: 0.75rem 0;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .glass-card {
+      backdrop-filter: blur(16px) saturate(1.2);
+      -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+  }
+
+  /* Compact glass cards for sections */
+  .glass-section-compact {
+    background: rgba(139, 92, 246, 0.12);
+    backdrop-filter: blur(12px) saturate(1.1);
+    -webkit-backdrop-filter: blur(12px) saturate(1.1);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 20px;
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .glass-section-compact {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 1rem;
+      margin: 0.5rem;
+    }
   }
 }
 

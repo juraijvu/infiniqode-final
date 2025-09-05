@@ -155,8 +155,8 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Strategic Process Section */}
-      <section className="py-32 relative">
-        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
+      <section className="py-20 md:py-32 relative">
+        <div className="absolute inset-4 glass-section-compact"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -168,13 +168,13 @@ export default function WebDevelopmentService() {
             ].map((item, index) => (
               <div key={index} className="group">
                 {/* Glass Card */}
-                <div className="relative h-full p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-sm border border-purple-400/30 shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                <div className="relative h-full p-4 md:p-6 rounded-xl md:rounded-2xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
                   
                   <div className="relative z-10 space-y-4">
                     {/* Icon */}
-                    <div className="w-12 h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-xl flex items-center justify-center border border-white/20">
-                      <item.icon className="text-white text-xl" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-lg md:rounded-xl flex items-center justify-center border border-white/20">
+                      <item.icon className="icon-white text-lg md:text-xl" />
                     </div>
                     
                     <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
@@ -201,8 +201,8 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Strategic Service Includes Section */}
-      <section className="py-32 relative">
-        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
+      <section className="py-20 md:py-32 relative">
+        <div className="absolute inset-4 glass-section-compact"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -245,7 +245,7 @@ export default function WebDevelopmentService() {
             {/* Right Content - 3D Illustration & Stats */}
             <div className="relative">
               {/* 3D Illustration Area */}
-              <div className="relative h-80 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 overflow-hidden mb-8">
+              <div className="relative h-64 md:h-80 rounded-xl md:rounded-2xl glass-card overflow-hidden mb-6 md:mb-8">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
                 
                 {/* Mock 3D Elements */}
@@ -254,7 +254,7 @@ export default function WebDevelopmentService() {
                     {/* Laptop Mock */}
                     <div className="w-32 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-xl mx-auto flex items-center justify-center border border-blue-300/30">
                       <div className="w-24 h-14 bg-white/20 rounded-sm flex items-center justify-center">
-                        <Palette className="text-white text-2xl" />
+                        <Palette className="icon-white text-xl md:text-2xl" />
                       </div>
                     </div>
                     
@@ -270,7 +270,7 @@ export default function WebDevelopmentService() {
               
               {/* Statistics Cards */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20">
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
                   <div className="text-3xl font-bold text-white mb-1">70%+</div>
                   <p className="text-purple-100/80 text-sm">Search Popularity</p>
                   <div className="flex items-center space-x-2 mt-2">
@@ -279,7 +279,7 @@ export default function WebDevelopmentService() {
                   </div>
                 </div>
                 
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20">
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
                   <div className="text-3xl font-bold text-white mb-1">100%</div>
                   <p className="text-purple-100/80 text-sm">User Oriented App</p>
                   <div className="flex items-center space-x-2 mt-2">
@@ -294,8 +294,8 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-32 relative">
-        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
+      <section className="py-20 md:py-32 relative">
+        <div className="absolute inset-4 glass-section-compact"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 space-y-6">
@@ -313,7 +313,7 @@ export default function WebDevelopmentService() {
               { title: "Leads Productivity", subtitle: "Leads Generation and Quality of Leads", desc: "Using modern web technologies to create efficient platforms, reducing inventory costs by 32% while improving product reach." }
             ].map((item, index) => (
               <div key={index} className="group">
-                <div className="h-full rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden">
+                <div className="h-full rounded-2xl md:rounded-3xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden">
                   {/* Dashboard Mockup */}
                   <div className="h-48 bg-gradient-to-br from-purple-800/40 to-purple-900/60 p-4 relative">
                     <div className="bg-black/40 rounded-lg h-full p-4 backdrop-blur-sm">
@@ -382,8 +382,8 @@ export default function WebDevelopmentService() {
               { icon: Zap, title: "New", subtitle: "Generation Theme" }
             ].map((item, index) => (
               <div key={index} className="text-center space-y-4 group">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto shadow-xl border border-white/20 group-hover:scale-110 transition-transform duration-300">
-                  <item.icon className="text-white text-2xl" />
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-primary to-accent rounded-xl md:rounded-2xl flex items-center justify-center mx-auto shadow-xl border border-white/20 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="icon-white text-xl md:text-2xl" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
@@ -396,8 +396,8 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-32 relative">
-        <div className="absolute inset-4 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 rounded-3xl"></div>
+      <section className="py-20 md:py-32 relative">
+        <div className="absolute inset-4 glass-section-compact"></div>
         <div className="max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
@@ -409,8 +409,8 @@ export default function WebDevelopmentService() {
               { icon: SiTailwindcss, name: "Styling Framework" }
             ].map((tech, index) => (
               <div key={index} className="text-center space-y-6 group">
-                <div className="w-24 h-24 bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs rounded-3xl flex items-center justify-center mx-auto shadow-2xl border border-purple-400/30 group-hover:scale-110 transition-transform duration-300">
-                  <tech.icon className="text-white text-4xl" />
+                <div className="w-20 h-20 md:w-24 md:h-24 glass-card rounded-2xl md:rounded-3xl flex items-center justify-center mx-auto shadow-2xl group-hover:scale-110 transition-transform duration-300">
+                  <tech.icon className="icon-white text-2xl md:text-3xl" />
                 </div>
                 <span className="text-lg font-semibold text-white">{tech.name}</span>
               </div>
