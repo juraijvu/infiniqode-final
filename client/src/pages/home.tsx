@@ -76,7 +76,7 @@ export default function Home() {
       <section className="py-3 relative" ref={statsRef as any}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-4">
-            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Proven Excellence</h2>
+            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">Proven Excellence</h2>
             <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Numbers that speak louder than words. Our track record of success spans across industries and technologies, 
               delivering measurable results that drive business growth.
@@ -162,7 +162,7 @@ export default function Home() {
       <section className="py-3 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-4">
-            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Our Technology Mastery</h2>
+            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">Our Technology Mastery</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We leverage cutting-edge technologies and proven frameworks to build scalable, 
               secure, and high-performance digital solutions that stand the test of time.
@@ -175,7 +175,7 @@ export default function Home() {
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4">
                   <Code className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading text-2xl font-bold mb-4">Frontend Excellence</h3>
+                <h3 className="font-heading text-2xl font-bold mb-4 text-white">Frontend Excellence</h3>
               </div>
               <p className="font-body text-muted-foreground mb-6 leading-relaxed">
                 React TypeScript, Next.js, Vue.js, Angular with modern state management, 
@@ -202,7 +202,7 @@ export default function Home() {
                 <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4">
                   <Server className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading text-2xl font-bold mb-4">Backend Mastery</h3>
+                <h3 className="font-heading text-2xl font-bold mb-4 text-white">Backend Mastery</h3>
               </div>
               <p className="font-body text-muted-foreground mb-6 leading-relaxed">
                 Python Flask, Node.js, Express, FastAPI with microservices architecture, 
@@ -229,7 +229,7 @@ export default function Home() {
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4">
                   <Cloud className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading text-2xl font-bold mb-4">Cloud Infrastructure</h3>
+                <h3 className="font-heading text-2xl font-bold mb-4 text-white">Cloud Infrastructure</h3>
               </div>
               <p className="font-body text-muted-foreground mb-6 leading-relaxed">
                 AWS, Google Cloud, Azure with Docker, Kubernetes, CI/CD pipelines, 
@@ -266,7 +266,7 @@ export default function Home() {
                 <div className={`w-16 h-16 mx-auto bg-gradient-to-br ${tech.color} rounded-xl flex items-center justify-center mb-4 text-white`}>
                   {tech.icon}
                 </div>
-                <h4 className="font-heading font-semibold">{tech.name}</h4>
+                <h4 className="font-heading font-semibold text-white">{tech.name}</h4>
               </div>
             ))}
           </div>
@@ -285,7 +285,7 @@ export default function Home() {
       <section className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-4">
-            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Our Proven Methodology</h2>
+            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">Our Proven Methodology</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Every successful project follows a carefully crafted process. Our methodology combines 
               agile development principles with design thinking to deliver exceptional results.
@@ -301,7 +301,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl font-bold mb-4">Discovery & Strategy</h3>
+                  <h3 className="font-heading text-2xl font-bold mb-4 text-white">Discovery & Strategy</h3>
                   <p className="font-body text-muted-foreground mb-4 leading-relaxed">
                     We begin every project with deep research and strategic planning. Understanding your 
                     business goals, target audience, and competitive landscape forms the foundation of our approach.
@@ -332,7 +332,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl font-bold mb-4">Design & Prototyping</h3>
+                  <h3 className="font-heading text-2xl font-bold mb-4 text-white">Design & Prototyping</h3>
                   <p className="font-body text-muted-foreground mb-4 leading-relaxed">
                     Our design phase focuses on creating intuitive, beautiful interfaces that enhance user 
                     experience while reflecting your brand identity and achieving business objectives.
@@ -363,7 +363,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl font-bold mb-4">Development & Integration</h3>
+                  <h3 className="font-heading text-2xl font-bold mb-4 text-white">Development & Integration</h3>
                   <p className="font-body text-muted-foreground mb-4 leading-relaxed">
                     Using cutting-edge technologies and best practices, we build scalable, secure solutions 
                     with clean code architecture and comprehensive testing protocols.
@@ -394,7 +394,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl font-bold mb-4">Launch & Optimization</h3>
+                  <h3 className="font-heading text-2xl font-bold mb-4 text-white">Launch & Optimization</h3>
                   <p className="font-body text-muted-foreground mb-4 leading-relaxed">
                     Post-launch, we monitor performance, gather user feedback, and continuously optimize 
                     your solution to ensure it meets evolving business needs and user expectations.
@@ -427,7 +427,7 @@ export default function Home() {
       <section id="about" className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-4">
-            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">About DigitalCraft</h2>
+            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">About DigitalCraft</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We're a team of passionate developers, designers, and digital strategists who believe in 
               crafting exceptional digital experiences that drive real business results and transform how people interact with technology.
