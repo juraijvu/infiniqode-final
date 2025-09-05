@@ -176,7 +176,7 @@ export default function Blog() {
       {featuredPost && !searchTerm && !selectedTag && (
         <section className="pb-12">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold mb-8 gradient-text">Featured Article</h2>
+            <h2 className="text-3xl font-bold mb-8 text-white">Featured Article</h2>
             <Link href={`/blog/${featuredPost.slug}`}>
               <GlassCard className="overflow-hidden hover:bg-white/5 transition-colors duration-200 cursor-pointer will-change-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
@@ -247,7 +247,7 @@ export default function Blog() {
             </div>
           ) : (
             <>
-              {!searchTerm && !selectedTag && <h2 className="text-3xl font-bold mb-8 gradient-text">Latest Articles</h2>}
+              {!searchTerm && !selectedTag && <h2 className="text-3xl font-bold mb-8 text-white">Latest Articles</h2>}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {(searchTerm || selectedTag ? filteredPosts : otherPosts).map((post) => (
                   <Link key={post.id} href={`/blog/${post.slug}`}>
@@ -328,7 +328,7 @@ export default function Blog() {
       <section className="py-20 bg-muted/5">
         <div className="max-w-4xl mx-auto px-6">
           <GlassCard className="p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Stay Updated
             </h2>
             <p className="text-xl text-muted-foreground mb-8">

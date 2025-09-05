@@ -77,12 +77,6 @@ export function PortfolioSection() {
           title="Our Portfolio" 
           subtitle="Explore our latest projects and see how we've helped businesses achieve their digital goals"
         />
-        <div className="text-center mb-2">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Portfolio</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore our latest projects and see how we've helped businesses achieve their goals
-          </p>
-        </div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-2">

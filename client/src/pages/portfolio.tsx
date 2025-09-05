@@ -137,7 +137,7 @@ export default function Portfolio() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Our <span className="gradient-text">Portfolio</span>
+            Our <span className="text-white">Portfolio</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
             Explore our successful projects and see how we've helped businesses transform their digital presence
@@ -216,7 +216,7 @@ export default function Portfolio() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <Badge variant="outline" className="border-accent text-accent">
+                    <Badge variant="outline" className="border-white text-white">
                       {item.category}
                     </Badge>
                     <span className="text-sm text-muted-foreground">{item.year}</span>
@@ -225,19 +225,19 @@ export default function Portfolio() {
                   <p className="text-muted-foreground text-sm mb-4">{item.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {item.technologies.slice(0, 3).map((tech) => (
-                      <Badge key={tech} variant="secondary" className="bg-primary/20 text-accent text-xs">
+                      <Badge key={tech} variant="secondary" className="bg-primary/20 text-white text-xs">
                         {tech}
                       </Badge>
                     ))}
                     {item.technologies.length > 3 && (
-                      <Badge variant="secondary" className="bg-primary/20 text-accent text-xs">
+                      <Badge variant="secondary" className="bg-primary/20 text-white text-xs">
                         +{item.technologies.length - 3}
                       </Badge>
                     )}
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-accent">View Details</span>
-                    <ExternalLink className="w-4 h-4 text-accent" />
+                    <span className="text-sm font-medium text-white">View Details</span>
+                    <ExternalLink className="w-4 h-4 text-white" />
                   </div>
                 </div>
                 </GlassCard>

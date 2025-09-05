@@ -82,7 +82,7 @@ export default function About() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            About <span className="gradient-text">DigitalCraft</span>
+            About <span className="text-white">DigitalCraft</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             We're a passionate team of developers, designers, and digital strategists 
@@ -222,19 +222,19 @@ export default function About() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <GlassCard className="p-8 text-center">
-              <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">150+</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">150+</div>
               <div className="text-muted-foreground">Projects Delivered</div>
             </GlassCard>
             <GlassCard className="p-8 text-center">
-              <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">98%</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">98%</div>
               <div className="text-muted-foreground">Client Satisfaction</div>
             </GlassCard>
             <GlassCard className="p-8 text-center">
-              <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">25+</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">25+</div>
               <div className="text-muted-foreground">Team Members</div>
             </GlassCard>
             <GlassCard className="p-8 text-center">
-              <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">5+</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">5+</div>
               <div className="text-muted-foreground">Years Experience</div>
             </GlassCard>
           </div>

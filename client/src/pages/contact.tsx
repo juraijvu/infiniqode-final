@@ -115,7 +115,7 @@ export default function Contact() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Let's Build Something <span className="gradient-text">Amazing</span>
+            Let's Build Something <span className="text-white">Amazing</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
             Ready to transform your digital presence? We're here to help you achieve your goals with cutting-edge solutions.

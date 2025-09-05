@@ -141,7 +141,7 @@ export default function SaaSSolutionsService() {
           <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-8">
             <Cloud className="text-white text-4xl" />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 gradient-text">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
             SaaS Solutions
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
@@ -174,7 +174,7 @@ export default function SaaSSolutionsService() {
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <GlassCard className="p-12 text-center">
-            <h2 className="text-4xl font-bold mb-6 gradient-text">Our Core Offering</h2>
+            <h2 className="text-4xl font-bold mb-6 text-white">Our Core Offering</h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We specialize in developing comprehensive SaaS platforms that combine innovative technology 
               with proven business models. Our custom development and optimization services cover everything 
@@ -191,7 +191,7 @@ export default function SaaSSolutionsService() {
       <section className="py-20 bg-muted/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 gradient-text">Key Features</h2>
+            <h2 className="text-4xl font-bold mb-6 text-white">Key Features</h2>
             <p className="text-xl text-muted-foreground">
               Everything you need for a successful SaaS platform
             </p>
@@ -213,7 +213,7 @@ export default function SaaSSolutionsService() {
       {/* Tech Stack */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 gradient-text">Cloud Infrastructure</h2>
+          <h2 className="text-4xl font-bold mb-6 text-white">Cloud Infrastructure</h2>
           <p className="text-xl text-muted-foreground mb-12">
             We leverage leading cloud platforms for maximum scalability and reliability
           </p>
@@ -244,7 +244,7 @@ export default function SaaSSolutionsService() {
       <section className="py-20 bg-muted/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 gradient-text">Our Process</h2>
+            <h2 className="text-4xl font-bold mb-6 text-white">Our Process</h2>
             <p className="text-xl text-muted-foreground">
               From concept to scale, we guide your SaaS journey
             </p>
@@ -272,7 +272,7 @@ export default function SaaSSolutionsService() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 gradient-text">Pricing Plans</h2>
+            <h2 className="text-4xl font-bold mb-6 text-white">Pricing Plans</h2>
             <p className="text-xl text-muted-foreground">
               Choose the SaaS development package that fits your vision
             </p>
@@ -286,7 +286,7 @@ export default function SaaSSolutionsService() {
                   </Badge>
                 )}
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="text-4xl font-bold mb-2 gradient-text">{plan.price}</div>
+                <div className="text-4xl font-bold mb-2 text-white">{plan.price}</div>
                 <p className="text-muted-foreground mb-8">{plan.description}</p>
                 <ul className="space-y-3 mb-8 text-left">
                   {plan.features.map((feature, featureIndex) => (
@@ -317,7 +317,7 @@ export default function SaaSSolutionsService() {
         <div className="max-w-4xl mx-auto px-6">
           <GlassCard className="p-12">
             <div className="text-center mb-8">
-              <h2 className="text-4xl font-bold mb-6 gradient-text">Success Story</h2>
+              <h2 className="text-4xl font-bold mb-6 text-white">Success Story</h2>
               <div className="text-6xl font-bold text-accent mb-4">40%</div>
               <div className="text-xl text-muted-foreground mb-8">Increased client retention</div>
             </div>
@@ -354,7 +354,7 @@ export default function SaaSSolutionsService() {
       {/* FAQ Section */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-12 gradient-text">
+          <h2 className="text-4xl font-bold mb-12 text-white">
             <Link href="/faq-saas" className="flex items-center justify-center gap-3 hover:opacity-80 transition-opacity">
               Common SaaS Questions
               <ArrowRight className="w-6 h-6" />

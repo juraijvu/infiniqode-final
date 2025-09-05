@@ -141,7 +141,7 @@ export default function DigitalMarketingService() {
           <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-8">
             <Megaphone className="text-white text-4xl" />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 gradient-text">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
             Digital Marketing
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
@@ -173,7 +173,7 @@ export default function DigitalMarketingService() {
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <GlassCard className="p-12 text-center">
-            <h2 className="text-4xl font-bold mb-6 gradient-text">Our Core Offering</h2>
+            <h2 className="text-4xl font-bold mb-6 text-white">Our Core Offering</h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We specialize in creating comprehensive digital marketing strategies that drive sustainable growth. 
               Our data-driven approach combines cutting-edge technology with proven marketing methodologies 
@@ -190,7 +190,7 @@ export default function DigitalMarketingService() {
       <section className="py-20 bg-muted/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 gradient-text">Key Features</h2>
+            <h2 className="text-4xl font-bold mb-6 text-white">Key Features</h2>
             <p className="text-xl text-muted-foreground">
               Comprehensive marketing services to grow your business
             </p>
@@ -212,7 +212,7 @@ export default function DigitalMarketingService() {
       {/* Platform Logos */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 gradient-text">Platform Expertise</h2>
+          <h2 className="text-4xl font-bold mb-6 text-white">Platform Expertise</h2>
           <p className="text-xl text-muted-foreground mb-12">
             We leverage the most powerful marketing platforms to maximize your reach
           </p>
@@ -243,7 +243,7 @@ export default function DigitalMarketingService() {
       <section className="py-20 bg-muted/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 gradient-text">Our Process</h2>
+            <h2 className="text-4xl font-bold mb-6 text-white">Our Process</h2>
             <p className="text-xl text-muted-foreground">
               Strategic approach to maximize your marketing ROI
             </p>
@@ -271,7 +271,7 @@ export default function DigitalMarketingService() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 gradient-text">Pricing Plans</h2>
+            <h2 className="text-4xl font-bold mb-6 text-white">Pricing Plans</h2>
             <p className="text-xl text-muted-foreground">
               Choose the marketing plan that fits your growth goals
             </p>
@@ -285,7 +285,7 @@ export default function DigitalMarketingService() {
                   </Badge>
                 )}
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="text-4xl font-bold mb-2 gradient-text">{plan.price}</div>
+                <div className="text-4xl font-bold mb-2 text-white">{plan.price}</div>
                 <p className="text-muted-foreground mb-8">{plan.description}</p>
                 <ul className="space-y-3 mb-8 text-left">
                   {plan.features.map((feature, featureIndex) => (
@@ -316,7 +316,7 @@ export default function DigitalMarketingService() {
         <div className="max-w-4xl mx-auto px-6">
           <GlassCard className="p-12">
             <div className="text-center mb-8">
-              <h2 className="text-4xl font-bold mb-6 gradient-text">Success Story</h2>
+              <h2 className="text-4xl font-bold mb-6 text-white">Success Story</h2>
               <div className="text-6xl font-bold text-accent mb-4">300% ROI</div>
               <div className="text-xl text-muted-foreground mb-8">Achieved in just 3 months</div>
             </div>
@@ -349,7 +349,7 @@ export default function DigitalMarketingService() {
       {/* FAQ Section */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-12 gradient-text">
+          <h2 className="text-4xl font-bold mb-12 text-white">
             <Link href="/faq-marketing" className="flex items-center justify-center gap-3 hover:opacity-80 transition-opacity">
               Marketing FAQs
               <ArrowRight className="w-6 h-6" />

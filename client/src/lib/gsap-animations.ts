@@ -8,17 +8,18 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 // Optimized animation configurations for Lenis smooth performance
 export const animationConfig = {
-  ease: "power2.out", // Faster, smoother easing
-  duration: 0.5, // Faster animations
-  stagger: 0.08, // Quicker stagger
+  ease: "power3.out", // Ultra smooth easing
+  duration: 0.8, // Longer for smoothness
+  stagger: 0.06, // Faster stagger for fluidity
   scrollTrigger: {
-    start: "top 85%",
-    end: "bottom 15%",
+    start: "top 90%",
+    end: "bottom 10%",
     toggleActions: "play none none reverse",
-    fastScrollEnd: true, // Better performance on fast scrolling
+    fastScrollEnd: true,
     preventOverlaps: true,
-    scroller: window, // Ensure Lenis compatibility
-    normalizeScroll: true // Work with Lenis normalization
+    scroller: window,
+    normalizeScroll: true,
+    refreshPriority: 1 // Higher priority
   }
 };
 
@@ -184,11 +185,14 @@ export const useHoverAnimation = () => {
 
       const handleMouseEnter = () => {
         gsap.to(element, {
-          scale: 1.03, // Slightly reduced for smoother effect
-          y: -3,
-          duration: 0.25, // Faster response
-          ease: "power1.out", // Lighter easing
-          force3D: true
+          scale: 1.05, // More noticeable but smooth
+          y: -8,
+          rotationX: 2, // Subtle 3D effect
+          rotationY: 1,
+          duration: 0.4, // Slower for smoothness
+          ease: "power3.out", // Smoother easing
+          force3D: true,
+          transformPerspective: 1000
         });
       };
 
@@ -196,8 +200,10 @@ export const useHoverAnimation = () => {
         gsap.to(element, {
           scale: 1,
           y: 0,
-          duration: 0.25,
-          ease: "power1.out",
+          rotationX: 0,
+          rotationY: 0,
+          duration: 0.4,
+          ease: "power3.out",
           force3D: true
         });
       };
