@@ -136,7 +136,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Process Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
+        <div className="absolute inset-6 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -148,7 +148,7 @@ export default function WebDevelopmentService() {
             ].map((item, index) => (
               <div key={index} className="group">
                 {/* Glass Card */}
-                <div className="relative h-full p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                <div className="relative h-full p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
                   
                   <div className="relative z-10 space-y-4">
@@ -182,7 +182,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Service Includes Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
+        <div className="absolute inset-6 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -225,7 +225,7 @@ export default function WebDevelopmentService() {
             {/* Right Content - 3D Illustration & Stats */}
             <div className="relative">
               {/* 3D Illustration Area */}
-              <div className="relative h-80 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 overflow-hidden mb-8">
+              <div className="relative h-80 rounded-2xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 overflow-hidden mb-8">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
                 
                 {/* Mock 3D Elements */}
@@ -250,7 +250,7 @@ export default function WebDevelopmentService() {
               
               {/* Statistics Cards */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20">
                   <div className="text-3xl font-bold text-white mb-1">70%+</div>
                   <p className="text-purple-100/80 text-sm">Search Popularity</p>
                   <div className="flex items-center space-x-2 mt-2">
@@ -259,7 +259,7 @@ export default function WebDevelopmentService() {
                   </div>
                 </div>
                 
-                <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20">
                   <div className="text-3xl font-bold text-white mb-1">100%</div>
                   <p className="text-purple-100/80 text-sm">User Oriented App</p>
                   <div className="flex items-center space-x-2 mt-2">
@@ -275,7 +275,7 @@ export default function WebDevelopmentService() {
 
       {/* Use Cases Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
+        <div className="absolute inset-6 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 space-y-6">
@@ -289,7 +289,7 @@ export default function WebDevelopmentService() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[1, 2, 3].map((item, index) => (
               <div key={index} className="group">
-                <div className="h-full p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-6">
+                <div className="h-full p-8 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-6">
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-white">Leads Productivity</h3>
                     <p className="text-purple-200 font-semibold">
@@ -313,14 +313,14 @@ export default function WebDevelopmentService() {
 
       {/* Service Details Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
+        <div className="absolute inset-6 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-4xl font-bold text-white">Service Details:</h2>
           
           {/* Strategic Content Layout */}
           <div className="space-y-12">
-            <div className="p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
+            <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
               <p className="text-purple-100/90 leading-relaxed text-lg">
                 Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
                 technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
@@ -328,7 +328,7 @@ export default function WebDevelopmentService() {
               </p>
             </div>
             
-            <div className="p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
+            <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
               <p className="text-purple-100/90 leading-relaxed text-lg">
                 Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
                 technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
@@ -363,7 +363,7 @@ export default function WebDevelopmentService() {
 
       {/* Technologies Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
+        <div className="absolute inset-6 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
         <div className="max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
@@ -387,7 +387,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Pricing Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
+        <div className="absolute inset-6 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-20">
           <div className="text-center space-y-8">
@@ -403,7 +403,7 @@ export default function WebDevelopmentService() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Starter Package */}
             <div className="group">
-              <div className="h-full p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
+              <div className="h-full p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
                 <div className="text-center space-y-4">
                   <h3 className="text-2xl font-bold text-white">Starter</h3>
                   <p className="text-purple-100/80">Perfect for small projects and startups</p>
@@ -489,7 +489,7 @@ export default function WebDevelopmentService() {
 
             {/* Enterprise Package */}
             <div className="group">
-              <div className="h-full p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
+              <div className="h-full p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
                 <div className="text-center space-y-4">
                   <h3 className="text-2xl font-bold text-foreground">Enterprise</h3>
                   <p className="text-muted-foreground">Perfect for Big projects and Professional Enterprises</p>
