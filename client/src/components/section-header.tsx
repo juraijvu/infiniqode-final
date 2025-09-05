@@ -10,7 +10,7 @@ interface SectionHeaderProps {
 export function SectionHeader({ title, subtitle, className, centered = true }: SectionHeaderProps) {
   return (
     <div className={cn("mb-16", centered && "text-center", className)}>
-      <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+      <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
         {title}
       </h2>
       {subtitle && (

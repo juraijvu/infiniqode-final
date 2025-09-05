@@ -68,7 +68,7 @@ export function TeamSection() {
                   className="team-image w-full h-full object-cover transition-transform duration-300"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">{member.name}</h3>
               <p className="text-accent mb-3">{member.position}</p>
               <p className="text-sm text-muted-foreground mb-4">{member.description}</p>
               <div className="flex justify-center space-x-3">

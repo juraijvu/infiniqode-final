@@ -78,7 +78,7 @@ export function PortfolioSection() {
           subtitle="Explore our latest projects and see how we've helped businesses achieve their digital goals"
         />
         <div className="text-center mb-2">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Portfolio</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Portfolio</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Explore our latest projects and see how we've helped businesses achieve their goals
           </p>
@@ -117,7 +117,7 @@ export function PortfolioSection() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
                   <p className="text-muted-foreground text-sm mb-4">{item.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {item.technologies.map((tech) => (

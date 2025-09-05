@@ -71,7 +71,7 @@ export default function Blog() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <h1 ref={heroRef} className="text-5xl md:text-6xl font-bold mb-6">
-            Our <span className="gradient-text">Blog</span>
+            Our <span className="text-white">Blog</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
             Stay updated with the latest insights on web development, digital marketing, and technology trends
@@ -88,7 +88,7 @@ export default function Blog() {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl">⚡</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Technical</h3>
+                <h3 className="text-xl font-semibold mb-2 text-white">Technical</h3>
                 <p className="text-muted-foreground text-sm">Code examples, tutorials, and technical insights</p>
               </GlassCard>
             </Link>
@@ -98,7 +98,7 @@ export default function Blog() {
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl">📝</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">General</h3>
+                <h3 className="text-xl font-semibold mb-2 text-white">General</h3>
                 <p className="text-muted-foreground text-sm">Industry insights and thought leadership</p>
               </GlassCard>
             </Link>
@@ -108,7 +108,7 @@ export default function Blog() {
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl">📈</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Marketing</h3>
+                <h3 className="text-xl font-semibold mb-2 text-white">Marketing</h3>
                 <p className="text-muted-foreground text-sm">Growth strategies and marketing insights</p>
               </GlassCard>
             </Link>
@@ -118,7 +118,7 @@ export default function Blog() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl">📰</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">News</h3>
+                <h3 className="text-xl font-semibold mb-2 text-white">News</h3>
                 <p className="text-muted-foreground text-sm">Latest industry news and updates</p>
               </GlassCard>
             </Link>

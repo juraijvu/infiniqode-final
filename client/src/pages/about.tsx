@@ -106,7 +106,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 gradient-text">Our Mission</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">Our Mission</h2>
               <p className="text-xl text-muted-foreground mb-8">
                 To empower businesses of all sizes with cutting-edge digital solutions that drive growth, 
                 enhance user experiences, and create lasting competitive advantages in the digital landscape.
@@ -152,7 +152,7 @@ export default function About() {
       <section className="py-20 bg-muted/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Story</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Story</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               From a small startup to a global digital agency, our journey has been driven by passion, 
               innovation, and an unwavering commitment to client success.
@@ -187,7 +187,7 @@ export default function About() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Values</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Values</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               The principles that guide everything we do and shape our company culture
             </p>
@@ -199,7 +199,7 @@ export default function About() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-6">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
+                <h3 className="text-xl font-semibold mb-4 text-white">{value.title}</h3>
                 <p className="text-muted-foreground">{value.description}</p>
               </GlassCard>
             ))}
@@ -214,7 +214,7 @@ export default function About() {
       <section className="py-20 bg-muted/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">By The Numbers</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">By The Numbers</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Our achievements and the impact we've made in the digital world
             </p>
@@ -245,7 +245,7 @@ export default function About() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Recognition & Awards</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Recognition & Awards</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Industry recognition for our commitment to excellence and innovation
             </p>
@@ -254,17 +254,17 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <GlassCard className="p-8 text-center">
               <Award className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Best Digital Agency 2023</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Best Digital Agency 2023</h3>
               <p className="text-muted-foreground">Web Excellence Awards</p>
             </GlassCard>
             <GlassCard className="p-8 text-center">
               <Award className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Innovation in SaaS</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Innovation in SaaS</h3>
               <p className="text-muted-foreground">Tech Innovation Summit</p>
             </GlassCard>
             <GlassCard className="p-8 text-center">
               <Award className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Top Mobile App Developer</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Top Mobile App Developer</h3>
               <p className="text-muted-foreground">Mobile Excellence Awards</p>
             </GlassCard>
           </div>
@@ -277,7 +277,7 @@ export default function About() {
           <GlassCard className="p-16 text-center relative overflow-hidden">
             <div className="hero-glow top-0 left-1/2 transform -translate-x-1/2"></div>
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
                 Ready to Work Together?
               </h2>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
