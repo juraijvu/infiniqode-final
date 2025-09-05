@@ -24,7 +24,7 @@ import {
   TrendingUp,
   Target
 } from "lucide-react";
-import { SiReact, SiNodedotjs, SiPostgresql, SiTailwindcss } from "react-icons/si";
+import { SiReact, SiNodedotjs, SiPostgresql, SiTailwindcss, SiTypescript, SiNextdotjs, SiMongodb, SiGraphql } from "react-icons/si";
 
 // FAQ Item Component
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -398,21 +398,28 @@ export default function WebDevelopmentService() {
       {/* Technologies Section */}
       <section className="py-12 md:py-20 lg:py-24 relative">
         <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
-        <div className="max-w-6xl mx-auto px-6 space-y-12">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
           <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiReact, name: "Frontend Development" },
-              { icon: SiNodedotjs, name: "Backend Development" },
-              { icon: SiPostgresql, name: "Database Design" },
-              { icon: SiTailwindcss, name: "Styling Framework" }
+              { icon: SiReact, name: "React", desc: "Modern frontend library for building interactive user interfaces with component-based architecture." },
+              { icon: SiNodedotjs, name: "Node.js", desc: "Server-side JavaScript runtime for building scalable backend applications and APIs." },
+              { icon: SiPostgresql, name: "PostgreSQL", desc: "Advanced relational database for storing and managing application data securely." },
+              { icon: SiTailwindcss, name: "Tailwind CSS", desc: "Utility-first CSS framework for rapid and responsive UI development." },
+              { icon: SiTypescript, name: "TypeScript", desc: "Type-safe JavaScript superset for building robust and maintainable applications." },
+              { icon: SiNextdotjs, name: "Next.js", desc: "Full-stack React framework with server-side rendering and static generation." },
+              { icon: SiMongodb, name: "MongoDB", desc: "NoSQL database for flexible and scalable data storage solutions." },
+              { icon: SiGraphql, name: "GraphQL", desc: "Query language and runtime for APIs with precise data fetching capabilities." }
             ].map((tech, index) => (
-              <div key={index} className="text-center space-y-6 group">
-                <div className="w-20 h-20 md:w-24 md:h-24 glass-card rounded-2xl md:rounded-3xl flex items-center justify-center mx-auto shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                  <tech.icon className="icon-white text-2xl md:text-3xl" />
+              <div key={index} className="text-center space-y-4 group cursor-pointer">
+                <div className="relative p-6 glass-card rounded-2xl shadow-2xl group-hover:scale-105 transition-all duration-300 hover:shadow-3xl">
+                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <tech.icon className="icon-white text-3xl group-hover:text-purple-300 transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">{tech.name}</h3>
+                  <p className="text-xs text-purple-100/80 leading-relaxed line-clamp-3">{tech.desc}</p>
                 </div>
-                <span className="text-lg font-semibold text-white">{tech.name}</span>
               </div>
             ))}
           </div>
