@@ -287,23 +287,46 @@ export default function WebDevelopmentService() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item, index) => (
+            {[
+              { title: "Leads Productivity", subtitle: "Leads Generation and Quality of Leads", desc: "Using modern web technologies to create conversion-focused websites, reducing inventory costs by 32% while improving product reach." },
+              { title: "Leads Productivity", subtitle: "Leads Generation and Quality of Leads", desc: "Using modern web technologies to improve demand platforms, reducing inventory costs by 32% while improving product reach." },
+              { title: "Leads Productivity", subtitle: "Leads Generation and Quality of Leads", desc: "Using modern web technologies to create efficient platforms, reducing inventory costs by 32% while improving product reach." }
+            ].map((item, index) => (
               <div key={index} className="group">
-                <div className="h-full p-8 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-6">
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-white">Leads Productivity</h3>
-                    <p className="text-purple-200 font-semibold">
-                      Leads Generation and Quality of Leads
-                    </p>
-                    <p className="text-sm text-purple-100/80 leading-relaxed">
-                      Using modern web technologies to create conversion-focused
-                      websites, increasing lead generation by 45% while
-                      improving user engagement and retention.
-                    </p>
+                <div className="h-full rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden">
+                  {/* Dashboard Mockup */}
+                  <div className="h-48 bg-gradient-to-br from-purple-800/40 to-purple-900/60 p-4 relative">
+                    <div className="bg-black/40 rounded-lg h-full p-4 backdrop-blur-sm">
+                      {/* Mock Dashboard Content */}
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs text-purple-200">
+                          <span>Revenue</span>
+                          <span>68%</span>
+                        </div>
+                        <div className="h-20 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded relative">
+                          {/* Mock Chart Bars */}
+                          <div className="absolute bottom-0 left-2 w-1 bg-purple-400 rounded-t" style={{ height: '60%' }}></div>
+                          <div className="absolute bottom-0 left-6 w-1 bg-purple-400 rounded-t" style={{ height: '80%' }}></div>
+                          <div className="absolute bottom-0 left-10 w-1 bg-purple-400 rounded-t" style={{ height: '40%' }}></div>
+                          <div className="absolute bottom-0 left-14 w-1 bg-purple-400 rounded-t" style={{ height: '90%' }}></div>
+                          <div className="absolute bottom-0 left-18 w-1 bg-purple-400 rounded-t" style={{ height: '70%' }}></div>
+                        </div>
+                        <div className="text-xs text-purple-300">45% Performance boost with modern technologies</div>
+                      </div>
+                    </div>
                   </div>
-                  <Button variant="outline" className="w-full border-purple-400/30 text-purple-200 hover:bg-purple-600/20 group-hover:border-purple-400/50 transition-all duration-300">
-                    View Case Study
-                  </Button>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
+                    <div className="space-y-2">
+                      <div className="text-xs text-purple-300 uppercase tracking-wider">Leads Productivity</div>
+                      <h3 className="text-lg font-bold text-white">{item.subtitle}</h3>
+                      <p className="text-sm text-purple-100/80 leading-relaxed">{item.desc}</p>
+                    </div>
+                    <Button variant="outline" className="w-full border-purple-400/30 text-purple-200 hover:bg-purple-600/20 group-hover:border-purple-400/50 transition-all duration-300">
+                      View Case Study
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -318,25 +341,16 @@ export default function WebDevelopmentService() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-4xl font-bold text-white">Service Details:</h2>
           
-          {/* Strategic Content Layout */}
-          <div className="space-y-12">
-            <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
-              <p className="text-purple-100/90 leading-relaxed text-lg">
-                Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
-                technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
-                development service combines cutting-edge technology with sleek aesthetics to
-              </p>
-            </div>
-            
-            <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
-              <p className="text-purple-100/90 leading-relaxed text-lg">
-                Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
-                technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
-                development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek
-                aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines
-                cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to
-              </p>
-            </div>
+          {/* Service Description */}
+          <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+            <p className="text-purple-100/90 leading-relaxed text-lg">
+              Our premium 3D web design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web design service combines cutting-edge 
+              technology with sleek aesthetics to Our premium 3D web design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web 
+              design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web design service combines cutting-edge technology with sleek 
+              aesthetics to Our premium 3D web design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web design service combines 
+              cutting-edge technology with sleek aesthetics to Our premium 3D web design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web 
+              design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web design service combines cutting-edge technology with sleek aesthetics to.
+            </p>
           </div>
           
           {/* Strategic Feature Icons */}
