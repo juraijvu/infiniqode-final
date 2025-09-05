@@ -195,38 +195,42 @@
 }
 
 @layer components {
-  /* Premium glass morphism cards with realistic depth */
+  /* Premium glass morphism cards with increased blur and compact padding */
   .glass-card {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
-    border: 1px solid rgba(139, 92, 246, 0.3);
-    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.18) 0%, rgba(139, 92, 246, 0.12) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    border-radius: 20px;
     box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 10px 40px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
     position: relative;
     overflow: hidden;
     transform: translateZ(0);
-    /* Compact size adjustments */
+    backdrop-filter: blur(28px) saturate(1.4);
+    -webkit-backdrop-filter: blur(28px) saturate(1.4);
+    /* Compact padding */
+    padding: 1rem;
     max-width: 100%;
   }
 
 
 
-  /* Enhanced 3D hover effects - Desktop only */
+  /* Enhanced 3D hover effects - Desktop only with higher blur */
   @media (min-width: 769px) {
     .glass-card {
-      backdrop-filter: blur(16px) saturate(1.2);
-      -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      backdrop-filter: blur(28px) saturate(1.4);
+      -webkit-backdrop-filter: blur(28px) saturate(1.4);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 1.5rem;
     }
     .glass-card:hover {
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(139, 92, 246, 0.15) 100%);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.25) 0%, rgba(139, 92, 246, 0.18) 100%);
       box-shadow: 
-        0 12px 40px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        0 15px 50px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
       transform: translateY(-2px) translateZ(0) scale(1.01);
-      backdrop-filter: blur(20px) saturate(1.3);
-      -webkit-backdrop-filter: blur(20px) saturate(1.3);
+      backdrop-filter: blur(36px) saturate(1.5);
+      -webkit-backdrop-filter: blur(36px) saturate(1.5);
     }
   }
 
@@ -511,16 +515,16 @@
     }
   }
 
-  /* Compact glass cards for sections */
+  /* Compact glass sections with increased blur */
   .glass-section-compact {
-    background: rgba(139, 92, 246, 0.12);
-    backdrop-filter: blur(12px) saturate(1.1);
-    -webkit-backdrop-filter: blur(12px) saturate(1.1);
-    border: 1px solid rgba(139, 92, 246, 0.25);
-    border-radius: 20px;
+    background: rgba(139, 92, 246, 0.15);
+    backdrop-filter: blur(32px) saturate(1.3);
+    -webkit-backdrop-filter: blur(32px) saturate(1.3);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 24px;
     box-shadow: 
-      0 6px 24px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
     position: relative;
     overflow: hidden;
   }
