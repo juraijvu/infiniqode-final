@@ -545,6 +545,143 @@ export default function WebDevelopmentService() {
         </div>
       </section>
 
+      {/* Contact Form Section */}
+      <section className="py-32 relative">
+        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Left Side - Contact Form */}
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-4xl font-bold text-white leading-tight">
+                  Ready to Transform Your<br />
+                  Digital Experience ?
+                </h2>
+                <p className="text-purple-100/80">
+                  Fill out the form and our team will get back to you within 24 hours.
+                </p>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm text-purple-100/80 mb-2">Full Name</label>
+                    <input type="text" placeholder="Full Name" className="w-full px-4 py-3 bg-white/10 border border-purple-400/30 rounded-lg text-white placeholder-purple-200/60 backdrop-blur-sm focus:border-purple-400/60 focus:outline-none" />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-purple-100/80 mb-2">Email</label>
+                    <input type="email" placeholder="example@email.com" className="w-full px-4 py-3 bg-white/10 border border-purple-400/30 rounded-lg text-white placeholder-purple-200/60 backdrop-blur-sm focus:border-purple-400/60 focus:outline-none" />
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm text-purple-100/80 mb-2">Service Interested In</label>
+                  <select className="w-full px-4 py-3 bg-white/10 border border-purple-400/30 rounded-lg text-white backdrop-blur-sm focus:border-purple-400/60 focus:outline-none">
+                    <option value="" className="bg-purple-900">Select Service</option>
+                    <option value="web-development" className="bg-purple-900">Web Development</option>
+                    <option value="saas-solutions" className="bg-purple-900">SaaS Solutions</option>
+                    <option value="digital-marketing" className="bg-purple-900">Digital Marketing</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-sm text-purple-100/80 mb-2">Project Query</label>
+                  <textarea rows={4} placeholder="Tell us about your project requirements..." className="w-full px-4 py-3 bg-white/10 border border-purple-400/30 rounded-lg text-white placeholder-purple-200/60 backdrop-blur-sm focus:border-purple-400/60 focus:outline-none resize-none"></textarea>
+                </div>
+                
+                <Button className="w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white py-3 rounded-lg font-semibold hover:from-purple-500 hover:to-purple-400 transition-all duration-300">
+                  Submit Request
+                </Button>
+              </div>
+            </div>
+            
+            {/* Right Side - Contact Info */}
+            <div className="grid grid-cols-2 gap-6">
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 text-center space-y-3">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto">
+                  <span className="text-2xl">📞</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-2">Phone No</h3>
+                  <p className="text-purple-100/80 text-sm">+91-9511871458<br />+91-9548858300</p>
+                </div>
+              </div>
+              
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 text-center space-y-3">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto">
+                  <span className="text-2xl">💬</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-2">WhatsApp</h3>
+                  <p className="text-purple-100/80 text-sm">+91-9511871458<br />+91-9548858300</p>
+                </div>
+              </div>
+              
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 text-center space-y-3">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto">
+                  <span className="text-2xl">📍</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-2">Address</h3>
+                  <p className="text-purple-100/80 text-sm">Business World<br />Ahmedabad</p>
+                </div>
+              </div>
+              
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 text-center space-y-3">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto">
+                  <span className="text-2xl">✉️</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-2">Email</h3>
+                  <p className="text-purple-100/80 text-sm">info@infiniqode.com<br />infiniqode@agency</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-32 relative">
+        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-white mb-4">Frequently Asked Question</h2>
+            <p className="text-xl text-purple-100/80">
+              Our comprehensive range of services includes web design, mobile app development, SEO, social media marketing, and
+              more. We focus on helping you establish and expand your online presence.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              "How long does it take to complete a web development project?",
+              "How long does it take to complete a web development project?",
+              "How long does it take to complete a web development project?",
+              "How long does it take to complete a web development project?",
+              "How long does it take to complete a web development project?",
+              "How long does it take to complete a web development project?"
+            ].map((question, index) => (
+              <div key={index} className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 group hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-start justify-between">
+                  <p className="text-white font-medium leading-relaxed pr-4">{question}</p>
+                  <div className="w-6 h-6 bg-purple-500/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/50 transition-colors duration-300">
+                    <span className="text-white text-sm">+</span>
+                  </div>
+                </div>
+                <div className="mt-4 text-purple-100/70 text-sm leading-relaxed hidden">
+                  The timeline for completing a web development project depends on the project's complexity and
+                  requirements. Our team strives to deliver high-quality standards. The timeline varies
+                  based on the scope of work and specific client needs.
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </>
   );
