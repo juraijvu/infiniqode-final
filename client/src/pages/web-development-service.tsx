@@ -358,7 +358,7 @@ export default function WebDevelopmentService() {
       <section className="py-32 relative">
         <div className="absolute inset-2 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-3xl p-8"></div>
         
-        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-6">
           <h2 className="text-4xl font-bold text-white">Service Details:</h2>
           
           {/* Service Description */}
