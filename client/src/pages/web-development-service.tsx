@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
@@ -24,6 +25,25 @@ import {
   Target
 } from "lucide-react";
 import { SiReact, SiNodedotjs, SiPostgresql, SiTailwindcss } from "react-icons/si";
+
+// FAQ Item Component
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 group hover:bg-white/10 transition-all duration-300">
+      <div className="flex items-start justify-between cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+        <p className="text-white font-medium leading-relaxed pr-4">{question}</p>
+        <div className="w-8 h-8 bg-purple-500/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/50 transition-all duration-300">
+          <span className={`text-white text-lg transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}>+</span>
+        </div>
+      </div>
+      <div className={`mt-4 text-purple-100/70 text-sm leading-relaxed transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
+        {answer}
+      </div>
+    </div>
+  );
+}
 
 export default function WebDevelopmentService() {
   const structuredData = {
@@ -657,27 +677,135 @@ export default function WebDevelopmentService() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              "How long does it take to complete a web development project?",
-              "How long does it take to complete a web development project?",
-              "How long does it take to complete a web development project?",
-              "How long does it take to complete a web development project?",
-              "How long does it take to complete a web development project?",
-              "How long does it take to complete a web development project?"
-            ].map((question, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-purple-400/20 group hover:bg-white/10 transition-all duration-300">
-                <div className="flex items-start justify-between">
-                  <p className="text-white font-medium leading-relaxed pr-4">{question}</p>
-                  <div className="w-6 h-6 bg-purple-500/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/50 transition-colors duration-300">
-                    <span className="text-white text-sm">+</span>
-                  </div>
+              { 
+                question: "How long does it take to complete a web development project?", 
+                answer: "The timeline for completing a web development project depends on the project's complexity and requirements. Our team strives to deliver high-quality standards. The timeline varies based on the scope of work and specific client needs."
+              },
+              { 
+                question: "What technologies do you use for web development?", 
+                answer: "We use modern technologies like React, Node.js, TypeScript, and PostgreSQL to build scalable and efficient web applications. Our tech stack ensures high performance and maintainability."
+              },
+              { 
+                question: "Do you provide ongoing support and maintenance?", 
+                answer: "Yes, we offer comprehensive support and maintenance packages to ensure your website remains secure, updated, and performs optimally after launch."
+              },
+              { 
+                question: "Can you help with mobile-responsive design?", 
+                answer: "Absolutely! All our web development projects include mobile-first responsive design to ensure your website looks and functions perfectly on all devices."
+              },
+              { 
+                question: "What is included in your web development packages?", 
+                answer: "Our packages include custom design, development, testing, deployment, and documentation. We also provide training and ongoing support based on your selected plan."
+              },
+              { 
+                question: "How do you ensure the security of web applications?", 
+                answer: "We implement industry-standard security practices including SSL certificates, secure authentication, data encryption, and regular security audits to protect your application."
+              }
+            ].map((item, index) => (
+              <FAQItem key={index} question={item.question} answer={item.answer} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-32 relative">
+        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-white mb-4">Our Testimonials</h2>
+            <p className="text-xl text-purple-100/80">
+              Our comprehensive range of services includes web design, mobile app development, SEO, social media marketing, and
+              more. Whether you're a startup or an established enterprise, our experts will craft solutions that drive results.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Ashraf Khan",
+                position: "Founder of Marjan Group of Companies",
+                content: "Working with Infiniqode was a pleasure. Their web design team created a stunning website that perfectly represents our brand. The positive feedback from our customers has been overwhelmingly positive."
+              },
+              {
+                name: "Ashraf Khan", 
+                position: "Founder of Marjan Group of Companies",
+                content: "Working with Infiniqode was a pleasure. Their web design team created a stunning website that perfectly represents our brand. The positive feedback from our customers has been overwhelmingly positive."
+              },
+              {
+                name: "Ashraf Khan",
+                position: "Founder of Marjan Group of Companies", 
+                content: "Working with Infiniqode was a pleasure. Their web design team created a stunning website that perfectly represents our brand. The positive feedback from our customers has been overwhelmingly positive."
+              }
+            ].map((testimonial, index) => (
+              <div key={index} className="p-8 rounded-3xl bg-white/5 backdrop-blur-sm border border-purple-400/20 space-y-6">
+                {/* Twitter Icon */}
+                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                  </svg>
                 </div>
-                <div className="mt-4 text-purple-100/70 text-sm leading-relaxed hidden">
-                  The timeline for completing a web development project depends on the project's complexity and
-                  requirements. Our team strives to deliver high-quality standards. The timeline varies
-                  based on the scope of work and specific client needs.
+                
+                {/* Content */}
+                <p className="text-purple-100/90 leading-relaxed">{testimonial.content}</p>
+                
+                {/* Author */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-white/20 rounded-full"></div>
+                  <div>
+                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
+                    <p className="text-purple-100/70 text-sm">{testimonial.position}</p>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+          
+          {/* Pagination Dots */}
+          <div className="flex justify-center space-x-2 mt-12">
+            {[0, 1, 2, 3].map((dot, index) => (
+              <div key={index} className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                index === 0 ? 'bg-purple-400' : 'bg-purple-400/30'
+              }`}></div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-32 relative">
+        <div className="absolute inset-10 bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-sm border border-purple-400/20 rounded-3xl"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            Ready to Transform Your Digital Presence?
+          </h2>
+          
+          <p className="text-lg text-purple-100/80 max-w-3xl mx-auto leading-relaxed">
+            Take the first step towards digital success with INFINIQODE by your side. Our team of experts is eager to craft tailored solutions that 
+            drive growth for your business. Join us now and witness a powerful mobile app or a data-driven marketing campaign, 
+            we've got you covered. Let's embark on this transformative journey together.
+          </p>
+          
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-white">Unlock Your Digital Potential Today</h3>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button className="px-8 py-4 text-lg font-semibold bg-purple-600 hover:bg-purple-500 text-white border-0 shadow-xl rounded-full">
+                Get Start With Us
+              </Button>
+              <Button className="px-8 py-4 text-lg font-semibold bg-transparent border-2 border-purple-400/60 text-purple-100 hover:bg-purple-600/20 rounded-full">
+                Free Consultation
+              </Button>
+            </div>
+            
+            {/* Company Logo */}
+            <div className="pt-8">
+              <div className="text-4xl font-bold text-white tracking-wider">
+                INFINI<span className="text-purple-400">QO</span>DE
+              </div>
+            </div>
           </div>
         </div>
       </section>
