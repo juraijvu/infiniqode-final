@@ -51,10 +51,7 @@ export default function WebDevelopmentService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950 overflow-hidden">
-        {/* Dark Purple Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-purple-800/30 via-transparent to-purple-900/40"></div>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -138,9 +135,7 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Strategic Process Section */}
-      <section className="py-32 relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950">
-        {/* Purple Background Continuity */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
+      <section className="py-32 relative">
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -151,8 +146,8 @@ export default function WebDevelopmentService() {
               { icon: Globe, title: "Deployment & Launching", step: "Step 4", desc: "AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting" }
             ].map((item, index) => (
               <div key={index} className="group">
-                {/* Purple Glass Card */}
-                <div className="relative h-full p-6 rounded-2xl bg-gradient-to-br from-purple-700/60 via-purple-600/40 to-purple-800/60 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                {/* Glass Card */}
+                <div className="relative h-full p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
                   
                   <div className="relative z-10 space-y-4">
@@ -167,7 +162,7 @@ export default function WebDevelopmentService() {
                     
                     {/* Step Badge */}
                     <div className="pt-2">
-                      <Badge className="bg-purple-800/60 text-purple-100 border border-purple-500/30 text-xs font-medium">
+                      <Badge className="bg-white/10 text-white border border-white/20 text-xs font-medium">
                         {item.step}
                       </Badge>
                     </div>
@@ -185,9 +180,7 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Strategic Service Includes Section */}
-      <section className="py-32 relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950">
-        {/* Purple Background Continuity */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
+      <section className="py-32 relative">
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -230,7 +223,7 @@ export default function WebDevelopmentService() {
             {/* Right Content - 3D Illustration & Stats */}
             <div className="relative">
               {/* 3D Illustration Area */}
-              <div className="relative h-80 rounded-2xl bg-gradient-to-br from-purple-700/30 to-purple-600/20 backdrop-blur-sm border border-purple-400/20 overflow-hidden mb-8">
+              <div className="relative h-80 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 overflow-hidden mb-8">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
                 
                 {/* Mock 3D Elements */}
@@ -255,7 +248,7 @@ export default function WebDevelopmentService() {
               
               {/* Statistics Cards */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-sm border border-purple-400/20">
+                <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
                   <div className="text-3xl font-bold text-white mb-1">70%+</div>
                   <p className="text-purple-100/80 text-sm">Search Popularity</p>
                   <div className="flex items-center space-x-2 mt-2">
@@ -264,7 +257,7 @@ export default function WebDevelopmentService() {
                   </div>
                 </div>
                 
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-sm border border-purple-400/20">
+                <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
                   <div className="text-3xl font-bold text-white mb-1">100%</div>
                   <p className="text-purple-100/80 text-sm">User Oriented App</p>
                   <div className="flex items-center space-x-2 mt-2">
@@ -279,8 +272,7 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-32 bg-gradient-to-b from-purple-900 via-purple-800 to-purple-950 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
+      <section className="py-32 relative">
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 space-y-6">
@@ -294,7 +286,7 @@ export default function WebDevelopmentService() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[1, 2, 3].map((item, index) => (
               <div key={index} className="group">
-                <div className="h-full p-8 rounded-3xl bg-gradient-to-br from-purple-700/60 to-purple-600/40 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-6">
+                <div className="h-full p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-6">
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-white">Leads Productivity</h3>
                     <p className="text-purple-200 font-semibold">
@@ -317,16 +309,14 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Service Details Section */}
-      <section className="py-32 relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950">
-        <div className="absolute inset-0 backdrop-blur-sm border-y border-purple-400/10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
+      <section className="py-32 relative">
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-4xl font-bold text-white">Service Details:</h2>
           
           {/* Strategic Content Layout */}
           <div className="space-y-12">
-            <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+            <div className="p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
               <p className="text-purple-100/90 leading-relaxed text-lg">
                 Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
                 technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
@@ -334,7 +324,7 @@ export default function WebDevelopmentService() {
               </p>
             </div>
             
-            <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+            <div className="p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
               <p className="text-purple-100/90 leading-relaxed text-lg">
                 Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web development service combines cutting-edge
                 technology with sleek aesthetics to Our premium web development service combines cutting-edge technology with sleek aesthetics to Our premium web
@@ -368,7 +358,7 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-32 bg-gradient-to-b from-purple-900 via-purple-800 to-purple-950">
+      <section className="py-32">
         <div className="max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
@@ -380,7 +370,7 @@ export default function WebDevelopmentService() {
               { icon: SiTailwindcss, name: "Styling Framework" }
             ].map((tech, index) => (
               <div key={index} className="text-center space-y-6 group">
-                <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-purple-500 rounded-3xl flex items-center justify-center mx-auto shadow-2xl border border-purple-400/30 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-24 h-24 bg-white/10 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto shadow-2xl border border-white/20 group-hover:scale-110 transition-transform duration-300">
                   <tech.icon className="text-white text-4xl" />
                 </div>
                 <span className="text-lg font-semibold text-white">{tech.name}</span>
@@ -391,9 +381,7 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* Strategic Pricing Section */}
-      <section className="py-32 relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950">
-        <div className="absolute inset-0 backdrop-blur-sm border-y border-purple-400/10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-purple-950/80"></div>
+      <section className="py-32 relative">
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-20">
           <div className="text-center space-y-8">
@@ -409,7 +397,7 @@ export default function WebDevelopmentService() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Starter Package */}
             <div className="group">
-              <div className="h-full p-10 rounded-3xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
+              <div className="h-full p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
                 <div className="text-center space-y-4">
                   <h3 className="text-2xl font-bold text-white">Starter</h3>
                   <p className="text-purple-100/80">Perfect for small projects and startups</p>
@@ -437,7 +425,7 @@ export default function WebDevelopmentService() {
                 
                 <ContactPopup 
                   trigger={
-                    <Button className="w-full bg-gradient-to-r from-purple-700/50 to-purple-600/30 border border-purple-400/30 text-white hover:bg-purple-600/40" data-testid="button-select-starter">
+                    <Button className="w-full bg-white/10 border border-white/20 text-white hover:bg-white/20" data-testid="button-select-starter">
                       Get Started
                     </Button>
                   }
@@ -495,7 +483,7 @@ export default function WebDevelopmentService() {
 
             {/* Enterprise Package */}
             <div className="group">
-              <div className="h-full p-10 rounded-3xl bg-gradient-to-br from-purple-700/50 to-purple-600/30 backdrop-blur-xl border border-purple-400/20 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
+              <div className="h-full p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl group-hover:shadow-3xl transition-all duration-300 space-y-8">
                 <div className="text-center space-y-4">
                   <h3 className="text-2xl font-bold text-foreground">Enterprise</h3>
                   <p className="text-muted-foreground">Perfect for Big projects and Professional Enterprises</p>

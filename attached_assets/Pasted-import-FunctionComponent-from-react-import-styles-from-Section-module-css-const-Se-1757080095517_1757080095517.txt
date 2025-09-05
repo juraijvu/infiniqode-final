@@ -1,0 +1,70 @@
+import { FunctionComponent } from 'react';
+import styles from './Section.module.css';
+
+
+const Section:FunctionComponent = () => {
+  	return (
+    		<div className={styles.section}>
+      			<div className={styles.aboutService}>
+        				<div className={styles.whatOurUiuxIntegrationSerParent}>
+          					<div className={styles.whatOurUiux}>What Our UI/UX Integration Service Includes</div>
+          					<div className={styles.ourComprehensiveAi}>Our comprehensive AI integration service is designed to help businesses of all sizes harness the power of artificial intelligence. We work closely with your team to understand your unique challenges and implement AI solutions that drive real business value.</div>
+        				</div>
+        				<div className={styles.frame1st}>
+          					<img className={styles.frame1stChild} alt="" src="Group 2.svg" />
+          					<div className={styles.point1}>
+            						<div className={styles.needsAssessment}>{`Needs Assessment & Strategy`}</div>
+            						<div className={styles.weAnalyzeYour}>We analyze your business processes and identify opportunities where AI can create the most impact.</div>
+          					</div>
+        				</div>
+        				<div className={styles.frame1st}>
+          					<img className={styles.frame1stChild} alt="" src="Group 2.svg" />
+          					<div className={styles.point1}>
+            						<div className={styles.needsAssessment}>{`Needs Assessment & Strategy`}</div>
+            						<div className={styles.weAnalyzeYour}>We analyze your business processes and identify opportunities where AI can create the most impact.</div>
+          					</div>
+        				</div>
+        				<div className={styles.frame1st}>
+          					<img className={styles.frame1stChild} alt="" src="Group 2.svg" />
+          					<div className={styles.point1}>
+            						<div className={styles.needsAssessment}>{`Needs Assessment & Strategy`}</div>
+            						<div className={styles.weAnalyzeYour}>We analyze your business processes and identify opportunities where AI can create the most impact.</div>
+          					</div>
+        				</div>
+        				<div className={styles.frame1st}>
+          					<img className={styles.frame1stChild} alt="" src="Group 2.svg" />
+          					<div className={styles.point1}>
+            						<div className={styles.needsAssessment}>{`Needs Assessment & Strategy`}</div>
+            						<div className={styles.weAnalyzeYour}>We analyze your business processes and identify opportunities where AI can create the most impact.</div>
+          					</div>
+        				</div>
+      			</div>
+      			<div className={styles.ser1Parent}>
+        				<img className={styles.ser1Icon} alt="" src="ser 1.png" />
+        				<div className={styles.customerPoint}>
+          					<div className={styles.searchPopularity}>
+            						<p className={styles.p}>70%+</p>
+            						<p className={styles.sectionSearchPopularity}>Search Popularity</p>
+          					</div>
+          					<div className={styles.xInteractive}>
+            						<p className={styles.p}>4.5x</p>
+            						<p className={styles.sectionSearchPopularity}>Interactive</p>
+          					</div>
+          					<div className={styles.userOrientedAppWrapper}>
+            						<div className={styles.userOrientedAppContainer}>
+              							<p className={styles.p}>100%</p>
+              							<p className={styles.sectionSearchPopularity}>User Oriented App</p>
+            						</div>
+          					</div>
+          					<div className={styles.xHigherIntentWrapper}>
+            						<div className={styles.xHigherIntentContainer}>
+              							<p className={styles.p}>5x</p>
+              							<p className={styles.sectionSearchPopularity}>Higher Intent</p>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+    		</div>);
+};
+
+export default Section;

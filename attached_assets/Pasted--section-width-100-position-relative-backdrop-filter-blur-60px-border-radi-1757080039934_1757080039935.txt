@@ -1,0 +1,168 @@
+.section {
+  	width: 100%;
+  	position: relative;
+  	backdrop-filter: blur(60px);
+  	border-radius: 10px;
+  	background: linear-gradient(180deg, rgba(163, 124, 240, 0.45), rgba(163, 124, 240, 0.15));
+  	border: 1px solid #bb99fe;
+  	box-sizing: border-box;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	padding: 60px;
+  	gap: 229px;
+  	text-align: left;
+  	font-size: 20px;
+  	color: #fff;
+  	font-family: Inter;
+}
+.aboutService {
+  	width: 682px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 20px;
+}
+.whatOurUiuxIntegrationSerParent {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 20px;
+  	font-size: 50px;
+}
+.whatOurUiux {
+  	align-self: stretch;
+  	position: relative;
+  	font-weight: 600;
+  	display: inline-block;
+  	height: 109px;
+  	flex-shrink: 0;
+}
+.ourComprehensiveAi {
+  	align-self: stretch;
+  	position: relative;
+  	font-size: 18px;
+  	color: #d1d5db;
+  	display: inline-block;
+  	height: 68px;
+  	flex-shrink: 0;
+}
+.frame1st {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 12px;
+}
+.frame1stChild {
+  	width: 23px;
+  	position: relative;
+  	height: 23px;
+}
+.point1 {
+  	width: 502px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 5px;
+}
+.needsAssessment {
+  	align-self: stretch;
+  	position: relative;
+  	font-weight: 600;
+  	display: inline-block;
+  	height: 28px;
+  	flex-shrink: 0;
+}
+.weAnalyzeYour {
+  	align-self: stretch;
+  	position: relative;
+  	font-size: 18px;
+  	color: #9ca3af;
+  	display: inline-block;
+  	height: 48px;
+  	flex-shrink: 0;
+}
+.ser1Parent {
+  	width: 496px;
+  	height: 649px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+  	text-align: center;
+  	font-size: 50px;
+}
+.ser1Icon {
+  	width: 596px;
+  	position: relative;
+  	max-height: 100%;
+  	object-fit: cover;
+}
+.customerPoint {
+  	width: 400px;
+  	border-radius: 10px;
+  	background: linear-gradient(180deg, rgba(163, 124, 240, 0.45), rgba(163, 124, 240, 0.15));
+  	display: grid;
+  	grid-template-rows: ;
+  	grid-template-columns: ;
+  	justify-content: start;
+  	align-content: start;
+  	column-gap: 17px;
+  	padding: 20px;
+  	box-sizing: border-box;
+  	margin-top: -25px;
+  	position: relative;
+}
+.searchPopularity {
+  	position: absolute;
+  	top: 20px;
+  	left: 30.75px;
+}
+.p {
+  	margin: 0;
+  	font-weight: 600;
+}
+.sectionSearchPopularity {
+  	margin: 0;
+  	font-size: 18px;
+}
+.xInteractive {
+  	position: absolute;
+  	top: 20px;
+  	left: 240.75px;
+}
+.userOrientedAppWrapper {
+  	position: absolute;
+  	top: 106.5px;
+  	left: 39.25px;
+  	border-top: 1px solid rgba(207, 207, 207, 0.9);
+  	box-sizing: border-box;
+  	width: 133px;
+  	height: 71px;
+}
+.userOrientedAppContainer {
+  	position: absolute;
+  	top: 0px;
+  	left: -13px;
+}
+.xHigherIntentWrapper {
+  	position: absolute;
+  	top: 106.5px;
+  	left: 228.75px;
+  	border-top: 1px solid rgba(207, 207, 207, 0.9);
+  	box-sizing: border-box;
+  	width: 131px;
+  	height: 71px;
+}
+.xHigherIntentContainer {
+  	position: absolute;
+  	top: 0px;
+  	left: calc(50% - 55.25px);
+}
+
