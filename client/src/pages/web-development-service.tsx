@@ -156,7 +156,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Process Section */}
       <section className="py-12 md:py-20 lg:py-24 relative">
-        <div className="absolute inset-1 md:inset-2 lg:inset-4 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -202,7 +202,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Service Includes Section */}
       <section className="py-12 md:py-20 lg:py-24 relative">
-        <div className="absolute inset-1 md:inset-2 lg:inset-4 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -295,7 +295,7 @@ export default function WebDevelopmentService() {
 
       {/* Use Cases Section */}
       <section className="py-12 md:py-20 lg:py-24 relative">
-        <div className="absolute inset-1 md:inset-2 lg:inset-4 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-12 space-y-4">
@@ -356,7 +356,7 @@ export default function WebDevelopmentService() {
 
       {/* Service Details Section */}
       <section className="py-16 md:py-24 lg:py-32 relative">
-        <div className="absolute inset-1 md:inset-2 lg:inset-4 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-6">
           <h2 className="text-4xl font-bold text-white">Service Details:</h2>
@@ -397,7 +397,7 @@ export default function WebDevelopmentService() {
 
       {/* Technologies Section */}
       <section className="py-12 md:py-20 lg:py-24 relative">
-        <div className="absolute inset-1 md:inset-2 lg:inset-4 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         <div className="max-w-6xl mx-auto px-6 space-y-12">
           <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
@@ -421,7 +421,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Pricing Section */}
       <section className="py-16 md:py-24 lg:py-32 relative">
-        <div className="absolute inset-1 md:inset-2 lg:inset-4 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-12">
           <div className="text-center space-y-8">
@@ -567,7 +567,7 @@ export default function WebDevelopmentService() {
 
       {/* Contact Form Section */}
       <section className="py-16 md:py-24 lg:py-32 relative">
-        <div className="absolute inset-1 md:inset-2 lg:inset-4 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -664,7 +664,7 @@ export default function WebDevelopmentService() {
 
       {/* FAQ Section */}
       <section className="py-16 md:py-24 lg:py-32 relative">
-        <div className="absolute inset-1 md:inset-2 lg:inset-4 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <div className="text-center mb-10">
@@ -710,7 +710,7 @@ export default function WebDevelopmentService() {
 
       {/* Testimonials Section */}
       <section className="py-16 md:py-24 lg:py-32 relative">
-        <div className="absolute inset-1 md:inset-2 lg:inset-4 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <div className="text-center mb-10">
@@ -775,7 +775,7 @@ export default function WebDevelopmentService() {
 
       {/* Final CTA Section */}
       <section className="py-16 md:py-24 lg:py-32 relative">
-        <div className="absolute inset-1 md:inset-2 lg:inset-4 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
