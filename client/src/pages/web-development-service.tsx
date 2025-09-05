@@ -136,7 +136,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Process Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl mx-6"></div>
+        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -182,7 +182,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Service Includes Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl mx-6"></div>
+        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -275,7 +275,7 @@ export default function WebDevelopmentService() {
 
       {/* Use Cases Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl mx-6"></div>
+        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 space-y-6">
@@ -313,7 +313,7 @@ export default function WebDevelopmentService() {
 
       {/* Service Details Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl mx-6"></div>
+        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-4xl font-bold text-white">Service Details:</h2>
@@ -363,7 +363,7 @@ export default function WebDevelopmentService() {
 
       {/* Technologies Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl mx-6"></div>
+        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
         <div className="max-w-6xl mx-auto px-6 space-y-20">
           <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
@@ -387,7 +387,7 @@ export default function WebDevelopmentService() {
 
       {/* Strategic Pricing Section */}
       <section className="py-32 relative">
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl mx-6"></div>
+        <div className="absolute inset-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-20">
           <div className="text-center space-y-8">
