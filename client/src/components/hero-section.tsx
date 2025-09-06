@@ -33,7 +33,7 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4">
             <ContactPopup 
               trigger={
-                <Button className="glass-button px-8 py-4 text-lg rounded-full" data-testid="button-start-project">
+                <Button className="button-3d px-8 py-4 text-lg rounded-full" data-testid="button-start-project">
                   Get Started
                 </Button>
               }
