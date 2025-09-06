@@ -47,7 +47,7 @@ export function Navigation() {
         className={`transition-colors duration-150 cursor-pointer flex items-center gap-2 ${
           location === href 
             ? "text-foreground" 
-            : "text-muted-foreground hover:text-accent"
+            : "text-muted-foreground hover:text-white"
         }`}
         onClick={() => setIsOpen(false)}
         data-testid={`nav-${label.toLowerCase()}`}
@@ -63,7 +63,7 @@ export function Navigation() {
       <div
         className={`group flex items-center gap-4 p-4 rounded-xl transition-colors duration-150 cursor-pointer ${
           location === href
-            ? "bg-primary/20 text-primary border border-primary/30"
+            ? "bg-white/10 text-white border border-white/20"
             : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
         }`}
         onClick={() => setIsOpen(false)}
@@ -71,7 +71,7 @@ export function Navigation() {
         {Icon && (
           <div className={`p-2 rounded-lg transition-colors duration-150 ${
             location === href
-              ? "bg-primary/30"
+              ? "bg-white/20"
               : "bg-white/10 group-hover:bg-white/20"
           }`}>
             <Icon className="w-5 h-5" />
@@ -90,10 +90,10 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <Link href="/">
             <div className="flex items-center space-x-2 cursor-pointer" data-testid="logo">
-              <div ref={logoRef} className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+              <div ref={logoRef} className="w-8 h-8 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center">
                 <Code className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xl font-bold gradient-text">DigitalCraft</span>
+              <span className="text-xl font-bold text-white">DigitalCraft</span>
             </div>
           </Link>
           
@@ -105,7 +105,7 @@ export function Navigation() {
             {/* Services Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-1 hover:text-accent transition-colors">
+                <Button variant="ghost" className="flex items-center gap-1 hover:text-white transition-colors">
                   Services
                   <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                 </Button>
@@ -115,8 +115,8 @@ export function Navigation() {
                   {servicesItems.map((service) => (
                     <Link key={service.href} href={service.href}>
                       <DropdownMenuItem className="flex items-start gap-3 p-3 rounded-lg cursor-pointer hover:bg-white/5 transition-colors duration-150 group">
-                        <div className="p-2 rounded-lg bg-primary/20 group-hover:bg-primary/30 transition-colors duration-150">
-                          <service.icon className="w-4 h-4 text-primary" />
+                        <div className="p-2 rounded-lg bg-white/10 group-hover:bg-white/20 transition-colors duration-150">
+                          <service.icon className="w-4 h-4 text-white" />
                         </div>
                         <div className="flex-1">
                           <div className="font-medium text-foreground">{service.label}</div>
@@ -128,7 +128,7 @@ export function Navigation() {
                   <div className="border-t border-border/50 mt-2 pt-2">
                     <Link href="/services">
                       <DropdownMenuItem className="justify-center p-3 rounded-lg cursor-pointer hover:bg-white/5 transition-colors">
-                        <span className="text-sm font-medium text-primary">View All Services</span>
+                        <span className="text-sm font-medium text-white">View All Services</span>
                       </DropdownMenuItem>
                     </Link>
                   </div>
@@ -168,10 +168,10 @@ export function Navigation() {
               {/* Mobile Menu Header */}
               <div className="flex items-center justify-between p-6 border-b border-border/30">
                 <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center">
                     <Code className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-lg font-bold gradient-text">DigitalCraft</span>
+                  <span className="text-lg font-bold text-white">DigitalCraft</span>
                 </div>
               </div>
 

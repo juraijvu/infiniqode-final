@@ -12,11 +12,11 @@ export function HeroSection() {
         <div className="text-left">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
             Digital Solutions 
-            <span className="text-purple-300 block">That</span>
+            <span className="text-white block">That</span>
             <span className="text-gray-300">Drive Success</span>
           </h1>
           
-          <div className="text-purple-200 mb-4 text-sm font-medium tracking-wide uppercase">
+          <div className="text-white mb-4 text-sm font-medium tracking-wide uppercase">
             AT INFINICODE
           </div>
           
@@ -42,7 +42,7 @@ export function HeroSection() {
             />
             <Button 
               variant="outline" 
-              className="glass-button border-purple-400 text-white px-8 py-4 text-lg rounded-full"
+              className="glass-button border-white text-white px-8 py-4 text-lg rounded-full"
               data-testid="button-consultation"
             >
               Free Consultation
@@ -55,20 +55,20 @@ export function HeroSection() {
           <div className="relative">
             {/* Large circular elements */}
             <div className="w-96 h-96 relative">
-              <div className="absolute inset-0 border-4 border-purple-300/30 rounded-full"></div>
-              <div className="absolute inset-8 border-4 border-purple-400/50 rounded-full"></div>
+              <div className="absolute inset-0 border-4 border-white/30 rounded-full"></div>
+              <div className="absolute inset-8 border-4 border-white/50 rounded-full"></div>
               <div className="absolute inset-16 border-4 border-white/70 rounded-full"></div>
               
               {/* Inner decorative elements */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-indigo-400 rounded-2xl flex items-center justify-center text-white text-4xl font-bold shadow-2xl">
+                <div className="w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl flex items-center justify-center text-white text-4xl font-bold shadow-2xl">
                   ∞
                 </div>
               </div>
               
               {/* Small floating elements */}
-              <div className="absolute top-10 right-10 w-6 h-6 bg-purple-400 rounded-full opacity-80"></div>
-              <div className="absolute bottom-10 left-10 w-4 h-4 bg-indigo-300 rounded-full opacity-60"></div>
+              <div className="absolute top-10 right-10 w-6 h-6 bg-white rounded-full opacity-80"></div>
+              <div className="absolute bottom-10 left-10 w-4 h-4 bg-gray-300 rounded-full opacity-60"></div>
               <div className="absolute top-1/3 left-0 w-3 h-3 bg-white rounded-full opacity-70"></div>
             </div>
           </div>

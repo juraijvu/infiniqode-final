@@ -90,7 +90,7 @@ export default function Home() {
                   <Trophy className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <div ref={projectsCountRef as any} className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">0+</div>
+              <div ref={projectsCountRef as any} className="text-5xl md:text-6xl font-display font-bold text-white mb-4">0+</div>
               <div className="font-body text-muted-foreground text-lg mb-4">Projects Completed</div>
               <div className="text-sm text-muted-foreground/70">Across 25+ Industries</div>
             </div>
@@ -101,7 +101,7 @@ export default function Home() {
                   <Star className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <div ref={satisfactionCountRef as any} className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">0%</div>
+              <div ref={satisfactionCountRef as any} className="text-5xl md:text-6xl font-display font-bold text-white mb-4">0%</div>
               <div className="font-body text-muted-foreground text-lg mb-4">Client Satisfaction</div>
               <div className="text-sm text-muted-foreground/70">Average Rating: 4.9/5</div>
             </div>
@@ -112,7 +112,7 @@ export default function Home() {
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <div ref={experienceCountRef as any} className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">0+</div>
+              <div ref={experienceCountRef as any} className="text-5xl md:text-6xl font-display font-bold text-white mb-4">0+</div>
               <div className="font-body text-muted-foreground text-lg mb-4">Years Experience</div>
               <div className="text-sm text-muted-foreground/70">Since 2019</div>
             </div>
@@ -123,7 +123,7 @@ export default function Home() {
                   <Shield className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <div className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">24/7</div>
+              <div className="text-5xl md:text-6xl font-display font-bold text-white mb-4">24/7</div>
               <div className="font-body text-muted-foreground text-lg mb-4">Support Available</div>
               <div className="text-sm text-muted-foreground/70">Global Coverage</div>
             </div>
@@ -226,7 +226,7 @@ export default function Home() {
             
             <div className="feature-item glass-card  p-8 group">
               <div className="mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl flex items-center justify-center mb-4">
                   <Cloud className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="font-heading text-2xl font-bold mb-4 text-white">Cloud Infrastructure</h3>
@@ -274,12 +274,12 @@ export default function Home() {
       </section>
       
       {/* Simple section divider for mobile performance */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
       
       <ServicesSection />
       
       {/* Simple section divider for mobile performance */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
 
       {/* Our Methodology - Deep Content */}
       <section className="py-3 relative">
@@ -421,7 +421,7 @@ export default function Home() {
       </section>
       
       {/* Simple section divider for mobile performance */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
       
       {/* About Section */}
       <section id="about" className="py-3 relative">
@@ -490,19 +490,19 @@ export default function Home() {
                 />
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
-                    <div className="font-heading text-3xl font-bold gradient-text mb-1">25+</div>
+                    <div className="font-heading text-3xl font-bold text-white mb-1">25+</div>
                     <div className="font-body text-sm text-muted-foreground">Team Members</div>
                   </div>
                   <div>
-                    <div className="font-heading text-3xl font-bold gradient-text mb-1">15</div>
+                    <div className="font-heading text-3xl font-bold text-white mb-1">15</div>
                     <div className="font-body text-sm text-muted-foreground">Countries Served</div>
                   </div>
                   <div>
-                    <div className="font-heading text-3xl font-bold gradient-text mb-1">40+</div>
+                    <div className="font-heading text-3xl font-bold text-white mb-1">40+</div>
                     <div className="font-body text-sm text-muted-foreground">Technologies</div>
                   </div>
                   <div>
-                    <div className="font-heading text-3xl font-bold gradient-text mb-1">99.9%</div>
+                    <div className="font-heading text-3xl font-bold text-white mb-1">99.9%</div>
                     <div className="font-body text-sm text-muted-foreground">Uptime SLA</div>
                   </div>
                 </div>
@@ -533,7 +533,7 @@ export default function Home() {
             </div>
             
             <div className="glass-card  p-8 text-center group">
-              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center mb-4">
                 <Globe className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-heading text-xl font-bold mb-4">Global Scale</h3>
@@ -559,7 +559,7 @@ export default function Home() {
       <section className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-4">
-            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Success Stories</h2>
+            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">Success Stories</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Real results for real businesses. See how we've helped companies transform their digital presence 
               and achieve measurable growth through innovative technology solutions.
@@ -587,15 +587,15 @@ export default function Home() {
               
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="text-center">
-                  <div className="font-heading text-2xl font-bold gradient-text">300%</div>
+                  <div className="font-heading text-2xl font-bold text-white">300%</div>
                   <div className="font-body text-xs text-muted-foreground">Revenue Increase</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-heading text-2xl font-bold gradient-text">2M+</div>
+                  <div className="font-heading text-2xl font-bold text-white">2M+</div>
                   <div className="font-body text-xs text-muted-foreground">Active Users</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-heading text-2xl font-bold gradient-text">99.9%</div>
+                  <div className="font-heading text-2xl font-bold text-white">99.9%</div>
                   <div className="font-body text-xs text-muted-foreground">Uptime</div>
                 </div>
               </div>
@@ -626,15 +626,15 @@ export default function Home() {
               
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="text-center">
-                  <div className="font-heading text-2xl font-bold gradient-text">50M+</div>
+                  <div className="font-heading text-2xl font-bold text-white">50M+</div>
                   <div className="font-body text-xs text-muted-foreground">Data Points/Day</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-heading text-2xl font-bold gradient-text">85%</div>
+                  <div className="font-heading text-2xl font-bold text-white">85%</div>
                   <div className="font-body text-xs text-muted-foreground">Accuracy Boost</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-heading text-2xl font-bold gradient-text">200ms</div>
+                  <div className="font-heading text-2xl font-bold text-white">200ms</div>
                   <div className="font-body text-xs text-muted-foreground">Response Time</div>
                 </div>
               </div>
@@ -649,30 +649,30 @@ export default function Home() {
       </section>
       
       {/* Simple section divider for mobile performance */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
       
       <PortfolioSection />
       
       {/* Simple section divider for mobile performance */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
       
       <TeamSection />
       
       {/* Simple section divider for mobile performance */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
       
       <TestimonialsSection />
       
       <PartnersSection />
       
       {/* Simple section divider for mobile performance */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
       
       {/* Industry Expertise Section */}
       <section className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-4">
-            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Industry Expertise</h2>
+            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">Industry Expertise</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We've worked across diverse industries, bringing specialized knowledge and proven solutions 
               to help businesses in every sector achieve their digital transformation goals.
@@ -700,7 +700,7 @@ export default function Home() {
                 description: 'Secure payment systems, trading platforms, KYC/AML compliance, and blockchain',
                 projects: '30+',
                 icon: <TrendingUp className="w-8 h-8" />,
-                color: 'from-purple-500 to-purple-600'
+                color: 'from-gray-700 to-gray-900'
               },
               {
                 title: 'Education & E-learning',
@@ -746,13 +746,13 @@ export default function Home() {
       <BlogSection />
       
       {/* Simple section divider for mobile performance */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
       
       {/* Resources & Knowledge Hub */}
       <section className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-4">
-            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">Knowledge Hub</h2>
+            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">Knowledge Hub</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Stay ahead with our comprehensive resources, whitepapers, and technical insights 
               covering the latest trends in web development and digital transformation.
@@ -794,7 +794,7 @@ export default function Home() {
             
             <div className="glass-card  p-8 group">
               <div className="mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center mb-4">
                   <PlayCircle className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-heading text-xl font-bold mb-4">Video Tutorials</h3>
@@ -812,7 +812,7 @@ export default function Home() {
       </section>
       
       {/* Simple section divider for mobile performance */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
       
       <ContactSection />
 
@@ -821,7 +821,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="glass-card  p-20 text-center relative overflow-hidden">
             <div className="relative z-10">
-              <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-text">
+              <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white">
                 Ready to Transform Your Business?
               </h2>
               <p className="font-body text-xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
@@ -885,35 +885,35 @@ export default function Home() {
       </section>
 
       {/* Simple section divider for mobile performance */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
       
       {/* Final Stats Banner */}
       <section className="py-16 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h3 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Why Choose DigitalCraft?</h3>
+            <h3 className="text-4xl md:text-5xl font-bold mb-6 text-white">Why Choose DigitalCraft?</h3>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We deliver exceptional results that drive your business forward
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <GlassCard className="text-center p-8 hover" hover>
-              <div className="text-5xl font-bold gradient-text mb-4">150+</div>
+              <div className="text-5xl font-bold text-white mb-4">150+</div>
               <h4 className="text-lg font-semibold mb-2">Successful Projects</h4>
               <p className="text-muted-foreground text-sm">Delivered with excellence and precision</p>
             </GlassCard>
             <GlassCard className="text-center p-8 hover" hover>
-              <div className="text-5xl font-bold gradient-text mb-4">25+</div>
+              <div className="text-5xl font-bold text-white mb-4">25+</div>
               <h4 className="text-lg font-semibold mb-2">Expert Developers</h4>
               <p className="text-muted-foreground text-sm">Skilled professionals at your service</p>
             </GlassCard>
             <GlassCard className="text-center p-8 hover" hover>
-              <div className="text-5xl font-bold gradient-text mb-4">15</div>
+              <div className="text-5xl font-bold text-white mb-4">15</div>
               <h4 className="text-lg font-semibold mb-2">Countries Served</h4>
               <p className="text-muted-foreground text-sm">Global reach and local expertise</p>
             </GlassCard>
             <GlassCard className="text-center p-8 hover" hover>
-              <div className="text-5xl font-bold gradient-text mb-4">5+</div>
+              <div className="text-5xl font-bold text-white mb-4">5+</div>
               <h4 className="text-lg font-semibold mb-2">Years Excellence</h4>
               <p className="text-muted-foreground text-sm">Proven track record of success</p>
             </GlassCard>
@@ -922,7 +922,7 @@ export default function Home() {
       </section>
       
       {/* Simple section divider for mobile performance */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent my-8"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
       
       <Footer />
     </>

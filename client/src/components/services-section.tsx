@@ -46,15 +46,15 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <GlassCard key={service.id} className="p-8 service-card">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center mb-6">
                 <i className={`${service.icon} text-white text-2xl`}></i>
               </div>
-              <h3 className="text-2xl font-bold mb-4">{service.name}</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">{service.name}</h3>
               <p className="text-muted-foreground mb-6">{service.description}</p>
               <ul className="space-y-2 text-sm text-muted-foreground mb-6">
                 {service.features.map((feature, index) => (
-                  <li key={index} className="flex items-center">
-                    <Check className="w-4 h-4 text-accent mr-2" />
+                  <li key={index} className="flex items-center text-white">
+                    <Check className="w-4 h-4 text-white mr-2" />
                     {feature}
                   </li>
                 ))}
@@ -62,7 +62,7 @@ export function ServicesSection() {
               <Link href={`/services/${service.slug}`}>
                 <Button 
                   variant="ghost" 
-                  className="text-accent hover:text-accent-foreground p-0"
+                  className="text-white hover:text-gray-300 p-0"
                   data-testid={`button-learn-more-${service.slug}`}
                 >
                   Learn More
