@@ -7,7 +7,7 @@ import { GlassCard } from "@/components/glass-card";
 import { ContactPopup } from "@/components/contact-popup";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, ArrowLeft, Rocket, Users, Clock, Shield } from "lucide-react";
+import { Check, ArrowLeft, Rocket, Users, Clock, Shield, Cloud, Globe, Target, Database, Smartphone, Search } from "lucide-react";
 import type { Service } from "@shared/schema";
 
 export default function ServiceDetail() {
@@ -16,6 +16,25 @@ export default function ServiceDetail() {
   const { data: service, isLoading, error } = useQuery<Service>({
     queryKey: ["/api/services", slug],
   });
+
+  const getServiceIcon = (serviceName: string) => {
+    const iconMap: Record<string, React.ReactNode> = {
+      'SaaS Solutions': <Cloud className="w-10 h-10 text-white" />,
+      'Web Development': <Globe className="w-10 h-10 text-white" />,
+      'Digital Marketing': <Target className="w-10 h-10 text-white" />,
+      'Mobile Development': <Smartphone className="w-10 h-10 text-white" />,
+      'Database Solutions': <Database className="w-10 h-10 text-white" />,
+      'SEO Optimization': <Search className="w-10 h-10 text-white" />,
+    };
+    
+    // Find the closest match or default to Globe
+    const match = Object.keys(iconMap).find(key => 
+      serviceName.toLowerCase().includes(key.toLowerCase()) || 
+      key.toLowerCase().includes(serviceName.toLowerCase())
+    );
+    
+    return match ? iconMap[match] : <Globe className="w-10 h-10 text-white" />;
+  };
 
   if (isLoading) {
     return (
@@ -85,8 +104,8 @@ export default function ServiceDetail() {
         <div className="hero-glow bottom-20 right-20 animation-delay-2s"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <i className={`${service.icon} text-white text-3xl`}></i>
+          <div className="w-20 h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-purple-500/25">
+            {getServiceIcon(service.name)}
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             {service.name}
