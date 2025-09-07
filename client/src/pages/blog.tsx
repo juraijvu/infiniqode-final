@@ -9,7 +9,7 @@ import { GlassCard } from "@/components/glass-card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, Clock, User, ArrowRight, Filter } from "lucide-react";
+import { Search, Clock, User, ArrowRight, Filter, Code2, TrendingUp, Globe, BookOpen } from "lucide-react";
 import type { BlogPost } from "@shared/schema";
 
 export default function Blog() {
@@ -85,8 +85,8 @@ export default function Blog() {
           <div ref={categoriesRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <Link href="/blog/technical">
               <GlassCard className="glass-blog-card p-8 text-center hover:bg-white/5 transition-colors duration-200 cursor-pointer will-change-auto" data-testid="card-technical-blog">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl">⚡</span>
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mx-auto mb-6 shadow-lg shadow-purple-500/25">
+                  <Code2 className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">Technical</h3>
                 <p className="text-muted-foreground text-sm">Code examples, tutorials, and technical insights</p>
@@ -95,8 +95,8 @@ export default function Blog() {
             
             <Link href="/blog/general">
               <GlassCard className="glass-blog-card p-8 text-center hover:bg-white/5 transition-colors duration-200 cursor-pointer will-change-auto" data-testid="card-general-blog">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl">📝</span>
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mx-auto mb-6 shadow-lg shadow-purple-500/25">
+                  <BookOpen className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">General</h3>
                 <p className="text-muted-foreground text-sm">Industry insights and thought leadership</p>
@@ -105,8 +105,8 @@ export default function Blog() {
             
             <Link href="/blog/marketing">
               <GlassCard className="glass-blog-card p-8 text-center hover:bg-white/5 transition-colors duration-200 cursor-pointer will-change-auto" data-testid="card-marketing-blog">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl">📈</span>
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mx-auto mb-6 shadow-lg shadow-purple-500/25">
+                  <TrendingUp className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">Marketing</h3>
                 <p className="text-muted-foreground text-sm">Growth strategies and marketing insights</p>
@@ -115,8 +115,8 @@ export default function Blog() {
             
             <Link href="/blog/news">
               <GlassCard className="glass-blog-card p-8 text-center hover:bg-white/5 transition-colors duration-200 cursor-pointer will-change-auto" data-testid="card-news-blog">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl">📰</span>
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mx-auto mb-6 shadow-lg shadow-purple-500/25">
+                  <Globe className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">News</h3>
                 <p className="text-muted-foreground text-sm">Latest industry news and updates</p>
