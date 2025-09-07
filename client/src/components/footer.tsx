@@ -21,31 +21,31 @@ export function Footer() {
             <div className="flex space-x-4">
               <a 
                 href="#" 
-                className="w-10 h-10 glass-card rounded-lg flex items-center justify-center hover:text-white transition-colors text-white"
+                className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center hover:from-blue-600 hover:to-blue-800 transition-all duration-300 shadow-lg shadow-blue-500/25"
                 data-testid="footer-social-linkedin"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-4 h-4 text-white" />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 glass-card rounded-lg flex items-center justify-center hover:text-white transition-colors text-white"
+                className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-lg flex items-center justify-center hover:from-cyan-600 hover:to-cyan-800 transition-all duration-300 shadow-lg shadow-cyan-500/25"
                 data-testid="footer-social-twitter"
               >
-                <Twitter className="w-4 h-4" />
+                <Twitter className="w-4 h-4 text-white" />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 glass-card rounded-lg flex items-center justify-center hover:text-white transition-colors text-white"
+                className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg flex items-center justify-center hover:from-gray-700 hover:to-gray-900 transition-all duration-300 shadow-lg shadow-gray-600/25"
                 data-testid="footer-social-github"
               >
-                <Github className="w-4 h-4" />
+                <Github className="w-4 h-4 text-white" />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 glass-card rounded-lg flex items-center justify-center hover:text-white transition-colors text-white"
+                className="w-10 h-10 bg-gradient-to-br from-pink-500 to-pink-700 rounded-lg flex items-center justify-center hover:from-pink-600 hover:to-pink-800 transition-all duration-300 shadow-lg shadow-pink-500/25"
                 data-testid="footer-social-dribbble"
               >
-                <Dribbble className="w-4 h-4" />
+                <Dribbble className="w-4 h-4 text-white" />
               </a>
             </div>
           </div>

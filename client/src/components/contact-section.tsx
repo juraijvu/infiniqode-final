@@ -112,31 +112,31 @@ export function ContactSection() {
             <div className="flex space-x-4 pt-6">
               <a 
                 href="#" 
-                className="w-12 h-12 glass-card rounded-lg flex items-center justify-center hover:text-accent transition-colors"
+                className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center hover:from-blue-600 hover:to-blue-800 transition-all duration-300 shadow-lg shadow-blue-500/25"
                 data-testid="social-linkedin"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-5 h-5 text-white" />
               </a>
               <a 
                 href="#" 
-                className="w-12 h-12 glass-card rounded-lg flex items-center justify-center hover:text-accent transition-colors"
+                className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-lg flex items-center justify-center hover:from-cyan-600 hover:to-cyan-800 transition-all duration-300 shadow-lg shadow-cyan-500/25"
                 data-testid="social-twitter"
               >
-                <Twitter className="w-5 h-5" />
+                <Twitter className="w-5 h-5 text-white" />
               </a>
               <a 
                 href="#" 
-                className="w-12 h-12 glass-card rounded-lg flex items-center justify-center hover:text-accent transition-colors"
+                className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg flex items-center justify-center hover:from-gray-700 hover:to-gray-900 transition-all duration-300 shadow-lg shadow-gray-600/25"
                 data-testid="social-github"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-5 h-5 text-white" />
               </a>
               <a 
                 href="#" 
-                className="w-12 h-12 glass-card rounded-lg flex items-center justify-center hover:text-accent transition-colors"
+                className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-700 rounded-lg flex items-center justify-center hover:from-pink-600 hover:to-pink-800 transition-all duration-300 shadow-lg shadow-pink-500/25"
                 data-testid="social-dribbble"
               >
-                <Dribbble className="w-5 h-5" />
+                <Dribbble className="w-5 h-5 text-white" />
               </a>
             </div>
           </div>
