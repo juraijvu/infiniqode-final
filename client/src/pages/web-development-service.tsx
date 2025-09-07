@@ -22,7 +22,11 @@ import {
   Shield,
   Star,
   TrendingUp,
-  Target
+  Target,
+  Phone,
+  MessageCircle,
+  MapPin,
+  Mail
 } from "lucide-react";
 import { SiReact, SiNodedotjs, SiPostgresql, SiTailwindcss, SiTypescript, SiNextdotjs, SiMongodb, SiGraphql } from "react-icons/si";
 
@@ -382,12 +386,12 @@ export default function WebDevelopmentService() {
               { icon: Zap, title: "New", subtitle: "Generation Theme" }
             ].map((item, index) => (
               <div key={index} className="text-center space-y-4 group">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-primary to-accent rounded-xl md:rounded-2xl flex items-center justify-center mx-auto shadow-xl border border-white/20 group-hover:scale-110 transition-transform duration-300">
-                  <item.icon className="icon-white text-xl md:text-2xl" />
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.subtitle}</p>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-purple-100/80">{item.subtitle}</p>
                 </div>
               </div>
             ))}
@@ -627,7 +631,7 @@ export default function WebDevelopmentService() {
             <div className="grid grid-cols-2 gap-6">
               <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 text-center space-y-3">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-purple-700/20 rounded-xl flex items-center justify-center mx-auto">
-                  <span className="text-2xl">📞</span>
+                  <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-2">Phone No</h3>
@@ -637,7 +641,7 @@ export default function WebDevelopmentService() {
               
               <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 text-center space-y-3">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-purple-700/20 rounded-xl flex items-center justify-center mx-auto">
-                  <span className="text-2xl">💬</span>
+                  <MessageCircle className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-2">WhatsApp</h3>
@@ -647,7 +651,7 @@ export default function WebDevelopmentService() {
               
               <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 text-center space-y-3">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-purple-700/20 rounded-xl flex items-center justify-center mx-auto">
-                  <span className="text-2xl">📍</span>
+                  <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-2">Address</h3>
@@ -657,7 +661,7 @@ export default function WebDevelopmentService() {
               
               <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 text-center space-y-3">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-purple-700/20 rounded-xl flex items-center justify-center mx-auto">
-                  <span className="text-2xl">✉️</span>
+                  <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-2">Email</h3>
