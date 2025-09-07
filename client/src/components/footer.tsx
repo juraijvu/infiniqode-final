@@ -4,8 +4,12 @@ import { FaReact, FaPython } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer className="py-2 border-t border-border">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer className="py-16 bg-gradient-to-br from-gray-900/95 via-purple-900/10 to-gray-900/95 backdrop-blur-xl border-t border-purple-500/20 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-2">
           {/* Company Info */}
           <div>
