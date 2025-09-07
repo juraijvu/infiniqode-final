@@ -66,7 +66,7 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <GlassCard key={service.id} className="p-8 service-card">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25">
                 {getServiceIcon(service.name)}
               </div>
               <h3 className="text-2xl font-bold mb-4 text-white">{service.name}</h3>

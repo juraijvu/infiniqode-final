@@ -444,7 +444,7 @@ export default function Home() {
             <div>
               <div className="space-y-8">
                 <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/25">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/25">
                     <Trophy className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -458,7 +458,7 @@ export default function Home() {
                 </div>
                 
                 <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/25">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/25">
                     <Users className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -472,7 +472,7 @@ export default function Home() {
                 </div>
                 
                 <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-orange-500/25">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/25">
                     <Rocket className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -837,21 +837,21 @@ export default function Home() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-green-500/25">
+                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                     <Calendar className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="font-heading text-lg font-bold mb-4">Free Consultation</h3>
                   <p className="font-body text-muted-foreground text-sm">30-minute strategy session</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-blue-500/25">
+                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                     <Target className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="font-heading text-lg font-bold mb-4">Custom Proposal</h3>
                   <p className="font-body text-muted-foreground text-sm">Tailored to your needs</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
+                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                     <Rocket className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="font-heading text-lg font-bold mb-4">Fast Delivery</h3>
