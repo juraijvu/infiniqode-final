@@ -93,7 +93,7 @@ export function BlogSection() {
 
         <div className="text-center mt-2">
           <Link href="/blog">
-            <Button className="glass-button px-8 py-4 text-lg" data-testid="button-view-all-posts">
+            <Button variant="glass" size="lg" data-testid="button-view-all-posts">
               View All Posts
             </Button>
           </Link>

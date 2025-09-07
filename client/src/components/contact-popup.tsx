@@ -256,7 +256,9 @@ export function ContactPopup({ trigger, defaultService, title, description }: Co
               <Button 
                 type="submit" 
                 disabled={submitMutation.isPending}
-                className="glass-button text-white font-medium flex-1 h-12 text-base"
+                variant="glass-3d"
+                size="default"
+                className="flex-1"
                 data-testid="button-submit-inquiry"
               >
                 {submitMutation.isPending ? (

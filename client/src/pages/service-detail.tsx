@@ -121,7 +121,7 @@ export default function ServiceDetail() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ContactPopup 
               trigger={
-                <Button className="glass-button px-8 py-4 text-lg" data-testid="button-get-quote">
+                <Button variant="glass-3d" size="lg" data-testid="button-get-quote">
                   <Rocket className="mr-2 h-5 w-5" />
                   Get Quote
                 </Button>
@@ -131,7 +131,7 @@ export default function ServiceDetail() {
               defaultService={service.name}
             />
             <Link href="/services">
-              <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white px-8 py-4 text-lg transition-all duration-300" data-testid="button-view-all-services">
+              <Button variant="outline" size="lg" data-testid="button-view-all-services">
                 View All Services
               </Button>
             </Link>
@@ -239,7 +239,7 @@ export default function ServiceDetail() {
                 </p>
                 <ContactPopup 
                   trigger={
-                    <Button className="glass-button w-full mb-3" data-testid="button-start-project">
+                    <Button variant="glass" size="default" className="w-full mb-3" data-testid="button-start-project">
                       Start Your Project
                     </Button>
                   }
@@ -248,7 +248,7 @@ export default function ServiceDetail() {
                   defaultService={service.name}
                 />
                 <Link href="/portfolio">
-                  <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white w-full transition-all duration-300" data-testid="button-view-portfolio">
+                  <Button variant="outline" size="default" className="w-full" data-testid="button-view-portfolio">
                     View Portfolio
                   </Button>
                 </Link>

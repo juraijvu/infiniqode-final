@@ -90,7 +90,7 @@ export default function About() {
           </p>
           <ContactPopup 
             trigger={
-              <Button className="glass-button px-8 py-4 text-lg" data-testid="button-work-with-us">
+              <Button variant="glass-3d" size="lg" data-testid="button-work-with-us">
                 <Heart className="mr-2 h-5 w-5" />
                 Work With Us
               </Button>
