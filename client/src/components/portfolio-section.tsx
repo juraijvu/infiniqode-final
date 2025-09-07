@@ -83,8 +83,8 @@ export function PortfolioSection() {
           {categories.map((category) => (
             <Button
               key={category}
-              variant={selectedCategory === category ? "default" : "outline"}
-              className={selectedCategory === category ? "glass-button" : ""}
+              variant={selectedCategory === category ? "glass" : "outline"}
+              size="sm"
               onClick={() => setSelectedCategory(category)}
               data-testid={`filter-${category.toLowerCase()}`}
             >
@@ -128,7 +128,7 @@ export function PortfolioSection() {
 
         <div className="text-center mt-2">
           <Link href="/portfolio">
-            <Button className="glass-button px-8 py-4 text-lg" data-testid="button-view-all-projects">
+            <Button variant="glass" size="lg" data-testid="button-view-all-projects">
               View All Projects
             </Button>
           </Link>

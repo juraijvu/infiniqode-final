@@ -140,7 +140,7 @@ export function Navigation() {
           <div ref={ctaButtonRef} className="hidden md:block">
             <ContactPopup 
               trigger={
-                <Button className="glass-button text-white font-medium" data-testid="button-get-started">
+                <Button variant="glass" size="default" data-testid="button-get-started">
                   Get Started
                 </Button>
               }

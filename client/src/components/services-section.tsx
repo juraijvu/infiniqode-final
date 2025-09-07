@@ -82,7 +82,7 @@ export function ServicesSection() {
               <Link href={`/services/${service.slug}`}>
                 <Button 
                   variant="ghost" 
-                  className="text-white hover:text-gray-300 p-0"
+                  size="sm"
                   data-testid={`button-learn-more-${service.slug}`}
                 >
                   Learn More

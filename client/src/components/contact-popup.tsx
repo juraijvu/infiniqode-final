@@ -271,8 +271,8 @@ export function ContactPopup({ trigger, defaultService, title, description }: Co
               <Button 
                 type="button" 
                 variant="outline" 
+                size="default"
                 onClick={() => setOpen(false)}
-                className="glass-border text-foreground hover:bg-accent/10 h-12"
                 data-testid="button-cancel"
               >
                 Cancel
