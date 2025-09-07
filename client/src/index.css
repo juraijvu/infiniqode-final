@@ -22,7 +22,7 @@
   --accent-foreground: hsl(0 0% 0%);
   --destructive: hsl(356 90% 54%);
   --destructive-foreground: hsl(0 0% 100%);
-  --border: hsl(0 0% 20%);
+  --border: hsl(262 83% 58%);
   --input: hsl(0 0% 10%);
   --ring: hsl(0 0% 100%);
   --chart-1: hsl(0 0% 100%);
@@ -36,7 +36,7 @@
   --sidebar-primary-foreground: hsl(0 0% 0%);
   --sidebar-accent: hsl(0 0% 100%);
   --sidebar-accent-foreground: hsl(0 0% 0%);
-  --sidebar-border: hsl(0 0% 20%);
+  --sidebar-border: hsl(262 83% 58%);
   --sidebar-ring: hsl(0 0% 100%);
   --font-sans: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-serif: 'Georgia', 'Times New Roman', serif;

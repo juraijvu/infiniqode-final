@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useDraggable } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
-import { Search, Grid, Type, Image, Square, Layout, Users } from 'lucide-react';
+import { Search, Grid, Type, Image, Square, Layout, Users, Mail, Phone, Map, Star, Calendar, Video, Music, FileText, PieChart, BarChart3, Settings, Palette, Layers, Code, Shield, Zap, Globe, Target, Award, CheckCircle, ArrowRight, PlayCircle, ExternalLink } from 'lucide-react';
 import { Input } from '../ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
 
@@ -84,6 +84,29 @@ const getIconForComponentType = (type: string): React.ReactNode => {
     'grid': <Grid size={16} />,
     'layout': <Layout size={16} />,
     'form': <Users size={16} />,
+    'contact': <Mail size={16} />,
+    'phone': <Phone size={16} />,
+    'map': <Map size={16} />,
+    'testimonial': <Star size={16} />,
+    'calendar': <Calendar size={16} />,
+    'video': <Video size={16} />,
+    'audio': <Music size={16} />,
+    'blog': <FileText size={16} />,
+    'chart': <PieChart size={16} />,
+    'analytics': <BarChart3 size={16} />,
+    'settings': <Settings size={16} />,
+    'design': <Palette size={16} />,
+    'stack': <Layers size={16} />,
+    'code': <Code size={16} />,
+    'security': <Shield size={16} />,
+    'performance': <Zap size={16} />,
+    'web': <Globe size={16} />,
+    'target': <Target size={16} />,
+    'achievement': <Award size={16} />,
+    'success': <CheckCircle size={16} />,
+    'navigation': <ArrowRight size={16} />,
+    'media': <PlayCircle size={16} />,
+    'link': <ExternalLink size={16} />,
   };
   return iconMap[type] || <Layout size={16} />;
 };

@@ -63,8 +63,8 @@ export function Navigation() {
       <div
         className={`group flex items-center gap-4 p-4 rounded-xl transition-colors duration-150 cursor-pointer ${
           location === href
-            ? "bg-white/10 text-white border border-white/20"
-            : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
+            ? "bg-gradient-to-r from-purple-500/20 to-purple-700/20 text-white border border-purple-500/50"
+            : "text-muted-foreground hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-purple-700/10 hover:text-foreground"
         }`}
         onClick={() => setIsOpen(false)}
       >
@@ -85,7 +85,7 @@ export function Navigation() {
   );
 
   return (
-    <nav className="fixed top-2 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl z-50 glass-nav border border-border rounded-2xl hanging-nav">
+    <nav className="fixed top-2 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl z-50 glass-nav border-2 border-purple-500/50 bg-gradient-to-r from-purple-500/10 to-purple-700/10 rounded-2xl hanging-nav">
       <div className="mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/">
@@ -110,11 +110,11 @@ export function Navigation() {
                   <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-80 glass-card border-border/50 z-[1000]" sideOffset={8}>
+              <DropdownMenuContent className="w-80 glass-card border-2 border-purple-500/50 bg-gradient-to-r from-purple-500/10 to-purple-700/10 z-[1000]" sideOffset={8}>
                 <div className="p-2 space-y-1">
                   {servicesItems.map((service) => (
                     <Link key={service.href} href={service.href}>
-                      <DropdownMenuItem className="flex items-start gap-3 p-3 rounded-lg cursor-pointer hover:bg-white/5 transition-colors duration-150 group">
+                      <DropdownMenuItem className="flex items-start gap-3 p-3 rounded-lg cursor-pointer hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-purple-700/20 transition-colors duration-150 group">
                         <div className="p-2 rounded-lg bg-white/10 group-hover:bg-white/20 transition-colors duration-150">
                           <service.icon className="w-4 h-4 text-white" />
                         </div>
@@ -163,10 +163,10 @@ export function Navigation() {
             </SheetTrigger>
             <SheetContent 
               side="right" 
-              className="w-full sm:w-[400px] glass-card border-border/30 p-0 backdrop-blur-xl transform-gpu"
+              className="w-full sm:w-[400px] glass-card border-2 border-purple-500/50 bg-gradient-to-r from-purple-500/10 to-purple-700/10 p-0 backdrop-blur-xl transform-gpu"
             >
               {/* Mobile Menu Header */}
-              <div className="flex items-center justify-between p-6 border-b border-border/30">
+              <div className="flex items-center justify-between p-6 border-b border-purple-500/50">
                 <div className="flex items-center space-x-2">
                   <div className="w-8 h-8 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center">
                     <Code className="w-4 h-4 text-white" />
@@ -189,7 +189,7 @@ export function Navigation() {
                     {servicesItems.map((service) => (
                       <Link key={service.href} href={service.href}>
                         <div
-                          className="group flex items-center gap-4 p-4 rounded-xl transition-colors duration-150 cursor-pointer hover:bg-white/5 hover:text-foreground text-muted-foreground"
+                          className="group flex items-center gap-4 p-4 rounded-xl transition-colors duration-150 cursor-pointer hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-purple-700/10 hover:text-foreground text-muted-foreground"
                           onClick={() => setIsOpen(false)}
                         >
                           <div className="p-2 rounded-lg bg-white/10 group-hover:bg-white/20 transition-colors duration-200 will-change-auto">
@@ -206,7 +206,7 @@ export function Navigation() {
                 </div>
 
                 {/* Mobile Menu Footer */}
-                <div className="p-6 border-t border-border/30 space-y-4">
+                <div className="p-6 border-t border-purple-500/50 space-y-4">
                   <ContactPopup 
                     trigger={
                       <Button className="glass-button text-white font-medium w-full h-12 text-base" data-testid="button-mobile-get-started">
