@@ -13,7 +13,7 @@ import { GlassCard } from "@/components/glass-card";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Trophy, Users, Rocket, Calendar, Download, Code, Shield, Zap, Globe, Star, TrendingUp, BarChart3, Monitor, Smartphone, Database, Cloud, Server, Cpu, Layers, GitBranch, Palette, Settings, Target, Award, CheckCircle, ArrowRight, PlayCircle, ExternalLink } from "lucide-react";
-import { Search, Brush, Cog, CheckSquare } from "@mynaui/icons-react";
+import { Search, Cog, CheckSquare } from "@mynaui/icons-react";
 import { useFadeInUp, useStaggerAnimation, useCountAnimation, useParallaxEffect, initializeGSAP } from "@/lib/gsap-animations";
 import { useEffect } from "react";
 
@@ -334,7 +334,7 @@ export default function Home() {
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
-                    <Brush className="w-8 h-8" />
+                    <Palette className="w-8 h-8" />
                   </div>
                 </div>
                 <div>
