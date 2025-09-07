@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
@@ -5,7 +6,6 @@ import { GlassCard } from "@/components/glass-card";
 import { ContactPopup } from "@/components/contact-popup";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
 import { 
   Cloud, 
@@ -19,9 +19,31 @@ import {
   ArrowRight,
   Database,
   Globe,
-  Lock
+  Lock,
+  Smartphone,
+  Code,
+  Palette
 } from "lucide-react";
-import { SiAmazon, SiGooglecloud } from "react-icons/si";
+import { SiAmazon, SiGooglecloud, SiDocker, SiKubernetes, SiPostgresql, SiMongodb, SiRedis } from "react-icons/si";
+
+// FAQ Item Component
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 group hover:bg-purple-500/25 transition-all duration-300">
+      <div className="flex items-start justify-between cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+        <p className="text-white font-medium leading-relaxed pr-4">{question}</p>
+        <div className="w-8 h-8 bg-purple-500/40 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/60 transition-all duration-300">
+          <span className={`text-white text-lg transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}>+</span>
+        </div>
+      </div>
+      <div className={`mt-4 text-purple-100/70 text-sm leading-relaxed transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
+        {answer}
+      </div>
+    </div>
+  );
+}
 
 export default function SaaSSolutionsService() {
   const structuredData = {
@@ -38,89 +60,6 @@ export default function SaaSSolutionsService() {
     "serviceType": "SaaS Development"
   };
 
-  const keyFeatures = [
-    {
-      icon: <Server className="w-8 h-8 text-accent" />,
-      title: "Scalable Architecture",
-      description: "Cloud-native solutions that grow with your business needs"
-    },
-    {
-      icon: <Settings className="w-8 h-8 text-accent" />,
-      title: "API Integrations",
-      description: "Seamless third-party service integration and custom APIs"
-    },
-    {
-      icon: <Users className="w-8 h-8 text-accent" />,
-      title: "Subscription Models",
-      description: "Flexible billing and subscription management systems"
-    },
-    {
-      icon: <Shield className="w-8 h-8 text-accent" />,
-      title: "Enterprise Security",
-      description: "Advanced security measures and compliance standards"
-    },
-    {
-      icon: <BarChart3 className="w-8 h-8 text-accent" />,
-      title: "Analytics Dashboard",
-      description: "Comprehensive user analytics and business intelligence"
-    },
-    {
-      icon: <Zap className="w-8 h-8 text-accent" />,
-      title: "High Performance",
-      description: "Optimized for speed and reliability at scale"
-    }
-  ];
-
-  const processSteps = [
-    { step: "01", title: "Design", description: "Architecture planning and system design" },
-    { step: "02", title: "Develop", description: "Agile development with regular milestones" },
-    { step: "03", title: "Deploy", description: "Cloud deployment and infrastructure setup" },
-    { step: "04", title: "Optimize", description: "Performance tuning and scaling optimization" },
-    { step: "05", title: "Monitor", description: "Continuous monitoring and maintenance" },
-    { step: "06", title: "Scale", description: "Growth support and feature expansion" }
-  ];
-
-  const pricingPlans = [
-    {
-      name: "MVP",
-      price: "$15,999",
-      description: "Perfect for startups",
-      features: [
-        "Core functionality development",
-        "Basic user management",
-        "Cloud deployment",
-        "3 months support",
-        "Mobile responsive"
-      ]
-    },
-    {
-      name: "Professional",
-      price: "$35,999",
-      description: "Ideal for growing businesses",
-      features: [
-        "Full feature development",
-        "Advanced user roles",
-        "Payment integration",
-        "API development",
-        "Analytics dashboard",
-        "6 months support"
-      ],
-      popular: true
-    },
-    {
-      name: "Enterprise",
-      price: "$75,999",
-      description: "For large organizations",
-      features: [
-        "Complete SaaS platform",
-        "Multi-tenant architecture",
-        "Custom integrations",
-        "Advanced security",
-        "Dedicated support",
-        "12 months support"
-      ]
-    }
-  ];
 
   return (
     <>
@@ -132,237 +71,399 @@ export default function SaaSSolutionsService() {
       />
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center pt-20">
-        <div className="hero-glow top-20 left-20"></div>
-        <div className="hero-glow bottom-20 right-20 animation-delay-2s"></div>
+      {/* Hero Section - Reference Design Match */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-8">
-            <Cloud className="text-white text-4xl" />
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
-            SaaS Solutions
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-            We build and optimize custom Software-as-a-Service platforms that scale with your business. 
-            From MVP development to enterprise-grade solutions, our expertise in cloud architecture, 
-            subscription management, and API integrations ensures your SaaS platform delivers exceptional 
-            user experiences while driving sustainable recurring revenue growth.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-            <ContactPopup 
-              trigger={
-                <Button className="glass-button px-12 py-6 text-xl" data-testid="button-get-saas-proposal">
-                  Get SaaS Proposal
-                </Button>
-              }
-              title="Ready to Build Your SaaS Platform?"
-              description="Let's discuss your SaaS vision and create a scalable platform that drives recurring revenue."
-              defaultService="SaaS Solutions"
-            />
-            <Link href="/portfolio">
-              <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white px-12 py-6 text-xl transition-all duration-300" data-testid="button-view-saas-portfolio">
-                View SaaS Portfolio
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Offering */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <GlassCard className="p-12 text-center">
-            <h2 className="text-4xl font-bold mb-6 text-white">Our Core Offering</h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              We specialize in developing comprehensive SaaS platforms that combine innovative technology 
-              with proven business models. Our custom development and optimization services cover everything 
-              from initial concept and MVP development to enterprise scaling and performance optimization. 
-              We build cloud-native applications with robust subscription management, seamless API integrations, 
-              and scalable architecture that supports millions of users while maintaining exceptional performance 
-              and security standards that enterprise clients demand.
-            </p>
-          </GlassCard>
-        </div>
-      </section>
-
-      {/* Key Features */}
-      <section className="py-20 bg-muted/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-white">Key Features</h2>
-            <p className="text-xl text-muted-foreground">
-              Everything you need for a successful SaaS platform
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {keyFeatures.map((feature, index) => (
-              <Card key={index} className="glass-card p-8 text-center hover:scale-105 transition-transform">
-                <div className="flex justify-center mb-6">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tech Stack */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-white">Cloud Infrastructure</h2>
-          <p className="text-xl text-muted-foreground mb-12">
-            We leverage leading cloud platforms for maximum scalability and reliability
-          </p>
-          <div className="flex justify-center items-center gap-16 flex-wrap">
-            <div className="flex flex-col items-center group cursor-pointer">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <SiAmazon className="text-white text-3xl" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content - Text Section */}
+            <div className="space-y-8">
+              {/* Main Title */}
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                  SaaS Solutions<br />
+                  <span className="text-purple-300">Development</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
+                  At INFINIQODE, we believe in the transformative power of scalable software solutions. Our team 
+                  of experts is dedicated to helping businesses like yours thrive in the cloud-first 
+                  digital landscape. From MVP development to enterprise-grade platforms 
+                  solutions, we are committed to delivering results that exceed expectations.
+                </p>
               </div>
-              <span className="text-lg font-semibold">AWS</span>
-            </div>
-            <div className="flex flex-col items-center group cursor-pointer">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Cloud className="text-white text-3xl" />
-              </div>
-              <span className="text-lg font-semibold">Azure</span>
-            </div>
-            <div className="flex flex-col items-center group cursor-pointer">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <SiGooglecloud className="text-white text-3xl" />
-              </div>
-              <span className="text-lg font-semibold">Google Cloud</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Steps */}
-      <section className="py-20 bg-muted/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-white">Our Process</h2>
-            <p className="text-xl text-muted-foreground">
-              From concept to scale, we guide your SaaS journey
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative">
-                <GlassCard className="p-6 text-center h-full">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold">{step.step}</span>
+              
+              {/* Service Badges */}
+              <div className="flex flex-wrap gap-4">
+                {[
+                  "MVP Development",
+                  "Cloud Architecture", 
+                  "API Integration",
+                  "Subscription Management"
+                ].map((service, index) => (
+                  <div key={index} className="px-6 py-3 bg-purple-700/50 backdrop-blur-sm border border-purple-500/30 rounded-full">
+                    <span className="text-purple-100 font-medium text-sm">{service}</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm">{step.description}</p>
-                </GlassCard>
-                {index < processSteps.length - 1 && index % 3 !== 2 && (
-                  <ArrowRight className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-accent w-8 h-8" />
-                )}
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Pricing Model */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-white">Pricing Plans</h2>
-            <p className="text-xl text-muted-foreground">
-              Choose the SaaS development package that fits your vision
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <GlassCard key={index} className={`p-8 text-center relative ${plan.popular ? 'border-2 border-accent' : ''}`}>
-                {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-black">
-                    Most Popular
-                  </Badge>
-                )}
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="text-4xl font-bold mb-2 text-white">{plan.price}</div>
-                <p className="text-muted-foreground mb-8">{plan.description}</p>
-                <ul className="space-y-3 mb-8 text-left">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
                 <ContactPopup 
                   trigger={
-                    <Button className={`w-full ${plan.popular ? 'glass-button' : ''}`} data-testid={`button-select-${plan.name.toLowerCase()}`}>
+                    <Button className="px-8 py-4 text-lg font-semibold bg-purple-600 hover:bg-purple-500 text-white border-0 shadow-xl rounded-full" data-testid="button-start-project">
                       Get Started
                     </Button>
                   }
-                  title={`Get Started with ${plan.name} Plan`}
-                  description={`Ready to begin your SaaS development project with our ${plan.name} plan? Let's discuss your specific requirements.`}
+                  title="Ready to Start Your SaaS Development Project?"
+                  description="Let's discuss your SaaS vision and create a scalable platform that drives recurring revenue."
                   defaultService="SaaS Solutions"
                 />
-              </GlassCard>
+                <Button className="px-8 py-4 text-lg font-semibold bg-transparent border-2 border-purple-400/60 text-purple-100 hover:bg-purple-600/20 rounded-full" data-testid="button-schedule-call">
+                  Schedule a Call
+                </Button>
+              </div>
+            </div>
+            
+            {/* Right Content - 3D Graphics */}
+            <div className="relative flex items-center justify-center lg:justify-end">
+              {/* Floating 3D Elements */}
+              <div className="relative w-full max-w-md h-96">
+                {/* Large Blue Cube */}
+                <div className="absolute top-16 right-8 w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300 opacity-80"></div>
+                
+                {/* Green Diamond */}
+                <div className="absolute top-32 left-4 w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 transform rotate-45 shadow-xl hover:rotate-12 transition-transform duration-300 opacity-90"></div>
+                
+                {/* Purple Hexagon */}
+                <div className="absolute top-8 left-16 w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl shadow-2xl transform rotate-6 hover:-rotate-6 transition-transform duration-300 opacity-75"></div>
+                
+                {/* Light Blue Cube */}
+                <div className="absolute bottom-24 right-16 w-18 h-18 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg shadow-xl transform -rotate-12 hover:rotate-3 transition-transform duration-300 opacity-85"></div>
+                
+                {/* Yellow Square */}
+                <div className="absolute bottom-8 left-8 w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-md shadow-lg transform rotate-45 hover:rotate-90 transition-transform duration-300 opacity-70"></div>
+                
+                {/* Large Glass Prism */}
+                <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-white/20 via-purple-300/30 to-blue-400/40 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300"></div>
+                
+                {/* Small Transparent Cube */}
+                <div className="absolute bottom-16 left-20 w-12 h-12 bg-gradient-to-br from-white/10 via-purple-200/20 to-transparent backdrop-blur-sm border border-white/10 rounded-lg shadow-xl transform -rotate-6 hover:rotate-12 transition-transform duration-300"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Process Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Settings, title: "Architecture Planning & Design", step: "Step 1", desc: "SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning" },
+              { icon: Code, title: "MVP Development & Testing", step: "Step 2", desc: "SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning" },
+              { icon: Cloud, title: "Cloud Deployment & Scaling", step: "Step 3", desc: "SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning" },
+              { icon: BarChart3, title: "Analytics & Optimization", step: "Step 4", desc: "SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning" }
+            ].map((item, index) => (
+              <div key={index} className="group">
+                {/* Glass Card */}
+                <div className="relative h-full p-4 md:p-6 rounded-xl md:rounded-2xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
+                  
+                  <div className="relative z-10 space-y-4">
+                    {/* Icon */}
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-lg md:rounded-xl flex items-center justify-center border border-white/20">
+                      <item.icon className="icon-white text-lg md:text-xl" />
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
+                    
+                    <p className="text-sm text-purple-100/80 leading-relaxed line-clamp-4">{item.desc}</p>
+                    
+                    {/* Step Badge */}
+                    <div className="pt-2">
+                      <Badge className="bg-white/10 text-white border border-white/20 text-xs font-medium">
+                        {item.step}
+                      </Badge>
+                    </div>
+                    
+                    {/* Arrow */}
+                    <div className="flex justify-end pt-2">
+                      <ArrowRight className="text-purple-300 text-lg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Case Study Teaser */}
-      <section className="py-20 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
-          <GlassCard className="p-12">
-            <div className="text-center mb-8">
-              <h2 className="text-4xl font-bold mb-6 text-white">Success Story</h2>
-              <div className="text-6xl font-bold text-accent mb-4">40%</div>
-              <div className="text-xl text-muted-foreground mb-8">Increased client retention</div>
+      {/* Strategic Service Includes Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                What Our SaaS Development<br />
+                Service Includes
+              </h2>
+              
+              <p className="text-lg text-purple-100/90 leading-relaxed">
+                Our comprehensive SaaS development service is designed to help businesses of all
+                sizes harness the power of cloud-native solutions. We work closely with your
+                team to understand your unique challenges and implement scalable platforms that
+                drive real business value and sustainable recurring revenue.
+              </p>
+              
+              {/* Service Features */}
+              <div className="space-y-6">
+                {[
+                  "MVP Development & Validation",
+                  "Scalable Cloud Architecture", 
+                  "Subscription Management",
+                  "API Integration & Development"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        We analyze your business model and identify 
+                        opportunities where SaaS solutions can create the most impact.
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="prose prose-lg mx-auto text-muted-foreground">
-              <p className="mb-4">
-                A rapidly growing B2B software company approached us with a critical challenge: their existing 
-                platform was struggling under increased user load, leading to performance issues and customer churn. 
-                Their subscription management was fragmented, and they lacked the analytics needed to understand 
-                user behavior and optimize their service offerings.
-              </p>
-              <p className="mb-4">
-                We redesigned their entire SaaS architecture using a microservices approach with cloud-native 
-                technologies. Our team implemented a robust subscription management system with flexible billing 
-                options, integrated advanced analytics for user behavior tracking, and built a comprehensive 
-                admin dashboard that gave them deep insights into their business metrics.
-              </p>
-              <p className="mb-4">
-                The new platform featured auto-scaling infrastructure that could handle traffic spikes seamlessly, 
-                a modernized user interface that improved user experience significantly, and API integrations 
-                that streamlined their customers' workflows. We also implemented advanced security measures 
-                including SSO, role-based access control, and compliance monitoring.
-              </p>
-              <p>
-                The results exceeded expectations: client retention increased by 40% within six months, 
-                platform performance improved by 300%, and the company was able to onboard enterprise 
-                clients that previously couldn't be supported. The scalable architecture we built 
-                positioned them for continued growth and market expansion.
-              </p>
+            
+            {/* Right Content - 3D Illustration & Stats */}
+            <div className="relative">
+              {/* 3D Illustration Area */}
+              <div className="relative h-64 md:h-80 rounded-xl md:rounded-2xl glass-card overflow-hidden mb-6 md:mb-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                
+                {/* Mock 3D Elements */}
+                <div className="relative z-10 h-full flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    {/* Cloud Architecture Mock */}
+                    <div className="w-32 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-xl mx-auto flex items-center justify-center border border-blue-300/30">
+                      <div className="w-24 h-14 bg-white/20 rounded-sm flex items-center justify-center">
+                        <Cloud className="icon-white text-xl md:text-2xl" />
+                      </div>
+                    </div>
+                    
+                    {/* Floating Elements */}
+                    <div className="flex justify-center space-x-4">
+                      <div className="w-8 h-8 bg-cyan-400 rounded-full shadow-lg"></div>
+                      <div className="w-6 h-6 bg-green-400 rounded-md shadow-lg"></div>
+                      <div className="w-10 h-6 bg-orange-400 rounded-lg shadow-lg"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Statistics Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">99.9%</div>
+                  <p className="text-purple-100/80 text-sm">Uptime SLA</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">10x</div>
+                    <p className="text-xs text-purple-100/60">Scalability</p>
+                  </div>
+                </div>
+                
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">50%</div>
+                  <p className="text-purple-100/80 text-sm">Faster Development</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">3x</div>
+                    <p className="text-xs text-purple-100/60">ROI Improvement</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </GlassCard>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-5xl font-bold text-white">All SaaS Development Usecase</h2>
+            <p className="text-xl text-purple-100/90 max-w-3xl mx-auto">
+              Discover how our SaaS development services have transformed businesses
+              across various industries.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Revenue Model", subtitle: "Subscription Revenue & Customer Retention", desc: "Using scalable SaaS architecture to create recurring revenue models, reducing churn by 40% while improving customer lifetime value and retention." },
+              { title: "Operational Efficiency", subtitle: "Business Process Automation", desc: "Using cloud-native solutions to improve operational efficiency platforms, reducing operational costs by 35% while improving business scalability." },
+              { title: "Market Expansion", subtitle: "Global Scalability & Market Reach", desc: "Using multi-tenant architecture to create efficient global platforms, reducing time-to-market by 60% while improving international reach." }
+            ].map((item, index) => (
+              <div key={index} className="group">
+                <div className="h-full rounded-2xl md:rounded-3xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden">
+                  {/* Dashboard Mockup */}
+                  <div className="h-48 bg-gradient-to-br from-purple-800/40 to-purple-900/60 p-4 relative">
+                    <div className="bg-black/40 rounded-lg h-full p-4 backdrop-blur-sm">
+                      {/* Mock Dashboard Content */}
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs text-purple-200">
+                          <span>SaaS Metrics</span>
+                          <span>92%</span>
+                        </div>
+                        <div className="h-20 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded relative">
+                          {/* Mock Chart Bars */}
+                          <div className="absolute bottom-0 left-2 w-1 bg-purple-400 rounded-t" style={{ height: '60%' }}></div>
+                          <div className="absolute bottom-0 left-6 w-1 bg-purple-400 rounded-t" style={{ height: '80%' }}></div>
+                          <div className="absolute bottom-0 left-10 w-1 bg-purple-400 rounded-t" style={{ height: '40%' }}></div>
+                          <div className="absolute bottom-0 left-14 w-1 bg-purple-400 rounded-t" style={{ height: '90%' }}></div>
+                          <div className="absolute bottom-0 left-18 w-1 bg-purple-400 rounded-t" style={{ height: '70%' }}></div>
+                        </div>
+                        <div className="text-xs text-purple-300">75% Performance boost with cloud architecture</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
+                    <div className="space-y-2">
+                      <div className="text-xs text-purple-300 uppercase tracking-wider">{item.title}</div>
+                      <h3 className="text-lg font-bold text-white">{item.subtitle}</h3>
+                      <p className="text-sm text-purple-100/80 leading-relaxed">{item.desc}</p>
+                    </div>
+                    <Button variant="outline" className="w-full border-purple-400/30 text-purple-200 hover:bg-purple-600/20 group-hover:border-purple-400/50 transition-all duration-300">
+                      View Case Study
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Details Section */}
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-6">
+          <h2 className="text-4xl font-bold text-white">Service Details:</h2>
+          
+          {/* Service Description */}
+          <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+            <p className="text-purple-100/90 leading-relaxed text-lg">
+              Our premium SaaS development service combines cutting-edge cloud technology with scalable architecture to Our premium SaaS development service 
+              combines cutting-edge cloud technology with scalable architecture to Our premium SaaS development service combines cutting-edge cloud technology 
+              with scalable architecture to Our premium SaaS development service combines cutting-edge cloud technology with scalable architecture to 
+              Our premium SaaS development service combines cutting-edge cloud technology with scalable architecture to Our premium SaaS development service 
+              combines cutting-edge cloud technology with scalable architecture to Our premium SaaS development service combines cutting-edge cloud technology.
+            </p>
+          </div>
+          
+          {/* Strategic Feature Icons */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
+            {[
+              { icon: Cloud, title: "Cloud", subtitle: "Native Architecture" },
+              { icon: Server, title: "Scalable", subtitle: "Infrastructure" },
+              { icon: Shield, title: "Secure", subtitle: "Platform Design" },
+              { icon: Zap, title: "High", subtitle: "Performance" }
+            ].map((item, index) => (
+              <div key={index} className="text-center space-y-4 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-purple-100/80">{item.subtitle}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
+          <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {[
+              { icon: SiAmazon, name: "AWS", desc: "Amazon Web Services cloud infrastructure for scalable and reliable SaaS hosting." },
+              { icon: Cloud, name: "Azure", desc: "Microsoft Azure cloud platform for enterprise-grade SaaS applications and services." },
+              { icon: SiGooglecloud, name: "Google Cloud", desc: "Google Cloud Platform for modern SaaS applications with global scalability." },
+              { icon: SiDocker, name: "Docker", desc: "Containerization technology for consistent deployment across different environments." },
+              { icon: SiKubernetes, name: "Kubernetes", desc: "Container orchestration platform for automated deployment and scaling of applications." },
+              { icon: SiPostgresql, name: "PostgreSQL", desc: "Advanced relational database for storing and managing SaaS application data securely." },
+              { icon: SiMongodb, name: "MongoDB", desc: "NoSQL database for flexible data storage and rapid application development needs." },
+              { icon: SiRedis, name: "Redis", desc: "In-memory data structure store for caching and real-time application performance." }
+            ].map((tech, index) => (
+              <div key={index} className="group">
+                <div className="h-full p-6 rounded-2xl glass-card shadow-xl group-hover:shadow-2xl transition-all duration-300">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-white/10 to-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-300">
+                      <tech.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white">{tech.name}</h3>
+                    <p className="text-sm text-purple-100/80 leading-relaxed">{tech.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-12 text-white">
-            <Link href="/faq-saas" className="flex items-center justify-center gap-3 hover:opacity-80 transition-opacity">
-              Common SaaS Questions
-              <ArrowRight className="w-6 h-6" />
-            </Link>
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            Get answers to frequently asked questions about SaaS development
-          </p>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl text-purple-100/90">Get answers to common questions about our SaaS development services</p>
+          </div>
+          
+          <div className="space-y-6">
+            {[
+              {
+                question: "How long does it take to develop a SaaS platform?",
+                answer: "Development time varies based on complexity. An MVP typically takes 3-6 months, while a full-featured platform can take 6-12 months depending on requirements."
+              },
+              {
+                question: "What makes your SaaS development approach different?",
+                answer: "We focus on scalable cloud-native architecture, modern development practices, and proven SaaS business models to ensure your platform can grow with your business."
+              },
+              {
+                question: "Do you provide ongoing support after launch?",
+                answer: "Yes, we offer comprehensive support packages including hosting, maintenance, feature updates, and technical support to ensure your SaaS platform runs smoothly."
+              },
+              {
+                question: "Can you integrate with existing systems and APIs?",
+                answer: "Absolutely! We specialize in API integrations and can connect your SaaS platform with existing business systems, third-party services, and popular software tools."
+              },
+              {
+                question: "How do you ensure the security of our SaaS platform?",
+                answer: "We implement enterprise-grade security including data encryption, secure authentication, role-based access control, and compliance with industry standards like SOC 2 and GDPR."
+              }
+            ].map((faq, index) => (
+              <FAQItem key={index} question={faq.question} answer={faq.answer} />
+            ))}
+          </div>
         </div>
       </section>
 
