@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
@@ -5,7 +6,6 @@ import { GlassCard } from "@/components/glass-card";
 import { ContactPopup } from "@/components/contact-popup";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
 import { 
   Megaphone, 
@@ -19,9 +19,33 @@ import {
   ArrowRight,
   Globe,
   Mail,
-  MessageSquare
+  MessageSquare,
+  Settings,
+  Shield,
+  Star,
+  Phone,
+  MapPin
 } from "lucide-react";
-import { SiGoogle, SiFacebook, SiHubspot } from "react-icons/si";
+import { SiGoogle, SiFacebook, SiHubspot, SiGoogleanalytics, SiLinkedin, SiInstagram } from "react-icons/si";
+
+// FAQ Item Component
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 group hover:bg-purple-500/25 transition-all duration-300">
+      <div className="flex items-start justify-between cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+        <p className="text-white font-medium leading-relaxed pr-4">{question}</p>
+        <div className="w-8 h-8 bg-purple-500/40 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/60 transition-all duration-300">
+          <span className={`text-white text-lg transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}>+</span>
+        </div>
+      </div>
+      <div className={`mt-4 text-purple-100/70 text-sm leading-relaxed transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
+        {answer}
+      </div>
+    </div>
+  );
+}
 
 export default function DigitalMarketingService() {
   const structuredData = {
@@ -38,89 +62,6 @@ export default function DigitalMarketingService() {
     "serviceType": "Digital Marketing"
   };
 
-  const keyFeatures = [
-    {
-      icon: <Search className="w-8 h-8 text-accent" />,
-      title: "SEO/SEM",
-      description: "Search engine optimization and marketing for maximum visibility"
-    },
-    {
-      icon: <Target className="w-8 h-8 text-accent" />,
-      title: "Social Ads",
-      description: "Targeted advertising campaigns across all major platforms"
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8 text-accent" />,
-      title: "Conversion Optimization",
-      description: "Maximize ROI through data-driven conversion improvements"
-    },
-    {
-      icon: <BarChart3 className="w-8 h-8 text-accent" />,
-      title: "Analytics & Reporting",
-      description: "Comprehensive tracking and performance analysis"
-    },
-    {
-      icon: <Mail className="w-8 h-8 text-accent" />,
-      title: "Email Marketing",
-      description: "Automated email campaigns that nurture and convert"
-    },
-    {
-      icon: <MessageSquare className="w-8 h-8 text-accent" />,
-      title: "Content Marketing",
-      description: "Engaging content that builds brand authority"
-    }
-  ];
-
-  const processSteps = [
-    { step: "01", title: "Audit", description: "Comprehensive analysis of current marketing performance" },
-    { step: "02", title: "Strategy", description: "Custom marketing strategy development" },
-    { step: "03", title: "Setup", description: "Campaign setup and tracking implementation" },
-    { step: "04", title: "Launch", description: "Multi-channel campaign execution" },
-    { step: "05", title: "Optimize", description: "Continuous optimization based on data" },
-    { step: "06", title: "Scale", description: "Scale successful campaigns for maximum ROI" }
-  ];
-
-  const pricingPlans = [
-    {
-      name: "Starter",
-      price: "$1,999/mo",
-      description: "Perfect for small businesses",
-      features: [
-        "SEO audit & basic optimization",
-        "Google Ads management",
-        "Social media setup",
-        "Monthly reporting",
-        "Email support"
-      ]
-    },
-    {
-      name: "Growth",
-      price: "$3,999/mo",
-      description: "Ideal for growing businesses",
-      features: [
-        "Comprehensive SEO strategy",
-        "Multi-platform ad management",
-        "Content marketing",
-        "Email automation",
-        "Bi-weekly strategy calls",
-        "Advanced analytics"
-      ],
-      popular: true
-    },
-    {
-      name: "Enterprise",
-      price: "$7,999/mo",
-      description: "For large organizations",
-      features: [
-        "Full-service marketing",
-        "Custom attribution modeling",
-        "Dedicated account manager",
-        "Weekly strategy sessions",
-        "Priority support",
-        "Custom integrations"
-      ]
-    }
-  ];
 
   return (
     <>
@@ -132,232 +73,400 @@ export default function DigitalMarketingService() {
       />
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center pt-20">
-        <div className="hero-glow top-20 left-20"></div>
-        <div className="hero-glow bottom-20 right-20 animation-delay-2s"></div>
+      {/* Hero Section - Reference Design Match */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-8">
-            <Megaphone className="text-white text-4xl" />
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
-            Digital Marketing
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-            We create data-driven growth strategies that amplify your brand's reach and drive measurable results. 
-            Our comprehensive approach combines SEO, paid advertising, content marketing, and conversion optimization 
-            to maximize your ROI and accelerate business growth across all digital channels.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-            <ContactPopup 
-              trigger={
-                <Button className="glass-button px-12 py-6 text-xl" data-testid="button-boost-marketing">
-                  Boost Marketing Now
-                </Button>
-              }
-              title="Ready to Accelerate Your Marketing?"
-              description="Let's create a data-driven marketing strategy that delivers measurable results and grows your business."
-              defaultService="Digital Marketing"
-            />
-            <Link href="/portfolio">
-              <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white px-12 py-6 text-xl transition-all duration-300" data-testid="button-view-case-studies">
-                View Case Studies
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Offering */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <GlassCard className="p-12 text-center">
-            <h2 className="text-4xl font-bold mb-6 text-white">Our Core Offering</h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              We specialize in creating comprehensive digital marketing strategies that drive sustainable growth. 
-              Our data-driven approach combines cutting-edge technology with proven marketing methodologies 
-              to increase brand visibility, generate qualified leads, and maximize conversion rates. 
-              From SEO and paid advertising to social media marketing and email automation, 
-              we deliver integrated campaigns that deliver measurable results and exceptional ROI 
-              for businesses of all sizes.
-            </p>
-          </GlassCard>
-        </div>
-      </section>
-
-      {/* Key Features */}
-      <section className="py-20 bg-muted/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-white">Key Features</h2>
-            <p className="text-xl text-muted-foreground">
-              Comprehensive marketing services to grow your business
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {keyFeatures.map((feature, index) => (
-              <Card key={index} className="glass-card p-8 text-center hover:scale-105 transition-transform">
-                <div className="flex justify-center mb-6">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Platform Logos */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-white">Platform Expertise</h2>
-          <p className="text-xl text-muted-foreground mb-12">
-            We leverage the most powerful marketing platforms to maximize your reach
-          </p>
-          <div className="flex justify-center items-center gap-16 flex-wrap">
-            <div className="flex flex-col items-center group cursor-pointer">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <SiGoogle className="text-white text-3xl" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content - Text Section */}
+            <div className="space-y-8">
+              {/* Main Title */}
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                  Digital Marketing<br />
+                  <span className="text-purple-300">Services</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
+                  At INFINIQODE, we believe in the transformative power of data-driven marketing solutions. Our team 
+                  of experts is dedicated to helping businesses like yours thrive in the competitive 
+                  digital landscape. From strategic SEO optimization to performance-driven advertising 
+                  campaigns, we are committed to delivering results that exceed expectations.
+                </p>
               </div>
-              <span className="text-lg font-semibold">Google Ads</span>
-            </div>
-            <div className="flex flex-col items-center group cursor-pointer">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <SiFacebook className="text-white text-3xl" />
-              </div>
-              <span className="text-lg font-semibold">Facebook</span>
-            </div>
-            <div className="flex flex-col items-center group cursor-pointer">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <SiHubspot className="text-white text-3xl" />
-              </div>
-              <span className="text-lg font-semibold">HubSpot</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Steps */}
-      <section className="py-20 bg-muted/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-white">Our Process</h2>
-            <p className="text-xl text-muted-foreground">
-              Strategic approach to maximize your marketing ROI
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative">
-                <GlassCard className="p-6 text-center h-full">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold">{step.step}</span>
+              
+              {/* Service Badges */}
+              <div className="flex flex-wrap gap-4">
+                {[
+                  "SEO Optimization",
+                  "Paid Advertising", 
+                  "Content Marketing",
+                  "Social Media Marketing"
+                ].map((service, index) => (
+                  <div key={index} className="px-6 py-3 bg-purple-700/50 backdrop-blur-sm border border-purple-500/30 rounded-full">
+                    <span className="text-purple-100 font-medium text-sm">{service}</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm">{step.description}</p>
-                </GlassCard>
-                {index < processSteps.length - 1 && index % 3 !== 2 && (
-                  <ArrowRight className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-accent w-8 h-8" />
-                )}
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Pricing Model */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-white">Pricing Plans</h2>
-            <p className="text-xl text-muted-foreground">
-              Choose the marketing plan that fits your growth goals
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <GlassCard key={index} className={`p-8 text-center relative ${plan.popular ? 'border-2 border-accent' : ''}`}>
-                {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-black">
-                    Most Popular
-                  </Badge>
-                )}
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="text-4xl font-bold mb-2 text-white">{plan.price}</div>
-                <p className="text-muted-foreground mb-8">{plan.description}</p>
-                <ul className="space-y-3 mb-8 text-left">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
                 <ContactPopup 
                   trigger={
-                    <Button className={`w-full ${plan.popular ? 'glass-button' : ''}`} data-testid={`button-select-${plan.name.toLowerCase()}`}>
+                    <Button className="px-8 py-4 text-lg font-semibold bg-purple-600 hover:bg-purple-500 text-white border-0 shadow-xl rounded-full" data-testid="button-start-project">
                       Get Started
                     </Button>
                   }
-                  title={`Get Started with ${plan.name} Plan`}
-                  description={`Ready to begin your marketing growth journey with our ${plan.name} plan? Let's discuss your specific requirements.`}
+                  title="Ready to Start Your Digital Marketing Campaign?"
+                  description="Let's discuss your marketing needs and create a custom strategy that drives measurable results."
                   defaultService="Digital Marketing"
                 />
-              </GlassCard>
+                <Button className="px-8 py-4 text-lg font-semibold bg-transparent border-2 border-purple-400/60 text-purple-100 hover:bg-purple-600/20 rounded-full" data-testid="button-schedule-call">
+                  Schedule a Call
+                </Button>
+              </div>
+            </div>
+            
+            {/* Right Content - 3D Graphics */}
+            <div className="relative flex items-center justify-center lg:justify-end">
+              {/* Floating 3D Elements */}
+              <div className="relative w-full max-w-md h-96">
+                {/* Large Blue Cube */}
+                <div className="absolute top-16 right-8 w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300 opacity-80"></div>
+                
+                {/* Green Diamond */}
+                <div className="absolute top-32 left-4 w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 transform rotate-45 shadow-xl hover:rotate-12 transition-transform duration-300 opacity-90"></div>
+                
+                {/* Purple Hexagon */}
+                <div className="absolute top-8 left-16 w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl shadow-2xl transform rotate-6 hover:-rotate-6 transition-transform duration-300 opacity-75"></div>
+                
+                {/* Light Blue Cube */}
+                <div className="absolute bottom-24 right-16 w-18 h-18 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg shadow-xl transform -rotate-12 hover:rotate-3 transition-transform duration-300 opacity-85"></div>
+                
+                {/* Yellow Square */}
+                <div className="absolute bottom-8 left-8 w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-md shadow-lg transform rotate-45 hover:rotate-90 transition-transform duration-300 opacity-70"></div>
+                
+                {/* Large Glass Prism */}
+                <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-white/20 via-purple-300/30 to-blue-400/40 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300"></div>
+                
+                {/* Small Transparent Cube */}
+                <div className="absolute bottom-16 left-20 w-12 h-12 bg-gradient-to-br from-white/10 via-purple-200/20 to-transparent backdrop-blur-sm border border-white/10 rounded-lg shadow-xl transform -rotate-6 hover:rotate-12 transition-transform duration-300"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Process Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Search, title: "Market Research & Analysis", step: "Step 1", desc: "Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy" },
+              { icon: Target, title: "Audience Targeting Strategy", step: "Step 2", desc: "Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy" },
+              { icon: TrendingUp, title: "Campaign Implementation", step: "Step 3", desc: "Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy" },
+              { icon: BarChart3, title: "Performance Optimization", step: "Step 4", desc: "Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy" }
+            ].map((item, index) => (
+              <div key={index} className="group">
+                {/* Glass Card */}
+                <div className="relative h-full p-4 md:p-6 rounded-xl md:rounded-2xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
+                  
+                  <div className="relative z-10 space-y-4">
+                    {/* Icon */}
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-lg md:rounded-xl flex items-center justify-center border border-white/20">
+                      <item.icon className="icon-white text-lg md:text-xl" />
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
+                    
+                    <p className="text-sm text-purple-100/80 leading-relaxed line-clamp-4">{item.desc}</p>
+                    
+                    {/* Step Badge */}
+                    <div className="pt-2">
+                      <Badge className="bg-white/10 text-white border border-white/20 text-xs font-medium">
+                        {item.step}
+                      </Badge>
+                    </div>
+                    
+                    {/* Arrow */}
+                    <div className="flex justify-end pt-2">
+                      <ArrowRight className="text-purple-300 text-lg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Case Study Teaser */}
-      <section className="py-20 bg-muted/5">
-        <div className="max-w-4xl mx-auto px-6">
-          <GlassCard className="p-12">
-            <div className="text-center mb-8">
-              <h2 className="text-4xl font-bold mb-6 text-white">Success Story</h2>
-              <div className="text-6xl font-bold text-accent mb-4">300% ROI</div>
-              <div className="text-xl text-muted-foreground mb-8">Achieved in just 3 months</div>
+      {/* Strategic Service Includes Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                What Our Digital Marketing<br />
+                Service Includes
+              </h2>
+              
+              <p className="text-lg text-purple-100/90 leading-relaxed">
+                Our comprehensive digital marketing service is designed to help businesses of all
+                sizes harness the power of data-driven strategies. We work closely with your
+                team to understand your unique challenges and implement marketing solutions that
+                drive real business value and measurable ROI.
+              </p>
+              
+              {/* Service Features */}
+              <div className="space-y-6">
+                {[
+                  "SEO & Content Strategy",
+                  "Paid Advertising Campaigns", 
+                  "Social Media Marketing",
+                  "Performance Analytics & Reporting"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        We analyze your market and identify 
+                        opportunities where digital marketing can create the most impact.
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="prose prose-lg mx-auto text-muted-foreground">
-              <p className="mb-4">
-                A growing e-commerce company approached us with stagnant sales despite having quality products. 
-                Their previous marketing efforts were scattered and lacked strategic focus, resulting in poor ROI 
-                and limited brand visibility.
-              </p>
-              <p className="mb-4">
-                We implemented a comprehensive digital marketing strategy that included SEO optimization, 
-                targeted Google Ads campaigns, Facebook and Instagram advertising, and email marketing automation. 
-                Our data-driven approach identified high-converting keywords and audience segments while optimizing 
-                the sales funnel for maximum conversion rates.
-              </p>
-              <p className="mb-4">
-                Within the first month, we saw a 75% increase in qualified traffic. By month two, conversion rates 
-                had improved by 150% through landing page optimization and retargeting campaigns. The third month 
-                brought the breakthrough - a 300% return on investment with sustained growth momentum.
-              </p>
-              <p>
-                The client not only recovered their marketing investment but scaled their business to new heights, 
-                establishing a strong online presence that continues to drive consistent growth month over month.
-              </p>
+            
+            {/* Right Content - 3D Illustration & Stats */}
+            <div className="relative">
+              {/* 3D Illustration Area */}
+              <div className="relative h-64 md:h-80 rounded-xl md:rounded-2xl glass-card overflow-hidden mb-6 md:mb-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                
+                {/* Mock 3D Elements */}
+                <div className="relative z-10 h-full flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    {/* Dashboard Mock */}
+                    <div className="w-32 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-xl mx-auto flex items-center justify-center border border-blue-300/30">
+                      <div className="w-24 h-14 bg-white/20 rounded-sm flex items-center justify-center">
+                        <BarChart3 className="icon-white text-xl md:text-2xl" />
+                      </div>
+                    </div>
+                    
+                    {/* Floating Elements */}
+                    <div className="flex justify-center space-x-4">
+                      <div className="w-8 h-8 bg-cyan-400 rounded-full shadow-lg"></div>
+                      <div className="w-6 h-6 bg-green-400 rounded-md shadow-lg"></div>
+                      <div className="w-10 h-6 bg-orange-400 rounded-lg shadow-lg"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Statistics Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">300%+</div>
+                  <p className="text-purple-100/80 text-sm">ROI Increase</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">5.2x</div>
+                    <p className="text-xs text-purple-100/60">Conversion Rate</p>
+                  </div>
+                </div>
+                
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">250%</div>
+                  <p className="text-purple-100/80 text-sm">Traffic Growth</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">8x</div>
+                    <p className="text-xs text-purple-100/60">Lead Quality</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </GlassCard>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-5xl font-bold text-white">All Digital Marketing Usecase</h2>
+            <p className="text-xl text-purple-100/90 max-w-3xl mx-auto">
+              Discover how our digital marketing services have transformed businesses
+              across various industries.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Lead Generation", subtitle: "High-Quality Lead Generation & Conversion", desc: "Using data-driven digital marketing strategies to create conversion-focused campaigns, reducing customer acquisition costs by 45% while improving lead quality." },
+              { title: "Brand Awareness", subtitle: "Brand Visibility & Market Reach", desc: "Using multi-channel marketing to improve brand recognition platforms, reducing marketing spend by 38% while improving brand reach and awareness." },
+              { title: "Revenue Growth", subtitle: "Sales Performance & Revenue Optimization", desc: "Using advanced marketing automation to create efficient sales funnels, reducing conversion time by 50% while improving revenue per customer." }
+            ].map((item, index) => (
+              <div key={index} className="group">
+                <div className="h-full rounded-2xl md:rounded-3xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden">
+                  {/* Dashboard Mockup */}
+                  <div className="h-48 bg-gradient-to-br from-purple-800/40 to-purple-900/60 p-4 relative">
+                    <div className="bg-black/40 rounded-lg h-full p-4 backdrop-blur-sm">
+                      {/* Mock Dashboard Content */}
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs text-purple-200">
+                          <span>Marketing ROI</span>
+                          <span>85%</span>
+                        </div>
+                        <div className="h-20 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded relative">
+                          {/* Mock Chart Bars */}
+                          <div className="absolute bottom-0 left-2 w-1 bg-purple-400 rounded-t" style={{ height: '60%' }}></div>
+                          <div className="absolute bottom-0 left-6 w-1 bg-purple-400 rounded-t" style={{ height: '80%' }}></div>
+                          <div className="absolute bottom-0 left-10 w-1 bg-purple-400 rounded-t" style={{ height: '40%' }}></div>
+                          <div className="absolute bottom-0 left-14 w-1 bg-purple-400 rounded-t" style={{ height: '90%' }}></div>
+                          <div className="absolute bottom-0 left-18 w-1 bg-purple-400 rounded-t" style={{ height: '70%' }}></div>
+                        </div>
+                        <div className="text-xs text-purple-300">60% Performance boost with targeted campaigns</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
+                    <div className="space-y-2">
+                      <div className="text-xs text-purple-300 uppercase tracking-wider">{item.title}</div>
+                      <h3 className="text-lg font-bold text-white">{item.subtitle}</h3>
+                      <p className="text-sm text-purple-100/80 leading-relaxed">{item.desc}</p>
+                    </div>
+                    <Button variant="outline" className="w-full border-purple-400/30 text-purple-200 hover:bg-purple-600/20 group-hover:border-purple-400/50 transition-all duration-300">
+                      View Case Study
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Details Section */}
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-6">
+          <h2 className="text-4xl font-bold text-white">Service Details:</h2>
+          
+          {/* Service Description */}
+          <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+            <p className="text-purple-100/90 leading-relaxed text-lg">
+              Our premium digital marketing service combines data-driven strategies with creative execution to Our premium digital marketing service combines 
+              data-driven strategies with creative execution to Our premium digital marketing service combines data-driven strategies with creative execution to 
+              Our premium digital marketing service combines data-driven strategies with creative execution to Our premium digital marketing service combines 
+              data-driven strategies with creative execution to Our premium digital marketing service combines data-driven strategies with creative execution to 
+              Our premium digital marketing service combines data-driven strategies with creative execution to Our premium digital marketing service combines 
+              data-driven strategies with creative execution to Our premium digital marketing service combines data-driven strategies with creative execution to.
+            </p>
+          </div>
+          
+          {/* Strategic Feature Icons */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
+            {[
+              { icon: Search, title: "SEO", subtitle: "Search Optimization" },
+              { icon: Target, title: "Targeted", subtitle: "Audience Reach" },
+              { icon: TrendingUp, title: "Growth", subtitle: "Driven Results" },
+              { icon: BarChart3, title: "Analytics", subtitle: "Data Insights" }
+            ].map((item, index) => (
+              <div key={index} className="text-center space-y-4 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-purple-100/80">{item.subtitle}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
+          <h2 className="text-5xl font-bold text-center text-white">Marketing Platforms We Use</h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {[
+              { icon: SiGoogle, name: "Google Ads", desc: "Advanced search and display advertising campaigns with smart bidding strategies." },
+              { icon: SiFacebook, name: "Facebook", desc: "Social media advertising and audience targeting across Facebook and Instagram platforms." },
+              { icon: SiLinkedin, name: "LinkedIn", desc: "Professional B2B marketing and lead generation through LinkedIn advertising platform." },
+              { icon: SiInstagram, name: "Instagram", desc: "Visual storytelling and influencer marketing campaigns for brand awareness and engagement." },
+              { icon: SiHubspot, name: "HubSpot", desc: "Marketing automation, CRM integration, and comprehensive lead nurturing workflows." },
+              { icon: SiGoogleanalytics, name: "Analytics", desc: "Advanced web analytics and conversion tracking for data-driven decision making." },
+              { icon: Mail, name: "Email Marketing", desc: "Automated email campaigns and personalized customer journey optimization." },
+              { icon: MessageSquare, name: "Content Tools", desc: "Content management and social media scheduling tools for consistent brand messaging." }
+            ].map((tech, index) => (
+              <div key={index} className="group">
+                <div className="h-full p-6 rounded-2xl glass-card shadow-xl group-hover:shadow-2xl transition-all duration-300">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-white/10 to-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-300">
+                      <tech.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white">{tech.name}</h3>
+                    <p className="text-sm text-purple-100/80 leading-relaxed">{tech.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-12 text-white">
-            <Link href="/faq-marketing" className="flex items-center justify-center gap-3 hover:opacity-80 transition-opacity">
-              Marketing FAQs
-              <ArrowRight className="w-6 h-6" />
-            </Link>
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            Get answers to common questions about our digital marketing services
-          </p>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl text-purple-100/90">Get answers to common questions about our digital marketing services</p>
+          </div>
+          
+          <div className="space-y-6">
+            {[
+              {
+                question: "How long does it take to see results from digital marketing?",
+                answer: "Typically, you can expect to see initial results within 30-60 days, with significant improvements in 3-6 months depending on your industry and competition."
+              },
+              {
+                question: "What makes your digital marketing approach different?",
+                answer: "We focus on data-driven strategies with transparent reporting, custom audience targeting, and continuous optimization to maximize your ROI and sustainable growth."
+              },
+              {
+                question: "Do you work with businesses in my industry?",
+                answer: "Yes, we have experience across various industries including e-commerce, B2B services, healthcare, technology, and more. We adapt our strategies to your specific market."
+              },
+              {
+                question: "How do you measure marketing success?",
+                answer: "We track key metrics like conversion rates, cost per acquisition, return on ad spend (ROAS), organic traffic growth, and ultimately your revenue growth and business objectives."
+              },
+              {
+                question: "Can I see examples of your previous marketing campaigns?",
+                answer: "Absolutely! We have detailed case studies and examples of successful campaigns. Contact us to see relevant examples from your industry and learn about our proven strategies."
+              }
+            ].map((faq, index) => (
+              <FAQItem key={index} question={faq.question} answer={faq.answer} />
+            ))}
+          </div>
         </div>
       </section>
 
