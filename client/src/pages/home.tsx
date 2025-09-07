@@ -87,7 +87,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-4">
             <div className="stat-item glass-card p-8 text-center group" data-testid="stat-projects">
               <div className="mb-4">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                   <Trophy className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default function Home() {
             
             <div className="stat-item glass-card  p-8 text-center group" data-testid="stat-satisfaction">
               <div className="mb-4">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                   <Star className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function Home() {
             
             <div className="stat-item glass-card  p-8 text-center group" data-testid="stat-experience">
               <div className="mb-4">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function Home() {
             
             <div className="stat-item glass-card  p-8 text-center group" data-testid="stat-support">
               <div className="mb-4">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                   <Shield className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -173,7 +173,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-4" ref={featuresRef as any}>
             <div className="feature-item glass-card  p-8 group">
               <div className="mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                   <Code className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="font-heading text-2xl font-bold mb-4 text-white">Frontend Excellence</h3>
@@ -200,7 +200,7 @@ export default function Home() {
             
             <div className="feature-item glass-card  p-8 group">
               <div className="mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                   <Server className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="font-heading text-2xl font-bold mb-4 text-white">Backend Mastery</h3>
@@ -227,7 +227,7 @@ export default function Home() {
             
             <div className="feature-item glass-card  p-8 group">
               <div className="mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl flex items-center justify-center mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                   <Cloud className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="font-heading text-2xl font-bold mb-4 text-white">Cloud Infrastructure</h3>
@@ -256,15 +256,15 @@ export default function Home() {
           {/* Technology Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {[
-              { name: 'React', icon: <Layers className="w-8 h-8" />, color: 'from-blue-500 to-cyan-500' },
-              { name: 'TypeScript', icon: <Code className="w-8 h-8" />, color: 'from-blue-600 to-blue-700' },
-              { name: 'Python', icon: <Database className="w-8 h-8" />, color: 'from-yellow-500 to-green-500' },
-              { name: 'Node.js', icon: <Server className="w-8 h-8" />, color: 'from-green-500 to-green-600' },
-              { name: 'PostgreSQL', icon: <Database className="w-8 h-8" />, color: 'from-blue-500 to-indigo-600' },
-              { name: 'AWS', icon: <Cloud className="w-8 h-8" />, color: 'from-orange-500 to-orange-600' }
+              { name: 'React', icon: <Layers className="w-8 h-8" /> },
+              { name: 'TypeScript', icon: <Code className="w-8 h-8" /> },
+              { name: 'Python', icon: <Database className="w-8 h-8" /> },
+              { name: 'Node.js', icon: <Server className="w-8 h-8" /> },
+              { name: 'PostgreSQL', icon: <Database className="w-8 h-8" /> },
+              { name: 'AWS', icon: <Cloud className="w-8 h-8" /> }
             ].map((tech, index) => (
               <div key={tech.name} className="glass-card  p-6 text-center group">
-                <div className={`w-16 h-16 mx-auto bg-gradient-to-br ${tech.color} rounded-xl flex items-center justify-center mb-4 text-white`}>
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                   {tech.icon}
                 </div>
                 <h4 className="font-heading font-semibold text-white">{tech.name}</h4>
@@ -287,7 +287,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-4 glass-card p-8 border-2 bg-gradient-to-br from-purple-500/10 to-purple-700/5 border-purple-400/20 backdrop-blur-lg">
             <div className="flex justify-center mb-4">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                 <Cog className="w-10 h-10 text-white" />
               </div>
             </div>
@@ -302,7 +302,7 @@ export default function Home() {
             <div className="methodology-step glass-card p-10 group border-2 border-purple-400/30 bg-gradient-to-br from-purple-500/5 to-purple-700/3 hover:border-purple-400/50 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
                     <Search className="w-8 h-8" />
                   </div>
                 </div>
@@ -333,7 +333,7 @@ export default function Home() {
             <div className="methodology-step glass-card p-10 group border-2 border-purple-400/30 bg-gradient-to-br from-purple-500/5 to-purple-700/3 hover:border-purple-400/50 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
                     <Palette className="w-8 h-8" />
                   </div>
                 </div>
@@ -364,7 +364,7 @@ export default function Home() {
             <div className="methodology-step glass-card p-10 group border-2 border-purple-400/30 bg-gradient-to-br from-purple-500/5 to-purple-700/3 hover:border-purple-400/50 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
                     <Code className="w-8 h-8" />
                   </div>
                 </div>
@@ -395,7 +395,7 @@ export default function Home() {
             <div className="methodology-step glass-card p-10 group border-2 border-purple-400/30 bg-gradient-to-br from-purple-500/5 to-purple-700/3 hover:border-purple-400/50 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
                     <CheckSquare className="w-8 h-8" />
                   </div>
                 </div>
@@ -519,7 +519,7 @@ export default function Home() {
           {/* Company Values Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-4">
             <div className="glass-card  p-8 text-center group">
-              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-heading text-xl font-bold mb-4">Security First</h3>
@@ -529,7 +529,7 @@ export default function Home() {
             </div>
             
             <div className="glass-card  p-8 text-center group">
-              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                 <Zap className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-heading text-xl font-bold mb-4">Performance</h3>
@@ -539,7 +539,7 @@ export default function Home() {
             </div>
             
             <div className="glass-card  p-8 text-center group">
-              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                 <Globe className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-heading text-xl font-bold mb-4">Global Scale</h3>
@@ -549,7 +549,7 @@ export default function Home() {
             </div>
             
             <div className="glass-card  p-8 text-center group">
-              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-heading text-xl font-bold mb-4">Excellence</h3>
@@ -576,7 +576,7 @@ export default function Home() {
             <div className="glass-card  p-10 group">
               <div className="mb-6">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center shadow-lg shadow-purple-500/25">
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -615,7 +615,7 @@ export default function Home() {
             <div className="glass-card  p-10 group">
               <div className="mb-6">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center shadow-lg shadow-purple-500/25">
                     <BarChart3 className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -691,48 +691,42 @@ export default function Home() {
                 title: 'E-commerce & Retail',
                 description: 'Custom platforms, inventory management, payment processing, and customer analytics',
                 projects: '45+',
-                icon: <Monitor className="w-8 h-8" />,
-                color: 'from-blue-500 to-blue-600'
+                icon: <Monitor className="w-8 h-8" />
               },
               {
                 title: 'Healthcare & MedTech',
                 description: 'HIPAA-compliant systems, patient portals, telemedicine, and data analytics',
                 projects: '25+',
-                icon: <Shield className="w-8 h-8" />,
-                color: 'from-green-500 to-green-600'
+                icon: <Shield className="w-8 h-8" />
               },
               {
                 title: 'FinTech & Banking',
                 description: 'Secure payment systems, trading platforms, KYC/AML compliance, and blockchain',
                 projects: '30+',
-                icon: <TrendingUp className="w-8 h-8" />,
-                color: 'from-gray-700 to-gray-900'
+                icon: <TrendingUp className="w-8 h-8" />
               },
               {
                 title: 'Education & E-learning',
                 description: 'Learning management systems, virtual classrooms, and assessment platforms',
                 projects: '20+',
-                icon: <Users className="w-8 h-8" />,
-                color: 'from-orange-500 to-orange-600'
+                icon: <Users className="w-8 h-8" />
               },
               {
                 title: 'SaaS & Enterprise',
                 description: 'Scalable platforms, API integrations, workflow automation, and analytics',
                 projects: '35+',
-                icon: <Server className="w-8 h-8" />,
-                color: 'from-indigo-500 to-indigo-600'
+                icon: <Server className="w-8 h-8" />
               },
               {
                 title: 'Media & Entertainment',
                 description: 'Streaming platforms, content management, user engagement, and monetization',
                 projects: '15+',
-                icon: <PlayCircle className="w-8 h-8" />,
-                color: 'from-pink-500 to-pink-600'
+                icon: <PlayCircle className="w-8 h-8" />
               }
             ].map((industry, index) => (
               <div key={industry.title} className="glass-card  p-8 group">
                 <div className="mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${industry.color} rounded-xl flex items-center justify-center mb-4 text-white`}>
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 text-white shadow-lg shadow-purple-500/25">
                     {industry.icon}
                   </div>
                   <h3 className="font-heading text-xl font-bold mb-4">{industry.title}</h3>
@@ -768,7 +762,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-4">
             <div className="glass-card  p-8 group">
               <div className="mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                   <Code className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-heading text-xl font-bold mb-4">Technical Guides</h3>
@@ -784,7 +778,7 @@ export default function Home() {
             
             <div className="glass-card  p-8 group">
               <div className="mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-heading text-xl font-bold mb-4">Whitepapers</h3>
@@ -800,7 +794,7 @@ export default function Home() {
             
             <div className="glass-card  p-8 group">
               <div className="mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
                   <PlayCircle className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-heading text-xl font-bold mb-4">Video Tutorials</h3>
