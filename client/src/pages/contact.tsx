@@ -20,28 +20,28 @@ import {
 export default function Contact() {
   const contactMethods = [
     {
-      icon: <Mail className="w-8 h-8 text-white" />,
+      icon: <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25"><Mail className="w-8 h-8 text-white" /></div>,
       title: "Email Us",
       description: "Send us an email and we'll respond within 24 hours",
       contact: "hello@digitalcraft.agency",
       action: "mailto:hello@digitalcraft.agency"
     },
     {
-      icon: <Phone className="w-8 h-8 text-white" />,
+      icon: <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25"><Phone className="w-8 h-8 text-white" /></div>,
       title: "Call Us",
       description: "Speak directly with our team during business hours",
       contact: "+1 (555) 123-4567",
       action: "tel:+15551234567"
     },
     {
-      icon: <MessageSquare className="w-8 h-8 text-white" />,
+      icon: <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25"><MessageSquare className="w-8 h-8 text-white" /></div>,
       title: "Live Chat",
       description: "Chat with us in real-time for quick questions",
       contact: "Available 9 AM - 6 PM PST",
       action: "#"
     },
     {
-      icon: <Calendar className="w-8 h-8 text-white" />,
+      icon: <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25"><Calendar className="w-8 h-8 text-white" /></div>,
       title: "Schedule a Call",
       description: "Book a consultation at your convenience",
       contact: "15-30 minute slots available",

@@ -7,12 +7,12 @@ import { ContactPopup } from "@/components/contact-popup";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import { Trophy, Users, Rocket, Target, Heart, Lightbulb, Shield, Award } from "lucide-react";
+import { Award, Users, Rocket, Target, Heart, Zap, Shield, Trophy } from "lucide-react";
 
 export default function About() {
   const values = [
     {
-      icon: <Trophy className="w-8 h-8 text-white" />,
+      icon: <Award className="w-8 h-8 text-white" />,
       title: "Excellence",
       description: "We strive for excellence in every project, delivering solutions that exceed expectations and drive real business results."
     },
@@ -22,7 +22,7 @@ export default function About() {
       description: "We believe in the power of collaboration, working closely with our clients to understand their needs and achieve their goals."
     },
     {
-      icon: <Lightbulb className="w-8 h-8 text-white" />,
+      icon: <Zap className="w-8 h-8 text-white" />,
       title: "Innovation",
       description: "We stay at the forefront of technology, constantly exploring new tools and methodologies to deliver cutting-edge solutions."
     },
@@ -113,7 +113,7 @@ export default function About() {
               </p>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/25">
                     <Target className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -124,7 +124,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/25">
                     <Rocket className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -196,7 +196,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <GlassCard key={index} className="p-8 text-center hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mx-auto mb-6 shadow-lg shadow-purple-500/25">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-white">{value.title}</h3>
