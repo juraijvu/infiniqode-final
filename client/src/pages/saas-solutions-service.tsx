@@ -162,7 +162,7 @@ export default function SaaSSolutionsService() {
               defaultService="SaaS Solutions"
             />
             <Link href="/portfolio">
-              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-12 py-6 text-xl" data-testid="button-view-saas-portfolio">
+              <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white px-12 py-6 text-xl transition-all duration-300" data-testid="button-view-saas-portfolio">
                 View SaaS Portfolio
               </Button>
             </Link>

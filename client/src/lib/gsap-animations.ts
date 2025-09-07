@@ -59,24 +59,37 @@ export const useStaggerAnimation = (selector: string, delay: number = 0) => {
     if (containerRef.current) {
       const elements = containerRef.current.querySelectorAll(selector);
       
-      gsap.fromTo(elements,
-        {
-          y: 40,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: animationConfig.duration,
-          ease: animationConfig.ease,
-          stagger: animationConfig.stagger,
-          delay,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            ...animationConfig.scrollTrigger
+      // Set initial state with enhanced transform
+      gsap.set(elements, {
+        y: 80,
+        opacity: 0,
+        scale: 0.8,
+        rotationY: 15
+      });
+      
+      gsap.to(elements, {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        rotationY: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: delay,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+          onEnter: () => {
+            // Add purple glow effect on enter
+            gsap.to(elements, {
+              boxShadow: "0 0 30px rgba(139, 92, 246, 0.3)",
+              duration: 0.5,
+              stagger: delay * 0.5
+            });
           }
         }
-      );
+      });
     }
   }, [selector, delay]);
 

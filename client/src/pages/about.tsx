@@ -291,7 +291,7 @@ export default function About() {
                   </Button>
                 </Link>
                 <Link href="/portfolio">
-                  <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-8 py-4 text-lg" data-testid="button-view-work">
+                  <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white px-8 py-4 text-lg transition-all duration-300" data-testid="button-view-work">
                     View Our Work
                   </Button>
                 </Link>

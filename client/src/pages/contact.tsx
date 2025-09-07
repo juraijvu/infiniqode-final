@@ -125,7 +125,7 @@ export default function Contact() {
               <Rocket className="mr-2 h-5 w-5" />
               Start Your Project
             </Button>
-            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-8 py-4 text-lg" data-testid="button-schedule-call">
+            <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white px-8 py-4 text-lg transition-all duration-300" data-testid="button-schedule-call">
               <Calendar className="mr-2 h-5 w-5" />
               Schedule a Call
             </Button>
@@ -219,7 +219,7 @@ export default function Contact() {
                   Located in the heart of San Francisco's tech district, our office is easily accessible 
                   by public transportation and offers convenient parking.
                 </p>
-                <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black" data-testid="button-get-directions">
+                <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white transition-all duration-300" data-testid="button-get-directions">
                   Get Directions
                 </Button>
               </GlassCard>
@@ -302,7 +302,7 @@ export default function Contact() {
                   Free Consultation
                 </Button>
                 <Link href="/portfolio">
-                  <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-8 py-4 text-lg" data-testid="button-view-our-work">
+                  <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white px-8 py-4 text-lg transition-all duration-300" data-testid="button-view-our-work">
                     View Our Work
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>

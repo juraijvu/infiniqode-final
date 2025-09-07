@@ -149,7 +149,7 @@ export default function BlogPost() {
                 </div>
               </div>
               
-              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black" data-testid="button-share">
+              <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white transition-all duration-300" data-testid="button-share">
                 <Share2 className="mr-2 h-4 w-4" />
                 Share
               </Button>

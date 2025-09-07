@@ -13,6 +13,7 @@ import { GlassCard } from "@/components/glass-card";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Trophy, Users, Rocket, Calendar, Download, Code, Shield, Zap, Globe, Star, TrendingUp, BarChart3, Monitor, Smartphone, Database, Cloud, Server, Cpu, Layers, GitBranch, Palette, Settings, Target, Award, CheckCircle, ArrowRight, PlayCircle, ExternalLink } from "lucide-react";
+import { Search, Brush, Cog, CheckSquare } from "@mynaui/icons-react";
 import { useFadeInUp, useStaggerAnimation, useCountAnimation, useParallaxEffect, initializeGSAP } from "@/lib/gsap-animations";
 import { useEffect } from "react";
 
@@ -27,7 +28,7 @@ export default function Home() {
   const heroRef = useFadeInUp(0);
   const statsRef = useStaggerAnimation('.stat-item', 0.2);
   const featuresRef = useStaggerAnimation('.feature-item', 0.1);
-  const methodologyRef = useStaggerAnimation('.methodology-step', 0.15);
+  const methodologyRef = useStaggerAnimation('.methodology-step', 0.3);
   
   // Counter refs for animated numbers
   const projectsCountRef = useCountAnimation(150, 2, '+');
@@ -284,8 +285,13 @@ export default function Home() {
       {/* Our Methodology - Deep Content */}
       <section className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-4">
-            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">Our Proven Methodology</h2>
+          <div className="text-center mb-4 glass-card p-8 border-2 bg-gradient-to-br from-purple-500/10 to-purple-700/5 border-purple-400/20 backdrop-blur-lg">
+            <div className="flex justify-center mb-4">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
+                <Cog className="w-10 h-10 text-white" />
+              </div>
+            </div>
+            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Our Proven Methodology</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Every successful project follows a carefully crafted process. Our methodology combines 
               agile development principles with design thinking to deliver exceptional results.
@@ -293,15 +299,15 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-4" ref={methodologyRef as any}>
-            <div className="methodology-step glass-card  p-10 group">
+            <div className="methodology-step glass-card p-10 group border-2 border-purple-400/30 bg-gradient-to-br from-purple-500/5 to-purple-700/3 hover:border-purple-400/50 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white font-bold text-2xl">
-                    01
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
+                    <Search className="w-8 h-8" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl font-bold mb-4 text-white">Discovery & Strategy</h3>
+                  <h3 className="font-heading text-2xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Discovery & Strategy</h3>
                   <p className="font-body text-muted-foreground mb-4 leading-relaxed">
                     We begin every project with deep research and strategic planning. Understanding your 
                     business goals, target audience, and competitive landscape forms the foundation of our approach.
@@ -324,15 +330,15 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="methodology-step glass-card  p-10 group">
+            <div className="methodology-step glass-card p-10 group border-2 border-purple-400/30 bg-gradient-to-br from-purple-500/5 to-purple-700/3 hover:border-purple-400/50 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white font-bold text-2xl">
-                    02
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
+                    <Brush className="w-8 h-8" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl font-bold mb-4 text-white">Design & Prototyping</h3>
+                  <h3 className="font-heading text-2xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Design & Prototyping</h3>
                   <p className="font-body text-muted-foreground mb-4 leading-relaxed">
                     Our design phase focuses on creating intuitive, beautiful interfaces that enhance user 
                     experience while reflecting your brand identity and achieving business objectives.
@@ -355,15 +361,15 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="methodology-step glass-card  p-10 group">
+            <div className="methodology-step glass-card p-10 group border-2 border-purple-400/30 bg-gradient-to-br from-purple-500/5 to-purple-700/3 hover:border-purple-400/50 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white font-bold text-2xl">
-                    03
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
+                    <Code className="w-8 h-8" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl font-bold mb-4 text-white">Development & Integration</h3>
+                  <h3 className="font-heading text-2xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Development & Integration</h3>
                   <p className="font-body text-muted-foreground mb-4 leading-relaxed">
                     Using cutting-edge technologies and best practices, we build scalable, secure solutions 
                     with clean code architecture and comprehensive testing protocols.
@@ -386,15 +392,15 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="methodology-step glass-card  p-10 group">
+            <div className="methodology-step glass-card p-10 group border-2 border-purple-400/30 bg-gradient-to-br from-purple-500/5 to-purple-700/3 hover:border-purple-400/50 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white font-bold text-2xl">
-                    04
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/25">
+                    <CheckSquare className="w-8 h-8" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-heading text-2xl font-bold mb-4 text-white">Launch & Optimization</h3>
+                  <h3 className="font-heading text-2xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Launch & Optimization</h3>
                   <p className="font-body text-muted-foreground mb-4 leading-relaxed">
                     Post-launch, we monitor performance, gather user feedback, and continuously optimize 
                     your solution to ensure it meets evolving business needs and user expectations.
@@ -863,7 +869,7 @@ export default function Home() {
                 <Link href="/portfolio">
                   <Button 
                     variant="outline" 
-                    className="border-accent text-accent hover:bg-accent hover:text-black px-10 py-5 text-lg font-medium backdrop-blur-md"
+                    className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white px-10 py-5 text-lg font-medium backdrop-blur-md transition-all duration-300"
                     data-testid="button-download-portfolio"
                   >
                     <Download className="mr-3 h-6 w-6" />

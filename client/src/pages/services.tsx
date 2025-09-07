@@ -124,7 +124,7 @@ export default function Services() {
                     </Link>
                     <ContactPopup 
                       trigger={
-                        <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black flex-1" data-testid={`button-get-quote-${service.slug}`}>
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" data-testid={`button-get-quote-${service.slug}`}>
                           Get Quote
                         </Button>
                       }

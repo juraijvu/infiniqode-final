@@ -112,7 +112,7 @@ export default function ServiceDetail() {
               defaultService={service.name}
             />
             <Link href="/services">
-              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-8 py-4 text-lg" data-testid="button-view-all-services">
+              <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white px-8 py-4 text-lg transition-all duration-300" data-testid="button-view-all-services">
                 View All Services
               </Button>
             </Link>
@@ -229,7 +229,7 @@ export default function ServiceDetail() {
                   defaultService={service.name}
                 />
                 <Link href="/portfolio">
-                  <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black w-full" data-testid="button-view-portfolio">
+                  <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white w-full transition-all duration-300" data-testid="button-view-portfolio">
                     View Portfolio
                   </Button>
                 </Link>
