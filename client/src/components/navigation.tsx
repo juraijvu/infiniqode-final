@@ -35,10 +35,9 @@ export function Navigation() {
   ];
 
   const servicesItems = [
-    { href: "/services/web-development", label: "Web Development", icon: Globe, description: "React TypeScript applications" },
-    { href: "/services/backend-development", label: "Backend Development", icon: Server, description: "Python Flask APIs" },
-    { href: "/services/digital-marketing", label: "Digital Marketing", icon: TrendingUp, description: "SEO & analytics" },
-    { href: "/services/saas-development", label: "SaaS Development", icon: Cloud, description: "Complete SaaS platforms" },
+    { href: "/services/web-development", label: "Web Development", icon: Globe, description: "Modern, responsive websites" },
+    { href: "/services/digital-marketing", label: "Digital Marketing", icon: TrendingUp, description: "Data-driven marketing strategies" },
+    { href: "/services/saas-solutions", label: "SaaS Solutions", icon: Cloud, description: "Custom Software as a Service" },
   ];
 
   const NavLink = ({ href, label, icon: Icon }: { href: string; label: string; icon?: any }) => (

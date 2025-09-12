@@ -78,7 +78,7 @@ export default function Services() {
               {services.map((service, index) => (
                 <GlassCard key={service.id} className="p-8 hover:scale-105 transition-all duration-300">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
-                    <i className={`${service.icon} text-white text-2xl`}></i>
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
                   </div>
                   
                   <h2 className="text-3xl font-bold mb-4">{service.name}</h2>

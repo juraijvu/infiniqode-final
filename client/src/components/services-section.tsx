@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { GlassCard } from "./glass-card";
 import { SectionHeader } from "./section-header";
 import { Button } from "@/components/ui/button";
-import { Check, ArrowRight, Cloud, Globe, Target, Database, Smartphone, Search } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import type { Service } from "@shared/schema";
 
 
@@ -12,24 +12,6 @@ export function ServicesSection() {
     queryKey: ["/api/services"],
   });
 
-  const getServiceIcon = (serviceName: string) => {
-    const iconMap: Record<string, React.ReactNode> = {
-      'SaaS Solutions': <Cloud className="w-8 h-8 text-white" />,
-      'Web Development': <Globe className="w-8 h-8 text-white" />,
-      'Digital Marketing': <Target className="w-8 h-8 text-white" />,
-      'Mobile Development': <Smartphone className="w-8 h-8 text-white" />,
-      'Database Solutions': <Database className="w-8 h-8 text-white" />,
-      'SEO Optimization': <Search className="w-8 h-8 text-white" />,
-    };
-    
-    // Find the closest match or default to Globe
-    const match = Object.keys(iconMap).find(key => 
-      serviceName.toLowerCase().includes(key.toLowerCase()) || 
-      key.toLowerCase().includes(serviceName.toLowerCase())
-    );
-    
-    return match ? iconMap[match] : <Globe className="w-8 h-8 text-white" />;
-  };
 
   if (isLoading) {
     return (
@@ -67,7 +49,7 @@ export function ServicesSection() {
           {services.map((service) => (
             <GlassCard key={service.id} className="p-8 service-card">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25">
-                {getServiceIcon(service.name)}
+                <span className="text-2xl" role="img" aria-label={service.name}>{service.icon}</span>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-white">{service.name}</h3>
               <p className="text-muted-foreground mb-6">{service.description}</p>
