@@ -25,7 +25,7 @@ import {
   Phone,
   MessageCircle,
   MapPin,
-  Api
+  FileText
 } from "lucide-react";
 import { SiNodedotjs, SiPython, SiRuby, SiGo, SiRust, SiPostgresql, SiMongodb, SiRedis } from "react-icons/si";
 
@@ -388,7 +388,7 @@ export default function APIDevelopmentService() {
               { icon: Code, title: "RESTful", subtitle: "APIs" },
               { icon: Database, title: "GraphQL", subtitle: "Endpoints" },
               { icon: Shield, title: "Secure", subtitle: "Authentication" },
-              { icon: Api, title: "API", subtitle: "Documentation" }
+              { icon: FileText, title: "API", subtitle: "Documentation" }
             ].map((item, index) => (
               <div key={index} className="text-center space-y-4 group">
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
