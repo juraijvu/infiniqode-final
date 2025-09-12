@@ -1,129 +1,202 @@
 import React, { useState } from "react";
-import { Plus, X, Users, TrendingUp, Target, Zap, ShoppingCart, CreditCard, Package, Truck } from "lucide-react";
-import { SiShopify, SiWoocommerce, SiMagento, SiBigcommerce, SiStripe, SiPaypal, SiSquare, SiKlarna } from "react-icons/si";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { SEOHead } from "@/components/seo-head";
+import { GlassCard } from "@/components/glass-card";
+import { ContactPopup } from "@/components/contact-popup";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "wouter";
+import { 
+  ShoppingCart, 
+  CheckCircle, 
+  CreditCard, 
+  Package, 
+  Search, 
+  Truck,
+  Users,
+  Zap,
+  Settings,
+  Globe,
+  ArrowRight,
+  Shield,
+  Star,
+  TrendingUp,
+  Target,
+  Phone,
+  MessageCircle,
+  MapPin,
+  Mail
+} from "lucide-react";
+import { SiShopify, SiWoocommerce, SiStripe, SiPaypal, SiMagento, SiBigcommerce, SiSquare, SiKlarna } from "react-icons/si";
 
-const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+// FAQ Item Component
+function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  
   return (
-    <div className="border border-white/10 rounded-xl overflow-hidden backdrop-blur-sm">
-      <button
-        className="w-full p-6 text-left flex justify-between items-center hover:bg-white/5 transition-colors"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="font-medium">{question}</span>
-        {isOpen ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6 text-gray-300">
-          <p>{answer}</p>
+    <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 group hover:bg-purple-500/25 transition-all duration-300">
+      <div className="flex items-start justify-between cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+        <p className="text-white font-medium leading-relaxed pr-4">{question}</p>
+        <div className="w-8 h-8 bg-purple-500/40 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/60 transition-all duration-300">
+          <span className={`text-white text-lg transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}>+</span>
         </div>
-      )}
+      </div>
+      <div className={`mt-4 text-purple-100/70 text-sm leading-relaxed transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
+        {answer}
+      </div>
     </div>
   );
-};
+}
 
-export function EcommerceDevelopmentService() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
+export default function EcommerceDevelopmentService() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "E-commerce Development Services",
+    "description": "Build powerful online stores that convert visitors into customers with secure payment processing",
+    "provider": {
+      "@type": "Organization",
+      "name": "DigitalCraft",
+      "url": "https://digitalcraft.agency"
+    },
+    "areaServed": "Worldwide",
+    "serviceType": "E-commerce Development"
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-purple-500/10"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Online Stores</span>
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Payment Integration</span>
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Mobile Commerce</span>
+    <>
+      <SEOHead
+        title="E-commerce Development Services - Online Store Development"
+        description="Build powerful online stores that convert visitors into customers. From custom shopping experiences to secure payment processing and inventory management."
+        keywords="ecommerce development, online store, shopping cart, payment integration, Shopify, WooCommerce"
+        structuredData={structuredData}
+      />
+      <Navigation />
+      
+      {/* Hero Section - Reference Design Match */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content - Text Section */}
+            <div className="space-y-8">
+              {/* Main Title */}
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                  E-commerce Development<br />
+                  <span className="text-purple-300">Services</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
+                  At INFINIQODE, we create powerful online stores that convert visitors into customers. 
+                  Our team specializes in building secure, scalable e-commerce solutions that drive sales 
+                  and grow your business. From custom shopping experiences to payment integration 
+                  strategies, we deliver results that exceed expectations.
+                </p>
               </div>
               
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-                E-commerce
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600"> Development</span>
-              </h1>
-              
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Build powerful online stores that convert visitors into customers. From custom shopping experiences to secure payment processing.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={() => setIsContactOpen(true)}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300 shadow-lg shadow-purple-500/25"
-                >
-                  Launch Your Store
-                </button>
-                <button className="px-8 py-4 border border-white/20 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
-                  View Store Examples
-                </button>
+              {/* Service Badges */}
+              <div className="flex flex-wrap gap-4">
+                {[
+                  "Online Stores",
+                  "Payment Integration", 
+                  "Inventory Management",
+                  "Mobile Commerce"
+                ].map((service, index) => (
+                  <div key={index} className="px-6 py-3 bg-purple-700/50 backdrop-blur-sm border border-purple-500/30 rounded-full">
+                    <span className="text-purple-100 font-medium text-sm">{service}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                <ContactPopup 
+                  trigger={
+                    <Button className="px-8 py-4 text-lg font-semibold bg-purple-600 hover:bg-purple-500 text-white border-0 shadow-xl rounded-full" data-testid="button-start-project">
+                      Launch Your Store
+                    </Button>
+                  }
+                  title="Ready to Start Your E-commerce Project?"
+                  description="Let's discuss your online store needs and create a custom solution that drives sales."
+                  defaultService="E-commerce Development"
+                />
+                <Button className="px-8 py-4 text-lg font-semibold bg-transparent border-2 border-purple-400/60 text-purple-100 hover:bg-purple-600/20 rounded-full" data-testid="button-schedule-call">
+                  Schedule a Call
+                </Button>
               </div>
             </div>
             
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-3xl flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-8">
-                  <div className="w-32 h-32 bg-gradient-to-br from-green-400/30 to-green-600/30 rounded-2xl flex items-center justify-center">
-                    <ShoppingCart className="w-16 h-16 text-green-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-400/30 to-blue-600/30 rounded-2xl flex items-center justify-center">
-                    <CreditCard className="w-16 h-16 text-blue-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-orange-400/30 to-orange-600/30 rounded-2xl flex items-center justify-center">
-                    <Package className="w-16 h-16 text-orange-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-purple-400/30 to-purple-600/30 rounded-2xl flex items-center justify-center">
-                    <Truck className="w-16 h-16 text-purple-300" />
-                  </div>
-                </div>
+            {/* Right Content - 3D Graphics */}
+            <div className="relative flex items-center justify-center lg:justify-end">
+              {/* Floating 3D Elements */}
+              <div className="relative w-full max-w-md h-96">
+                {/* Large Shopping Cart */}
+                <div className="absolute top-16 right-8 w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300 opacity-80"></div>
+                
+                {/* Credit Card Diamond */}
+                <div className="absolute top-32 left-4 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 transform rotate-45 shadow-xl hover:rotate-12 transition-transform duration-300 opacity-90"></div>
+                
+                {/* Package Hexagon */}
+                <div className="absolute top-8 left-16 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl shadow-2xl transform rotate-6 hover:-rotate-6 transition-transform duration-300 opacity-75"></div>
+                
+                {/* Payment Cube */}
+                <div className="absolute bottom-24 right-16 w-18 h-18 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg shadow-xl transform -rotate-12 hover:rotate-3 transition-transform duration-300 opacity-85"></div>
+                
+                {/* Delivery Square */}
+                <div className="absolute bottom-8 left-8 w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-md shadow-lg transform rotate-45 hover:rotate-90 transition-transform duration-300 opacity-70"></div>
+                
+                {/* Large Glass Prism */}
+                <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-white/20 via-green-300/30 to-blue-400/40 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300"></div>
+                
+                {/* Small Transparent Cube */}
+                <div className="absolute bottom-16 left-20 w-12 h-12 bg-gradient-to-br from-white/10 via-orange-200/20 to-transparent backdrop-blur-sm border border-white/10 rounded-lg shadow-xl transform -rotate-6 hover:rotate-12 transition-transform duration-300"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Our E-commerce Development Process</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From concept to conversion - building online stores that drive sales
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Strategic Process Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                step: "01",
-                title: "Store Planning",
-                description: "Analyze your products, target market, and business model to design the perfect e-commerce solution."
-              },
-              {
-                step: "02", 
-                title: "Platform Development",
-                description: "Build your custom online store with advanced features like inventory management and customer accounts."
-              },
-              {
-                step: "03",
-                title: "Payment & Security",
-                description: "Integrate secure payment gateways and implement SSL certificates for safe transactions."
-              },
-              {
-                step: "04",
-                title: "Launch & Optimization",
-                description: "Deploy your store and continuously optimize for performance, conversions, and user experience."
-              }
+              { icon: Settings, title: "Store Planning", step: "Step 1", desc: "Analyze your products, target market, and business model to design the perfect e-commerce solution that drives sales and customer satisfaction." },
+              { icon: ShoppingCart, title: "Platform Development", step: "Step 2", desc: "Build your custom online store with advanced features like inventory management, customer accounts, and seamless shopping experiences." },
+              { icon: CreditCard, title: "Payment & Security", step: "Step 3", desc: "Integrate secure payment gateways and implement SSL certificates for safe transactions with comprehensive fraud protection systems." },
+              { icon: Globe, title: "Launch & Optimization", step: "Step 4", desc: "Deploy your store and continuously optimize for performance, conversions, and user experience with ongoing support and maintenance." }
             ].map((item, index) => (
-              <div key={index} className="relative">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8 h-full hover:from-white/15 hover:to-white/10 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mb-6">
-                    <span className="text-white font-bold">{item.step}</span>
+              <div key={index} className="group">
+                {/* Glass Card */}
+                <div className="relative h-full p-4 md:p-6 rounded-xl md:rounded-2xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
+                  
+                  <div className="relative z-10 space-y-4">
+                    {/* Icon */}
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-lg md:rounded-xl flex items-center justify-center border border-white/20">
+                      <item.icon className="icon-white text-lg md:text-xl" />
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
+                    
+                    <p className="text-sm text-purple-100/80 leading-relaxed line-clamp-4">{item.desc}</p>
+                    
+                    {/* Step Badge */}
+                    <div className="pt-2">
+                      <Badge className="bg-white/10 text-white border border-white/20 text-xs font-medium">
+                        {item.step}
+                      </Badge>
+                    </div>
+                    
+                    {/* Arrow */}
+                    <div className="flex justify-end pt-2">
+                      <ArrowRight className="text-purple-300 text-lg" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                  <p className="text-gray-300">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -131,64 +204,91 @@ export function EcommerceDevelopmentService() {
         </div>
       </section>
 
-      {/* Service Includes Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-8">Complete E-commerce Solution</h2>
+      {/* Strategic Service Includes Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                What Our E-commerce Development<br />
+                Service Includes
+              </h2>
               
+              <p className="text-lg text-purple-100/90 leading-relaxed">
+                Our comprehensive e-commerce development service is designed to help businesses of all
+                sizes create powerful online stores that convert visitors into customers. We work closely with your
+                team to understand your unique requirements and implement solutions that
+                drive real business growth.
+              </p>
+              
+              {/* Service Features */}
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Store Development</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Custom store design and branding</li>
-                    <li>• Product catalog management</li>
-                    <li>• Shopping cart and checkout</li>
-                    <li>• Mobile-responsive design</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Payment & Security</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Multiple payment gateway integration</li>
-                    <li>• SSL certificate and PCI compliance</li>
-                    <li>• Fraud protection systems</li>
-                    <li>• Secure customer data handling</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Management Features</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Inventory tracking and alerts</li>
-                    <li>• Order management system</li>
-                    <li>• Customer relationship tools</li>
-                    <li>• Analytics and reporting dashboard</li>
-                  </ul>
-                </div>
+                {[
+                  "Custom Store Design & Branding",
+                  "Payment Gateway Integration", 
+                  "Inventory Management System",
+                  "Mobile Commerce Optimization"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        We build secure, scalable e-commerce solutions with advanced features 
+                        that enhance customer experience and maximize sales conversion.
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             
+            {/* Right Content - 3D Illustration & Stats */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-3xl p-8 text-center">
-                <div className="grid grid-cols-2 gap-6 mb-8">
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">250+</div>
-                    <div className="text-sm text-gray-300">Stores Built</div>
+              {/* 3D Illustration Area */}
+              <div className="relative h-64 md:h-80 rounded-xl md:rounded-2xl glass-card overflow-hidden mb-6 md:mb-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                
+                {/* Mock 3D Elements */}
+                <div className="relative z-10 h-full flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    {/* Shopping Cart Mock */}
+                    <div className="w-32 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-xl mx-auto flex items-center justify-center border border-green-300/30">
+                      <div className="w-24 h-14 bg-white/20 rounded-sm flex items-center justify-center">
+                        <ShoppingCart className="icon-white text-xl md:text-2xl" />
+                      </div>
+                    </div>
+                    
+                    {/* Floating Elements */}
+                    <div className="flex justify-center space-x-4">
+                      <div className="w-8 h-8 bg-blue-400 rounded-full shadow-lg"></div>
+                      <div className="w-6 h-6 bg-orange-400 rounded-md shadow-lg"></div>
+                      <div className="w-10 h-6 bg-purple-400 rounded-lg shadow-lg"></div>
+                    </div>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">$50M+</div>
-                    <div className="text-sm text-gray-300">Sales Generated</div>
+                </div>
+              </div>
+              
+              {/* Statistics Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">250+</div>
+                  <p className="text-purple-100/80 text-sm">Stores Built</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">3.5%</div>
+                    <p className="text-xs text-purple-100/60">Avg Conversion</p>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">99.9%</div>
-                    <div className="text-sm text-gray-300">Uptime Guarantee</div>
-                  </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">3.5%</div>
-                    <div className="text-sm text-gray-300">Avg. Conversion Rate</div>
+                </div>
+                
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">$50M+</div>
+                  <p className="text-purple-100/80 text-sm">Sales Generated</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">99.9%</div>
+                    <p className="text-xs text-purple-100/60">Uptime</p>
                   </div>
                 </div>
               </div>
@@ -198,38 +298,59 @@ export function EcommerceDevelopmentService() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">E-commerce Success Stories</h2>
-            <p className="text-xl text-gray-300">Real results from our e-commerce development projects</p>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-5xl font-bold text-white">All E-commerce Development Usecase</h2>
+            <p className="text-xl text-purple-100/90 max-w-3xl mx-auto">
+              Discover how our e-commerce development services have transformed businesses
+              across various industries with powerful online stores.
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                title: "Fashion Retailer Growth",
-                description: "Increased online sales by 400% with a custom e-commerce platform optimized for mobile shopping.",
-                metrics: ["400% sales increase", "2.8s average page load time"]
-              },
-              {
-                title: "B2B Wholesale Platform",
-                description: "Built a complex wholesale platform with bulk ordering, custom pricing, and automated invoicing.",
-                metrics: ["60% faster order processing", "90% customer satisfaction"]
-              },
-              {
-                title: "Multi-vendor Marketplace",
-                description: "Created a marketplace connecting 100+ vendors with advanced commission tracking and analytics.",
-                metrics: ["100+ active vendors", "$2M+ monthly transactions"]
-              }
-            ].map((useCase, index) => (
-              <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8 hover:from-white/15 hover:to-white/10 transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-4">{useCase.title}</h3>
-                <p className="text-gray-300 mb-6">{useCase.description}</p>
-                <div className="space-y-2">
-                  {useCase.metrics.map((metric, i) => (
-                    <div key={i} className="text-purple-400 text-sm font-medium">✓ {metric}</div>
-                  ))}
+              { title: "Fashion Retailer", subtitle: "400% Sales Increase with Mobile Commerce", desc: "Custom e-commerce platform with mobile-first design increased online sales by 400% while reducing cart abandonment by 60%." },
+              { title: "B2B Wholesale", subtitle: "Automated Bulk Ordering & Pricing", desc: "Built complex wholesale platform with bulk ordering, custom pricing tiers, and automated invoicing for streamlined operations." },
+              { title: "Multi-vendor Marketplace", subtitle: "100+ Vendors with Commission Tracking", desc: "Created marketplace connecting 100+ vendors with advanced commission tracking, analytics, and $2M+ monthly transactions." }
+            ].map((item, index) => (
+              <div key={index} className="group">
+                <div className="h-full rounded-2xl md:rounded-3xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden">
+                  {/* Dashboard Mockup */}
+                  <div className="h-48 bg-gradient-to-br from-green-800/40 to-green-900/60 p-4 relative">
+                    <div className="bg-black/40 rounded-lg h-full p-4 backdrop-blur-sm">
+                      {/* Mock Dashboard Content */}
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs text-green-200">
+                          <span>Sales</span>
+                          <span>68%</span>
+                        </div>
+                        <div className="h-20 bg-gradient-to-r from-green-500/30 to-blue-500/30 rounded relative">
+                          {/* Mock Chart Bars */}
+                          <div className="absolute bottom-0 left-2 w-1 bg-green-400 rounded-t" style={{ height: '60%' }}></div>
+                          <div className="absolute bottom-0 left-6 w-1 bg-green-400 rounded-t" style={{ height: '80%' }}></div>
+                          <div className="absolute bottom-0 left-10 w-1 bg-green-400 rounded-t" style={{ height: '40%' }}></div>
+                          <div className="absolute bottom-0 left-14 w-1 bg-green-400 rounded-t" style={{ height: '90%' }}></div>
+                          <div className="absolute bottom-0 left-18 w-1 bg-green-400 rounded-t" style={{ height: '70%' }}></div>
+                        </div>
+                        <div className="text-xs text-green-300">400% sales boost with optimized store</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
+                    <div className="space-y-2">
+                      <div className="text-xs text-purple-300 uppercase tracking-wider">{item.title}</div>
+                      <h3 className="text-lg font-bold text-white">{item.subtitle}</h3>
+                      <p className="text-sm text-purple-100/80 leading-relaxed">{item.desc}</p>
+                    </div>
+                    <Button variant="outline" className="w-full border-purple-400/30 text-purple-200 hover:bg-purple-600/20 group-hover:border-purple-400/50 transition-all duration-300">
+                      View Case Study
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -238,28 +359,38 @@ export function EcommerceDevelopmentService() {
       </section>
 
       {/* Service Details Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Why Choose Our E-commerce Development</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Professional e-commerce solutions that drive sales and grow your business
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-6">
+          <h2 className="text-4xl font-bold text-white">Service Details:</h2>
+          
+          {/* Service Description */}
+          <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+            <p className="text-purple-100/90 leading-relaxed text-lg">
+              Our comprehensive e-commerce development service combines cutting-edge technology with proven business strategies to create online stores that 
+              convert visitors into loyal customers. We specialize in building secure, scalable platforms with advanced features like inventory management, 
+              multi-payment gateway integration, and mobile-responsive designs. From small boutiques to large enterprise marketplaces, our solutions are 
+              tailored to meet your specific business needs while ensuring optimal performance, security, and user experience across all devices.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Strategic Feature Icons */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
             {[
-              { icon: Users, title: "User-Focused Design", desc: "Intuitive shopping experiences that guide customers from browse to purchase." },
-              { icon: TrendingUp, title: "Conversion Optimized", desc: "Every element designed to maximize sales and reduce cart abandonment." },
-              { icon: Target, title: "SEO Ready", desc: "Built-in SEO optimization to help your products rank higher in search results." },
-              { icon: Zap, title: "Fast Performance", desc: "Optimized for speed to ensure quick loading times and better user experience." }
-            ].map((feature, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-purple-500/30 group-hover:to-purple-700/30 transition-all duration-300">
-                  <feature.icon className="w-8 h-8 text-purple-300" />
+              { icon: ShoppingCart, title: "Custom", subtitle: "Online Stores" },
+              { icon: CreditCard, title: "Secure", subtitle: "Payment Processing" },
+              { icon: Package, title: "Inventory", subtitle: "Management" },
+              { icon: Truck, title: "Order", subtitle: "Fulfillment" }
+            ].map((item, index) => (
+              <div key={index} className="text-center space-y-4 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-300">{feature.desc}</p>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-purple-100/80">{item.subtitle}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -267,30 +398,28 @@ export function EcommerceDevelopmentService() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">E-commerce Platforms & Payment Solutions</h2>
-            <p className="text-xl text-gray-300">Powerful platforms and secure payment systems for your online store</p>
-          </div>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
+          <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiShopify, name: "Shopify", desc: "Complete e-commerce platform with built-in hosting, themes, and payment processing." },
-              { icon: SiWoocommerce, name: "WooCommerce", desc: "Flexible WordPress-based e-commerce solution with extensive customization options." },
-              { icon: SiMagento, name: "Magento", desc: "Enterprise-level e-commerce platform for complex stores with advanced features." },
-              { icon: SiBigcommerce, name: "BigCommerce", desc: "Scalable e-commerce platform with built-in features for growing businesses." },
-              { icon: SiStripe, name: "Stripe", desc: "Modern payment processing with support for cards, wallets, and international payments." },
-              { icon: SiPaypal, name: "PayPal", desc: "Trusted payment gateway with buyer protection and global payment acceptance." },
-              { icon: SiSquare, name: "Square", desc: "Unified payment system connecting online and in-person sales channels." },
-              { icon: SiKlarna, name: "Klarna", desc: "Buy now, pay later payment solution to increase conversion rates and average order value." }
+              { icon: SiShopify, name: "Shopify", desc: "Complete e-commerce platform with built-in hosting, themes, and payment processing for quick store setup." },
+              { icon: SiWoocommerce, name: "WooCommerce", desc: "Flexible WordPress-based e-commerce solution with extensive customization options and plugins." },
+              { icon: SiMagento, name: "Magento", desc: "Enterprise-level e-commerce platform for complex stores with advanced features and scalability." },
+              { icon: SiBigcommerce, name: "BigCommerce", desc: "Scalable e-commerce platform with built-in features for growing businesses and global reach." },
+              { icon: SiStripe, name: "Stripe", desc: "Modern payment processing with support for cards, wallets, and international payments worldwide." },
+              { icon: SiPaypal, name: "PayPal", desc: "Trusted payment gateway with buyer protection and global payment acceptance capabilities." },
+              { icon: SiSquare, name: "Square", desc: "Unified payment system connecting online and in-person sales channels for seamless operations." },
+              { icon: SiKlarna, name: "Klarna", desc: "Buy now, pay later payment solution to increase conversion rates and average order value significantly." }
             ].map((tech, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300">
-                  <tech.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-white/5 group-hover:scale-110 transition-transform duration-300">
+                  <tech.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">{tech.name}</h3>
-                <p className="text-sm text-gray-300">{tech.desc}</p>
+                <h3 className="text-lg font-semibold text-white mb-2">{tech.name}</h3>
+                <p className="text-sm text-purple-100/80 leading-relaxed">{tech.desc}</p>
               </div>
             ))}
           </div>
@@ -298,14 +427,16 @@ export function EcommerceDevelopmentService() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-300">Common questions about our e-commerce development services</p>
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-6 space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-5xl font-bold text-white">Frequently Asked Questions</h2>
+            <p className="text-xl text-purple-100/90">Common questions about our e-commerce development services</p>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             <FAQItem 
               question="How long does it take to build an e-commerce store?"
               answer="Typically 4-8 weeks depending on complexity, number of products, and custom features required. Simple stores can be completed in 2-3 weeks, while complex multi-vendor platforms may take 10-12 weeks."
@@ -326,36 +457,11 @@ export function EcommerceDevelopmentService() {
               question="How do you ensure my store is secure?"
               answer="We implement SSL certificates, PCI compliance, secure payment gateways, regular security audits, and follow e-commerce security best practices to protect customer data and transactions."
             />
-            <FAQItem 
-              question="What's included in the development cost?"
-              answer="Our packages include store design, development, payment integration, security setup, mobile optimization, basic SEO, and training. Additional features like custom integrations are quoted separately."
-            />
           </div>
         </div>
       </section>
 
-      {/* Contact Modal */}
-      {isContactOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border border-white/20 rounded-2xl p-8 max-w-md w-full">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-2xl font-bold">Launch Your Store</h3>
-              <button onClick={() => setIsContactOpen(false)} className="text-gray-400 hover:text-white">
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <p className="text-gray-300 mb-6">Ready to start selling online? Let's build an e-commerce store that converts.</p>
-            <div className="space-y-4">
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300">
-                Get Store Development Quote
-              </button>
-              <button className="w-full px-6 py-3 border border-white/20 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
-                View Our E-commerce Portfolio
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+      <Footer />
+    </>
   );
 }

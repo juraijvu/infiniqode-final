@@ -1,129 +1,209 @@
 import React, { useState } from "react";
-import { Plus, X, Users, TrendingUp, Target, Zap, Code, Database, Globe, Shield } from "lucide-react";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { SEOHead } from "@/components/seo-head";
+import { GlassCard } from "@/components/glass-card";
+import { ContactPopup } from "@/components/contact-popup";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "wouter";
+import { 
+  Code, 
+  CheckCircle, 
+  Database, 
+  Globe, 
+  Search, 
+  Shield,
+  Users,
+  Zap,
+  Settings,
+  Server,
+  ArrowRight,
+  Star,
+  TrendingUp,
+  Target,
+  Phone,
+  MessageCircle,
+  MapPin,
+  Api
+} from "lucide-react";
 import { SiNodedotjs, SiPython, SiRuby, SiGo, SiRust, SiPostgresql, SiMongodb, SiRedis } from "react-icons/si";
 
-const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+// FAQ Item Component with improved accessibility
+function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  
   return (
-    <div className="border border-white/10 rounded-xl overflow-hidden backdrop-blur-sm">
-      <button
-        className="w-full p-6 text-left flex justify-between items-center hover:bg-white/5 transition-colors"
+    <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 group hover:bg-purple-500/25 transition-all duration-300">
+      <button 
+        className="flex items-start justify-between cursor-pointer w-full text-left"
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls={`faq-content-${question.replace(/\s+/g, '-').toLowerCase()}`}
       >
-        <span className="font-medium">{question}</span>
-        {isOpen ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6 text-gray-300">
-          <p>{answer}</p>
+        <p className="text-white font-medium leading-relaxed pr-4">{question}</p>
+        <div className="w-8 h-8 bg-purple-500/40 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/60 transition-all duration-300">
+          <span className={`text-white text-lg transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`} aria-hidden="true">+</span>
         </div>
-      )}
+      </button>
+      <div 
+        id={`faq-content-${question.replace(/\s+/g, '-').toLowerCase()}`}
+        className={`mt-4 text-purple-100/70 text-sm leading-relaxed transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        {answer}
+      </div>
     </div>
   );
-};
+}
 
-export function APIDevelopmentService() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
+export default function APIDevelopmentService() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "API Development Services",
+    "description": "Build robust, scalable APIs that power modern applications with secure, high-performance backend services",
+    "provider": {
+      "@type": "Organization",
+      "name": "DigitalCraft",
+      "url": "https://digitalcraft.agency"
+    },
+    "areaServed": "Worldwide",
+    "serviceType": "API Development"
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-purple-500/10"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">REST APIs</span>
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">GraphQL</span>
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Microservices</span>
+    <>
+      <SEOHead
+        title="API Development Services - REST, GraphQL & Microservices"
+        description="Build robust, scalable APIs that power modern applications with secure, high-performance backend services and seamless integrations."
+        keywords="API development, REST API, GraphQL, microservices, backend development, API integration"
+        structuredData={structuredData}
+      />
+      <Navigation />
+      
+      {/* Hero Section - Reference Design Match */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content - Text Section */}
+            <div className="space-y-8">
+              {/* Main Title */}
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                  API Development<br />
+                  <span className="text-purple-300">Services</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
+                  At INFINIQODE, we build robust, scalable APIs that power modern applications with 
+                  secure, high-performance backend services. Our team creates seamless integrations 
+                  and microservices architectures. From REST APIs to GraphQL endpoints, 
+                  we deliver backend solutions that scale with your business.
+                </p>
               </div>
               
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-                API
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600"> Development</span>
-              </h1>
-              
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Build robust, scalable APIs that power modern applications with secure, high-performance backend services and seamless integrations.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={() => setIsContactOpen(true)}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300 shadow-lg shadow-purple-500/25"
-                >
-                  Build Custom APIs
-                </button>
-                <button className="px-8 py-4 border border-white/20 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
-                  View API Examples
-                </button>
+              {/* Service Badges */}
+              <div className="flex flex-wrap gap-4">
+                {[
+                  "REST APIs",
+                  "GraphQL", 
+                  "Microservices",
+                  "API Integration"
+                ].map((service, index) => (
+                  <div key={index} className="px-6 py-3 bg-purple-700/50 backdrop-blur-sm border border-purple-500/30 rounded-full">
+                    <span className="text-purple-100 font-medium text-sm">{service}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                <ContactPopup 
+                  trigger={
+                    <Button className="px-8 py-4 text-lg font-semibold bg-purple-600 hover:bg-purple-500 text-white border-0 shadow-xl rounded-full" data-testid="button-start-project">
+                      Build Custom APIs
+                    </Button>
+                  }
+                  title="Ready to Start Your API Project?"
+                  description="Let's discuss your API needs and create robust backend solutions that scale."
+                  defaultService="API Development"
+                />
+                <Button className="px-8 py-4 text-lg font-semibold bg-transparent border-2 border-purple-400/60 text-purple-100 hover:bg-purple-600/20 rounded-full" data-testid="button-schedule-call">
+                  Schedule a Call
+                </Button>
               </div>
             </div>
             
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-3xl flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-8">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-400/30 to-blue-600/30 rounded-2xl flex items-center justify-center">
-                    <Code className="w-16 h-16 text-blue-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-green-400/30 to-green-600/30 rounded-2xl flex items-center justify-center">
-                    <Database className="w-16 h-16 text-green-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-orange-400/30 to-orange-600/30 rounded-2xl flex items-center justify-center">
-                    <Globe className="w-16 h-16 text-orange-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-purple-400/30 to-purple-600/30 rounded-2xl flex items-center justify-center">
-                    <Shield className="w-16 h-16 text-purple-300" />
-                  </div>
-                </div>
+            {/* Right Content - 3D Graphics */}
+            <div className="relative flex items-center justify-center lg:justify-end">
+              {/* Floating 3D Elements */}
+              <div className="relative w-full max-w-md h-96">
+                {/* Large API Cube */}
+                <div className="absolute top-16 right-8 w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300 opacity-80"></div>
+                
+                {/* Database Diamond */}
+                <div className="absolute top-32 left-4 w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 transform rotate-45 shadow-xl hover:rotate-12 transition-transform duration-300 opacity-90"></div>
+                
+                {/* Server Hexagon */}
+                <div className="absolute top-8 left-16 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl shadow-2xl transform rotate-6 hover:-rotate-6 transition-transform duration-300 opacity-75"></div>
+                
+                {/* Code Cube */}
+                <div className="absolute bottom-24 right-16 w-18 h-18 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg shadow-xl transform -rotate-12 hover:rotate-3 transition-transform duration-300 opacity-85"></div>
+                
+                {/* Integration Square */}
+                <div className="absolute bottom-8 left-8 w-14 h-14 bg-gradient-to-br from-pink-400 to-pink-600 rounded-md shadow-lg transform rotate-45 hover:rotate-90 transition-transform duration-300 opacity-70"></div>
+                
+                {/* Large Glass Prism */}
+                <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-white/20 via-blue-300/30 to-purple-400/40 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300"></div>
+                
+                {/* Small Transparent Cube */}
+                <div className="absolute bottom-16 left-20 w-12 h-12 bg-gradient-to-br from-white/10 via-orange-200/20 to-transparent backdrop-blur-sm border border-white/10 rounded-lg shadow-xl transform -rotate-6 hover:rotate-12 transition-transform duration-300"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Our API Development Process</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Systematic approach to building APIs that scale and perform
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Strategic Process Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                step: "01",
-                title: "API Design",
-                description: "Design RESTful or GraphQL APIs with clear documentation, consistent structure, and optimal performance."
-              },
-              {
-                step: "02", 
-                title: "Development",
-                description: "Build secure, scalable APIs using best practices for authentication, validation, and error handling."
-              },
-              {
-                step: "03",
-                title: "Testing & Documentation",
-                description: "Comprehensive testing suite and detailed API documentation for seamless integration."
-              },
-              {
-                step: "04",
-                title: "Deployment & Monitoring",
-                description: "Deploy to production with monitoring, logging, and performance optimization for reliability."
-              }
+              { icon: Settings, title: "API Planning & Design", step: "Step 1", desc: "Define API specifications, data models, and security requirements to create a robust and scalable architecture blueprint." },
+              { icon: Code, title: "Development & Testing", step: "Step 2", desc: "Build secure, high-performance APIs with comprehensive testing, documentation, and validation for reliability." },
+              { icon: Server, title: "Deployment & Integration", step: "Step 3", desc: "Deploy APIs with proper monitoring, versioning, and integration support for seamless system connectivity." },
+              { icon: Globe, title: "Monitoring & Scaling", step: "Step 4", desc: "Continuously monitor performance, handle scaling needs, and maintain API excellence with ongoing optimization." }
             ].map((item, index) => (
-              <div key={index} className="relative">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8 h-full hover:from-white/15 hover:to-white/10 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mb-6">
-                    <span className="text-white font-bold">{item.step}</span>
+              <div key={index} className="group">
+                {/* Glass Card */}
+                <div className="relative h-full p-4 md:p-6 rounded-xl md:rounded-2xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
+                  
+                  <div className="relative z-10 space-y-4">
+                    {/* Icon */}
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-lg md:rounded-xl flex items-center justify-center border border-white/20">
+                      <item.icon className="icon-white text-lg md:text-xl" />
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
+                    
+                    <p className="text-sm text-purple-100/80 leading-relaxed line-clamp-4">{item.desc}</p>
+                    
+                    {/* Step Badge */}
+                    <div className="pt-2">
+                      <Badge className="bg-white/10 text-white border border-white/20 text-xs font-medium">
+                        {item.step}
+                      </Badge>
+                    </div>
+                    
+                    {/* Arrow */}
+                    <div className="flex justify-end pt-2">
+                      <ArrowRight className="text-purple-300 text-lg" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                  <p className="text-gray-300">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -131,64 +211,91 @@ export function APIDevelopmentService() {
         </div>
       </section>
 
-      {/* Service Includes Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-8">Complete API Development Solution</h2>
+      {/* Strategic Service Includes Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                What Our API Development<br />
+                Service Includes
+              </h2>
               
+              <p className="text-lg text-purple-100/90 leading-relaxed">
+                Our comprehensive API development service is designed to help businesses of all
+                sizes create robust backend systems that scale. We work closely with your
+                team to understand your unique requirements and implement solutions that
+                deliver exceptional performance, security, and developer experience.
+              </p>
+              
+              {/* Service Features */}
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">API Architecture</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• RESTful API design and development</li>
-                    <li>• GraphQL API implementation</li>
-                    <li>• Microservices architecture</li>
-                    <li>• Third-party API integrations</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Security & Performance</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Authentication and authorization</li>
-                    <li>• Rate limiting and throttling</li>
-                    <li>• Data validation and sanitization</li>
-                    <li>• Caching and optimization</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Documentation & Testing</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Interactive API documentation</li>
-                    <li>• Comprehensive test suites</li>
-                    <li>• Performance monitoring</li>
-                    <li>• Version management</li>
-                  </ul>
-                </div>
+                {[
+                  "RESTful & GraphQL API Development",
+                  "Microservices Architecture", 
+                  "API Security & Authentication",
+                  "Documentation & Testing Suites"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        We build APIs that are secure, scalable, and easy to integrate with 
+                        comprehensive documentation and robust testing frameworks.
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             
+            {/* Right Content - 3D Illustration & Stats */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-3xl p-8 text-center">
-                <div className="grid grid-cols-2 gap-6 mb-8">
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">100+</div>
-                    <div className="text-sm text-gray-300">APIs Developed</div>
+              {/* 3D Illustration Area */}
+              <div className="relative h-64 md:h-80 rounded-xl md:rounded-2xl glass-card overflow-hidden mb-6 md:mb-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                
+                {/* Mock 3D Elements */}
+                <div className="relative z-10 h-full flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    {/* API Server Mock */}
+                    <div className="w-32 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-xl mx-auto flex items-center justify-center border border-blue-300/30">
+                      <div className="w-24 h-14 bg-white/20 rounded-sm flex items-center justify-center">
+                        <Server className="icon-white text-xl md:text-2xl" />
+                      </div>
+                    </div>
+                    
+                    {/* Floating Elements */}
+                    <div className="flex justify-center space-x-4">
+                      <div className="w-8 h-8 bg-green-400 rounded-full shadow-lg"></div>
+                      <div className="w-6 h-6 bg-orange-400 rounded-md shadow-lg"></div>
+                      <div className="w-10 h-6 bg-purple-400 rounded-lg shadow-lg"></div>
+                    </div>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">99.9%</div>
-                    <div className="text-sm text-gray-300">Uptime Achieved</div>
+                </div>
+              </div>
+              
+              {/* Statistics Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">500+</div>
+                  <p className="text-purple-100/80 text-sm">APIs Deployed</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">99.9%</div>
+                    <p className="text-xs text-purple-100/60">Uptime</p>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">50ms</div>
-                    <div className="text-sm text-gray-300">Avg. Response Time</div>
-                  </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">24/7</div>
-                    <div className="text-sm text-gray-300">Monitoring & Support</div>
+                </div>
+                
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">1M+</div>
+                  <p className="text-purple-100/80 text-sm">API Calls/Day</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">< 100ms</div>
+                    <p className="text-xs text-purple-100/60">Response</p>
                   </div>
                 </div>
               </div>
@@ -198,38 +305,59 @@ export function APIDevelopmentService() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">API Development Success Stories</h2>
-            <p className="text-xl text-gray-300">Real results from our API development projects</p>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-5xl font-bold text-white">All API Development Usecase</h2>
+            <p className="text-xl text-purple-100/90 max-w-3xl mx-auto">
+              Discover how our API development services have powered businesses
+              across various industries with robust backend solutions.
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                title: "E-commerce Platform APIs",
-                description: "Built scalable APIs for a major e-commerce platform handling 10M+ requests daily with 99.99% uptime.",
-                metrics: ["10M+ daily requests", "99.99% uptime"]
-              },
-              {
-                title: "FinTech Integration Hub",
-                description: "Developed secure payment APIs for a fintech startup, processing $50M+ in transactions monthly.",
-                metrics: ["$50M+ monthly transactions", "Bank-grade security"]
-              },
-              {
-                title: "IoT Data Processing",
-                description: "Created real-time APIs for IoT platform processing sensor data from 100K+ devices globally.",
-                metrics: ["100K+ connected devices", "Real-time processing"]
-              }
-            ].map((useCase, index) => (
-              <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8 hover:from-white/15 hover:to-white/10 transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-4">{useCase.title}</h3>
-                <p className="text-gray-300 mb-6">{useCase.description}</p>
-                <div className="space-y-2">
-                  {useCase.metrics.map((metric, i) => (
-                    <div key={i} className="text-purple-400 text-sm font-medium">✓ {metric}</div>
-                  ))}
+              { title: "E-commerce Platform", subtitle: "Microservices Architecture for Scale", desc: "Built a microservices API architecture handling 100K+ transactions daily with 99.9% uptime and sub-100ms response times for optimal performance." },
+              { title: "Financial Services API", subtitle: "Bank-Grade Security & Compliance", desc: "Developed secure financial APIs with multi-factor authentication, encryption, and regulatory compliance processing $50M+ in transactions." },
+              { title: "IoT Data Processing", subtitle: "Real-Time Analytics & Monitoring", desc: "Created high-throughput APIs processing 1M+ IoT sensor readings per hour with real-time analytics and automated alerting systems." }
+            ].map((item, index) => (
+              <div key={index} className="group">
+                <div className="h-full rounded-2xl md:rounded-3xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden">
+                  {/* Dashboard Mockup */}
+                  <div className="h-48 bg-gradient-to-br from-blue-800/40 to-blue-900/60 p-4 relative">
+                    <div className="bg-black/40 rounded-lg h-full p-4 backdrop-blur-sm">
+                      {/* Mock Dashboard Content */}
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs text-blue-200">
+                          <span>Requests/sec</span>
+                          <span>1.2K</span>
+                        </div>
+                        <div className="h-20 bg-gradient-to-r from-blue-500/30 to-green-500/30 rounded relative">
+                          {/* Mock Chart Bars */}
+                          <div className="absolute bottom-0 left-2 w-1 bg-blue-400 rounded-t" style={{ height: '60%' }}></div>
+                          <div className="absolute bottom-0 left-6 w-1 bg-blue-400 rounded-t" style={{ height: '80%' }}></div>
+                          <div className="absolute bottom-0 left-10 w-1 bg-blue-400 rounded-t" style={{ height: '40%' }}></div>
+                          <div className="absolute bottom-0 left-14 w-1 bg-blue-400 rounded-t" style={{ height: '90%' }}></div>
+                          <div className="absolute bottom-0 left-18 w-1 bg-blue-400 rounded-t" style={{ height: '70%' }}></div>
+                        </div>
+                        <div className="text-xs text-blue-300">99.9% uptime with sub-100ms response</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
+                    <div className="space-y-2">
+                      <div className="text-xs text-purple-300 uppercase tracking-wider">{item.title}</div>
+                      <h3 className="text-lg font-bold text-white">{item.subtitle}</h3>
+                      <p className="text-sm text-purple-100/80 leading-relaxed">{item.desc}</p>
+                    </div>
+                    <Button variant="outline" className="w-full border-purple-400/30 text-purple-200 hover:bg-purple-600/20 group-hover:border-purple-400/50 transition-all duration-300">
+                      View Case Study
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -238,28 +366,38 @@ export function APIDevelopmentService() {
       </section>
 
       {/* Service Details Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Why Choose Our API Development</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Expert API development that powers modern applications with reliability and scale
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-6">
+          <h2 className="text-4xl font-bold text-white">Service Details:</h2>
+          
+          {/* Service Description */}
+          <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+            <p className="text-purple-100/90 leading-relaxed text-lg">
+              Our comprehensive API development service combines modern backend technologies with industry best practices to create robust, scalable APIs 
+              that power your digital ecosystem. We specialize in designing RESTful APIs, GraphQL endpoints, and microservices architectures that handle 
+              high traffic loads while maintaining security and performance. From authentication systems to real-time data processing, our APIs are built 
+              with comprehensive documentation, thorough testing, and monitoring solutions that ensure reliability and ease of integration.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Strategic Feature Icons */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
             {[
-              { icon: Users, title: "Expert Developers", desc: "Senior backend developers with extensive API development experience." },
-              { icon: TrendingUp, title: "Scalable Architecture", desc: "APIs designed to handle growth from thousands to millions of requests." },
-              { icon: Target, title: "Security First", desc: "Built-in security measures including authentication, encryption, and validation." },
-              { icon: Zap, title: "High Performance", desc: "Optimized for speed with caching, efficient queries, and minimal latency." }
-            ].map((feature, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-purple-500/30 group-hover:to-purple-700/30 transition-all duration-300">
-                  <feature.icon className="w-8 h-8 text-purple-300" />
+              { icon: Code, title: "RESTful", subtitle: "APIs" },
+              { icon: Database, title: "GraphQL", subtitle: "Endpoints" },
+              { icon: Shield, title: "Secure", subtitle: "Authentication" },
+              { icon: Api, title: "API", subtitle: "Documentation" }
+            ].map((item, index) => (
+              <div key={index} className="text-center space-y-4 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-300">{feature.desc}</p>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-purple-100/80">{item.subtitle}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -267,30 +405,28 @@ export function APIDevelopmentService() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">API Development Technologies</h2>
-            <p className="text-xl text-gray-300">Modern backend technologies for building robust APIs</p>
-          </div>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
+          <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiNodedotjs, name: "Node.js", desc: "JavaScript runtime for building fast, scalable network applications and APIs." },
-              { icon: SiPython, name: "Python", desc: "Versatile language with frameworks like Django and FastAPI for API development." },
-              { icon: SiRuby, name: "Ruby on Rails", desc: "Full-stack web framework with convention over configuration for rapid API development." },
-              { icon: SiGo, name: "Go (Golang)", desc: "High-performance language designed for building efficient, concurrent backend services." },
-              { icon: SiRust, name: "Rust", desc: "Systems programming language offering memory safety and high performance for APIs." },
-              { icon: SiPostgresql, name: "PostgreSQL", desc: "Advanced relational database with JSON support and excellent performance." },
-              { icon: SiMongodb, name: "MongoDB", desc: "NoSQL database perfect for document-based data and flexible schema requirements." },
-              { icon: SiRedis, name: "Redis", desc: "In-memory data structure store used for caching and real-time applications." }
+              { icon: SiNodedotjs, name: "Node.js", desc: "JavaScript runtime for building fast, scalable server-side applications and RESTful APIs." },
+              { icon: SiPython, name: "Python", desc: "High-level programming language perfect for API development with frameworks like Django and FastAPI." },
+              { icon: SiRuby, name: "Ruby", desc: "Dynamic programming language with Ruby on Rails framework for rapid API development." },
+              { icon: SiGo, name: "Go", desc: "Google's programming language designed for building high-performance, concurrent backend services." },
+              { icon: SiRust, name: "Rust", desc: "Systems programming language offering memory safety and performance for critical API infrastructure." },
+              { icon: SiPostgresql, name: "PostgreSQL", desc: "Advanced relational database with powerful features for complex data relationships and queries." },
+              { icon: SiMongodb, name: "MongoDB", desc: "NoSQL document database for flexible, scalable data storage in modern applications." },
+              { icon: SiRedis, name: "Redis", desc: "In-memory data structure store used for caching, session management, and real-time applications." }
             ].map((tech, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300">
-                  <tech.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-white/5 group-hover:scale-110 transition-transform duration-300">
+                  <tech.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">{tech.name}</h3>
-                <p className="text-sm text-gray-300">{tech.desc}</p>
+                <h3 className="text-lg font-semibold text-white mb-2">{tech.name}</h3>
+                <p className="text-sm text-purple-100/80 leading-relaxed">{tech.desc}</p>
               </div>
             ))}
           </div>
@@ -298,64 +434,41 @@ export function APIDevelopmentService() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-300">Common questions about our API development services</p>
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-6 space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-5xl font-bold text-white">Frequently Asked Questions</h2>
+            <p className="text-xl text-purple-100/90">Common questions about our API development services</p>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             <FAQItem 
-              question="What type of APIs do you develop?"
-              answer="We develop RESTful APIs, GraphQL APIs, WebSocket APIs for real-time communication, and webhook systems. We also create microservices architectures and integrate with third-party APIs."
+              question="What's the difference between REST and GraphQL APIs?"
+              answer="REST APIs use standard HTTP methods with multiple endpoints, while GraphQL uses a single endpoint with flexible queries. GraphQL offers more precise data fetching, while REST is simpler and more widely adopted."
             />
             <FAQItem 
               question="How do you ensure API security?"
-              answer="We implement multiple security layers including OAuth 2.0, JWT tokens, API key management, rate limiting, input validation, SQL injection prevention, and HTTPS encryption for all communications."
+              answer="We implement multiple security layers including authentication (OAuth, JWT), authorization, rate limiting, input validation, HTTPS encryption, and regular security audits to protect against common vulnerabilities."
             />
             <FAQItem 
-              question="Do you provide API documentation?"
-              answer="Yes, we create comprehensive API documentation using tools like Swagger/OpenAPI, including interactive examples, request/response schemas, and integration guides for developers."
-            />
-            <FAQItem 
-              question="Can you integrate with existing systems?"
-              answer="Absolutely! We specialize in integrating APIs with existing databases, CRM systems, payment gateways, third-party services, and legacy applications while ensuring data consistency."
+              question="What documentation do you provide?"
+              answer="We provide comprehensive API documentation including endpoint descriptions, request/response examples, authentication details, error codes, and interactive testing interfaces using tools like Swagger/OpenAPI."
             />
             <FAQItem 
               question="How do you handle API versioning?"
-              answer="We implement proper versioning strategies using URL versioning, header versioning, or content negotiation to ensure backward compatibility while allowing for API evolution and updates."
+              answer="We implement semantic versioning strategies with backward compatibility, clear deprecation timelines, and migration guides. We support multiple versions simultaneously to ensure smooth transitions."
             />
             <FAQItem 
-              question="What about API performance and scalability?"
-              answer="We optimize APIs with database indexing, query optimization, caching strategies, load balancing, and horizontal scaling to handle high traffic loads and ensure fast response times."
+              question="Can you integrate with existing systems?"
+              answer="Yes, we specialize in creating APIs that integrate seamlessly with existing databases, third-party services, legacy systems, and modern cloud platforms through various integration patterns."
             />
           </div>
         </div>
       </section>
 
-      {/* Contact Modal */}
-      {isContactOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border border-white/20 rounded-2xl p-8 max-w-md w-full">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-2xl font-bold">Build Custom APIs</h3>
-              <button onClick={() => setIsContactOpen(false)} className="text-gray-400 hover:text-white">
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <p className="text-gray-300 mb-6">Ready to build powerful APIs that scale? Let's create backend solutions that drive your applications.</p>
-            <div className="space-y-4">
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300">
-                Get API Development Quote
-              </button>
-              <button className="w-full px-6 py-3 border border-white/20 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
-                Schedule Technical Discussion
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+      <Footer />
+    </>
   );
 }

@@ -1,129 +1,201 @@
 import React, { useState } from "react";
-import { Plus, X, Users, TrendingUp, Target, Zap, Mail, Send, BarChart3, UserCheck } from "lucide-react";
-import { SiMailchimp, SiConstantcontact, SiSendgrid, SiHubspot, SiKlaviyo, SiActivecampaign, SiConvertkit, SiGetresponse } from "react-icons/si";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { SEOHead } from "@/components/seo-head";
+import { GlassCard } from "@/components/glass-card";
+import { ContactPopup } from "@/components/contact-popup";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "wouter";
+import { 
+  Mail, 
+  CheckCircle, 
+  Send, 
+  BarChart3, 
+  Search, 
+  UserCheck,
+  Users,
+  Zap,
+  Settings,
+  Globe,
+  ArrowRight,
+  Shield,
+  Star,
+  TrendingUp,
+  Target,
+  Phone,
+  MessageCircle,
+  MapPin
+} from "lucide-react";
+import { SiMailchimp, SiSendgrid, SiHubspot } from "react-icons/si";
 
-const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+// FAQ Item Component
+function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  
   return (
-    <div className="border border-white/10 rounded-xl overflow-hidden backdrop-blur-sm">
-      <button
-        className="w-full p-6 text-left flex justify-between items-center hover:bg-white/5 transition-colors"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="font-medium">{question}</span>
-        {isOpen ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6 text-gray-300">
-          <p>{answer}</p>
+    <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 group hover:bg-purple-500/25 transition-all duration-300">
+      <div className="flex items-start justify-between cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+        <p className="text-white font-medium leading-relaxed pr-4">{question}</p>
+        <div className="w-8 h-8 bg-purple-500/40 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/60 transition-all duration-300">
+          <span className={`text-white text-lg transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}>+</span>
         </div>
-      )}
+      </div>
+      <div className={`mt-4 text-purple-100/70 text-sm leading-relaxed transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
+        {answer}
+      </div>
     </div>
   );
-};
+}
 
-export function EmailMarketingService() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
+export default function EmailMarketingService() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Email Marketing Services",
+    "description": "Build lasting relationships and drive revenue with strategic email marketing campaigns",
+    "provider": {
+      "@type": "Organization",
+      "name": "DigitalCraft",
+      "url": "https://digitalcraft.agency"
+    },
+    "areaServed": "Worldwide",
+    "serviceType": "Email Marketing"
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-purple-500/10"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Email Campaigns</span>
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Automation</span>
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Segmentation</span>
+    <>
+      <SEOHead
+        title="Email Marketing Services - Strategic Email Campaigns"
+        description="Build lasting relationships and drive revenue with strategic email marketing campaigns that convert subscribers into loyal customers."
+        keywords="email marketing, email campaigns, automation, segmentation, newsletter, drip campaigns"
+        structuredData={structuredData}
+      />
+      <Navigation />
+      
+      {/* Hero Section - Reference Design Match */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content - Text Section */}
+            <div className="space-y-8">
+              {/* Main Title */}
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                  Email Marketing<br />
+                  <span className="text-purple-300">Services</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
+                  At INFINIQODE, we build lasting relationships and drive revenue through strategic 
+                  email marketing campaigns. Our team creates personalized experiences that convert 
+                  subscribers into loyal customers. From automation workflows to advanced 
+                  segmentation strategies, we deliver results that exceed expectations.
+                </p>
               </div>
               
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-                Email
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600"> Marketing</span>
-              </h1>
-              
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Build lasting relationships and drive revenue with strategic email marketing campaigns that convert subscribers into loyal customers.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={() => setIsContactOpen(true)}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300 shadow-lg shadow-purple-500/25"
-                >
-                  Boost Email Revenue
-                </button>
-                <button className="px-8 py-4 border border-white/20 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
-                  View Campaign Examples
-                </button>
+              {/* Service Badges */}
+              <div className="flex flex-wrap gap-4">
+                {[
+                  "Email Campaigns",
+                  "Marketing Automation", 
+                  "List Segmentation",
+                  "Performance Analytics"
+                ].map((service, index) => (
+                  <div key={index} className="px-6 py-3 bg-purple-700/50 backdrop-blur-sm border border-purple-500/30 rounded-full">
+                    <span className="text-purple-100 font-medium text-sm">{service}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                <ContactPopup 
+                  trigger={
+                    <Button className="px-8 py-4 text-lg font-semibold bg-purple-600 hover:bg-purple-500 text-white border-0 shadow-xl rounded-full" data-testid="button-start-project">
+                      Boost Email Revenue
+                    </Button>
+                  }
+                  title="Ready to Start Your Email Marketing Campaign?"
+                  description="Let's discuss your email marketing needs and create campaigns that convert subscribers into customers."
+                  defaultService="Email Marketing"
+                />
+                <Button className="px-8 py-4 text-lg font-semibold bg-transparent border-2 border-purple-400/60 text-purple-100 hover:bg-purple-600/20 rounded-full" data-testid="button-schedule-call">
+                  Schedule a Call
+                </Button>
               </div>
             </div>
             
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-3xl flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-8">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-400/30 to-blue-600/30 rounded-2xl flex items-center justify-center">
-                    <Mail className="w-16 h-16 text-blue-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-green-400/30 to-green-600/30 rounded-2xl flex items-center justify-center">
-                    <Send className="w-16 h-16 text-green-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-orange-400/30 to-orange-600/30 rounded-2xl flex items-center justify-center">
-                    <BarChart3 className="w-16 h-16 text-orange-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-purple-400/30 to-purple-600/30 rounded-2xl flex items-center justify-center">
-                    <UserCheck className="w-16 h-16 text-purple-300" />
-                  </div>
-                </div>
+            {/* Right Content - 3D Graphics */}
+            <div className="relative flex items-center justify-center lg:justify-end">
+              {/* Floating 3D Elements */}
+              <div className="relative w-full max-w-md h-96">
+                {/* Large Email Cube */}
+                <div className="absolute top-16 right-8 w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300 opacity-80"></div>
+                
+                {/* Send Diamond */}
+                <div className="absolute top-32 left-4 w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 transform rotate-45 shadow-xl hover:rotate-12 transition-transform duration-300 opacity-90"></div>
+                
+                {/* Analytics Hexagon */}
+                <div className="absolute top-8 left-16 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl shadow-2xl transform rotate-6 hover:-rotate-6 transition-transform duration-300 opacity-75"></div>
+                
+                {/* User Check Cube */}
+                <div className="absolute bottom-24 right-16 w-18 h-18 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg shadow-xl transform -rotate-12 hover:rotate-3 transition-transform duration-300 opacity-85"></div>
+                
+                {/* Campaign Square */}
+                <div className="absolute bottom-8 left-8 w-14 h-14 bg-gradient-to-br from-pink-400 to-pink-600 rounded-md shadow-lg transform rotate-45 hover:rotate-90 transition-transform duration-300 opacity-70"></div>
+                
+                {/* Large Glass Prism */}
+                <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-white/20 via-blue-300/30 to-purple-400/40 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300"></div>
+                
+                {/* Small Transparent Cube */}
+                <div className="absolute bottom-16 left-20 w-12 h-12 bg-gradient-to-br from-white/10 via-green-200/20 to-transparent backdrop-blur-sm border border-white/10 rounded-lg shadow-xl transform -rotate-6 hover:rotate-12 transition-transform duration-300"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Our Email Marketing Process</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Strategic approach to building relationships and driving conversions through email
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Strategic Process Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                step: "01",
-                title: "Strategy & Planning",
-                description: "Develop comprehensive email marketing strategy aligned with your business goals and customer journey."
-              },
-              {
-                step: "02", 
-                title: "List Building & Segmentation",
-                description: "Build quality subscriber lists and create targeted segments for personalized messaging."
-              },
-              {
-                step: "03",
-                title: "Campaign Creation",
-                description: "Design beautiful email templates and write compelling copy that drives engagement and conversions."
-              },
-              {
-                step: "04",
-                title: "Automation & Optimization",
-                description: "Set up automated workflows and continuously optimize performance based on analytics."
-              }
+              { icon: Settings, title: "Strategy & Planning", step: "Step 1", desc: "Develop comprehensive email marketing strategy aligned with your business goals and customer journey for maximum impact." },
+              { icon: Users, title: "List Building & Segmentation", step: "Step 2", desc: "Build quality subscriber lists and create targeted segments for personalized messaging that resonates with your audience." },
+              { icon: Mail, title: "Campaign Creation", step: "Step 3", desc: "Design beautiful email templates and write compelling copy that drives engagement and conversions across all devices." },
+              { icon: BarChart3, title: "Automation & Optimization", step: "Step 4", desc: "Set up automated workflows and continuously optimize performance based on analytics and subscriber behavior." }
             ].map((item, index) => (
-              <div key={index} className="relative">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8 h-full hover:from-white/15 hover:to-white/10 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mb-6">
-                    <span className="text-white font-bold">{item.step}</span>
+              <div key={index} className="group">
+                {/* Glass Card */}
+                <div className="relative h-full p-4 md:p-6 rounded-xl md:rounded-2xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
+                  
+                  <div className="relative z-10 space-y-4">
+                    {/* Icon */}
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-lg md:rounded-xl flex items-center justify-center border border-white/20">
+                      <item.icon className="icon-white text-lg md:text-xl" />
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
+                    
+                    <p className="text-sm text-purple-100/80 leading-relaxed line-clamp-4">{item.desc}</p>
+                    
+                    {/* Step Badge */}
+                    <div className="pt-2">
+                      <Badge className="bg-white/10 text-white border border-white/20 text-xs font-medium">
+                        {item.step}
+                      </Badge>
+                    </div>
+                    
+                    {/* Arrow */}
+                    <div className="flex justify-end pt-2">
+                      <ArrowRight className="text-purple-300 text-lg" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                  <p className="text-gray-300">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -131,64 +203,91 @@ export function EmailMarketingService() {
         </div>
       </section>
 
-      {/* Service Includes Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-8">Complete Email Marketing Solution</h2>
+      {/* Strategic Service Includes Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                What Our Email Marketing<br />
+                Service Includes
+              </h2>
               
+              <p className="text-lg text-purple-100/90 leading-relaxed">
+                Our comprehensive email marketing service is designed to help businesses of all
+                sizes build lasting relationships with their audience and drive measurable revenue. We work closely with your
+                team to understand your unique goals and implement strategies that
+                deliver real business results.
+              </p>
+              
+              {/* Service Features */}
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Campaign Management</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Newsletter design and content creation</li>
-                    <li>• Promotional campaign development</li>
-                    <li>• A/B testing and optimization</li>
-                    <li>• Mobile-responsive email templates</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Marketing Automation</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Welcome series and onboarding flows</li>
-                    <li>• Abandoned cart recovery sequences</li>
-                    <li>• Lead nurturing drip campaigns</li>
-                    <li>• Re-engagement and win-back campaigns</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Analytics & Reporting</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Detailed performance analytics</li>
-                    <li>• List growth and segmentation insights</li>
-                    <li>• Revenue attribution tracking</li>
-                    <li>• Deliverability monitoring and optimization</li>
-                  </ul>
-                </div>
+                {[
+                  "Campaign Management & Design",
+                  "Marketing Automation Workflows", 
+                  "Advanced Audience Segmentation",
+                  "Performance Analytics & Reporting"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        We create strategic email campaigns that nurture leads, engage customers, 
+                        and drive conversions with personalized messaging and automated workflows.
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             
+            {/* Right Content - 3D Illustration & Stats */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-3xl p-8 text-center">
-                <div className="grid grid-cols-2 gap-6 mb-8">
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">25%</div>
-                    <div className="text-sm text-gray-300">Avg. Open Rate</div>
+              {/* 3D Illustration Area */}
+              <div className="relative h-64 md:h-80 rounded-xl md:rounded-2xl glass-card overflow-hidden mb-6 md:mb-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                
+                {/* Mock 3D Elements */}
+                <div className="relative z-10 h-full flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    {/* Email Mock */}
+                    <div className="w-32 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-xl mx-auto flex items-center justify-center border border-blue-300/30">
+                      <div className="w-24 h-14 bg-white/20 rounded-sm flex items-center justify-center">
+                        <Mail className="icon-white text-xl md:text-2xl" />
+                      </div>
+                    </div>
+                    
+                    {/* Floating Elements */}
+                    <div className="flex justify-center space-x-4">
+                      <div className="w-8 h-8 bg-green-400 rounded-full shadow-lg"></div>
+                      <div className="w-6 h-6 bg-orange-400 rounded-md shadow-lg"></div>
+                      <div className="w-10 h-6 bg-purple-400 rounded-lg shadow-lg"></div>
+                    </div>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">4.5%</div>
-                    <div className="text-sm text-gray-300">Avg. Click Rate</div>
+                </div>
+              </div>
+              
+              {/* Statistics Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">25%</div>
+                  <p className="text-purple-100/80 text-sm">Avg. Open Rate</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">$42</div>
+                    <p className="text-xs text-purple-100/60">ROI per $1</p>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">$42</div>
-                    <div className="text-sm text-gray-300">ROI per $1 Spent</div>
-                  </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">98%</div>
-                    <div className="text-sm text-gray-300">Deliverability Rate</div>
+                </div>
+                
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">4.5%</div>
+                  <p className="text-purple-100/80 text-sm">Avg. Click Rate</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">98%</div>
+                    <p className="text-xs text-purple-100/60">Deliverability</p>
                   </div>
                 </div>
               </div>
@@ -198,38 +297,59 @@ export function EmailMarketingService() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Email Marketing Success Stories</h2>
-            <p className="text-xl text-gray-300">Real results from our email marketing campaigns</p>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-5xl font-bold text-white">All Email Marketing Usecase</h2>
+            <p className="text-xl text-purple-100/90 max-w-3xl mx-auto">
+              Discover how our email marketing services have transformed businesses
+              across various industries with strategic campaigns that convert.
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                title: "E-commerce Revenue Growth",
-                description: "Increased email revenue by 350% for an online retailer through segmented campaigns and automated flows.",
-                metrics: ["350% revenue increase", "45% higher open rates"]
-              },
-              {
-                title: "SaaS Customer Retention",
-                description: "Improved customer retention by 60% for a SaaS company through targeted onboarding and engagement emails.",
-                metrics: ["60% better retention", "30% increase in upgrades"]
-              },
-              {
-                title: "B2B Lead Nurturing",
-                description: "Generated 200% more qualified leads for a consulting firm through strategic drip campaigns.",
-                metrics: ["200% more qualified leads", "25% higher conversion rate"]
-              }
-            ].map((useCase, index) => (
-              <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8 hover:from-white/15 hover:to-white/10 transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-4">{useCase.title}</h3>
-                <p className="text-gray-300 mb-6">{useCase.description}</p>
-                <div className="space-y-2">
-                  {useCase.metrics.map((metric, i) => (
-                    <div key={i} className="text-purple-400 text-sm font-medium">✓ {metric}</div>
-                  ))}
+              { title: "E-commerce Growth", subtitle: "350% Revenue Increase with Segmentation", desc: "Increased email revenue by 350% for an online retailer through segmented campaigns and automated flows with personalized product recommendations." },
+              { title: "SaaS Retention", subtitle: "60% Better Customer Retention", desc: "Improved customer retention by 60% for a SaaS company through targeted onboarding and engagement emails that reduced churn significantly." },
+              { title: "B2B Lead Generation", subtitle: "200% More Qualified Leads", desc: "Generated 200% more qualified leads for a consulting firm through strategic drip campaigns and lead nurturing automation workflows." }
+            ].map((item, index) => (
+              <div key={index} className="group">
+                <div className="h-full rounded-2xl md:rounded-3xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden">
+                  {/* Dashboard Mockup */}
+                  <div className="h-48 bg-gradient-to-br from-blue-800/40 to-blue-900/60 p-4 relative">
+                    <div className="bg-black/40 rounded-lg h-full p-4 backdrop-blur-sm">
+                      {/* Mock Dashboard Content */}
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs text-blue-200">
+                          <span>Open Rate</span>
+                          <span>45%</span>
+                        </div>
+                        <div className="h-20 bg-gradient-to-r from-blue-500/30 to-green-500/30 rounded relative">
+                          {/* Mock Chart Bars */}
+                          <div className="absolute bottom-0 left-2 w-1 bg-blue-400 rounded-t" style={{ height: '60%' }}></div>
+                          <div className="absolute bottom-0 left-6 w-1 bg-blue-400 rounded-t" style={{ height: '80%' }}></div>
+                          <div className="absolute bottom-0 left-10 w-1 bg-blue-400 rounded-t" style={{ height: '40%' }}></div>
+                          <div className="absolute bottom-0 left-14 w-1 bg-blue-400 rounded-t" style={{ height: '90%' }}></div>
+                          <div className="absolute bottom-0 left-18 w-1 bg-blue-400 rounded-t" style={{ height: '70%' }}></div>
+                        </div>
+                        <div className="text-xs text-blue-300">350% revenue boost with email campaigns</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
+                    <div className="space-y-2">
+                      <div className="text-xs text-purple-300 uppercase tracking-wider">{item.title}</div>
+                      <h3 className="text-lg font-bold text-white">{item.subtitle}</h3>
+                      <p className="text-sm text-purple-100/80 leading-relaxed">{item.desc}</p>
+                    </div>
+                    <Button variant="outline" className="w-full border-purple-400/30 text-purple-200 hover:bg-purple-600/20 group-hover:border-purple-400/50 transition-all duration-300">
+                      View Case Study
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -238,28 +358,38 @@ export function EmailMarketingService() {
       </section>
 
       {/* Service Details Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Why Choose Our Email Marketing Services</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Strategic email marketing that builds relationships and drives measurable business results
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-6">
+          <h2 className="text-4xl font-bold text-white">Service Details:</h2>
+          
+          {/* Service Description */}
+          <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+            <p className="text-purple-100/90 leading-relaxed text-lg">
+              Our comprehensive email marketing service combines strategic planning with cutting-edge automation to build lasting relationships that drive revenue. 
+              We specialize in creating personalized email campaigns that engage subscribers at every stage of the customer journey. From welcome series and 
+              abandoned cart recovery to advanced segmentation and A/B testing, our solutions are designed to maximize open rates, click-through rates, and 
+              conversions. We work with leading email platforms to ensure optimal deliverability and provide detailed analytics to track performance and ROI.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Strategic Feature Icons */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
             {[
-              { icon: Users, title: "Audience Segmentation", desc: "Advanced segmentation strategies that deliver the right message to the right audience." },
-              { icon: TrendingUp, title: "Revenue Optimization", desc: "Data-driven campaigns focused on maximizing email revenue and customer lifetime value." },
-              { icon: Target, title: "Personalization", desc: "Highly personalized content and dynamic messaging based on subscriber behavior." },
-              { icon: Zap, title: "Automation Expertise", desc: "Sophisticated automation workflows that nurture leads and retain customers." }
-            ].map((feature, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-purple-500/30 group-hover:to-purple-700/30 transition-all duration-300">
-                  <feature.icon className="w-8 h-8 text-purple-300" />
+              { icon: Mail, title: "Campaign", subtitle: "Design & Content" },
+              { icon: Send, title: "Automated", subtitle: "Workflows" },
+              { icon: Users, title: "Audience", subtitle: "Segmentation" },
+              { icon: BarChart3, title: "Analytics", subtitle: "& Reporting" }
+            ].map((item, index) => (
+              <div key={index} className="text-center space-y-4 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-300">{feature.desc}</p>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-purple-100/80">{item.subtitle}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -267,30 +397,28 @@ export function EmailMarketingService() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Email Marketing Platforms We Use</h2>
-            <p className="text-xl text-gray-300">Professional email marketing tools for maximum deliverability and performance</p>
-          </div>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
+          <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiMailchimp, name: "Mailchimp", desc: "All-in-one marketing platform with advanced automation and segmentation features." },
-              { icon: SiConstantcontact, name: "Constant Contact", desc: "User-friendly email marketing solution with excellent customer support and templates." },
-              { icon: SiSendgrid, name: "SendGrid", desc: "Reliable email delivery service with powerful API and analytics for developers." },
-              { icon: SiHubspot, name: "HubSpot", desc: "Comprehensive marketing platform with CRM integration and advanced lead nurturing." },
-              { icon: SiKlaviyo, name: "Klaviyo", desc: "E-commerce focused email marketing with powerful segmentation and automation." },
-              { icon: SiActivecampaign, name: "ActiveCampaign", desc: "Advanced marketing automation platform with CRM and sales automation features." },
-              { icon: SiConvertkit, name: "ConvertKit", desc: "Creator-focused email marketing platform with powerful automation and landing pages." },
-              { icon: SiGetresponse, name: "GetResponse", desc: "Complete online marketing platform with email, landing pages, and webinars." }
-            ].map((platform, index) => (
+              { icon: SiMailchimp, name: "Mailchimp", desc: "All-in-one marketing platform with advanced automation and segmentation features for growing businesses." },
+              { icon: Mail, name: "Constant Contact", desc: "User-friendly email marketing solution with excellent customer support and beautiful templates." },
+              { icon: SiSendgrid, name: "SendGrid", desc: "Reliable email delivery service with powerful API and analytics for developers and marketers." },
+              { icon: SiHubspot, name: "HubSpot", desc: "Comprehensive marketing platform with CRM integration and advanced lead nurturing capabilities." },
+              { icon: Send, name: "Klaviyo", desc: "E-commerce focused email marketing with powerful segmentation and automation for online stores." },
+              { icon: BarChart3, name: "ActiveCampaign", desc: "Advanced marketing automation platform with CRM and sales automation features included." },
+              { icon: Users, name: "ConvertKit", desc: "Creator-focused email marketing platform with powerful automation and landing page features." },
+              { icon: Target, name: "GetResponse", desc: "Complete online marketing platform with email, landing pages, and webinar capabilities." }
+            ].map((tech, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300">
-                  <platform.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-white/5 group-hover:scale-110 transition-transform duration-300">
+                  <tech.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">{platform.name}</h3>
-                <p className="text-sm text-gray-300">{platform.desc}</p>
+                <h3 className="text-lg font-semibold text-white mb-2">{tech.name}</h3>
+                <p className="text-sm text-purple-100/80 leading-relaxed">{tech.desc}</p>
               </div>
             ))}
           </div>
@@ -298,14 +426,16 @@ export function EmailMarketingService() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-300">Common questions about our email marketing services</p>
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-6 space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-5xl font-bold text-white">Frequently Asked Questions</h2>
+            <p className="text-xl text-purple-100/90">Common questions about our email marketing services</p>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             <FAQItem 
               question="How often should we send marketing emails?"
               answer="It depends on your audience and content quality. Generally, 1-2 emails per week works well for most businesses. We'll help determine the optimal frequency based on your audience engagement and business goals."
@@ -323,10 +453,6 @@ export function EmailMarketingService() {
               answer="Yes! We create lead magnets, optimize sign-up forms, implement popup strategies, and develop content that encourages subscriptions while maintaining list quality and compliance."
             />
             <FAQItem 
-              question="Do you provide email templates and design?"
-              answer="Absolutely! We create custom email templates that match your brand, are mobile-responsive, and optimized for conversions. We also provide a library of templates for different campaign types."
-            />
-            <FAQItem 
               question="How do you measure email marketing success?"
               answer="We track open rates, click rates, conversion rates, revenue per email, list growth, unsubscribe rates, and overall ROI. We provide detailed monthly reports with actionable insights."
             />
@@ -334,28 +460,7 @@ export function EmailMarketingService() {
         </div>
       </section>
 
-      {/* Contact Modal */}
-      {isContactOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border border-white/20 rounded-2xl p-8 max-w-md w-full">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-2xl font-bold">Boost Email Revenue</h3>
-              <button onClick={() => setIsContactOpen(false)} className="text-gray-400 hover:text-white">
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <p className="text-gray-300 mb-6">Ready to turn your email list into a revenue engine? Let's create campaigns that convert.</p>
-            <div className="space-y-4">
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300">
-                Get Email Marketing Audit
-              </button>
-              <button className="w-full px-6 py-3 border border-white/20 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
-                View Campaign Examples
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+      <Footer />
+    </>
   );
 }
