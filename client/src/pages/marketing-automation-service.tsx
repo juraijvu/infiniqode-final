@@ -1,129 +1,209 @@
 import React, { useState } from "react";
-import { Plus, X, Users, TrendingUp, Target, Zap, Workflow, Send, BarChart, Bot } from "lucide-react";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { SEOHead } from "@/components/seo-head";
+import { GlassCard } from "@/components/glass-card";
+import { ContactPopup } from "@/components/contact-popup";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "wouter";
+import { 
+  Workflow, 
+  CheckCircle, 
+  Send, 
+  BarChart, 
+  TrendingUp, 
+  Bot,
+  Users,
+  Zap,
+  Settings,
+  Globe,
+  ArrowRight,
+  Shield,
+  Star,
+  Target,
+  Phone,
+  MessageCircle,
+  MapPin,
+  Mail
+} from "lucide-react";
 import { SiHubspot, SiMailchimp, SiMarketo, SiSalesforce, SiZapier, SiActivepieces, SiAutomateio, SiIntegrately } from "react-icons/si";
 
-const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+// FAQ Item Component with improved accessibility
+function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  
   return (
-    <div className="border border-white/10 rounded-xl overflow-hidden backdrop-blur-sm">
-      <button
-        className="w-full p-6 text-left flex justify-between items-center hover:bg-white/5 transition-colors"
+    <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 group hover:bg-purple-500/25 transition-all duration-300">
+      <button 
+        className="flex items-start justify-between cursor-pointer w-full text-left"
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls={`faq-content-${question.replace(/\s+/g, '-').toLowerCase()}`}
       >
-        <span className="font-medium">{question}</span>
-        {isOpen ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6 text-gray-300">
-          <p>{answer}</p>
+        <p className="text-white font-medium leading-relaxed pr-4">{question}</p>
+        <div className="w-8 h-8 bg-purple-500/40 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/60 transition-all duration-300">
+          <span className={`text-white text-lg transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`} aria-hidden="true">+</span>
         </div>
-      )}
+      </button>
+      <div 
+        id={`faq-content-${question.replace(/\s+/g, '-').toLowerCase()}`}
+        className={`mt-4 text-purple-100/70 text-sm leading-relaxed transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        {answer}
+      </div>
     </div>
   );
-};
+}
 
-export function MarketingAutomationService() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
+export default function MarketingAutomationService() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Marketing Automation Services",
+    "description": "Scale your marketing efforts with intelligent automation that nurtures leads, personalizes experiences, and drives conversions on autopilot",
+    "provider": {
+      "@type": "Organization",
+      "name": "DigitalCraft",
+      "url": "https://digitalcraft.agency"
+    },
+    "areaServed": "Worldwide",
+    "serviceType": "Marketing Automation"
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-purple-500/10"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Lead Nurturing</span>
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Workflow Automation</span>
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Personalization</span>
+    <>
+      <SEOHead
+        title="Marketing Automation Services - Scale Your Marketing Efforts"
+        description="Scale your marketing efforts with intelligent automation that nurtures leads, personalizes experiences, and drives conversions on autopilot with advanced workflows."
+        keywords="marketing automation, lead nurturing, email automation, workflow automation, personalization, marketing technology"
+        structuredData={structuredData}
+      />
+      <Navigation />
+      
+      {/* Hero Section - Reference Design Match */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content - Text Section */}
+            <div className="space-y-8">
+              {/* Main Title */}
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                  Marketing Automation<br />
+                  <span className="text-purple-300">Services</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
+                  At INFINIQODE, we scale your marketing efforts with intelligent automation that nurtures 
+                  leads, personalizes experiences, and drives conversions on autopilot. Our team creates 
+                  sophisticated marketing workflows. From lead nurturing to personalization, 
+                  we deliver automation solutions that maximize efficiency and ROI.
+                </p>
               </div>
               
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-                Marketing
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600"> Automation</span>
-              </h1>
-              
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Scale your marketing efforts with intelligent automation that nurtures leads, personalizes experiences, and drives conversions on autopilot.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={() => setIsContactOpen(true)}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300 shadow-lg shadow-purple-500/25"
-                >
-                  Automate Your Marketing
-                </button>
-                <button className="px-8 py-4 border border-white/20 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
-                  View Automation Examples
-                </button>
+              {/* Service Badges */}
+              <div className="flex flex-wrap gap-4">
+                {[
+                  "Lead Nurturing",
+                  "Workflow Automation", 
+                  "Personalization",
+                  "Campaign Analytics"
+                ].map((service, index) => (
+                  <div key={index} className="px-6 py-3 bg-purple-700/50 backdrop-blur-sm border border-purple-500/30 rounded-full">
+                    <span className="text-purple-100 font-medium text-sm">{service}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                <ContactPopup 
+                  trigger={
+                    <Button className="px-8 py-4 text-lg font-semibold bg-purple-600 hover:bg-purple-500 text-white border-0 shadow-xl rounded-full" data-testid="button-start-project">
+                      Automate Your Marketing
+                    </Button>
+                  }
+                  title="Ready to Scale Your Marketing with Automation?"
+                  description="Let's discuss your marketing needs and create automation solutions that drive results."
+                  defaultService="Marketing Automation"
+                />
+                <Button className="px-8 py-4 text-lg font-semibold bg-transparent border-2 border-purple-400/60 text-purple-100 hover:bg-purple-600/20 rounded-full" data-testid="button-schedule-call">
+                  Schedule a Call
+                </Button>
               </div>
             </div>
             
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-3xl flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-8">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-400/30 to-blue-600/30 rounded-2xl flex items-center justify-center">
-                    <Workflow className="w-16 h-16 text-blue-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-green-400/30 to-green-600/30 rounded-2xl flex items-center justify-center">
-                    <Send className="w-16 h-16 text-green-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-orange-400/30 to-orange-600/30 rounded-2xl flex items-center justify-center">
-                    <BarChart className="w-16 h-16 text-orange-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-purple-400/30 to-purple-600/30 rounded-2xl flex items-center justify-center">
-                    <Bot className="w-16 h-16 text-purple-300" />
-                  </div>
-                </div>
+            {/* Right Content - 3D Graphics */}
+            <div className="relative flex items-center justify-center lg:justify-end">
+              {/* Floating 3D Elements */}
+              <div className="relative w-full max-w-md h-96">
+                {/* Large Automation Cube */}
+                <div className="absolute top-16 right-8 w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300 opacity-80"></div>
+                
+                {/* Workflow Diamond */}
+                <div className="absolute top-32 left-4 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 transform rotate-45 shadow-xl hover:rotate-12 transition-transform duration-300 opacity-90"></div>
+                
+                {/* Bot Hexagon */}
+                <div className="absolute top-8 left-16 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl shadow-2xl transform rotate-6 hover:-rotate-6 transition-transform duration-300 opacity-75"></div>
+                
+                {/* Personalization Cube */}
+                <div className="absolute bottom-24 right-16 w-18 h-18 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg shadow-xl transform -rotate-12 hover:rotate-3 transition-transform duration-300 opacity-85"></div>
+                
+                {/* Email Square */}
+                <div className="absolute bottom-8 left-8 w-14 h-14 bg-gradient-to-br from-pink-400 to-pink-600 rounded-md shadow-lg transform rotate-45 hover:rotate-90 transition-transform duration-300 opacity-70"></div>
+                
+                {/* Large Glass Prism */}
+                <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-white/20 via-green-300/30 to-purple-400/40 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300"></div>
+                
+                {/* Small Transparent Cube */}
+                <div className="absolute bottom-16 left-20 w-12 h-12 bg-gradient-to-br from-white/10 via-blue-200/20 to-transparent backdrop-blur-sm border border-white/10 rounded-lg shadow-xl transform -rotate-6 hover:rotate-12 transition-transform duration-300"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Our Marketing Automation Process</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Strategic approach to automating marketing workflows for maximum efficiency
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Strategic Process Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                step: "01",
-                title: "Strategy & Mapping",
-                description: "Map customer journeys and identify automation opportunities for maximum impact and efficiency."
-              },
-              {
-                step: "02", 
-                title: "Workflow Design",
-                description: "Create sophisticated automation workflows with triggers, conditions, and personalized messaging."
-              },
-              {
-                step: "03",
-                title: "Implementation",
-                description: "Set up automation platforms, integrate systems, and configure campaigns for optimal performance."
-              },
-              {
-                step: "04",
-                title: "Optimization",
-                description: "Monitor performance, A/B test variations, and continuously optimize for better results."
-              }
+              { icon: Target, title: "Strategy & Planning", step: "Step 1", desc: "Analyze customer journey, define automation goals, and map out marketing workflows for optimal lead conversion." },
+              { icon: Settings, title: "Setup & Integration", step: "Step 2", desc: "Configure marketing automation platform, integrate with existing systems, and establish tracking mechanisms." },
+              { icon: Workflow, title: "Workflow Development", step: "Step 3", desc: "Create sophisticated automation sequences including drip campaigns, lead scoring, and personalized messaging." },
+              { icon: BarChart, title: "Optimization & Analytics", step: "Step 4", desc: "Monitor performance metrics, A/B test automation flows, and continuously optimize for better results." }
             ].map((item, index) => (
-              <div key={index} className="relative">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8 h-full hover:from-white/15 hover:to-white/10 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mb-6">
-                    <span className="text-white font-bold">{item.step}</span>
+              <div key={index} className="group">
+                {/* Glass Card */}
+                <div className="relative h-full p-4 md:p-6 rounded-xl md:rounded-2xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
+                  
+                  <div className="relative z-10 space-y-4">
+                    {/* Icon */}
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-lg md:rounded-xl flex items-center justify-center border border-white/20">
+                      <item.icon className="icon-white text-lg md:text-xl" />
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
+                    
+                    <p className="text-sm text-purple-100/80 leading-relaxed line-clamp-4">{item.desc}</p>
+                    
+                    {/* Step Badge */}
+                    <div className="pt-2">
+                      <Badge className="bg-white/10 text-white border border-white/20 text-xs font-medium">
+                        {item.step}
+                      </Badge>
+                    </div>
+                    
+                    {/* Arrow */}
+                    <div className="flex justify-end pt-2">
+                      <ArrowRight className="text-purple-300 text-lg" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                  <p className="text-gray-300">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -131,64 +211,91 @@ export function MarketingAutomationService() {
         </div>
       </section>
 
-      {/* Service Includes Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-8">Complete Marketing Automation Solution</h2>
+      {/* Strategic Service Includes Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                What Our Marketing Automation<br />
+                Service Includes
+              </h2>
               
+              <p className="text-lg text-purple-100/90 leading-relaxed">
+                Our comprehensive marketing automation service is designed to help businesses of all
+                sizes scale their marketing efforts efficiently. We work closely with your
+                marketing team to understand your customer journey and implement solutions that
+                deliver personalized experiences, nurture leads automatically, and drive conversions at scale.
+              </p>
+              
+              {/* Service Features */}
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Lead Nurturing</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Automated drip campaigns and sequences</li>
-                    <li>• Lead scoring and qualification</li>
-                    <li>• Behavioral trigger campaigns</li>
-                    <li>• Progressive profiling workflows</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Customer Journey Automation</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Welcome series and onboarding flows</li>
-                    <li>• Abandoned cart recovery campaigns</li>
-                    <li>• Re-engagement and win-back sequences</li>
-                    <li>• Cross-sell and upsell automation</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Analytics & Reporting</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Campaign performance tracking</li>
-                    <li>• ROI and attribution analysis</li>
-                    <li>• A/B testing and optimization</li>
-                    <li>• Custom dashboard creation</li>
-                  </ul>
-                </div>
+                {[
+                  "Lead Nurturing & Drip Campaign Development",
+                  "Email Automation & Personalization", 
+                  "Customer Journey Mapping & Workflows",
+                  "Marketing Analytics & Performance Optimization"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        We create intelligent automation systems that work 24/7 to nurture prospects, 
+                        engage customers, and drive revenue growth through personalized experiences.
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             
+            {/* Right Content - 3D Illustration & Stats */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-3xl p-8 text-center">
-                <div className="grid grid-cols-2 gap-6 mb-8">
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">70%</div>
-                    <div className="text-sm text-gray-300">Time Savings</div>
+              {/* 3D Illustration Area */}
+              <div className="relative h-64 md:h-80 rounded-xl md:rounded-2xl glass-card overflow-hidden mb-6 md:mb-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                
+                {/* Mock 3D Elements */}
+                <div className="relative z-10 h-full flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    {/* Automation Workflow Mock */}
+                    <div className="w-32 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-xl mx-auto flex items-center justify-center border border-green-300/30">
+                      <div className="w-24 h-14 bg-white/20 rounded-sm flex items-center justify-center">
+                        <Bot className="icon-white text-xl md:text-2xl" />
+                      </div>
+                    </div>
+                    
+                    {/* Floating Elements */}
+                    <div className="flex justify-center space-x-4">
+                      <div className="w-8 h-8 bg-blue-400 rounded-full shadow-lg"></div>
+                      <div className="w-6 h-6 bg-orange-400 rounded-md shadow-lg"></div>
+                      <div className="w-10 h-6 bg-purple-400 rounded-lg shadow-lg"></div>
+                    </div>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">3x</div>
-                    <div className="text-sm text-gray-300">Lead Quality Improvement</div>
+                </div>
+              </div>
+              
+              {/* Statistics Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">400%</div>
+                  <p className="text-purple-100/80 text-sm">Lead Conversion</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">24/7</div>
+                    <p className="text-xs text-purple-100/60">Automation</p>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">45%</div>
-                    <div className="text-sm text-gray-300">Conversion Increase</div>
-                  </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">24/7</div>
-                    <div className="text-sm text-gray-300">Automated Nurturing</div>
+                </div>
+                
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">80%</div>
+                  <p className="text-purple-100/80 text-sm">Time Savings</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">60%</div>
+                    <p className="text-xs text-purple-100/60">Cost Reduction</p>
                   </div>
                 </div>
               </div>
@@ -198,38 +305,59 @@ export function MarketingAutomationService() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Marketing Automation Success Stories</h2>
-            <p className="text-xl text-gray-300">Real results from our marketing automation implementations</p>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-5xl font-bold text-white">All Marketing Automation Usecase</h2>
+            <p className="text-xl text-purple-100/90 max-w-3xl mx-auto">
+              Discover how our marketing automation services have transformed businesses
+              across various industries with intelligent workflows and personalized experiences.
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                title: "SaaS Lead Nurturing",
-                description: "Increased trial-to-paid conversion by 180% for a SaaS company through automated onboarding sequences.",
-                metrics: ["180% conversion increase", "65% reduced sales cycle"]
-              },
-              {
-                title: "E-commerce Automation",
-                description: "Boosted revenue by 250% for an online retailer with cart abandonment and post-purchase campaigns.",
-                metrics: ["250% revenue increase", "40% higher customer lifetime value"]
-              },
-              {
-                title: "B2B Lead Qualification",
-                description: "Improved lead quality by 300% for a consulting firm using behavioral scoring and nurturing workflows.",
-                metrics: ["300% better lead quality", "50% more qualified opportunities"]
-              }
-            ].map((useCase, index) => (
-              <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8 hover:from-white/15 hover:to-white/10 transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-4">{useCase.title}</h3>
-                <p className="text-gray-300 mb-6">{useCase.description}</p>
-                <div className="space-y-2">
-                  {useCase.metrics.map((metric, i) => (
-                    <div key={i} className="text-purple-400 text-sm font-medium">✓ {metric}</div>
-                  ))}
+              { title: "SaaS Lead Nurturing", subtitle: "400% Conversion Rate Increase", desc: "Implemented comprehensive lead nurturing automation for B2B SaaS platform with behavior-triggered emails, lead scoring, and personalized content achieving 400% conversion improvement." },
+              { title: "E-commerce Personalization", subtitle: "300% Revenue Growth from Automation", desc: "Created sophisticated e-commerce automation including abandoned cart recovery, product recommendations, and post-purchase workflows resulting in 300% automated revenue increase." },
+              { title: "Agency Client Onboarding", subtitle: "90% Process Automation", desc: "Streamlined agency client onboarding with automated welcome sequences, document collection, and project kickoff workflows reducing manual effort by 90% while improving client experience." }
+            ].map((item, index) => (
+              <div key={index} className="group">
+                <div className="h-full rounded-2xl md:rounded-3xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden">
+                  {/* Dashboard Mockup */}
+                  <div className="h-48 bg-gradient-to-br from-green-800/40 to-green-900/60 p-4 relative">
+                    <div className="bg-black/40 rounded-lg h-full p-4 backdrop-blur-sm">
+                      {/* Mock Dashboard Content */}
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs text-green-200">
+                          <span>Conversion Rate</span>
+                          <span>+400%</span>
+                        </div>
+                        <div className="h-20 bg-gradient-to-r from-green-500/30 to-blue-500/30 rounded relative">
+                          {/* Mock Chart Bars */}
+                          <div className="absolute bottom-0 left-2 w-1 bg-green-400 rounded-t" style={{ height: '25%' }}></div>
+                          <div className="absolute bottom-0 left-6 w-1 bg-green-400 rounded-t" style={{ height: '45%' }}></div>
+                          <div className="absolute bottom-0 left-10 w-1 bg-green-400 rounded-t" style={{ height: '70%' }}></div>
+                          <div className="absolute bottom-0 left-14 w-1 bg-green-400 rounded-t" style={{ height: '90%' }}></div>
+                          <div className="absolute bottom-0 left-18 w-1 bg-green-400 rounded-t" style={{ height: '100%' }}></div>
+                        </div>
+                        <div className="text-xs text-green-300">400% conversion rate improvement achieved</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
+                    <div className="space-y-2">
+                      <div className="text-xs text-purple-300 uppercase tracking-wider">{item.title}</div>
+                      <h3 className="text-lg font-bold text-white">{item.subtitle}</h3>
+                      <p className="text-sm text-purple-100/80 leading-relaxed">{item.desc}</p>
+                    </div>
+                    <Button variant="outline" className="w-full border-purple-400/30 text-purple-200 hover:bg-purple-600/20 group-hover:border-purple-400/50 transition-all duration-300">
+                      View Case Study
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -238,28 +366,40 @@ export function MarketingAutomationService() {
       </section>
 
       {/* Service Details Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Why Choose Our Marketing Automation</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Intelligent automation that scales your marketing while delivering personalized experiences
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-6">
+          <h2 className="text-4xl font-bold text-white">Service Details:</h2>
+          
+          {/* Service Description */}
+          <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+            <p className="text-purple-100/90 leading-relaxed text-lg">
+              Our comprehensive marketing automation service combines strategic customer journey mapping with sophisticated workflow development to 
+              create intelligent marketing systems that operate efficiently at scale. We specialize in implementing advanced automation platforms 
+              including email marketing, lead scoring, behavioral triggers, and personalized content delivery. From simple drip campaigns to 
+              complex multi-channel automation sequences, our marketing automation solutions are designed with conversion optimization, customer 
+              experience, and operational efficiency in mind, ensuring that every automated interaction moves prospects closer to purchase while 
+              delivering measurable ROI through intelligent, data-driven marketing workflows.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Strategic Feature Icons */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
             {[
-              { icon: Users, title: "Personalization Experts", desc: "Advanced segmentation and personalization strategies for maximum relevance." },
-              { icon: TrendingUp, title: "Revenue Growth", desc: "Focus on automation that directly drives revenue and business growth." },
-              { icon: Target, title: "Precision Targeting", desc: "Sophisticated targeting and behavioral triggers for the right message at the right time." },
-              { icon: Zap, title: "Rapid Deployment", desc: "Quick implementation of automation workflows with immediate impact." }
-            ].map((feature, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-purple-500/30 group-hover:to-purple-700/30 transition-all duration-300">
-                  <feature.icon className="w-8 h-8 text-purple-300" />
+              { icon: Workflow, title: "Workflow", subtitle: "Automation" },
+              { icon: Mail, title: "Email", subtitle: "Marketing" },
+              { icon: Bot, title: "Lead", subtitle: "Scoring" },
+              { icon: Target, title: "Behavioral", subtitle: "Triggers" }
+            ].map((item, index) => (
+              <div key={index} className="text-center space-y-4 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-300">{feature.desc}</p>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-purple-100/80">{item.subtitle}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -267,30 +407,28 @@ export function MarketingAutomationService() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Marketing Automation Platforms</h2>
-            <p className="text-xl text-gray-300">Professional platforms for comprehensive marketing automation</p>
-          </div>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
+          <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiHubspot, name: "HubSpot", desc: "All-in-one inbound marketing platform with comprehensive automation features." },
-              { icon: SiMailchimp, name: "Mailchimp", desc: "Email marketing platform with automation workflows and customer journey builder." },
-              { icon: SiMarketo, name: "Marketo", desc: "Enterprise marketing automation platform with advanced lead management capabilities." },
-              { icon: SiSalesforce, name: "Salesforce Pardot", desc: "B2B marketing automation platform with CRM integration and lead scoring." },
-              { icon: SiZapier, name: "Zapier", desc: "Automation platform connecting apps and services for seamless workflow integration." },
-              { icon: SiActivepieces, name: "Activepieces", desc: "Open-source automation platform for creating custom workflows and integrations." },
-              { icon: SiAutomateio, name: "Automate.io", desc: "Cloud-based automation platform for connecting business applications." },
-              { icon: SiIntegrately, name: "Integrately", desc: "Integration platform with pre-built automation templates for marketing tools." }
-            ].map((platform, index) => (
+              { icon: SiHubspot, name: "HubSpot", desc: "Comprehensive marketing automation platform with CRM integration, lead scoring, and workflow management." },
+              { icon: SiMailchimp, name: "Mailchimp", desc: "Email marketing and automation platform with advanced segmentation and behavioral targeting capabilities." },
+              { icon: SiMarketo, name: "Marketo", desc: "Enterprise marketing automation solution with advanced lead management and revenue attribution." },
+              { icon: SiSalesforce, name: "Salesforce", desc: "Customer relationship management platform with powerful marketing automation and analytics tools." },
+              { icon: SiZapier, name: "Zapier", desc: "Workflow automation tool connecting different apps and services for seamless data integration." },
+              { icon: SiActivepieces, name: "Activepieces", desc: "Open-source automation platform for building custom workflows and business process automation." },
+              { icon: SiAutomateio, name: "Automate.io", desc: "Multi-app integration platform for creating automated workflows between cloud applications." },
+              { icon: SiIntegrately, name: "Integrately", desc: "Automation platform with pre-built integrations for connecting popular business applications." }
+            ].map((tech, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300">
-                  <platform.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-white/5 group-hover:scale-110 transition-transform duration-300">
+                  <tech.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">{platform.name}</h3>
-                <p className="text-sm text-gray-300">{platform.desc}</p>
+                <h3 className="text-lg font-semibold text-white mb-2">{tech.name}</h3>
+                <p className="text-sm text-purple-100/80 leading-relaxed">{tech.desc}</p>
               </div>
             ))}
           </div>
@@ -298,64 +436,41 @@ export function MarketingAutomationService() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-300">Common questions about our marketing automation services</p>
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-6 space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-5xl font-bold text-white">Frequently Asked Questions</h2>
+            <p className="text-xl text-purple-100/90">Common questions about our marketing automation services</p>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             <FAQItem 
-              question="What types of marketing can be automated?"
-              answer="We can automate email campaigns, lead nurturing, social media posting, lead scoring, customer onboarding, abandoned cart recovery, re-engagement campaigns, and much more."
+              question="What is marketing automation and how can it benefit my business?"
+              answer="Marketing automation uses software to automate repetitive marketing tasks like email campaigns, lead nurturing, and customer segmentation. It increases efficiency, improves lead quality, and delivers personalized experiences at scale."
             />
             <FAQItem 
               question="How long does it take to set up marketing automation?"
-              answer="Basic automation can be set up in 2-3 weeks, while comprehensive multi-channel automation typically takes 6-8 weeks depending on complexity and integrations required."
+              answer="Setup typically takes 4-8 weeks depending on complexity. This includes strategy development, platform configuration, workflow creation, and integration with existing systems. We ensure thorough testing before launch."
             />
             <FAQItem 
-              question="Will automation make my marketing feel impersonal?"
-              answer="Not at all! Modern automation enables hyper-personalization by delivering the right message to the right person at the right time based on their behavior and preferences."
+              question="Can you integrate with our existing CRM and tools?"
+              answer="Yes, we integrate with popular CRMs like Salesforce, HubSpot, and Pipedrive, as well as email platforms, analytics tools, and other marketing technology in your current stack."
             />
             <FAQItem 
-              question="Can you integrate with our existing tools?"
-              answer="Yes, we integrate with most CRM systems, email platforms, e-commerce platforms, and marketing tools. We ensure seamless data flow between all your marketing systems."
+              question="How do you measure marketing automation success?"
+              answer="We track key metrics including lead conversion rates, email engagement, customer lifetime value, sales cycle length, and ROI. We provide detailed reports and continuous optimization recommendations."
             />
             <FAQItem 
-              question="How do you measure automation success?"
-              answer="We track key metrics like conversion rates, lead quality scores, customer lifetime value, engagement rates, and ROI. We provide detailed analytics and optimization recommendations."
-            />
-            <FAQItem 
-              question="What if our business processes change?"
-              answer="Marketing automation workflows are flexible and can be easily modified. We design scalable systems that grow with your business and adapt to changing requirements."
+              question="Do you provide training on how to use the automation platform?"
+              answer="Absolutely! We provide comprehensive training for your team including platform navigation, campaign creation, analytics interpretation, and best practices to ensure long-term success with automation."
             />
           </div>
         </div>
       </section>
 
-      {/* Contact Modal */}
-      {isContactOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border border-white/20 rounded-2xl p-8 max-w-md w-full">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-2xl font-bold">Automate Your Marketing</h3>
-              <button onClick={() => setIsContactOpen(false)} className="text-gray-400 hover:text-white">
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <p className="text-gray-300 mb-6">Ready to scale your marketing with intelligent automation? Let's create workflows that drive results.</p>
-            <div className="space-y-4">
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300">
-                Get Automation Strategy
-              </button>
-              <button className="w-full px-6 py-3 border border-white/20 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
-                View Automation Examples
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+      <Footer />
+    </>
   );
 }
