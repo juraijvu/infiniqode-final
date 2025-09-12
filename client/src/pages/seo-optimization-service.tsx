@@ -1,129 +1,208 @@
 import React, { useState } from "react";
-import { Plus, X, Users, TrendingUp, Target, Zap, Search, BarChart, FileText, Globe } from "lucide-react";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { SEOHead } from "@/components/seo-head";
+import { GlassCard } from "@/components/glass-card";
+import { ContactPopup } from "@/components/contact-popup";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "wouter";
+import { 
+  Search, 
+  CheckCircle, 
+  BarChart, 
+  FileText, 
+  TrendingUp, 
+  Globe,
+  Users,
+  Zap,
+  Settings,
+  Target,
+  ArrowRight,
+  Shield,
+  Star,
+  Phone,
+  MessageCircle,
+  MapPin,
+  LineChart
+} from "lucide-react";
 import { SiGoogleanalytics, SiGooglesearchconsole, SiSemrush, SiAhrefs, SiMoz, SiScreaminggrog, SiYoast, SiGtmetrix } from "react-icons/si";
 
-const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+// FAQ Item Component with improved accessibility
+function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  
   return (
-    <div className="border border-white/10 rounded-xl overflow-hidden backdrop-blur-sm">
-      <button
-        className="w-full p-6 text-left flex justify-between items-center hover:bg-white/5 transition-colors"
+    <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-700/15 backdrop-blur-xs border border-purple-400/30 group hover:bg-purple-500/25 transition-all duration-300">
+      <button 
+        className="flex items-start justify-between cursor-pointer w-full text-left"
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls={`faq-content-${question.replace(/\s+/g, '-').toLowerCase()}`}
       >
-        <span className="font-medium">{question}</span>
-        {isOpen ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6 text-gray-300">
-          <p>{answer}</p>
+        <p className="text-white font-medium leading-relaxed pr-4">{question}</p>
+        <div className="w-8 h-8 bg-purple-500/40 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/60 transition-all duration-300">
+          <span className={`text-white text-lg transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`} aria-hidden="true">+</span>
         </div>
-      )}
+      </button>
+      <div 
+        id={`faq-content-${question.replace(/\s+/g, '-').toLowerCase()}`}
+        className={`mt-4 text-purple-100/70 text-sm leading-relaxed transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        {answer}
+      </div>
     </div>
   );
-};
+}
 
-export function SEOOptimizationService() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
+export default function SEOOptimizationService() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SEO Optimization Services",
+    "description": "Boost your search engine rankings and drive organic traffic with comprehensive SEO strategies that deliver measurable results",
+    "provider": {
+      "@type": "Organization",
+      "name": "DigitalCraft",
+      "url": "https://digitalcraft.agency"
+    },
+    "areaServed": "Worldwide",
+    "serviceType": "SEO Optimization"
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-purple-500/10"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Technical SEO</span>
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Content Optimization</span>
-                <span className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-sm">Link Building</span>
+    <>
+      <SEOHead
+        title="SEO Optimization Services - Boost Search Engine Rankings"
+        description="Boost your search engine rankings and drive organic traffic with comprehensive SEO strategies that deliver measurable results and increased visibility."
+        keywords="SEO optimization, search engine optimization, organic traffic, keyword research, link building, technical SEO"
+        structuredData={structuredData}
+      />
+      <Navigation />
+      
+      {/* Hero Section - Reference Design Match */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content - Text Section */}
+            <div className="space-y-8">
+              {/* Main Title */}
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                  SEO Optimization<br />
+                  <span className="text-purple-300">Services</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
+                  At INFINIQODE, we boost your search engine rankings and drive organic traffic 
+                  with comprehensive SEO strategies that deliver measurable results. Our team 
+                  creates data-driven optimization campaigns. From technical SEO to content strategy, 
+                  we deliver search engine optimization that increases your online visibility.
+                </p>
               </div>
               
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-                SEO
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600"> Optimization</span>
-              </h1>
-              
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Boost your search engine rankings and drive organic traffic with comprehensive SEO strategies that deliver measurable results.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={() => setIsContactOpen(true)}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300 shadow-lg shadow-purple-500/25"
-                >
-                  Improve Your Rankings
-                </button>
-                <button className="px-8 py-4 border border-white/20 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
-                  Get SEO Audit
-                </button>
+              {/* Service Badges */}
+              <div className="flex flex-wrap gap-4">
+                {[
+                  "Technical SEO",
+                  "Content Optimization", 
+                  "Link Building",
+                  "Analytics & Reporting"
+                ].map((service, index) => (
+                  <div key={index} className="px-6 py-3 bg-purple-700/50 backdrop-blur-sm border border-purple-500/30 rounded-full">
+                    <span className="text-purple-100 font-medium text-sm">{service}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                <ContactPopup 
+                  trigger={
+                    <Button className="px-8 py-4 text-lg font-semibold bg-purple-600 hover:bg-purple-500 text-white border-0 shadow-xl rounded-full" data-testid="button-start-project">
+                      Boost Your Rankings
+                    </Button>
+                  }
+                  title="Ready to Improve Your SEO Rankings?"
+                  description="Let's discuss your SEO goals and create strategies that drive organic growth."
+                  defaultService="SEO Optimization"
+                />
+                <Button className="px-8 py-4 text-lg font-semibold bg-transparent border-2 border-purple-400/60 text-purple-100 hover:bg-purple-600/20 rounded-full" data-testid="button-schedule-call">
+                  Schedule a Call
+                </Button>
               </div>
             </div>
             
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-3xl flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-8">
-                  <div className="w-32 h-32 bg-gradient-to-br from-green-400/30 to-green-600/30 rounded-2xl flex items-center justify-center">
-                    <Search className="w-16 h-16 text-green-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-400/30 to-blue-600/30 rounded-2xl flex items-center justify-center">
-                    <BarChart className="w-16 h-16 text-blue-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-orange-400/30 to-orange-600/30 rounded-2xl flex items-center justify-center">
-                    <FileText className="w-16 h-16 text-orange-300" />
-                  </div>
-                  <div className="w-32 h-32 bg-gradient-to-br from-purple-400/30 to-purple-600/30 rounded-2xl flex items-center justify-center">
-                    <Globe className="w-16 h-16 text-purple-300" />
-                  </div>
-                </div>
+            {/* Right Content - 3D Graphics */}
+            <div className="relative flex items-center justify-center lg:justify-end">
+              {/* Floating 3D Elements */}
+              <div className="relative w-full max-w-md h-96">
+                {/* Large SEO Cube */}
+                <div className="absolute top-16 right-8 w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300 opacity-80"></div>
+                
+                {/* Analytics Diamond */}
+                <div className="absolute top-32 left-4 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 transform rotate-45 shadow-xl hover:rotate-12 transition-transform duration-300 opacity-90"></div>
+                
+                {/* Search Hexagon */}
+                <div className="absolute top-8 left-16 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl shadow-2xl transform rotate-6 hover:-rotate-6 transition-transform duration-300 opacity-75"></div>
+                
+                {/* Content Cube */}
+                <div className="absolute bottom-24 right-16 w-18 h-18 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg shadow-xl transform -rotate-12 hover:rotate-3 transition-transform duration-300 opacity-85"></div>
+                
+                {/* Rankings Square */}
+                <div className="absolute bottom-8 left-8 w-14 h-14 bg-gradient-to-br from-pink-400 to-pink-600 rounded-md shadow-lg transform rotate-45 hover:rotate-90 transition-transform duration-300 opacity-70"></div>
+                
+                {/* Large Glass Prism */}
+                <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-white/20 via-green-300/30 to-purple-400/40 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-300"></div>
+                
+                {/* Small Transparent Cube */}
+                <div className="absolute bottom-16 left-20 w-12 h-12 bg-gradient-to-br from-white/10 via-blue-200/20 to-transparent backdrop-blur-sm border border-white/10 rounded-lg shadow-xl transform -rotate-6 hover:rotate-12 transition-transform duration-300"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Our SEO Optimization Process</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Data-driven SEO strategies that improve rankings and drive qualified traffic
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Strategic Process Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                step: "01",
-                title: "SEO Audit & Analysis",
-                description: "Comprehensive analysis of your current SEO performance, technical issues, and competitive landscape."
-              },
-              {
-                step: "02", 
-                title: "Keyword Research",
-                description: "Identify high-value keywords and search opportunities relevant to your business and audience."
-              },
-              {
-                step: "03",
-                title: "On-Page Optimization",
-                description: "Optimize content, meta tags, site structure, and technical elements for better search visibility."
-              },
-              {
-                step: "04",
-                title: "Monitoring & Reporting",
-                description: "Track rankings, traffic, and conversions with detailed monthly reports and ongoing optimization."
-              }
+              { icon: Search, title: "SEO Audit & Research", step: "Step 1", desc: "Comprehensive analysis of current SEO performance, keyword research, and competitive landscape to identify optimization opportunities." },
+              { icon: Settings, title: "Technical Optimization", step: "Step 2", desc: "Implement technical SEO improvements including site speed optimization, mobile responsiveness, and search engine crawlability." },
+              { icon: FileText, title: "Content & On-Page SEO", step: "Step 3", desc: "Optimize existing content and create new SEO-focused content with proper keyword targeting and user intent alignment." },
+              { icon: BarChart, title: "Monitoring & Reporting", step: "Step 4", desc: "Continuous performance monitoring, ranking tracking, and detailed reporting to measure success and refine strategies." }
             ].map((item, index) => (
-              <div key={index} className="relative">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8 h-full hover:from-white/15 hover:to-white/10 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mb-6">
-                    <span className="text-white font-bold">{item.step}</span>
+              <div key={index} className="group">
+                {/* Glass Card */}
+                <div className="relative h-full p-4 md:p-6 rounded-xl md:rounded-2xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl"></div>
+                  
+                  <div className="relative z-10 space-y-4">
+                    {/* Icon */}
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-lg md:rounded-xl flex items-center justify-center border border-white/20">
+                      <item.icon className="icon-white text-lg md:text-xl" />
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
+                    
+                    <p className="text-sm text-purple-100/80 leading-relaxed line-clamp-4">{item.desc}</p>
+                    
+                    {/* Step Badge */}
+                    <div className="pt-2">
+                      <Badge className="bg-white/10 text-white border border-white/20 text-xs font-medium">
+                        {item.step}
+                      </Badge>
+                    </div>
+                    
+                    {/* Arrow */}
+                    <div className="flex justify-end pt-2">
+                      <ArrowRight className="text-purple-300 text-lg" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                  <p className="text-gray-300">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -131,64 +210,91 @@ export function SEOOptimizationService() {
         </div>
       </section>
 
-      {/* Service Includes Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-8">Complete SEO Optimization Package</h2>
+      {/* Strategic Service Includes Section */}
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                What Our SEO Optimization<br />
+                Service Includes
+              </h2>
               
+              <p className="text-lg text-purple-100/90 leading-relaxed">
+                Our comprehensive SEO optimization service is designed to help businesses of all
+                sizes improve their search engine visibility and drive organic growth. We work closely with your
+                team to understand your unique goals and implement solutions that
+                deliver increased rankings, traffic, and conversions from search engines.
+              </p>
+              
+              {/* Service Features */}
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Technical SEO</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Site speed optimization and Core Web Vitals</li>
-                    <li>• Mobile responsiveness and mobile-first indexing</li>
-                    <li>• Schema markup and structured data</li>
-                    <li>• XML sitemaps and robots.txt optimization</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">On-Page SEO</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Keyword research and content optimization</li>
-                    <li>• Meta titles and descriptions optimization</li>
-                    <li>• Header tags and internal linking structure</li>
-                    <li>• Image optimization and alt text</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-semibold mb-4">Off-Page SEO</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• High-quality backlink building strategies</li>
-                    <li>• Local SEO and Google My Business optimization</li>
-                    <li>• Content marketing and outreach campaigns</li>
-                    <li>• Online reputation management</li>
-                  </ul>
-                </div>
+                {[
+                  "Keyword Research & Strategy Development",
+                  "Technical SEO & Site Optimization", 
+                  "Content Creation & On-Page SEO",
+                  "Link Building & Off-Page SEO"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        We implement proven SEO strategies that are data-driven, sustainable, and 
+                        designed to improve your search rankings and organic visibility long-term.
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             
+            {/* Right Content - 3D Illustration & Stats */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-3xl p-8 text-center">
-                <div className="grid grid-cols-2 gap-6 mb-8">
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">300%</div>
-                    <div className="text-sm text-gray-300">Avg. Traffic Increase</div>
+              {/* 3D Illustration Area */}
+              <div className="relative h-64 md:h-80 rounded-xl md:rounded-2xl glass-card overflow-hidden mb-6 md:mb-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                
+                {/* Mock 3D Elements */}
+                <div className="relative z-10 h-full flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    {/* SEO Graph Mock */}
+                    <div className="w-32 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-xl mx-auto flex items-center justify-center border border-green-300/30">
+                      <div className="w-24 h-14 bg-white/20 rounded-sm flex items-center justify-center">
+                        <TrendingUp className="icon-white text-xl md:text-2xl" />
+                      </div>
+                    </div>
+                    
+                    {/* Floating Elements */}
+                    <div className="flex justify-center space-x-4">
+                      <div className="w-8 h-8 bg-blue-400 rounded-full shadow-lg"></div>
+                      <div className="w-6 h-6 bg-orange-400 rounded-md shadow-lg"></div>
+                      <div className="w-10 h-6 bg-purple-400 rounded-lg shadow-lg"></div>
+                    </div>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">Top 3</div>
-                    <div className="text-sm text-gray-300">Ranking Achievement</div>
+                </div>
+              </div>
+              
+              {/* Statistics Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">300%</div>
+                  <p className="text-purple-100/80 text-sm">Traffic Increase</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">#1</div>
+                    <p className="text-xs text-purple-100/60">Page Rankings</p>
                   </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">90%</div>
-                    <div className="text-sm text-gray-300">Client Retention Rate</div>
-                  </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-400">3-6</div>
-                    <div className="text-sm text-gray-300">Months to Results</div>
+                </div>
+                
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl glass-card">
+                  <div className="text-3xl font-bold text-white mb-1">1000+</div>
+                  <p className="text-purple-100/80 text-sm">Keywords Ranked</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <div className="text-xl font-bold text-purple-200">90%</div>
+                    <p className="text-xs text-purple-100/60">Page 1 Results</p>
                   </div>
                 </div>
               </div>
@@ -198,38 +304,59 @@ export function SEOOptimizationService() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">SEO Success Stories</h2>
-            <p className="text-xl text-gray-300">Real results from our SEO optimization campaigns</p>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-5xl font-bold text-white">All SEO Optimization Usecase</h2>
+            <p className="text-xl text-purple-100/90 max-w-3xl mx-auto">
+              Discover how our SEO optimization services have transformed businesses
+              across various industries with data-driven search strategies.
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                title: "E-commerce Growth",
-                description: "Increased organic traffic by 450% and doubled online sales for a fashion retailer through strategic SEO.",
-                metrics: ["450% organic traffic increase", "100% sales growth"]
-              },
-              {
-                title: "Local Business Visibility",
-                description: "Improved local search rankings and increased foot traffic for a restaurant chain across 15 locations.",
-                metrics: ["85% increase in local calls", "Top 3 local rankings"]
-              },
-              {
-                title: "B2B Lead Generation",
-                description: "Generated 300% more qualified leads for a consulting firm through targeted keyword optimization.",
-                metrics: ["300% more qualified leads", "60% increase in conversions"]
-              }
-            ].map((useCase, index) => (
-              <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8 hover:from-white/15 hover:to-white/10 transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-4">{useCase.title}</h3>
-                <p className="text-gray-300 mb-6">{useCase.description}</p>
-                <div className="space-y-2">
-                  {useCase.metrics.map((metric, i) => (
-                    <div key={i} className="text-purple-400 text-sm font-medium">✓ {metric}</div>
-                  ))}
+              { title: "E-commerce SEO Growth", subtitle: "300% Organic Traffic Increase", desc: "Comprehensive SEO optimization for e-commerce platform resulting in 300% organic traffic growth, 150% keyword rankings improvement, and 40% revenue increase." },
+              { title: "Local Business Optimization", subtitle: "Top 3 Local Search Results", desc: "Local SEO strategy for service business achieving top 3 rankings in local search results, 200% increase in local inquiries, and 5-star review growth." },
+              { title: "SaaS Platform SEO", subtitle: "500+ Keywords on Page 1", desc: "Technical SEO and content optimization for SaaS platform securing 500+ first-page keyword rankings and 250% increase in qualified organic leads." }
+            ].map((item, index) => (
+              <div key={index} className="group">
+                <div className="h-full rounded-2xl md:rounded-3xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden">
+                  {/* Dashboard Mockup */}
+                  <div className="h-48 bg-gradient-to-br from-green-800/40 to-green-900/60 p-4 relative">
+                    <div className="bg-black/40 rounded-lg h-full p-4 backdrop-blur-sm">
+                      {/* Mock Dashboard Content */}
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs text-green-200">
+                          <span>Organic Traffic</span>
+                          <span>+300%</span>
+                        </div>
+                        <div className="h-20 bg-gradient-to-r from-green-500/30 to-blue-500/30 rounded relative">
+                          {/* Mock Chart Bars */}
+                          <div className="absolute bottom-0 left-2 w-1 bg-green-400 rounded-t" style={{ height: '30%' }}></div>
+                          <div className="absolute bottom-0 left-6 w-1 bg-green-400 rounded-t" style={{ height: '50%' }}></div>
+                          <div className="absolute bottom-0 left-10 w-1 bg-green-400 rounded-t" style={{ height: '70%' }}></div>
+                          <div className="absolute bottom-0 left-14 w-1 bg-green-400 rounded-t" style={{ height: '85%' }}></div>
+                          <div className="absolute bottom-0 left-18 w-1 bg-green-400 rounded-t" style={{ height: '100%' }}></div>
+                        </div>
+                        <div className="text-xs text-green-300">300% organic traffic growth achieved</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
+                    <div className="space-y-2">
+                      <div className="text-xs text-purple-300 uppercase tracking-wider">{item.title}</div>
+                      <h3 className="text-lg font-bold text-white">{item.subtitle}</h3>
+                      <p className="text-sm text-purple-100/80 leading-relaxed">{item.desc}</p>
+                    </div>
+                    <Button variant="outline" className="w-full border-purple-400/30 text-purple-200 hover:bg-purple-600/20 group-hover:border-purple-400/50 transition-all duration-300">
+                      View Case Study
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -238,28 +365,39 @@ export function SEOOptimizationService() {
       </section>
 
       {/* Service Details Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Why Choose Our SEO Services</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Professional SEO optimization that delivers sustainable organic growth
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-6">
+          <h2 className="text-4xl font-bold text-white">Service Details:</h2>
+          
+          {/* Service Description */}
+          <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
+            <p className="text-purple-100/90 leading-relaxed text-lg">
+              Our comprehensive SEO optimization service combines data-driven keyword research with technical optimization and content strategy to improve 
+              your search engine visibility and drive organic growth. We specialize in implementing sustainable SEO practices including on-page optimization, 
+              technical SEO improvements, content creation, and strategic link building. From local SEO to enterprise-level optimization, our search engine 
+              optimization solutions are designed with long-term results in mind, focusing on improving rankings, increasing organic traffic, and delivering 
+              measurable ROI through proven SEO methodologies and continuous performance monitoring.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Strategic Feature Icons */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
             {[
-              { icon: Users, title: "Expert Team", desc: "Certified SEO specialists with proven track records across various industries." },
-              { icon: TrendingUp, title: "Data-Driven", desc: "Strategies based on comprehensive analytics and continuous performance monitoring." },
-              { icon: Target, title: "White-Hat Techniques", desc: "Ethical SEO practices that ensure long-term sustainability and search engine compliance." },
-              { icon: Zap, title: "Transparent Reporting", desc: "Monthly detailed reports with clear metrics and actionable insights for improvement." }
-            ].map((feature, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-purple-500/30 group-hover:to-purple-700/30 transition-all duration-300">
-                  <feature.icon className="w-8 h-8 text-purple-300" />
+              { icon: Search, title: "Keyword", subtitle: "Research" },
+              { icon: Settings, title: "Technical", subtitle: "SEO" },
+              { icon: FileText, title: "Content", subtitle: "Optimization" },
+              { icon: LineChart, title: "Performance", subtitle: "Tracking" }
+            ].map((item, index) => (
+              <div key={index} className="text-center space-y-4 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-300">{feature.desc}</p>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-purple-100/80">{item.subtitle}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -267,30 +405,28 @@ export function SEOOptimizationService() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Professional SEO Tools & Analytics</h2>
-            <p className="text-xl text-gray-300">Industry-leading tools for comprehensive SEO analysis and optimization</p>
-          </div>
+      <section className="py-12 md:py-20 lg:py-24 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
+          <h2 className="text-5xl font-bold text-center text-white">Technologies We Use</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiGoogleanalytics, name: "Google Analytics", desc: "Comprehensive website analytics and user behavior tracking for data-driven decisions." },
-              { icon: SiGooglesearchconsole, name: "Search Console", desc: "Google's official tool for monitoring search performance and technical issues." },
-              { icon: SiSemrush, name: "SEMrush", desc: "All-in-one digital marketing toolkit for keyword research and competitive analysis." },
-              { icon: SiAhrefs, name: "Ahrefs", desc: "Powerful SEO toolset for backlink analysis, keyword research, and site auditing." },
-              { icon: SiMoz, name: "Moz Pro", desc: "SEO software suite for keyword tracking, site audits, and link building opportunities." },
-              { icon: SiScreaminggrog, name: "Screaming Frog", desc: "Website crawler for technical SEO audits and on-page optimization analysis." },
-              { icon: SiYoast, name: "Yoast SEO", desc: "WordPress SEO plugin for on-page optimization and content analysis." },
-              { icon: SiGtmetrix, name: "GTmetrix", desc: "Website performance analysis tool for Core Web Vitals and speed optimization." }
-            ].map((tool, index) => (
+              { icon: SiGoogleanalytics, name: "Google Analytics", desc: "Comprehensive web analytics platform for tracking SEO performance and user behavior insights." },
+              { icon: SiGooglesearchconsole, name: "Search Console", desc: "Google's search performance monitoring tool for tracking rankings, clicks, and indexing status." },
+              { icon: SiSemrush, name: "SEMrush", desc: "All-in-one SEO toolkit for keyword research, competitor analysis, and ranking tracking." },
+              { icon: SiAhrefs, name: "Ahrefs", desc: "Professional SEO toolset for backlink analysis, keyword research, and content optimization." },
+              { icon: SiMoz, name: "Moz", desc: "SEO software suite providing keyword research, link building, and search ranking insights." },
+              { icon: SiScreaminggrog, name: "Screaming Frog", desc: "Website crawler for technical SEO audits and identifying optimization opportunities." },
+              { icon: SiYoast, name: "Yoast SEO", desc: "WordPress SEO plugin for on-page optimization and technical SEO improvements." },
+              { icon: SiGtmetrix, name: "GTmetrix", desc: "Website performance testing tool for analyzing page speed and technical optimization needs." }
+            ].map((tech, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300">
-                  <tool.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-white/5 group-hover:scale-110 transition-transform duration-300">
+                  <tech.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">{tool.name}</h3>
-                <p className="text-sm text-gray-300">{tool.desc}</p>
+                <h3 className="text-lg font-semibold text-white mb-2">{tech.name}</h3>
+                <p className="text-sm text-purple-100/80 leading-relaxed">{tech.desc}</p>
               </div>
             ))}
           </div>
@@ -298,64 +434,41 @@ export function SEOOptimizationService() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-300">Common questions about our SEO optimization services</p>
+      <section className="py-16 md:py-24 lg:py-32 relative">
+        <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-6 space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-5xl font-bold text-white">Frequently Asked Questions</h2>
+            <p className="text-xl text-purple-100/90">Common questions about our SEO optimization services</p>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             <FAQItem 
               question="How long does it take to see SEO results?"
-              answer="Typically 3-6 months for significant improvements. You may see some quick wins in 4-8 weeks, but substantial ranking improvements and traffic growth usually occur after 3-6 months of consistent optimization."
+              answer="SEO is a long-term strategy. You may see initial improvements in 3-4 months, with significant results typically appearing in 6-12 months depending on competition, current site status, and keyword difficulty."
             />
             <FAQItem 
-              question="Do you guarantee first page rankings?"
-              answer="No ethical SEO agency can guarantee specific rankings due to Google's complex algorithm. We focus on sustainable improvements and increased organic visibility using proven white-hat techniques."
+              question="What's the difference between on-page and off-page SEO?"
+              answer="On-page SEO focuses on optimizing elements on your website (content, meta tags, site structure), while off-page SEO involves external factors like backlinks, social signals, and online reputation."
             />
             <FAQItem 
-              question="What's included in your SEO audit?"
-              answer="Our comprehensive audit covers technical SEO, on-page optimization, content analysis, backlink profile, competitor research, and keyword opportunities with actionable recommendations."
-            />
-            <FAQItem 
-              question="Do you work with all types of businesses?"
-              answer="Yes, we have experience with e-commerce, local businesses, B2B companies, professional services, and various industries. Our strategies are customized based on your specific business needs."
+              question="Do you guarantee first-page rankings?"
+              answer="While we can't guarantee specific rankings due to search algorithm changes, we use proven strategies and provide detailed reporting on progress. We focus on sustainable, long-term improvements."
             />
             <FAQItem 
               question="How do you measure SEO success?"
-              answer="We track keyword rankings, organic traffic growth, conversion rates, search visibility, and business-specific KPIs. Monthly reports include detailed analytics and progress insights."
+              answer="We track keyword rankings, organic traffic growth, click-through rates, conversion rates, and business metrics like leads and revenue to measure comprehensive SEO success."
             />
             <FAQItem 
               question="Can you help with local SEO?"
-              answer="Absolutely! We specialize in local SEO including Google My Business optimization, local citations, review management, and location-based keyword strategies for businesses serving specific geographic areas."
+              answer="Yes, we specialize in local SEO including Google My Business optimization, local citations, review management, and location-based keyword targeting to improve local search visibility."
             />
           </div>
         </div>
       </section>
 
-      {/* Contact Modal */}
-      {isContactOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border border-white/20 rounded-2xl p-8 max-w-md w-full">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-2xl font-bold">Improve Your Rankings</h3>
-              <button onClick={() => setIsContactOpen(false)} className="text-gray-400 hover:text-white">
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <p className="text-gray-300 mb-6">Ready to dominate search results? Let's boost your SEO performance.</p>
-            <div className="space-y-4">
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300">
-                Get Free SEO Audit
-              </button>
-              <button className="w-full px-6 py-3 border border-white/20 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
-                Schedule SEO Consultation
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+      <Footer />
+    </>
   );
 }
