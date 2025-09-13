@@ -54,6 +54,15 @@ export function Navigation() {
       ]
     },
     {
+      title: "Cloud & DevOps",
+      services: [
+        { href: "/services/cloud-migration", label: "Cloud Migration", icon: Cloud, description: "Seamless cloud platform migration" },
+        { href: "/services/devops-automation", label: "DevOps Automation", icon: Server, description: "Automated CI/CD pipelines" },
+        { href: "/services/cybersecurity", label: "Cybersecurity", icon: TrendingUp, description: "Comprehensive security solutions" },
+        { href: "/services/quality-assurance", label: "Quality Assurance", icon: Code, description: "Complete testing services" },
+      ]
+    },
+    {
       title: "Marketing",
       services: [
         { href: "/services/digital-marketing", label: "Digital Marketing", icon: TrendingUp, description: "Data-driven growth strategies" },
@@ -62,6 +71,7 @@ export function Navigation() {
         { href: "/services/email-marketing", label: "Email Marketing", icon: Mail, description: "Targeted email campaigns" },
         { href: "/services/social-media-management", label: "Social Media", icon: User, description: "Social media management" },
         { href: "/services/paid-advertising", label: "Paid Advertising", icon: TrendingUp, description: "PPC & social ads" },
+        { href: "/services/marketing-automation", label: "Marketing Automation", icon: TrendingUp, description: "Automated marketing workflows" },
       ]
     },
     {
