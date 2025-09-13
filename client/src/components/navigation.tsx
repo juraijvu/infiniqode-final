@@ -34,10 +34,44 @@ export function Navigation() {
     { href: "/contact", label: "Contact", icon: Mail },
   ];
 
-  const servicesItems = [
-    { href: "/services/web-development", label: "Web Development", icon: Globe, description: "Modern, responsive websites" },
-    { href: "/services/digital-marketing", label: "Digital Marketing", icon: TrendingUp, description: "Data-driven marketing strategies" },
-    { href: "/services/saas-solutions", label: "SaaS Solutions", icon: Cloud, description: "Custom Software as a Service" },
+  const servicesCategories = [
+    {
+      title: "Development",
+      services: [
+        { href: "/services/web-development", label: "Web Development", icon: Globe, description: "Modern, responsive websites" },
+        { href: "/services/mobile-app-development", label: "Mobile Apps", icon: Briefcase, description: "iOS & Android applications" },
+        { href: "/services/api-development", label: "API Development", icon: Server, description: "Robust backend APIs" },
+        { href: "/services/saas-solutions", label: "SaaS Solutions", icon: Cloud, description: "Custom Software as a Service" },
+        { href: "/services/ecommerce-development", label: "E-commerce", icon: TrendingUp, description: "Online store development" },
+        { href: "/services/blockchain-development", label: "Blockchain", icon: Code, description: "Decentralized applications" },
+      ]
+    },
+    {
+      title: "AI & Analytics", 
+      services: [
+        { href: "/services/ai-machine-learning", label: "AI & Machine Learning", icon: Code, description: "Intelligent automation solutions" },
+        { href: "/services/data-analytics", label: "Data Analytics", icon: TrendingUp, description: "Business intelligence insights" },
+      ]
+    },
+    {
+      title: "Marketing",
+      services: [
+        { href: "/services/digital-marketing", label: "Digital Marketing", icon: TrendingUp, description: "Data-driven growth strategies" },
+        { href: "/services/seo-optimization", label: "SEO Optimization", icon: TrendingUp, description: "Search engine optimization" },
+        { href: "/services/content-marketing", label: "Content Marketing", icon: FileText, description: "Engaging content strategies" },
+        { href: "/services/email-marketing", label: "Email Marketing", icon: Mail, description: "Targeted email campaigns" },
+        { href: "/services/social-media-management", label: "Social Media", icon: User, description: "Social media management" },
+        { href: "/services/paid-advertising", label: "Paid Advertising", icon: TrendingUp, description: "PPC & social ads" },
+      ]
+    },
+    {
+      title: "Design & Business",
+      services: [
+        { href: "/services/ui-ux-design", label: "UI/UX Design", icon: User, description: "User-centered design" },
+        { href: "/services/brand-identity", label: "Brand Identity", icon: User, description: "Complete branding solutions" },
+        { href: "/services/business-consulting", label: "Business Consulting", icon: Briefcase, description: "Strategic business guidance" },
+      ]
+    }
   ];
 
   const NavLink = ({ href, label, icon: Icon }: { href: string; label: string; icon?: any }) => (
@@ -109,22 +143,32 @@ export function Navigation() {
                   <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-80 glass-card border-2 border-purple-500/50 bg-gradient-to-r from-purple-500/10 to-purple-700/10 z-[1000]" sideOffset={8}>
-                <div className="p-2 space-y-1">
-                  {servicesItems.map((service) => (
-                    <Link key={service.href} href={service.href}>
-                      <DropdownMenuItem className="flex items-start gap-3 p-3 rounded-lg cursor-pointer hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-purple-700/20 transition-colors duration-150 group">
-                        <div className="p-2 rounded-lg bg-white/10 group-hover:bg-white/20 transition-colors duration-150">
-                          <service.icon className="w-4 h-4 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-medium text-foreground">{service.label}</div>
-                          <div className="text-sm text-muted-foreground">{service.description}</div>
-                        </div>
-                      </DropdownMenuItem>
-                    </Link>
+              <DropdownMenuContent className="w-96 glass-card border-2 border-purple-500/50 bg-gradient-to-r from-purple-500/10 to-purple-700/10 z-[1000]" sideOffset={8}>
+                <div className="p-3 space-y-4 max-h-[70vh] overflow-y-auto">
+                  {servicesCategories.map((category, categoryIndex) => (
+                    <div key={category.title}>
+                      <div className="text-sm font-semibold text-white mb-2 px-2">{category.title}</div>
+                      <div className="space-y-1">
+                        {category.services.map((service) => (
+                          <Link key={service.href} href={service.href}>
+                            <DropdownMenuItem className="flex items-start gap-3 p-3 rounded-lg cursor-pointer hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-purple-700/20 transition-colors duration-150 group">
+                              <div className="p-2 rounded-lg bg-white/10 group-hover:bg-white/20 transition-colors duration-150">
+                                <service.icon className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <div className="font-medium text-foreground text-sm">{service.label}</div>
+                                <div className="text-xs text-muted-foreground">{service.description}</div>
+                              </div>
+                            </DropdownMenuItem>
+                          </Link>
+                        ))}
+                      </div>
+                      {categoryIndex < servicesCategories.length - 1 && (
+                        <div className="border-t border-border/50 mt-3 pt-1"></div>
+                      )}
+                    </div>
                   ))}
-                  <div className="border-t border-border/50 mt-2 pt-2">
+                  <div className="border-t border-border/50 mt-3 pt-3">
                     <Link href="/services">
                       <DropdownMenuItem className="justify-center p-3 rounded-lg cursor-pointer hover:bg-white/5 transition-colors">
                         <span className="text-sm font-medium text-white">View All Services</span>
@@ -185,21 +229,26 @@ export function Navigation() {
                   {/* Services Section */}
                   <div className="pt-4">
                     <div className="text-sm font-medium text-muted-foreground mb-3 px-4">Services</div>
-                    {servicesItems.map((service) => (
-                      <Link key={service.href} href={service.href}>
-                        <div
-                          className="group flex items-center gap-4 p-4 rounded-xl transition-colors duration-150 cursor-pointer hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-purple-700/10 hover:text-foreground text-muted-foreground"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          <div className="p-2 rounded-lg bg-white/10 group-hover:bg-white/20 transition-colors duration-200 will-change-auto">
-                            <service.icon className="w-5 h-5" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="text-base font-medium">{service.label}</div>
-                            <div className="text-sm text-muted-foreground/80">{service.description}</div>
-                          </div>
-                        </div>
-                      </Link>
+                    {servicesCategories.map((category) => (
+                      <div key={category.title} className="mb-4">
+                        <div className="text-xs font-semibold text-white mb-2 px-4">{category.title}</div>
+                        {category.services.map((service) => (
+                          <Link key={service.href} href={service.href}>
+                            <div
+                              className="group flex items-center gap-4 p-3 rounded-xl transition-colors duration-150 cursor-pointer hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-purple-700/10 hover:text-foreground text-muted-foreground"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              <div className="p-2 rounded-lg bg-white/10 group-hover:bg-white/20 transition-colors duration-200 will-change-auto">
+                                <service.icon className="w-4 h-4" />
+                              </div>
+                              <div className="flex-1">
+                                <div className="text-sm font-medium">{service.label}</div>
+                                <div className="text-xs text-muted-foreground/80">{service.description}</div>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
                     ))}
                   </div>
                 </div>
