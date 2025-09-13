@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { SEOHead } from "@/components/seo-head";
@@ -8,6 +8,48 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Phone, MessageCircle, MapPin, Mail } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { IconType } from "react-icons";
+
+// Lazy Section Component
+function LazySection({ 
+  children, 
+  className = "", 
+  threshold = 0.1 
+}: { 
+  children: React.ReactNode; 
+  className?: string; 
+  threshold?: number; 
+}) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return (
+    <section ref={ref} className={className}>
+      {isVisible ? children : (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-purple-400 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
+    </section>
+  );
+}
 
 // FAQ Item Component
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -235,7 +277,7 @@ export default function StandardServicePageLayout({ data }: StandardServicePageL
       </section>
 
       {/* Strategic Process Section */}
-      <section className="py-12 md:py-20 lg:py-24 relative">
+      <LazySection className="py-12 md:py-20 lg:py-24 relative">
         <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -269,10 +311,10 @@ export default function StandardServicePageLayout({ data }: StandardServicePageL
             ))}
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Strategic Service Includes Section */}
-      <section className="py-12 md:py-20 lg:py-24 relative">
+      <LazySection className="py-12 md:py-20 lg:py-24 relative">
         <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -345,10 +387,10 @@ export default function StandardServicePageLayout({ data }: StandardServicePageL
             </div>
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Use Cases Section */}
-      <section className="py-12 md:py-20 lg:py-24 relative">
+      <LazySection className="py-12 md:py-20 lg:py-24 relative">
         <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -399,10 +441,10 @@ export default function StandardServicePageLayout({ data }: StandardServicePageL
             ))}
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Service Details Section */}
-      <section className="py-16 md:py-24 lg:py-32 relative">
+      <LazySection className="py-16 md:py-24 lg:py-32 relative">
         <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-6">
@@ -430,10 +472,10 @@ export default function StandardServicePageLayout({ data }: StandardServicePageL
             ))}
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Technologies Section */}
-      <section className="py-12 md:py-20 lg:py-24 relative">
+      <LazySection className="py-12 md:py-20 lg:py-24 relative">
         <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
           <h2 className="text-5xl font-bold text-center text-white">{data.technologies.title || "Technologies We Use"}</h2>
@@ -450,11 +492,11 @@ export default function StandardServicePageLayout({ data }: StandardServicePageL
             ))}
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Pricing Section */}
       {data.pricing && (
-        <section className="py-12 md:py-20 lg:py-24 relative">
+        <LazySection className="py-12 md:py-20 lg:py-24 relative">
           <div className="absolute inset-4 md:inset-8 lg:inset-16 bg-gradient-to-br from-purple-500/25 to-purple-700/20 backdrop-blur-[20px] border border-purple-400/40 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"></div>
           <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
             <h2 className="text-5xl font-bold text-center text-white">{data.pricing.title || "Strategic Pricing"}</h2>
@@ -498,7 +540,7 @@ export default function StandardServicePageLayout({ data }: StandardServicePageL
               ))}
             </div>
           </div>
-        </section>
+        </LazySection>
       )}
 
       {/* Contact Form Section */}
