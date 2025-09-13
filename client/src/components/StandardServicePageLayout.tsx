@@ -9,15 +9,17 @@ import { ArrowRight, Phone, MessageCircle, MapPin, Mail } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { IconType } from "react-icons";
 
-// Lazy Section Component
+// Lazy Section Component - Optimized for 10% visibility trigger
 function LazySection({ 
   children, 
   className = "", 
-  threshold = 0.1 
+  threshold = 0.1, 
+  rootMargin = "200px 0px" 
 }: { 
   children: React.ReactNode; 
   className?: string; 
   threshold?: number; 
+  rootMargin?: string;
 }) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLElement>(null);
@@ -30,7 +32,10 @@ function LazySection({
           observer.disconnect();
         }
       },
-      { threshold }
+      { 
+        threshold, // 0.1 = 10% of section must be visible
+        rootMargin // Start loading 200px before entering viewport
+      }
     );
 
     if (ref.current) {
@@ -38,12 +43,12 @@ function LazySection({
     }
 
     return () => observer.disconnect();
-  }, [threshold]);
+  }, [threshold, rootMargin]);
 
   return (
     <section ref={ref} className={className}>
       {isVisible ? children : (
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="min-h-[40vh] flex items-center justify-center">
           <div className="w-8 h-8 border-2 border-purple-400 border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
