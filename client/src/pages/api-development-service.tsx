@@ -64,8 +64,8 @@ export default function APIDevelopmentService() {
     "description": "Build robust, scalable APIs that power modern applications with secure, high-performance backend services",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "API Development"
@@ -173,7 +173,7 @@ export default function APIDevelopmentService() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Settings, title: "API Planning & Design", step: "Step 1", desc: "Define API specifications, data models, and security requirements to create a robust and scalable architecture blueprint." },
-              { icon: Code, title: "Development & Testing", step: "Step 2", desc: "Build secure, high-performance APIs with comprehensive testing, documentation, and validation for reliability." },
+              { icon: Code, title: "Development & Testing", step: "Step 2", desc: "Build secure, high-performance APIs with professional testing, documentation, and validation for reliability." },
               { icon: Server, title: "Deployment & Integration", step: "Step 3", desc: "Deploy APIs with proper monitoring, versioning, and integration support for seamless system connectivity." },
               { icon: Globe, title: "Monitoring & Scaling", step: "Step 4", desc: "Continuously monitor performance, handle scaling needs, and maintain API excellence with ongoing optimization." }
             ].map((item, index) => (
@@ -225,7 +225,7 @@ export default function APIDevelopmentService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive API development service is designed to help businesses of all
+                Our professional API development service is designed to help businesses of all
                 sizes create robust backend systems that scale. We work closely with your
                 team to understand your unique requirements and implement solutions that
                 deliver exceptional performance, security, and developer experience.
@@ -233,23 +233,46 @@ export default function APIDevelopmentService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "RESTful & GraphQL API Development",
-                  "Microservices Architecture", 
-                  "API Security & Authentication",
-                  "Documentation & Testing Suites"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">RESTful & GraphQL API Development</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We build APIs that are secure, scalable, and easy to integrate with 
-                        comprehensive documentation and robust testing frameworks.
+                        Create efficient, scalable APIs using RESTful or GraphQL 
+                        standards to enable seamless data exchange and app connectivity.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Microservices Architecture</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Design modular, flexible APIs with microservices for enhanced scalability,
+                         maintainability, and independent deployment.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">API Security & Authentication</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Implement robust security with OAuth, JWT, and encryption 
+                        to protect APIs and ensure secure user authentication.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Documentation & Testing Suites</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Deliver clear API documentation and professional testing
+                        suites for reliability, easy integration, and developer support.
+                      </p>
+                    </div>
+                  </div>
               </div>
             </div>
             
@@ -294,7 +317,7 @@ export default function APIDevelopmentService() {
                   <div className="text-3xl font-bold text-white mb-1">1M+</div>
                   <p className="text-purple-100/80 text-sm">API Calls/Day</p>
                   <div className="flex items-center space-x-2 mt-2">
-                    <div className="text-xl font-bold text-purple-200">< 100ms</div>
+                    <div className="text-xl font-bold text-purple-200"> 100ms</div>
                     <p className="text-xs text-purple-100/60">Response</p>
                   </div>
                 </div>
@@ -375,10 +398,10 @@ export default function APIDevelopmentService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive API development service combines modern backend technologies with industry best practices to create robust, scalable APIs 
+              Our professional API development service combines modern backend technologies with industry best practices to create robust, scalable APIs 
               that power your digital ecosystem. We specialize in designing RESTful APIs, GraphQL endpoints, and microservices architectures that handle 
               high traffic loads while maintaining security and performance. From authentication systems to real-time data processing, our APIs are built 
-              with comprehensive documentation, thorough testing, and monitoring solutions that ensure reliability and ease of integration.
+              with professional documentation, thorough testing, and monitoring solutions that ensure reliability and ease of integration.
             </p>
           </div>
           
@@ -454,7 +477,7 @@ export default function APIDevelopmentService() {
             />
             <FAQItem 
               question="What documentation do you provide?"
-              answer="We provide comprehensive API documentation including endpoint descriptions, request/response examples, authentication details, error codes, and interactive testing interfaces using tools like Swagger/OpenAPI."
+              answer="We provide professional API documentation including endpoint descriptions, request/response examples, authentication details, error codes, and interactive testing interfaces using tools like Swagger/OpenAPI."
             />
             <FAQItem 
               question="How do you handle API versioning?"

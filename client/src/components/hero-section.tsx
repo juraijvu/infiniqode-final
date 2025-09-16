@@ -5,7 +5,7 @@ import { Rocket, Play } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center justify-center overflow-hidden">
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center min-h-screen">
         {/* Left side - Content */}
@@ -17,7 +17,7 @@ export function HeroSection() {
           </h1>
           
           <div className="text-white mb-4 text-sm font-medium tracking-wide uppercase">
-            AT INFINICODE
+            AT INFINIQODE
           </div>
           
           <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
@@ -40,6 +40,8 @@ export function HeroSection() {
               title="Ready to Transform Your Digital Presence?"
               description="Tell us about your project goals and let's create something amazing together. Get a free consultation and custom proposal."
             />
+            <ContactPopup 
+              trigger={
             <Button 
               variant="glass" 
               size="xl"
@@ -47,6 +49,10 @@ export function HeroSection() {
             >
               Free Consultation
             </Button>
+            }
+              title="Ready to Transform Your Digital Presence?"
+              description="Tell us about your project goals and let's create something amazing together. Get a free consultation and custom proposal."
+            />
           </div>
         </div>
         

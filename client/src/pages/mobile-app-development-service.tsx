@@ -57,8 +57,8 @@ export default function MobileAppDevelopmentService() {
     "description": "Create native and cross-platform mobile applications that engage users and drive business growth",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Mobile App Development"
@@ -75,7 +75,7 @@ export default function MobileAppDevelopmentService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -165,7 +165,7 @@ export default function MobileAppDevelopmentService() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Settings, title: "Discovery & Planning", step: "Step 1", desc: "Define app requirements, user personas, and technical architecture to create a comprehensive development roadmap for success." },
+              { icon: Settings, title: "Discovery & Planning", step: "Step 1", desc: "Define app requirements, user personas, and technical architecture to create a professional development roadmap for success." },
               { icon: Code, title: "UI/UX Design", step: "Step 2", desc: "Create intuitive user interfaces and seamless user experiences optimized for mobile interaction patterns and user engagement." },
               { icon: Smartphone, title: "Development & Testing", step: "Step 3", desc: "Build your app using native or cross-platform technologies with continuous testing and quality assurance throughout." },
               { icon: Globe, title: "Launch & Support", step: "Step 4", desc: "Deploy to app stores and provide ongoing maintenance, updates, and performance optimization for sustained success." }
@@ -218,7 +218,7 @@ export default function MobileAppDevelopmentService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive mobile app development service is designed to help businesses of all
+                Our professional mobile app development service is designed to help businesses of all
                 sizes create powerful mobile applications that engage users and drive growth. We work closely with your
                 team to understand your unique vision and implement solutions that
                 deliver exceptional user experiences and business value.
@@ -226,23 +226,46 @@ export default function MobileAppDevelopmentService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Native & Cross-Platform Development",
-                  "UI/UX Design & Prototyping", 
-                  "Backend & API Integration",
-                  "App Store Optimization & Deployment"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Native & Cross-Platform Development</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We create mobile applications that work flawlessly across all devices with 
-                        intuitive design, seamless functionality, and optimized performance.
+                        Build high-performance iOS and Android apps using 
+                        Swift, Kotlin, or frameworks like Flutter for seamless, scalable solutions.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div  className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">UI/UX Design & Prototyping</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Design intuitive, user-friendly app interfaces with 
+                        prototypes that ensure engaging experiences and brand consistency.
+                      </p>
+                    </div>
+                  </div>
+                  <div  className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Backend & API Integration</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Develop secure, scalable backends with API integrations for 
+                        real-time data and third-party service connectivity.
+                      </p>
+                    </div>
+                  </div>
+                  <div  className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">App Store Optimization & Deployment</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Boost app visibility with ASO and ensure smooth, 
+                        compliant launches on iOS App Store and Google Play.
+                      </p>
+                    </div>
+                  </div>
               </div>
             </div>
             
@@ -312,7 +335,7 @@ export default function MobileAppDevelopmentService() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Fitness Tracking App", subtitle: "500K+ Downloads with Social Features", desc: "Built a comprehensive fitness app with workout tracking, social features, and wearable integration that achieved 500K+ downloads with 4.7 star rating." },
+              { title: "Fitness Tracking App", subtitle: "500K+ Downloads with Social Features", desc: "Built a professional fitness app with workout tracking, social features, and wearable integration that achieved 500K+ downloads with 4.7 star rating." },
               { title: "Food Delivery Platform", subtitle: "50K+ Daily Orders Processing", desc: "Created a multi-vendor food delivery app with real-time tracking and payment integration serving 50K+ daily orders for 2M+ registered users." },
               { title: "Financial Services App", subtitle: "Bank-Grade Security Implementation", desc: "Developed a secure banking app with biometric authentication and real-time transaction monitoring maintaining 99.9% uptime with enterprise security." }
             ].map((item, index) => (
@@ -368,7 +391,7 @@ export default function MobileAppDevelopmentService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive mobile app development service combines cutting-edge technology with user-centered design to create applications that users love 
+              Our professional mobile app development service combines cutting-edge technology with user-centered design to create applications that users love 
               and businesses depend on. We specialize in developing both native iOS and Android applications as well as cross-platform solutions using React Native 
               and Flutter. From intuitive user interfaces to robust backend systems, our mobile solutions are designed for performance, scalability, and optimal 
               user experience. We handle the complete app lifecycle from concept and design to development, testing, deployment, and ongoing maintenance.

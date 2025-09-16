@@ -23,9 +23,10 @@ import {
   Phone,
   MessageCircle,
   MapPin,
-  BarChart
+  BarChart,
+  Building2
 } from "lucide-react";
-import { SiMicrosoft, SiSlack, SiAsana, SiNotion, SiJira, SiTrello, SiMiro, SiZoom } from "react-icons/si";
+import {  SiSlack, SiAsana, SiNotion, SiJira, SiTrello, SiMiro, SiZoom } from "react-icons/si";
 
 // FAQ Item Component with improved accessibility
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -62,8 +63,8 @@ export default function BusinessConsultingService() {
     "description": "Strategic business consulting that transforms operations, accelerates growth, and drives sustainable competitive advantages",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Business Consulting"
@@ -80,7 +81,7 @@ export default function BusinessConsultingService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -170,7 +171,7 @@ export default function BusinessConsultingService() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Target, title: "Discovery & Assessment", step: "Step 1", desc: "Comprehensive business analysis to identify challenges, opportunities, and strategic priorities for sustainable growth." },
+              { icon: Target, title: "Discovery & Assessment", step: "Step 1", desc: "professional business analysis to identify challenges, opportunities, and strategic priorities for sustainable growth." },
               { icon: Lightbulb, title: "Strategy Development", step: "Step 2", desc: "Create customized strategies and roadmaps that align with your business goals and market positioning." },
               { icon: Settings, title: "Implementation Planning", step: "Step 3", desc: "Develop detailed implementation plans with clear timelines, resources, and success metrics for execution." },
               { icon: TrendingUp, title: "Execution & Optimization", step: "Step 4", desc: "Guide implementation and continuously optimize processes to ensure sustained business growth and competitive advantage." }
@@ -223,7 +224,7 @@ export default function BusinessConsultingService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive business consulting service is designed to help businesses of all
+                Our professional business consulting service is designed to help businesses of all
                 sizes transform their operations and accelerate growth. We work closely with your
                 leadership team to understand your unique challenges and implement solutions that
                 deliver strategic advantage, operational excellence, and sustainable success.
@@ -231,23 +232,48 @@ export default function BusinessConsultingService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Strategic Planning & Business Development",
-                  "Operations Optimization & Process Improvement", 
-                  "Digital Transformation & Change Management",
-                  "Performance Analytics & Growth Strategy"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Strategic Planning & Business Development</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We deliver strategic consulting solutions that are practical, results-oriented, 
-                        and designed to create lasting competitive advantages for your business.
+                        Craft data-driven strategies to drive business growth, identify opportunities, 
+                        and align objectives with market trends for sustainable success.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Operations Optimization & Process Improvement</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Streamline operations and enhance efficiency through process audits, lean methodologies,
+                         and tailored improvements for optimal performance.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Digital Transformation & Change Management</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Guide seamless digital transformation with change management strategies to adopt technologies 
+                        and foster organizational adaptability effectively.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Performance Analytics & Growth Strategy</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Leverage analytics to track KPIs, uncover insights, and develop growth
+                        strategies that accelerate business expansion and ROI.
+                      </p>
+                    </div>
+                  </div>
+                
               </div>
             </div>
             
@@ -317,7 +343,7 @@ export default function BusinessConsultingService() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Manufacturing Optimization", subtitle: "40% Efficiency Improvement", desc: "Led comprehensive operational transformation for manufacturing company resulting in 40% efficiency gains, $5M cost savings, and 25% faster production cycles." },
+              { title: "Manufacturing Optimization", subtitle: "40% Efficiency Improvement", desc: "Led professional operational transformation for manufacturing company resulting in 40% efficiency gains, $5M cost savings, and 25% faster production cycles." },
               { title: "Digital Transformation", subtitle: "Enterprise-wide Technology Adoption", desc: "Guided tech startup through digital transformation implementing cloud infrastructure, automated workflows, and data analytics achieving 300% productivity increase." },
               { title: "Market Expansion Strategy", subtitle: "Successfully Entered 5 New Markets", desc: "Developed market entry strategy for retail chain expanding into 5 new markets with strategic positioning, competitive analysis, and $20M+ revenue growth." }
             ].map((item, index) => (
@@ -373,7 +399,7 @@ export default function BusinessConsultingService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive business consulting service combines strategic expertise with practical implementation experience to help organizations 
+              Our professional business consulting service combines strategic expertise with practical implementation experience to help organizations 
               achieve sustainable competitive advantages. We specialize in developing customized strategies for business transformation, operational 
               excellence, and growth acceleration across diverse industries. From organizational restructuring to digital transformation initiatives, 
               our consulting solutions are designed with measurable outcomes in mind, ensuring that every recommendation delivers tangible business 
@@ -411,7 +437,7 @@ export default function BusinessConsultingService() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiMicrosoft, name: "Microsoft 365", desc: "Comprehensive productivity suite for collaboration, document management, and business operations." },
+              { icon: Building2, name: "Microsoft 365", desc: "professional productivity suite for collaboration, document management, and business operations." },
               { icon: SiSlack, name: "Slack", desc: "Team communication and collaboration platform for streamlined business workflows." },
               { icon: SiAsana, name: "Asana", desc: "Project management tool for organizing tasks, tracking progress, and team coordination." },
               { icon: SiNotion, name: "Notion", desc: "All-in-one workspace for documentation, project management, and knowledge sharing." },
@@ -449,7 +475,7 @@ export default function BusinessConsultingService() {
             />
             <FAQItem 
               question="How long do consulting engagements typically last?"
-              answer="Engagement duration varies from 3-6 months for specific projects to 12-24 months for comprehensive transformations. We tailor the timeline to your specific needs and complexity."
+              answer="Engagement duration varies from 3-6 months for specific projects to 12-24 months for professional transformations. We tailor the timeline to your specific needs and complexity."
             />
             <FAQItem 
               question="What's your approach to change management?"

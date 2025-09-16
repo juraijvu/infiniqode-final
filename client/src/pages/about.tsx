@@ -35,42 +35,29 @@ export default function About() {
 
   const milestones = [
     {
-      year: "2018",
+      year: "2023",
       title: "Company Founded",
-      description: "DigitalCraft was established with a vision to transform businesses through innovative digital solutions."
+      description: "InfiniQode was established with a vision to transform businesses through innovative digital solutions."
     },
     {
-      year: "2019",
+      year: "2024",
       title: "First Major Client",
       description: "Secured our first enterprise client and delivered a game-changing e-commerce platform."
     },
     {
-      year: "2020",
+      year: "2025",
       title: "Team Expansion",
-      description: "Grew our team to 15+ talented professionals across development, design, and marketing."
+      description: "Grew our team to 10+ talented professionals across development, design, and marketing."
     },
-    {
-      year: "2021",
-      title: "SaaS Specialization",
-      description: "Specialized in SaaS development, helping startups and enterprises build scalable platforms."
-    },
-    {
-      year: "2022",
-      title: "Industry Recognition",
-      description: "Received multiple industry awards for our innovative approach to digital transformation."
-    },
-    {
-      year: "2023",
-      title: "Global Expansion",
-      description: "Expanded operations globally, serving clients across North America, Europe, and Asia."
-    }
+
+  
   ];
 
   return (
     <>
       <SEOHead
         title="About Us"
-        description="Learn about DigitalCraft's mission, values, and team. We're a passionate group of developers, designers, and strategists dedicated to crafting exceptional digital experiences."
+        description="Learn about InfiniQode's mission, values, and team. We're a passionate group of developers, designers, and strategists dedicated to crafting exceptional digital experiences."
         keywords="about us, digital agency team, company mission, values, expertise"
       />
       <Navigation />
@@ -82,7 +69,7 @@ export default function About() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            About <span className="text-white">DigitalCraft</span>
+            About <span className="text-white">InfiniQode</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             We're a passionate team of developers, designers, and digital strategists 
@@ -222,7 +209,7 @@ export default function About() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <GlassCard className="p-8 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">150+</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">50+</div>
               <div className="text-muted-foreground">Projects Delivered</div>
             </GlassCard>
             <GlassCard className="p-8 text-center">
@@ -230,11 +217,11 @@ export default function About() {
               <div className="text-muted-foreground">Client Satisfaction</div>
             </GlassCard>
             <GlassCard className="p-8 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">25+</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">10+</div>
               <div className="text-muted-foreground">Team Members</div>
             </GlassCard>
             <GlassCard className="p-8 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">5+</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">2+</div>
               <div className="text-muted-foreground">Years Experience</div>
             </GlassCard>
           </div>
@@ -242,7 +229,7 @@ export default function About() {
       </section>
 
       {/* Certifications & Awards */}
-      <section className="py-20">
+   {/*   <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Recognition & Awards</h2>
@@ -269,7 +256,7 @@ export default function About() {
             </GlassCard>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20">

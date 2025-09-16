@@ -26,7 +26,7 @@ import {
   MapPin,
   Camera
 } from "lucide-react";
-import { SiFacebook, SiInstagram, SiTwitter, SiLinkedin, SiTiktok, SiYoutube, SiPinterest, SiSnapchat } from "react-icons/si";
+import { SiFacebook, SiInstagram, SiX , SiLinkedin, SiTiktok, SiYoutube, SiPinterest, SiSnapchat } from "react-icons/si";
 
 // FAQ Item Component with improved accessibility
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -60,11 +60,11 @@ export default function SocialMediaManagementService() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Social Media Management Services",
-    "description": "Build engaged communities and drive meaningful interactions across all social platforms with comprehensive social media management",
+    "description": "Build engaged communities and drive meaningful interactions across all social platforms with professional social media management",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Social Media Management"
@@ -74,14 +74,14 @@ export default function SocialMediaManagementService() {
     <>
       <SEOHead
         title="Social Media Management Services - Build Engaged Communities"
-        description="Build engaged communities and drive meaningful interactions across all social platforms with comprehensive social media management and content strategy."
+        description="Build engaged communities and drive meaningful interactions across all social platforms with professional social media management and content strategy."
         keywords="social media management, community management, social media marketing, content creation, social advertising"
         structuredData={structuredData}
       />
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -96,7 +96,7 @@ export default function SocialMediaManagementService() {
                 
                 <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
                   At INFINIQODE, we build engaged communities and drive meaningful interactions across 
-                  all social platforms with comprehensive social media management services. Our team 
+                  all social platforms with professional social media management services. Our team 
                   creates authentic social experiences. From content creation to community management, 
                   we deliver social media strategies that build brand loyalty and drive conversions.
                 </p>
@@ -171,7 +171,7 @@ export default function SocialMediaManagementService() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Target, title: "Strategy & Planning", step: "Step 1", desc: "Develop comprehensive social media strategy aligned with brand goals, audience insights, and platform best practices." },
+              { icon: Target, title: "Strategy & Planning", step: "Step 1", desc: "Develop professional social media strategy aligned with brand goals, audience insights, and platform best practices." },
               { icon: Camera, title: "Content Creation & Design", step: "Step 2", desc: "Create engaging visual content, graphics, videos, and copy that resonates with your target audience across platforms." },
               { icon: Users, title: "Community Management", step: "Step 3", desc: "Actively engage with your audience, respond to comments, build relationships, and foster brand loyalty." },
               { icon: BarChart3, title: "Analytics & Optimization", step: "Step 4", desc: "Monitor performance metrics, analyze engagement data, and continuously optimize strategy for better results." }
@@ -224,7 +224,7 @@ export default function SocialMediaManagementService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive social media management service is designed to help businesses of all
+                Our professional social media management service is designed to help businesses of all
                 sizes build authentic connections with their audience across social platforms. We work closely with your
                 brand to understand your voice and implement solutions that
                 deliver meaningful engagement, community growth, and measurable business results.
@@ -232,23 +232,47 @@ export default function SocialMediaManagementService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Strategic Content Planning & Creation",
-                  "Community Management & Engagement", 
-                  "Social Media Advertising & Promotion",
-                  "Performance Analytics & Reporting"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Strategic Content Planning & Creation</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We create authentic social media experiences that build brand loyalty, increase 
-                        engagement, and drive conversions across all major social platforms.
+                        Develop tailored content strategies and create engaging posts to
+                         align with brand goals and captivate target audiences.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Community Management & Engagement</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Foster active communities through responsive engagement, building brand loyalty
+                         and strengthening audience connections across platforms.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Social Media Advertising & Promotion</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Execute targeted ad campaigns to boost reach, drive conversions, 
+                        and maximize ROI on social media platforms.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Performance Analytics & Reporting</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Analyze campaign performance with detailed metrics and reports to 
+                        optimize strategies and enhance social media impact.
+                      </p>
+                    </div>
+                  </div>
+
               </div>
             </div>
             
@@ -374,7 +398,7 @@ export default function SocialMediaManagementService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive social media management service combines strategic content creation with authentic community building to establish 
+              Our professional social media management service combines strategic content creation with authentic community building to establish 
               meaningful connections between your brand and audience across all major social platforms. We specialize in developing platform-specific 
               strategies for Facebook, Instagram, Twitter, LinkedIn, TikTok, and emerging social channels. From content calendar planning to real-time 
               community engagement, our social media solutions are designed with brand consistency, audience growth, and conversion optimization in mind, 
@@ -414,7 +438,7 @@ export default function SocialMediaManagementService() {
             {[
               { icon: SiFacebook, name: "Facebook", desc: "Community building and targeted advertising on the world's largest social network for broad audience reach." },
               { icon: SiInstagram, name: "Instagram", desc: "Visual storytelling and brand aesthetic development through photos, stories, and reels for lifestyle brands." },
-              { icon: SiTwitter, name: "Twitter", desc: "Real-time engagement and thought leadership through conversations, news, and trending topics." },
+              { icon: SiX, name: "Twitter", desc: "Real-time engagement and thought leadership through conversations, news, and trending topics." },
               { icon: SiLinkedin, name: "LinkedIn", desc: "Professional networking and B2B marketing through industry insights and thought leadership content." },
               { icon: SiTiktok, name: "TikTok", desc: "Creative short-form video content and viral marketing for younger demographics and trending culture." },
               { icon: SiYoutube, name: "YouTube", desc: "Long-form video content, tutorials, and brand storytelling for educational and entertainment value." },

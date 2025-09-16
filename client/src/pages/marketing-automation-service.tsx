@@ -25,9 +25,11 @@ import {
   Phone,
   MessageCircle,
   MapPin,
-  Mail
+  Mail,
+  GitBranch,
+  Shuffle
 } from "lucide-react";
-import { SiHubspot, SiMailchimp, SiMarketo, SiSalesforce, SiZapier, SiActivepieces, SiAutomateio, SiIntegrately } from "react-icons/si";
+import { SiHubspot, SiMailchimp, SiMarketo, SiSalesforce, SiZapier } from "react-icons/si";
 
 // FAQ Item Component with improved accessibility
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -64,8 +66,8 @@ export default function MarketingAutomationService() {
     "description": "Scale your marketing efforts with intelligent automation that nurtures leads, personalizes experiences, and drives conversions on autopilot",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Marketing Automation"
@@ -82,7 +84,7 @@ export default function MarketingAutomationService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -225,7 +227,7 @@ export default function MarketingAutomationService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive marketing automation service is designed to help businesses of all
+                Our professional marketing automation service is designed to help businesses of all
                 sizes scale their marketing efforts efficiently. We work closely with your
                 marketing team to understand your customer journey and implement solutions that
                 deliver personalized experiences, nurture leads automatically, and drive conversions at scale.
@@ -233,23 +235,48 @@ export default function MarketingAutomationService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Lead Nurturing & Drip Campaign Development",
-                  "Email Automation & Personalization", 
-                  "Customer Journey Mapping & Workflows",
-                  "Marketing Analytics & Performance Optimization"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Lead Nurturing & Drip Campaign Development</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We create intelligent automation systems that work 24/7 to nurture prospects, 
-                        engage customers, and drive revenue growth through personalized experiences.
+                        Design targeted drip campaigns to nurture leads, fostering trust and guiding prospects
+                        through the sales funnel with personalized, automated messaging.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Email Automation & Personalization</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Automate tailored email sequences to deliver personalized content, enhancing
+                        engagement and driving conversions with efficient, scalable solutions.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Customer Journey Mapping & Workflows</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Map customer journeys and create automated workflows to deliver seamless, 
+                        context-aware experiences across multiple touchpoints for better retention.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Marketing Analytics & Performance Optimization</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Leverage detailed analytics to track campaign performance, optimize workflows, 
+                        and maximize ROI with data-driven insights and continuous improvements.
+                      </p>
+                    </div>
+                  </div>
+
               </div>
             </div>
             
@@ -319,7 +346,7 @@ export default function MarketingAutomationService() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "SaaS Lead Nurturing", subtitle: "400% Conversion Rate Increase", desc: "Implemented comprehensive lead nurturing automation for B2B SaaS platform with behavior-triggered emails, lead scoring, and personalized content achieving 400% conversion improvement." },
+              { title: "SaaS Lead Nurturing", subtitle: "400% Conversion Rate Increase", desc: "Implemented professional lead nurturing automation for B2B SaaS platform with behavior-triggered emails, lead scoring, and personalized content achieving 400% conversion improvement." },
               { title: "E-commerce Personalization", subtitle: "300% Revenue Growth from Automation", desc: "Created sophisticated e-commerce automation including abandoned cart recovery, product recommendations, and post-purchase workflows resulting in 300% automated revenue increase." },
               { title: "Agency Client Onboarding", subtitle: "90% Process Automation", desc: "Streamlined agency client onboarding with automated welcome sequences, document collection, and project kickoff workflows reducing manual effort by 90% while improving client experience." }
             ].map((item, index) => (
@@ -375,7 +402,7 @@ export default function MarketingAutomationService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive marketing automation service combines strategic customer journey mapping with sophisticated workflow development to 
+              Our professional marketing automation service combines strategic customer journey mapping with sophisticated workflow development to 
               create intelligent marketing systems that operate efficiently at scale. We specialize in implementing advanced automation platforms 
               including email marketing, lead scoring, behavioral triggers, and personalized content delivery. From simple drip campaigns to 
               complex multi-channel automation sequences, our marketing automation solutions are designed with conversion optimization, customer 
@@ -414,14 +441,14 @@ export default function MarketingAutomationService() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiHubspot, name: "HubSpot", desc: "Comprehensive marketing automation platform with CRM integration, lead scoring, and workflow management." },
+              { icon: SiHubspot, name: "HubSpot", desc: "professional marketing automation platform with CRM integration, lead scoring, and workflow management." },
               { icon: SiMailchimp, name: "Mailchimp", desc: "Email marketing and automation platform with advanced segmentation and behavioral targeting capabilities." },
               { icon: SiMarketo, name: "Marketo", desc: "Enterprise marketing automation solution with advanced lead management and revenue attribution." },
               { icon: SiSalesforce, name: "Salesforce", desc: "Customer relationship management platform with powerful marketing automation and analytics tools." },
               { icon: SiZapier, name: "Zapier", desc: "Workflow automation tool connecting different apps and services for seamless data integration." },
-              { icon: SiActivepieces, name: "Activepieces", desc: "Open-source automation platform for building custom workflows and business process automation." },
-              { icon: SiAutomateio, name: "Automate.io", desc: "Multi-app integration platform for creating automated workflows between cloud applications." },
-              { icon: SiIntegrately, name: "Integrately", desc: "Automation platform with pre-built integrations for connecting popular business applications." }
+              { icon: Workflow, name: "Activepieces", desc: "Open-source automation platform for building custom workflows and business process automation." },
+              { icon: Shuffle, name: "Automate.io", desc: "Multi-app integration platform for creating automated workflows between cloud applications." },
+              { icon: GitBranch, name: "Integrately", desc: "Automation platform with pre-built integrations for connecting popular business applications." }
             ].map((tech, index) => (
               <div key={index} className="text-center group">
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-white/5 group-hover:scale-110 transition-transform duration-300">
@@ -464,7 +491,7 @@ export default function MarketingAutomationService() {
             />
             <FAQItem 
               question="Do you provide training on how to use the automation platform?"
-              answer="Absolutely! We provide comprehensive training for your team including platform navigation, campaign creation, analytics interpretation, and best practices to ensure long-term success with automation."
+              answer="Absolutely! We provide professional training for your team including platform navigation, campaign creation, analytics interpretation, and best practices to ensure long-term success with automation."
             />
           </div>
         </div>

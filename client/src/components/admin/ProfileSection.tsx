@@ -51,7 +51,7 @@ export function ProfileSection() {
   const mockProfile: AdminProfile = {
     id: 'admin-1',
     username: 'admin',
-    email: 'admin@digitalcraft.com',
+    email: 'admin@InfiniQode.com',
     firstName: 'John',
     lastName: 'Admin',
     phone: '+1 (555) 123-4567',

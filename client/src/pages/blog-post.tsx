@@ -73,10 +73,10 @@ export default function BlogPost() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "DigitalCraft",
+      "name": "InfiniQode",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://digitalcraft.agency/logo.png"
+        "url": "https://theinfiniqode.com/logo.png"
       }
     },
     "datePublished": post.publishedAt,
@@ -266,7 +266,7 @@ export default function BlogPost() {
                     <div>
                       <div className="font-medium">{post.author}</div>
                       <div className="text-sm text-muted-foreground">
-                        Senior Developer at DigitalCraft
+                        Senior Developer at InfiniQode
                       </div>
                     </div>
                   </div>

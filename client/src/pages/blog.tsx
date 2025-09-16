@@ -59,7 +59,7 @@ export default function Blog() {
     <>
       <SEOHead
         title="Blog"
-        description="Stay updated with the latest insights on web development, digital marketing, and technology trends. Expert tips and in-depth articles from the DigitalCraft team."
+        description="Stay updated with the latest insights on web development, digital marketing, and technology trends. Expert tips and in-depth articles from the InfiniQode team."
         keywords="blog, web development, digital marketing, React, TypeScript, Python, Flask, SEO, tech insights"
       />
       <Navigation />

@@ -25,9 +25,10 @@ import {
   Phone,
   MessageCircle,
   MapPin,
-  Lock
+  Lock,
+  Wallet
 } from "lucide-react";
-import { SiEthereum, SiBitcoin, SiSolana, SiPolygon, SiChainlink, SiTether, SiHyperledger, SiMetamask } from "react-icons/si";
+import { SiEthereum, SiBitcoin, SiSolana, SiPolygon, SiChainlink, SiTether, SiWeb3Dotjs } from "react-icons/si";
 
 // FAQ Item Component with improved accessibility
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -64,8 +65,8 @@ export default function BlockchainDevelopmentService() {
     "description": "Build decentralized applications, smart contracts, and blockchain solutions that revolutionize industries",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Blockchain Development"
@@ -82,7 +83,7 @@ export default function BlockchainDevelopmentService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -173,7 +174,7 @@ export default function BlockchainDevelopmentService() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Settings, title: "Architecture & Planning", step: "Step 1", desc: "Design blockchain architecture, select optimal networks, and plan smart contract interactions for scalable solutions." },
-              { icon: Shield, title: "Smart Contract Development", step: "Step 2", desc: "Build secure, audited smart contracts with comprehensive testing and optimization for gas efficiency." },
+              { icon: Shield, title: "Smart Contract Development", step: "Step 2", desc: "Build secure, audited smart contracts with professional testing and optimization for gas efficiency." },
               { icon: LinkIcon, title: "DApp Integration", step: "Step 3", desc: "Develop intuitive frontend interfaces and integrate Web3 functionality for seamless user experience." },
               { icon: Globe, title: "Deployment & Security", step: "Step 4", desc: "Deploy to mainnet with security audits, monitoring systems, and ongoing maintenance for reliability." }
             ].map((item, index) => (
@@ -225,7 +226,7 @@ export default function BlockchainDevelopmentService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive blockchain development service is designed to help businesses of all
+                Our professional blockchain development service is designed to help businesses of all
                 sizes leverage decentralized technology for innovation. We work closely with your
                 team to understand your unique vision and implement solutions that
                 deliver transparency, security, and decentralized value creation.
@@ -233,23 +234,42 @@ export default function BlockchainDevelopmentService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Smart Contract Development & Auditing",
-                  "DeFi & NFT Platform Creation", 
-                  "Web3 Integration & Wallet Connection",
-                  "Blockchain Consulting & Architecture"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Smart Contract Development & Auditing</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We create blockchain solutions that are secure, scalable, and user-friendly with 
-                        comprehensive auditing and optimized performance for real-world adoption.
+                        Create and audit secure smart contracts for reliable, transparent blockchain transactions.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">DeFi & NFT Platform Creation</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Build decentralized finance and NFT platforms for innovative, secure digital asset solutions.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Web3 Integration & Wallet Connection</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Integrate Web3 protocols and wallets for seamless, decentralized user experiences.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Blockchain Consulting & Architecture</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Provide expert consulting and scalable blockchain architecture for business transformation.
+                      </p>
+                    </div>
+                  </div>
               </div>
             </div>
             
@@ -319,7 +339,7 @@ export default function BlockchainDevelopmentService() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "DeFi Trading Platform", subtitle: "$10M+ TVL with Advanced Features", desc: "Built a comprehensive DeFi platform with yield farming, liquidity pools, and governance features securing $10M+ TVL with zero security incidents." },
+              { title: "DeFi Trading Platform", subtitle: "$10M+ TVL with Advanced Features", desc: "Built a professional DeFi platform with yield farming, liquidity pools, and governance features securing $10M+ TVL with zero security incidents." },
               { title: "NFT Marketplace", subtitle: "10K+ Unique Collectors & Artists", desc: "Created a user-friendly NFT marketplace with lazy minting, royalty distribution, and social features serving 10K+ active users daily." },
               { title: "Supply Chain Transparency", subtitle: "End-to-End Product Tracking", desc: "Developed blockchain solution for supply chain transparency tracking products from origin to consumer with immutable audit trails." }
             ].map((item, index) => (
@@ -375,10 +395,10 @@ export default function BlockchainDevelopmentService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive blockchain development service combines cutting-edge decentralized technology with practical business applications to create 
+              Our professional blockchain development service combines cutting-edge decentralized technology with practical business applications to create 
               solutions that drive innovation and transparency. We specialize in developing smart contracts, DeFi protocols, NFT platforms, and Web3 
               applications across multiple blockchain networks including Ethereum, Polygon, and Solana. From tokenomics design to security auditing, 
-              our blockchain solutions are built with rigorous testing, comprehensive documentation, and ongoing support to ensure reliability and scalability 
+              our blockchain solutions are built with rigorous testing, professional documentation, and ongoing support to ensure reliability and scalability 
               in the decentralized ecosystem.
             </p>
           </div>
@@ -419,8 +439,8 @@ export default function BlockchainDevelopmentService() {
               { icon: SiPolygon, name: "Polygon", desc: "Layer 2 scaling solution for Ethereum providing faster and cheaper transactions." },
               { icon: SiChainlink, name: "Chainlink", desc: "Decentralized oracle network connecting smart contracts with real-world data feeds." },
               { icon: SiTether, name: "Stablecoins", desc: "Digital currencies pegged to stable assets for reliable value exchange in DeFi ecosystems." },
-              { icon: SiHyperledger, name: "Hyperledger", desc: "Enterprise-grade blockchain framework for building scalable business applications." },
-              { icon: SiMetamask, name: "Web3 Wallets", desc: "Integration with popular crypto wallets for seamless user authentication and transactions." }
+              { icon: SiWeb3Dotjs, name: "Hyperledger", desc: "Enterprise-grade blockchain framework for building scalable business applications." },
+              { icon: Wallet, name: "Web3 Wallets", desc: "Integration with popular crypto wallets for seamless user authentication and transactions." }
             ].map((tech, index) => (
               <div key={index} className="text-center group">
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-white/5 group-hover:scale-110 transition-transform duration-300">
@@ -451,7 +471,7 @@ export default function BlockchainDevelopmentService() {
             />
             <FAQItem 
               question="How do you ensure smart contract security?"
-              answer="We follow industry best practices including comprehensive testing, formal verification, security audits by third-party firms, and gas optimization. All contracts undergo rigorous peer review before deployment."
+              answer="We follow industry best practices including professional testing, formal verification, security audits by third-party firms, and gas optimization. All contracts undergo rigorous peer review before deployment."
             />
             <FAQItem 
               question="What's the typical timeline for blockchain projects?"
@@ -459,7 +479,7 @@ export default function BlockchainDevelopmentService() {
             />
             <FAQItem 
               question="Do you provide ongoing support after deployment?"
-              answer="Yes, we offer comprehensive post-deployment support including monitoring, updates, security patches, feature enhancements, and assistance with network upgrades or migrations."
+              answer="Yes, we offer professional post-deployment support including monitoring, updates, security patches, feature enhancements, and assistance with network upgrades or migrations."
             />
             <FAQItem 
               question="Can you integrate with existing business systems?"

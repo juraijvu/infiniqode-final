@@ -81,8 +81,8 @@ export default function ServiceDetail() {
     "description": service.fullDescription,
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": service.name
@@ -178,7 +178,7 @@ export default function ServiceDetail() {
                     {
                       step: "1",
                       title: "Requirements Analysis",
-                      description: "We dive deep into your business needs and technical requirements to create a comprehensive project scope."
+                      description: "We dive deep into your business needs and technical requirements to create a professional project scope."
                     },
                     {
                       step: "2",
@@ -193,7 +193,7 @@ export default function ServiceDetail() {
                     {
                       step: "4",
                       title: "Testing & Launch",
-                      description: "Comprehensive testing followed by deployment and post-launch support to ensure everything runs smoothly."
+                      description: "professional testing followed by deployment and post-launch support to ensure everything runs smoothly."
                     }
                   ].map((phase, index) => (
                     <div key={index} className="flex items-start space-x-4 p-4 rounded-lg bg-muted/10">
@@ -298,7 +298,7 @@ export default function ServiceDetail() {
               },
               {
                 question: "Do you provide ongoing support?",
-                answer: "Yes, we offer comprehensive post-launch support including maintenance, updates, and technical assistance to ensure your solution continues to perform optimally."
+                answer: "Yes, we offer professional post-launch support including maintenance, updates, and technical assistance to ensure your solution continues to perform optimally."
               },
               {
                 question: "Can you work with our existing systems?",

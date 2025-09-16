@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Plus, X, Users, TrendingUp, Target, Zap, Cloud, Server, Database, ArrowUpRight } from "lucide-react";
-import { SiAmazonaws, SiMicrosoftazure, SiGooglecloud, SiDigitalocean, SiHeroku, SiVercel, SiNetlify, SiCloudflare } from "react-icons/si";
+import {  SiGooglecloud, SiDigitalocean, SiHeroku, SiVercel, SiNetlify, SiCloudflare } from "react-icons/si";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { SEOHead } from "@/components/seo-head";
 
 const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,10 +26,30 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
   );
 };
 
-export function CloudMigrationService() {
+export default function CloudMigrationService() {
   const [isContactOpen, setIsContactOpen] = useState(false);
-
+   const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Cloud Migration Services",
+    "description": "Move your applications and data to the cloud with zero hassle. Our expert cloud migration services ensure secure, scalable, and cost-efficient transitions to AWS, Azure, or Google Cloud.",
+    "provider": {
+      "@type": "Organization",
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
+    },
+    "areaServed": "Worldwide",
+    "serviceType": "Cloud Migration"
+  };
   return (
+     <>
+              <SEOHead
+                title="Cloud Migration Services | Secure & Seamless Cloud Transition"
+                description="Move your applications and data to the cloud with zero hassle. Our expert cloud migration services ensure secure, scalable, and cost-efficient transitions to AWS, Azure, or Google Cloud."
+                keywords="cloud migration services, cloud migration company, cloud transition, cloud migration consulting, AWS migration, Azure migration, Google Cloud migration, data migration to cloud, cloud infrastructure migration, cloud modernization"
+                structuredData={structuredData}
+              />
+              <Navigation />
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden">
@@ -99,7 +122,7 @@ export function CloudMigrationService() {
               {
                 step: "01",
                 title: "Assessment & Planning",
-                description: "Comprehensive analysis of your current infrastructure, dependencies, and migration requirements."
+                description: "professional analysis of your current infrastructure, dependencies, and migration requirements."
               },
               {
                 step: "02", 
@@ -271,13 +294,13 @@ export function CloudMigrationService() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Cloud Platforms & Technologies</h2>
-            <p className="text-xl text-gray-300">Comprehensive migration services across all major cloud providers</p>
+            <p className="text-xl text-gray-300">professional migration services across all major cloud providers</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiAmazonaws, name: "Amazon AWS", desc: "Comprehensive migration to AWS with EC2, RDS, S3, and other managed services." },
-              { icon: SiMicrosoftazure, name: "Microsoft Azure", desc: "Enterprise-grade migration to Azure with hybrid cloud and Active Directory integration." },
+              { icon: Cloud, name: "Amazon AWS", desc: "professional migration to AWS with EC2, RDS, S3, and other managed services." },
+              { icon: Server, name: "Microsoft Azure", desc: "Enterprise-grade migration to Azure with hybrid cloud and Active Directory integration." },
               { icon: SiGooglecloud, name: "Google Cloud", desc: "Migration to GCP with advanced analytics, AI/ML, and container orchestration." },
               { icon: SiDigitalocean, name: "DigitalOcean", desc: "Simple and cost-effective cloud migration for startups and small businesses." },
               { icon: SiHeroku, name: "Heroku", desc: "Platform-as-a-Service migration for rapid application deployment and scaling." },
@@ -324,7 +347,7 @@ export function CloudMigrationService() {
             />
             <FAQItem 
               question="Do you provide post-migration support?"
-              answer="Yes, we offer comprehensive post-migration support including monitoring, optimization, troubleshooting, and ongoing maintenance to ensure optimal cloud performance."
+              answer="Yes, we offer professional post-migration support including monitoring, optimization, troubleshooting, and ongoing maintenance to ensure optimal cloud performance."
             />
             <FAQItem 
               question="Can you help optimize costs after migration?"
@@ -357,5 +380,7 @@ export function CloudMigrationService() {
         </div>
       )}
     </div>
+       <Footer />
+        </>
   );
 }

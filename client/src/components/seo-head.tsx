@@ -19,7 +19,7 @@ export function SEOHead({
 }: SEOHeadProps) {
   useEffect(() => {
     // Set document title
-    document.title = `${title} | DigitalCraft - Premium Digital Agency`;
+    document.title = `${title} | InfiniQode - Premium Digital Agency`;
     
     // Set meta tags
     const setMetaTag = (name: string, content: string) => {

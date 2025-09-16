@@ -25,9 +25,10 @@ import {
   Phone,
   MessageCircle,
   MapPin,
-  Brain
+  Brain,
+   BarChart2
 } from "lucide-react";
-import { SiTableau, SiPowerbi, SiGoogleanalytics, SiSnowflake, SiDatabricks, SiMongodb, SiPostgresql, SiApachespark } from "react-icons/si";
+import { SiTableau, SiGoogleanalytics, SiSnowflake, SiDatabricks, SiMongodb, SiPostgresql, SiApachespark } from "react-icons/si";
 
 // FAQ Item Component with improved accessibility
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -64,8 +65,8 @@ export default function DataAnalyticsService() {
     "description": "Transform raw data into actionable insights that drive strategic business decisions and competitive advantages",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Data Analytics"
@@ -82,7 +83,7 @@ export default function DataAnalyticsService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -225,7 +226,7 @@ export default function DataAnalyticsService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive data analytics service is designed to help businesses of all
+                Our professional data analytics service is designed to help businesses of all
                 sizes harness the power of their data for strategic advantage. We work closely with your
                 team to understand your unique challenges and implement solutions that
                 deliver actionable insights, predictive capabilities, and data-driven decision making.
@@ -233,23 +234,42 @@ export default function DataAnalyticsService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Business Intelligence & Reporting",
-                  "Advanced Data Visualization", 
-                  "Predictive Analytics & Forecasting",
-                  "Machine Learning & AI Implementation"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Business Intelligence & Reporting</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We deliver powerful analytics solutions that transform complex data into clear, 
-                        actionable insights that drive informed decision-making and competitive advantage.
+                        Transform raw data into actionable insights with tailored BI tools and professional reports.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Advanced Data Visualization</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Create interactive, intuitive visualizations to simplify complex data and enhance decision-making.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Predictive Analytics & Forecasting</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Leverage predictive models to forecast trends and drive strategic business planning.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Machine Learning & AI Implementation</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Integrate ML and AI for automated insights, process optimization, and data-driven innovation.
+                      </p>
+                    </div>
+                  </div>
               </div>
             </div>
             
@@ -319,7 +339,7 @@ export default function DataAnalyticsService() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Retail Analytics Platform", subtitle: "40% Revenue Increase with ML", desc: "Built comprehensive retail analytics platform with customer behavior analysis, inventory optimization, and predictive modeling resulting in 40% revenue growth." },
+              { title: "Retail Analytics Platform", subtitle: "40% Revenue Increase with ML", desc: "Built professional retail analytics platform with customer behavior analysis, inventory optimization, and predictive modeling resulting in 40% revenue growth." },
               { title: "Healthcare Data Intelligence", subtitle: "Predictive Patient Outcomes", desc: "Developed predictive healthcare analytics system processing 1M+ patient records to forecast treatment outcomes and optimize care delivery with 95% accuracy." },
               { title: "Financial Risk Analytics", subtitle: "Real-Time Fraud Detection", desc: "Created real-time fraud detection system using machine learning algorithms processing 100K+ transactions daily with 99.8% accuracy and $2M+ fraud prevention." }
             ].map((item, index) => (
@@ -375,7 +395,7 @@ export default function DataAnalyticsService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive data analytics service combines advanced statistical analysis with machine learning and artificial intelligence to transform 
+              Our professional data analytics service combines advanced statistical analysis with machine learning and artificial intelligence to transform 
               your business data into strategic advantages. We specialize in building end-to-end analytics solutions including data warehousing, business 
               intelligence dashboards, predictive modeling, and real-time analytics platforms. From customer behavior analysis to operational optimization, 
               our data analytics solutions are designed with scalability, accuracy, and business impact in mind, ensuring you can make data-driven decisions 
@@ -414,7 +434,7 @@ export default function DataAnalyticsService() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
               { icon: SiTableau, name: "Tableau", desc: "Powerful data visualization platform for creating interactive dashboards and business intelligence reports." },
-              { icon: SiPowerbi, name: "Power BI", desc: "Microsoft's business analytics solution providing comprehensive data visualization and reporting capabilities." },
+              { icon: BarChart2, name: "Power BI", desc: "Microsoft's business analytics solution providing professional data visualization and reporting capabilities." },
               { icon: SiGoogleanalytics, name: "Google Analytics", desc: "Web analytics platform for tracking website performance and user behavior insights." },
               { icon: SiSnowflake, name: "Snowflake", desc: "Cloud-based data warehouse platform for scalable data storage and analytics processing." },
               { icon: SiDatabricks, name: "Databricks", desc: "Unified analytics platform for big data processing and machine learning workloads." },
@@ -459,7 +479,7 @@ export default function DataAnalyticsService() {
             />
             <FAQItem 
               question="Do you provide ongoing support and maintenance?"
-              answer="Yes, we offer comprehensive support including dashboard updates, model retraining, performance monitoring, new feature development, and user training to ensure continued success with your analytics solutions."
+              answer="Yes, we offer professional support including dashboard updates, model retraining, performance monitoring, new feature development, and user training to ensure continued success with your analytics solutions."
             />
             <FAQItem 
               question="Can you integrate with our existing systems?"

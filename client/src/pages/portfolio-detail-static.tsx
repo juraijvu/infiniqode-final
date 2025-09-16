@@ -77,7 +77,7 @@ const portfolioData: Record<string, any> = {
   "ecommerce-platform": {
     title: "E-commerce Platform Revolution",
     description: "Complete e-commerce transformation with React TypeScript frontend and Flask backend, featuring real-time inventory management and advanced analytics.",
-    fullDescription: "This comprehensive e-commerce platform revolutionized our client's online presence with a modern React TypeScript frontend and robust Python Flask backend. The solution includes real-time inventory management, advanced customer analytics, payment processing integration, and a responsive admin dashboard. Built for scalability, the platform now handles 10x more traffic than the previous solution.",
+    fullDescription: "This professional e-commerce platform revolutionized our client's online presence with a modern React TypeScript frontend and robust Python Flask backend. The solution includes real-time inventory management, advanced customer analytics, payment processing integration, and a responsive admin dashboard. Built for scalability, the platform now handles 10x more traffic than the previous solution.",
     category: "E-commerce",
     technologies: ["React", "TypeScript", "Flask", "PostgreSQL", "Redis", "Stripe"],
     clientName: "TechVenture Inc",
@@ -91,8 +91,8 @@ const portfolioData: Record<string, any> = {
   },
   "analytics-saas": {
     title: "Analytics SaaS Dashboard",
-    description: "Comprehensive analytics platform with real-time data visualization, custom reporting, and multi-tenant architecture.",
-    fullDescription: "A powerful SaaS analytics platform that transforms raw data into actionable insights. Features include real-time dashboards, custom report generation, advanced data visualization with D3.js, multi-tenant architecture, and comprehensive API for third-party integrations. The platform serves thousands of users with sub-second query performance.",
+    description: "professional analytics platform with real-time data visualization, custom reporting, and multi-tenant architecture.",
+    fullDescription: "A powerful SaaS analytics platform that transforms raw data into actionable insights. Features include real-time dashboards, custom report generation, advanced data visualization with D3.js, multi-tenant architecture, and professional API for third-party integrations. The platform serves thousands of users with sub-second query performance.",
     category: "SaaS",
     technologies: ["React", "D3.js", "Node.js", "MongoDB", "Docker", "AWS"],
     clientName: "DataInsights Corp",
@@ -149,7 +149,7 @@ export default function PortfolioDetailStatic() {
   return (
     <>
       <SEOHead
-        title={`${portfolioItem.title} - Case Study | DigitalCraft`}
+        title={`${portfolioItem.title} - Case Study | InfiniQode`}
         description={portfolioItem.description}
         keywords={`${portfolioItem.title}, ${portfolioItem.category}, ${portfolioItem.technologies.join(', ')}, case study, portfolio, digital agency`}
       />

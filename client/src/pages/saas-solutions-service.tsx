@@ -53,8 +53,8 @@ export default function SaaSSolutionsService() {
     "description": "Custom SaaS development and optimization for scalable cloud applications",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "SaaS Development"
@@ -72,7 +72,7 @@ export default function SaaSSolutionsService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -162,10 +162,10 @@ export default function SaaSSolutionsService() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Settings, title: "Architecture Planning & Design", step: "Step 1", desc: "SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning" },
-              { icon: Code, title: "MVP Development & Testing", step: "Step 2", desc: "SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning" },
-              { icon: Cloud, title: "Cloud Deployment & Scaling", step: "Step 3", desc: "SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning" },
-              { icon: BarChart3, title: "Analytics & Optimization", step: "Step 4", desc: "SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning SaaS Strategy Planning" }
+              { icon: Settings, title: "Architecture Planning & Design", step: "Step 1", desc: "Outline scalable SaaS architecture with secure, modular design for future growth." },
+              { icon: Code, title: "MVP Development & Testing", step: "Step 2", desc: "Build and rigorously test Minimum Viable Product for quick market validation." },
+              { icon: Cloud, title: "Cloud Deployment & Scaling", step: "Step 3", desc: "Deploy on cloud platforms like AWS for elastic scaling and high availability." },
+              { icon: BarChart3, title: "Analytics & Optimization", step: "Step 4", desc: "Integrate analytics tools to monitor performance and continuously optimize user experience." }
             ].map((item, index) => (
               <div key={index} className="group">
                 {/* Glass Card */}
@@ -215,7 +215,7 @@ export default function SaaSSolutionsService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive SaaS development service is designed to help businesses of all
+                Our professional SaaS development service is designed to help businesses of all
                 sizes harness the power of cloud-native solutions. We work closely with your
                 team to understand your unique challenges and implement scalable platforms that
                 drive real business value and sustainable recurring revenue.
@@ -223,23 +223,43 @@ export default function SaaSSolutionsService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "MVP Development & Validation",
-                  "Scalable Cloud Architecture", 
-                  "Subscription Management",
-                  "API Integration & Development"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div  className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">MVP Development & Validation</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We analyze your business model and identify 
-                        opportunities where SaaS solutions can create the most impact.
+                        Build and test a Minimum Viable Product to validate ideas and accelerate market entry.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Scalable Cloud Architecture</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Design cloud-based systems using AWS or Azure for scalability, reliability, and performance.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Subscription Management</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Implement seamless billing and subscription systems for flexible, user-friendly payment experiences.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">API Integration & Development</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Create and integrate secure APIs for enhanced functionality and third-party service connectivity.
+                      </p>
+                    </div>
+                  </div>
+
               </div>
             </div>
             
@@ -365,11 +385,12 @@ export default function SaaSSolutionsService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our premium SaaS development service combines cutting-edge cloud technology with scalable architecture to Our premium SaaS development service 
-              combines cutting-edge cloud technology with scalable architecture to Our premium SaaS development service combines cutting-edge cloud technology 
-              with scalable architecture to Our premium SaaS development service combines cutting-edge cloud technology with scalable architecture to 
-              Our premium SaaS development service combines cutting-edge cloud technology with scalable architecture to Our premium SaaS development service 
-              combines cutting-edge cloud technology with scalable architecture to Our premium SaaS development service combines cutting-edge cloud technology.
+              Infiniqode delivers end-to-end SaaS solutions, crafting scalable, cloud-based platforms 
+              tailored to your business needs. From strategic architecture planning to rapid MVP development, 
+              seamless cloud deployment on AWS or Azure, and robust subscription management, we ensure secure,
+               user-friendly applications. Our expertise in API integration enhances functionality, 
+               while ongoing analytics and optimization 
+              drive performance, helping you achieve a 30% faster time-to-market and sustained growth.
             </p>
           </div>
           
@@ -450,7 +471,7 @@ export default function SaaSSolutionsService() {
               },
               {
                 question: "Do you provide ongoing support after launch?",
-                answer: "Yes, we offer comprehensive support packages including hosting, maintenance, feature updates, and technical support to ensure your SaaS platform runs smoothly."
+                answer: "Yes, we offer professional support packages including hosting, maintenance, feature updates, and technical support to ensure your SaaS platform runs smoothly."
               },
               {
                 question: "Can you integrate with existing systems and APIs?",

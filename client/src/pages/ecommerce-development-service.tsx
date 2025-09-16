@@ -57,8 +57,8 @@ export default function EcommerceDevelopmentService() {
     "description": "Build powerful online stores that convert visitors into customers with secure payment processing",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "E-commerce Development"
@@ -75,7 +75,7 @@ export default function EcommerceDevelopmentService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -167,7 +167,7 @@ export default function EcommerceDevelopmentService() {
             {[
               { icon: Settings, title: "Store Planning", step: "Step 1", desc: "Analyze your products, target market, and business model to design the perfect e-commerce solution that drives sales and customer satisfaction." },
               { icon: ShoppingCart, title: "Platform Development", step: "Step 2", desc: "Build your custom online store with advanced features like inventory management, customer accounts, and seamless shopping experiences." },
-              { icon: CreditCard, title: "Payment & Security", step: "Step 3", desc: "Integrate secure payment gateways and implement SSL certificates for safe transactions with comprehensive fraud protection systems." },
+              { icon: CreditCard, title: "Payment & Security", step: "Step 3", desc: "Integrate secure payment gateways and implement SSL certificates for safe transactions with professional fraud protection systems." },
               { icon: Globe, title: "Launch & Optimization", step: "Step 4", desc: "Deploy your store and continuously optimize for performance, conversions, and user experience with ongoing support and maintenance." }
             ].map((item, index) => (
               <div key={index} className="group">
@@ -218,7 +218,7 @@ export default function EcommerceDevelopmentService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive e-commerce development service is designed to help businesses of all
+                Our professional e-commerce development service is designed to help businesses of all
                 sizes create powerful online stores that convert visitors into customers. We work closely with your
                 team to understand your unique requirements and implement solutions that
                 drive real business growth.
@@ -226,23 +226,46 @@ export default function EcommerceDevelopmentService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Custom Store Design & Branding",
-                  "Payment Gateway Integration", 
-                  "Inventory Management System",
-                  "Mobile Commerce Optimization"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Custom Store Design & Branding</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We build secure, scalable e-commerce solutions with advanced features 
-                        that enhance customer experience and maximize sales conversion.
+                        Craft unique, brand-aligned e-commerce stores with responsive, 
+                        SEO-optimized designs for enhanced user engagement.
                       </p>
                     </div>
                   </div>
-                ))}
+                    <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Payment Gateway Integration</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Integrate secure payment gateways like Stripe or PayPal for seamless,
+                         trusted checkout experiences.
+                      </p>
+                    </div>
+                  </div>
+                    <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Inventory Management System</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Develop efficient systems to track, manage, and automate 
+                        inventory for streamlined operations.
+                      </p>
+                    </div>
+                  </div>
+                    <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Mobile Commerce Optimization</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Optimize e-commerce platforms for mobile, ensuring fast, 
+                        user-friendly shopping experiences across devices.
+                      </p>
+                    </div>
+                  </div>
               </div>
             </div>
             
@@ -368,7 +391,7 @@ export default function EcommerceDevelopmentService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive e-commerce development service combines cutting-edge technology with proven business strategies to create online stores that 
+              Our professional e-commerce development service combines cutting-edge technology with proven business strategies to create online stores that 
               convert visitors into loyal customers. We specialize in building secure, scalable platforms with advanced features like inventory management, 
               multi-payment gateway integration, and mobile-responsive designs. From small boutiques to large enterprise marketplaces, our solutions are 
               tailored to meet your specific business needs while ensuring optimal performance, security, and user experience across all devices.
@@ -447,7 +470,7 @@ export default function EcommerceDevelopmentService() {
             />
             <FAQItem 
               question="Do you provide ongoing maintenance and support?"
-              answer="Yes, we offer comprehensive maintenance packages including security updates, backups, performance optimization, and 24/7 technical support to keep your store running smoothly."
+              answer="Yes, we offer professional maintenance packages including security updates, backups, performance optimization, and 24/7 technical support to keep your store running smoothly."
             />
             <FAQItem 
               question="Can you integrate with my existing inventory system?"

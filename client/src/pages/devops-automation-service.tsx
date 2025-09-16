@@ -63,13 +63,13 @@ export default function DevOpsAutomationService() {
           icon: Gauge, 
           title: "Monitoring & Optimization", 
           step: "Step 4", 
-          description: "Deploy comprehensive monitoring and continuously optimize automation for better performance." 
+          description: "Deploy professional monitoring and continuously optimize automation for better performance." 
         }
       ]
     },
     includes: {
       title: "What Our DevOps Automation Service Includes",
-      description: "Our comprehensive DevOps automation service is designed to help businesses of all sizes streamline their development and deployment processes. We work closely with your team to understand your unique challenges and implement automation solutions that drive efficiency and reliability.",
+      description: "Our professional DevOps automation service is designed to help businesses of all sizes streamline their development and deployment processes. We work closely with your team to understand your unique challenges and implement automation solutions that drive efficiency and reliability.",
       features: [
         {
           title: "Continuous Integration/Deployment",
@@ -85,7 +85,7 @@ export default function DevOpsAutomationService() {
         },
         {
           title: "Monitoring & Alerting",
-          description: "Comprehensive monitoring solutions with real-time alerting to ensure optimal performance and quick issue resolution."
+          description: "professional monitoring solutions with real-time alerting to ensure optimal performance and quick issue resolution."
         }
       ],
       stats: [
@@ -106,7 +106,7 @@ export default function DevOpsAutomationService() {
         { 
           title: "Financial Services", 
           subtitle: "99.9% Uptime with Automated Monitoring", 
-          description: "Comprehensive monitoring and automated scaling solution that achieved 99.9% uptime and reduced response times by 40%."
+          description: "professional monitoring and automated scaling solution that achieved 99.9% uptime and reduced response times by 40%."
         },
         { 
           title: "Healthcare Application", 
@@ -116,7 +116,7 @@ export default function DevOpsAutomationService() {
       ]
     },
     serviceDetails: {
-      description: "Our comprehensive DevOps automation service combines cutting-edge tools with proven methodologies to create seamless development and deployment workflows. We specialize in implementing CI/CD pipelines, containerization strategies, and infrastructure automation that transform how teams build, test, and deploy applications. From automated testing and quality gates to infrastructure as code and monitoring solutions, our DevOps practices are designed to deliver faster time-to-market and improved reliability.",
+      description: "Our professional DevOps automation service combines cutting-edge tools with proven methodologies to create seamless development and deployment workflows. We specialize in implementing CI/CD pipelines, containerization strategies, and infrastructure automation that transform how teams build, test, and deploy applications. From automated testing and quality gates to infrastructure as code and monitoring solutions, our DevOps practices are designed to deliver faster time-to-market and improved reliability.",
       features: [
         { icon: Zap, title: "Automated", subtitle: "Pipelines" },
         { icon: Shield, title: "Secure", subtitle: "Deployments" },
@@ -145,7 +145,7 @@ export default function DevOpsAutomationService() {
         },
         {
           question: "How long does it take to implement DevOps automation?",
-          answer: "Implementation time varies from 2-8 weeks depending on your current infrastructure and complexity. Simple CI/CD setups take 2-4 weeks, while comprehensive automation with monitoring may require 6-8 weeks."
+          answer: "Implementation time varies from 2-8 weeks depending on your current infrastructure and complexity. Simple CI/CD setups take 2-4 weeks, while professional automation with monitoring may require 6-8 weeks."
         },
         {
           question: "Can you work with our existing tools and infrastructure?",
@@ -153,7 +153,7 @@ export default function DevOpsAutomationService() {
         },
         {
           question: "What kind of monitoring and alerting do you provide?",
-          answer: "We implement comprehensive monitoring covering application performance, infrastructure health, and business metrics. This includes real-time alerts, custom dashboards, and automated incident response."
+          answer: "We implement professional monitoring covering application performance, infrastructure health, and business metrics. This includes real-time alerts, custom dashboards, and automated incident response."
         },
         {
           question: "How do you ensure security in automated deployments?",

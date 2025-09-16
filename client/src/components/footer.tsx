@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Code, Linkedin, Twitter, Github, Dribbble } from "lucide-react";
 import { FaReact, FaPython } from "react-icons/fa";
+import myImage from '../Logo.svg';
 
 export function Footer() {
   return (
@@ -14,10 +15,12 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <Link href="/" className="flex items-center space-x-2 mb-6" data-testid="footer-logo">
-              <div className="w-8 h-8 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center">
-                <Code className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white">DigitalCraft</span>
+              <img 
+      src={myImage} 
+      alt="Logo"
+      width={100}
+      height={50}
+    />
             </Link>
             <p className="text-muted-foreground mb-6">
               Crafting exceptional digital experiences that drive real business results.
@@ -59,9 +62,9 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-6">Services</h3>
             <ul className="space-y-3 text-muted-foreground">
               <li><Link href="/services/web-development" className="hover:text-white transition-colors">Web Development</Link></li>
-              <li><Link href="/services/saas-development" className="hover:text-white transition-colors">SaaS Development</Link></li>
+              <li><Link href="/services/saas-solutions" className="hover:text-white transition-colors">SaaS Development</Link></li>
               <li><Link href="/services/digital-marketing" className="hover:text-white transition-colors">Digital Marketing</Link></li>
-              <li><Link href="/services/mobile-development" className="hover:text-white transition-colors">Mobile Development</Link></li>
+              <li><Link href="/services/mobile-app-development" className="hover:text-white transition-colors">Mobile Development</Link></li>
               <li><Link href="/services/seo-optimization" className="hover:text-white transition-colors">SEO Optimization</Link></li>
             </ul>
           </div>
@@ -72,7 +75,6 @@ export function Footer() {
             <ul className="space-y-3 text-muted-foreground">
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/about#team" className="hover:text-white transition-colors">Our Team</Link></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
@@ -84,9 +86,8 @@ export function Footer() {
             <ul className="space-y-3 text-muted-foreground">
               <li><Link href="/portfolio" className="hover:text-white transition-colors">Case Studies</Link></li>
               <li><Link href="/portfolio" className="hover:text-white transition-colors">Portfolio</Link></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Support</a></li>
+              <li><Link href="/privacypolicy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+
             </ul>
           </div>
         </div>
@@ -94,7 +95,7 @@ export function Footer() {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground text-sm">
-              © 2023 DigitalCraft. All rights reserved.
+              © 2023 InfiniQode. All rights reserved.
             </p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
               <span className="text-muted-foreground text-sm">Made with</span>

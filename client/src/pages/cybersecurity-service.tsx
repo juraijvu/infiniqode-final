@@ -27,7 +27,7 @@ import {
   MapPin,
   ShieldCheck
 } from "lucide-react";
-import { SiPaloaltosoftware, SiCloudflare, SiNorton, SiKaspersky, SiMcafee, SiTrendmicro, SiBitdefender, SiCrowdstrike } from "react-icons/si";
+import { SiPaloaltosoftware, SiCloudflare, SiNorton, SiKaspersky, SiMcafee, SiTrendmicro, SiBitdefender } from "react-icons/si";
 
 // FAQ Item Component with improved accessibility
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -61,11 +61,11 @@ export default function CybersecurityService() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Cybersecurity Services",
-    "description": "Protect your business from cyber threats with comprehensive security solutions that safeguard your data, systems, and reputation",
+    "description": "Protect your business from cyber threats with professional security solutions that safeguard your data, systems, and reputation",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Cybersecurity"
@@ -75,14 +75,14 @@ export default function CybersecurityService() {
     <>
       <SEOHead
         title="Cybersecurity Services - Protect Your Business & Data"
-        description="Protect your business from cyber threats with comprehensive security solutions that safeguard your data, systems, and reputation from advanced threats."
+        description="Protect your business from cyber threats with professional security solutions that safeguard your data, systems, and reputation from advanced threats."
         keywords="cybersecurity, data protection, security audits, threat detection, compliance, penetration testing, security consulting"
         structuredData={structuredData}
       />
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -96,7 +96,7 @@ export default function CybersecurityService() {
                 </h1>
                 
                 <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
-                  At INFINIQODE, we protect your business from cyber threats with comprehensive 
+                  At INFINIQODE, we protect your business from cyber threats with professional 
                   security solutions that safeguard your data, systems, and reputation. Our team 
                   provides advanced threat detection and prevention. From security audits to 
                   compliance frameworks, we deliver cybersecurity solutions that keep your business secure.
@@ -172,7 +172,7 @@ export default function CybersecurityService() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Search, title: "Security Assessment", step: "Step 1", desc: "Comprehensive evaluation of your current security posture, identifying vulnerabilities and risk areas across all systems." },
+              { icon: Search, title: "Security Assessment", step: "Step 1", desc: "professional evaluation of your current security posture, identifying vulnerabilities and risk areas across all systems." },
               { icon: Shield, title: "Defense Implementation", step: "Step 2", desc: "Deploy advanced security solutions including firewalls, monitoring systems, and threat detection technologies." },
               { icon: Eye, title: "Continuous Monitoring", step: "Step 3", desc: "24/7 security monitoring and threat intelligence to detect and respond to security incidents in real-time." },
               { icon: Globe, title: "Compliance & Training", step: "Step 4", desc: "Ensure regulatory compliance and provide security awareness training to maintain strong security culture." }
@@ -225,7 +225,7 @@ export default function CybersecurityService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive cybersecurity service is designed to help businesses of all
+                Our professional cybersecurity service is designed to help businesses of all
                 sizes protect against evolving cyber threats. We work closely with your
                 team to understand your unique security needs and implement solutions that
                 deliver robust protection, regulatory compliance, and peace of mind.
@@ -233,23 +233,42 @@ export default function CybersecurityService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Security Audits & Penetration Testing",
-                  "Threat Detection & Incident Response", 
-                  "Compliance & Risk Management",
-                  "Security Training & Awareness Programs"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Security Audits & Penetration Testing</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We provide enterprise-grade security solutions that are proactive, comprehensive, 
-                        and tailored to your specific industry requirements and threat landscape.
+                        Conduct thorough audits and penetration tests to identify and mitigate vulnerabilities effectively.
                       </p>
                     </div>
                   </div>
-                ))}
+                     <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Threat Detection & Incident Response</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                       Implement advanced monitoring and rapid response strategies to neutralize cyber threats swiftly.
+                      </p>
+                    </div>
+                  </div>
+                     <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Compliance & Risk Management</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Ensure regulatory compliance and manage risks with tailored cybersecurity frameworks.
+                      </p>
+                    </div>
+                  </div>
+                     <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Security Training & Awareness Programs</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Educate teams with customized training to foster proactive cybersecurity awareness and practices.
+                      </p>
+                    </div>
+                  </div>
               </div>
             </div>
             
@@ -319,7 +338,7 @@ export default function CybersecurityService() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Healthcare Data Protection", subtitle: "HIPAA Compliance & Zero Breaches", desc: "Implemented comprehensive cybersecurity framework for healthcare network protecting 1M+ patient records with zero security incidents and full HIPAA compliance." },
+              { title: "Healthcare Data Protection", subtitle: "HIPAA Compliance & Zero Breaches", desc: "Implemented professional cybersecurity framework for healthcare network protecting 1M+ patient records with zero security incidents and full HIPAA compliance." },
               { title: "Financial Services Security", subtitle: "Bank-Grade Protection & Monitoring", desc: "Deployed advanced threat detection and prevention systems for financial institution handling $500M+ in daily transactions with 99.9% uptime." },
               { title: "E-commerce Platform Security", subtitle: "PCI DSS Compliance & Fraud Prevention", desc: "Secured e-commerce platform processing 100K+ daily transactions with PCI DSS compliance, fraud prevention, and real-time threat monitoring." }
             ].map((item, index) => (
@@ -375,7 +394,7 @@ export default function CybersecurityService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive cybersecurity service combines advanced threat detection technologies with proven security frameworks to protect your 
+              Our professional cybersecurity service combines advanced threat detection technologies with proven security frameworks to protect your 
               business from evolving cyber threats. We specialize in implementing multi-layered security architectures including firewalls, intrusion 
               detection systems, and continuous monitoring solutions. From vulnerability assessments to incident response planning, our cybersecurity 
               solutions are designed with regulatory compliance, risk management, and business continuity in mind, ensuring your organization maintains 
@@ -413,14 +432,14 @@ export default function CybersecurityService() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiPaloaltosoftware, name: "Palo Alto", desc: "Next-generation firewalls and advanced threat prevention solutions for comprehensive network security." },
+              { icon: SiPaloaltosoftware, name: "Palo Alto", desc: "Next-generation firewalls and advanced threat prevention solutions for professional network security." },
               { icon: SiCloudflare, name: "Cloudflare", desc: "Web security and performance optimization with DDoS protection and threat intelligence." },
-              { icon: SiNorton, name: "Norton", desc: "Endpoint protection and antivirus solutions for comprehensive device and data security." },
+              { icon: SiNorton, name: "Norton", desc: "Endpoint protection and antivirus solutions for professional device and data security." },
               { icon: SiKaspersky, name: "Kaspersky", desc: "Advanced threat detection and cybersecurity solutions for enterprise environments." },
-              { icon: SiMcafee, name: "McAfee", desc: "Comprehensive security suites and threat intelligence for business protection." },
+              { icon: SiMcafee, name: "McAfee", desc: "professional security suites and threat intelligence for business protection." },
               { icon: SiTrendmicro, name: "Trend Micro", desc: "Cloud security and advanced threat defense solutions for modern businesses." },
               { icon: SiBitdefender, name: "Bitdefender", desc: "Multi-layered cybersecurity solutions with machine learning threat detection." },
-              { icon: SiCrowdstrike, name: "CrowdStrike", desc: "Cloud-delivered endpoint protection and threat intelligence for advanced cyber defense." }
+              { icon: Shield, name: "CrowdStrike", desc: "Cloud-delivered endpoint protection and threat intelligence for advanced cyber defense." }
             ].map((tech, index) => (
               <div key={index} className="text-center group">
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-white/5 group-hover:scale-110 transition-transform duration-300">
@@ -447,15 +466,15 @@ export default function CybersecurityService() {
           <div className="space-y-6">
             <FAQItem 
               question="What types of cyber threats do you protect against?"
-              answer="We protect against malware, ransomware, phishing attacks, DDoS attacks, insider threats, advanced persistent threats (APTs), and zero-day exploits through comprehensive multi-layered security approaches."
+              answer="We protect against malware, ransomware, phishing attacks, DDoS attacks, insider threats, advanced persistent threats (APTs), and zero-day exploits through professional multi-layered security approaches."
             />
             <FAQItem 
               question="How quickly can you respond to security incidents?"
-              answer="Our security operations center provides 24/7 monitoring with incident response times under 15 minutes for critical threats and comprehensive incident management throughout the resolution process."
+              answer="Our security operations center provides 24/7 monitoring with incident response times under 15 minutes for critical threats and professional incident management throughout the resolution process."
             />
             <FAQItem 
               question="Do you help with regulatory compliance?"
-              answer="Yes, we ensure compliance with major frameworks including GDPR, HIPAA, PCI DSS, SOX, ISO 27001, and industry-specific regulations through comprehensive compliance management and regular audits."
+              answer="Yes, we ensure compliance with major frameworks including GDPR, HIPAA, PCI DSS, SOX, ISO 27001, and industry-specific regulations through professional compliance management and regular audits."
             />
             <FAQItem 
               question="What's included in your security assessments?"

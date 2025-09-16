@@ -64,8 +64,8 @@ export default function ContentMarketingService() {
     "description": "Create compelling content that engages your audience, builds trust, and drives conversions across all marketing channels",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Content Marketing"
@@ -82,7 +82,7 @@ export default function ContentMarketingService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -172,7 +172,7 @@ export default function ContentMarketingService() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Target, title: "Content Strategy & Planning", step: "Step 1", desc: "Develop comprehensive content strategy aligned with your brand goals, audience needs, and marketing objectives." },
+              { icon: Target, title: "Content Strategy & Planning", step: "Step 1", desc: "Develop professional content strategy aligned with your brand goals, audience needs, and marketing objectives." },
               { icon: Edit3, title: "Content Creation & Production", step: "Step 2", desc: "Create high-quality, engaging content across multiple formats including blogs, videos, infographics, and social media." },
               { icon: Megaphone, title: "Distribution & Amplification", step: "Step 3", desc: "Strategically distribute content across channels to maximize reach, engagement, and audience growth." },
               { icon: TrendingUp, title: "Performance & Optimization", step: "Step 4", desc: "Monitor content performance, analyze engagement metrics, and continuously optimize strategy for better results." }
@@ -225,7 +225,7 @@ export default function ContentMarketingService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive content marketing service is designed to help businesses of all
+                Our professional content marketing service is designed to help businesses of all
                 sizes build meaningful connections with their audience through strategic content. We work closely with your
                 team to understand your brand voice and implement solutions that
                 deliver engaging experiences, build trust, and drive conversions across all channels.
@@ -233,23 +233,43 @@ export default function ContentMarketingService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Strategic Content Planning & Editorial Calendars",
-                  "Blog Writing & SEO-Optimized Content", 
-                  "Video Production & Visual Content Creation",
-                  "Social Media Content & Community Management"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Strategic Content Planning & Editorial Calendars</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We create content that is authentic, valuable, and strategically aligned with 
-                        your business goals to build lasting relationships with your audience.
+                        Develop data-driven content plans with editorial calendars to align with business goals and audience needs.
                       </p>
                     </div>
                   </div>
-                ))}
+                        <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Blog Writing & SEO-Optimized Content</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Create engaging, keyword-rich blogs to boost SEO rankings and drive organic traffic effectively.
+                      </p>
+                    </div>
+                  </div>
+                        <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Video Production & Visual Content Creation</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Produce compelling videos and visuals to enhance brand storytelling and audience engagement.
+                      </p>
+                    </div>
+                  </div>
+                        <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Social Media Content & Community Management</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                       Craft targeted social media content and manage communities to build loyalty and interaction.
+                      </p>
+                    </div>
+                  </div>
+
               </div>
             </div>
             
@@ -319,7 +339,7 @@ export default function ContentMarketingService() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "SaaS Content Strategy", subtitle: "300% Lead Generation Increase", desc: "Developed comprehensive content strategy for SaaS platform including thought leadership blog, video tutorials, and case studies resulting in 300% qualified lead increase." },
+              { title: "SaaS Content Strategy", subtitle: "300% Lead Generation Increase", desc: "Developed professional content strategy for SaaS platform including thought leadership blog, video tutorials, and case studies resulting in 300% qualified lead increase." },
               { title: "E-commerce Content Hub", subtitle: "200% Organic Traffic Growth", desc: "Created product-focused content hub with buying guides, tutorials, and user-generated content achieving 200% organic traffic growth and 40% higher conversions." },
               { title: "B2B Thought Leadership", subtitle: "Industry Authority Positioning", desc: "Established industry thought leadership through strategic content including whitepapers, webinars, and expert interviews increasing brand authority and premium pricing." }
             ].map((item, index) => (
@@ -375,7 +395,7 @@ export default function ContentMarketingService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive content marketing service combines strategic content planning with creative execution to build meaningful connections 
+              Our professional content marketing service combines strategic content planning with creative execution to build meaningful connections 
               between your brand and audience. We specialize in developing multi-channel content strategies including blog content, video production, 
               social media campaigns, and thought leadership initiatives. From content audit to performance optimization, our content marketing solutions 
               are designed with audience engagement, brand building, and conversion optimization in mind, ensuring that every piece of content serves 
@@ -415,7 +435,7 @@ export default function ContentMarketingService() {
             {[
               { icon: SiContentful, name: "Contentful", desc: "Headless content management system for creating, managing, and delivering digital content across channels." },
               { icon: SiWordpress, name: "WordPress", desc: "Popular content management platform for building and managing websites with extensive customization options." },
-              { icon: SiHubspot, name: "HubSpot", desc: "Comprehensive marketing platform for content management, lead generation, and customer relationship management." },
+              { icon: SiHubspot, name: "HubSpot", desc: "professional marketing platform for content management, lead generation, and customer relationship management." },
               { icon: SiMailchimp, name: "Mailchimp", desc: "Email marketing platform for creating newsletters, automated campaigns, and audience segmentation." },
               { icon: SiCanva, name: "Canva", desc: "Design platform for creating visual content including graphics, presentations, and social media posts." },
               { icon: SiAdobe, name: "Adobe Creative", desc: "Professional creative suite including Photoshop, Illustrator, and Premiere for content creation." },
@@ -459,7 +479,7 @@ export default function ContentMarketingService() {
             />
             <FAQItem 
               question="Can you help with content distribution?"
-              answer="Yes, we develop comprehensive distribution strategies including social media, email marketing, influencer partnerships, guest posting, and paid promotion to maximize your content reach and impact."
+              answer="Yes, we develop professional distribution strategies including social media, email marketing, influencer partnerships, guest posting, and paid promotion to maximize your content reach and impact."
             />
             <FAQItem 
               question="Do you handle content for different industries?"

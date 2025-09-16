@@ -107,7 +107,7 @@ const mockServices: ServiceTemplate[] = [
     category: 'marketing',
     title: 'SEO & Content Marketing',
     subtitle: 'Boost your online visibility and drive organic traffic',
-    description: 'Comprehensive SEO and content strategies to grow your business online.',
+    description: 'professional SEO and content strategies to grow your business online.',
     features: ['Keyword Research', 'Content Strategy', 'Link Building', 'Analytics Reporting'],
     pricing: {
       basic: { price: '$999/mo', features: ['5 Blog Posts', 'Basic SEO', 'Monthly Reports'] },

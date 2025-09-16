@@ -56,8 +56,8 @@ export default function EmailMarketingService() {
     "description": "Build lasting relationships and drive revenue with strategic email marketing campaigns",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Email Marketing"
@@ -74,7 +74,7 @@ export default function EmailMarketingService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -164,7 +164,7 @@ export default function EmailMarketingService() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Settings, title: "Strategy & Planning", step: "Step 1", desc: "Develop comprehensive email marketing strategy aligned with your business goals and customer journey for maximum impact." },
+              { icon: Settings, title: "Strategy & Planning", step: "Step 1", desc: "Develop professional email marketing strategy aligned with your business goals and customer journey for maximum impact." },
               { icon: Users, title: "List Building & Segmentation", step: "Step 2", desc: "Build quality subscriber lists and create targeted segments for personalized messaging that resonates with your audience." },
               { icon: Mail, title: "Campaign Creation", step: "Step 3", desc: "Design beautiful email templates and write compelling copy that drives engagement and conversions across all devices." },
               { icon: BarChart3, title: "Automation & Optimization", step: "Step 4", desc: "Set up automated workflows and continuously optimize performance based on analytics and subscriber behavior." }
@@ -217,7 +217,7 @@ export default function EmailMarketingService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive email marketing service is designed to help businesses of all
+                Our professional email marketing service is designed to help businesses of all
                 sizes build lasting relationships with their audience and drive measurable revenue. We work closely with your
                 team to understand your unique goals and implement strategies that
                 deliver real business results.
@@ -225,23 +225,43 @@ export default function EmailMarketingService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Campaign Management & Design",
-                  "Marketing Automation Workflows", 
-                  "Advanced Audience Segmentation",
-                  "Performance Analytics & Reporting"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Campaign Management & Design</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We create strategic email campaigns that nurture leads, engage customers, 
-                        and drive conversions with personalized messaging and automated workflows.
+                        Craft visually appealing email campaigns with strategic management to
+                         boost engagement and conversions effectively.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Marketing Automation Workflows</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Build automated email workflows to nurture leads and streamline customer journeys with precision.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Advanced Audience Segmentation</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Target specific audience segments with tailored emails to enhance relevance and improve open rates.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Performance Analytics & Reporting</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Track email performance with detailed analytics and reports to optimize campaigns for maximum ROI.
+                      </p>
+                    </div>
+                  </div>
               </div>
             </div>
             
@@ -367,7 +387,7 @@ export default function EmailMarketingService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive email marketing service combines strategic planning with cutting-edge automation to build lasting relationships that drive revenue. 
+              Our professional email marketing service combines strategic planning with cutting-edge automation to build lasting relationships that drive revenue. 
               We specialize in creating personalized email campaigns that engage subscribers at every stage of the customer journey. From welcome series and 
               abandoned cart recovery to advanced segmentation and A/B testing, our solutions are designed to maximize open rates, click-through rates, and 
               conversions. We work with leading email platforms to ensure optimal deliverability and provide detailed analytics to track performance and ROI.
@@ -407,7 +427,7 @@ export default function EmailMarketingService() {
               { icon: SiMailchimp, name: "Mailchimp", desc: "All-in-one marketing platform with advanced automation and segmentation features for growing businesses." },
               { icon: Mail, name: "Constant Contact", desc: "User-friendly email marketing solution with excellent customer support and beautiful templates." },
               { icon: SiSendgrid, name: "SendGrid", desc: "Reliable email delivery service with powerful API and analytics for developers and marketers." },
-              { icon: SiHubspot, name: "HubSpot", desc: "Comprehensive marketing platform with CRM integration and advanced lead nurturing capabilities." },
+              { icon: SiHubspot, name: "HubSpot", desc: "professional marketing platform with CRM integration and advanced lead nurturing capabilities." },
               { icon: Send, name: "Klaviyo", desc: "E-commerce focused email marketing with powerful segmentation and automation for online stores." },
               { icon: BarChart3, name: "ActiveCampaign", desc: "Advanced marketing automation platform with CRM and sales automation features included." },
               { icon: Users, name: "ConvertKit", desc: "Creator-focused email marketing platform with powerful automation and landing page features." },

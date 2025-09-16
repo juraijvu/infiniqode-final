@@ -26,9 +26,10 @@ import {
   Phone,
   MessageCircle,
   MapPin,
-  Eye
+  Eye,
+  Layers
 } from "lucide-react";
-import { SiFigma, SiSketch, SiAdobe, SiFramer, SiInvision, SiZeplin, SiMiro, SiAbstract } from "react-icons/si";
+import { SiFigma, SiSketch, SiAdobe, SiFramer, SiInvision, SiMiro, SiAbstract } from "react-icons/si";
 
 // FAQ Item Component with improved accessibility
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -65,8 +66,8 @@ export default function UIUXDesignService() {
     "description": "Create intuitive, beautiful user experiences that delight users and drive business results through research-driven design",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "UI/UX Design"
@@ -226,7 +227,7 @@ export default function UIUXDesignService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive UI/UX design service is designed to help businesses of all
+                Our professional UI/UX design service is designed to help businesses of all
                 sizes create exceptional digital experiences. We work closely with your
                 team to understand your users' needs and implement solutions that
                 deliver intuitive interfaces, seamless interactions, and measurable business results.
@@ -234,23 +235,46 @@ export default function UIUXDesignService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "User Research & Persona Development",
-                  "Information Architecture & Wireframing", 
-                  "Visual Design & Brand Integration",
-                  "Interactive Prototyping & Testing"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">User Research & Persona Development</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We create user-centered designs that are beautiful, functional, and accessible 
-                        with comprehensive research and testing throughout the design process.
+                        Conduct in-depth user research to create detailed personas, ensuring designs align 
+                        with target audience needs and behaviors for optimal engagement.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Information Architecture & Wireframing</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Develop intuitive information architecture and detailed wireframes to structure user-friendly 
+                        interfaces that enhance navigation and usability effectively.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Visual Design & Brand Integration</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Craft visually stunning designs that integrate brand identity, ensuring cohesive aesthetics
+                         and engaging user experiences across all platforms.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Interactive Prototyping & Testing</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Build interactive prototypes and conduct usability testing to validate designs, 
+                        ensuring seamless functionality and user satisfaction before development.
+                      </p>
+                    </div>
+                  </div>
               </div>
             </div>
             
@@ -376,7 +400,7 @@ export default function UIUXDesignService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive UI/UX design service combines user-centered design methodology with creative excellence to create digital experiences 
+              Our professional UI/UX design service combines user-centered design methodology with creative excellence to create digital experiences 
               that users love and businesses depend on. We specialize in conducting thorough user research, creating intuitive information architectures, 
               and designing beautiful interfaces that work seamlessly across all devices. From wireframes to high-fidelity prototypes, our design solutions 
               are crafted with accessibility, usability, and business goals in mind, ensuring that every interaction delights users while driving 
@@ -419,7 +443,7 @@ export default function UIUXDesignService() {
               { icon: SiAdobe, name: "Adobe XD", desc: "Complete UX/UI design platform for wireframing, prototyping, and creating interactive design experiences." },
               { icon: SiFramer, name: "Framer", desc: "Advanced prototyping tool for creating high-fidelity interactive prototypes with realistic animations." },
               { icon: SiInvision, name: "InVision", desc: "Digital product design platform for prototyping, collaboration, and design workflow management." },
-              { icon: SiZeplin, name: "Zeplin", desc: "Collaboration tool bridging design and development with specs, assets, and design handoff capabilities." },
+              { icon: Layers, name: "Zeplin", desc: "Collaboration tool bridging design and development with specs, assets, and design handoff capabilities." },
               { icon: SiMiro, name: "Miro", desc: "Online collaborative whiteboard platform for brainstorming, user journey mapping, and design workshops." },
               { icon: SiAbstract, name: "Abstract", desc: "Version control and collaboration platform specifically designed for design teams and file management." }
             ].map((tech, index) => (
@@ -456,7 +480,7 @@ export default function UIUXDesignService() {
             />
             <FAQItem 
               question="Do you conduct user research and testing?"
-              answer="Yes, we conduct comprehensive user research including interviews, surveys, and usability testing. We also create user personas, journey maps, and validate designs through A/B testing and user feedback."
+              answer="Yes, we conduct professional user research including interviews, surveys, and usability testing. We also create user personas, journey maps, and validate designs through A/B testing and user feedback."
             />
             <FAQItem 
               question="What deliverables do you provide?"

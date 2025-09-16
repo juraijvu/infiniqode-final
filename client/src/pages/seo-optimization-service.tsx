@@ -24,9 +24,11 @@ import {
   Phone,
   MessageCircle,
   MapPin,
-  LineChart
+  LineChart,
+  Gauge,
+  Eye
 } from "lucide-react";
-import { SiGoogleanalytics, SiGooglesearchconsole, SiSemrush, SiAhrefs, SiMoz, SiScreaminggrog, SiYoast, SiGtmetrix } from "react-icons/si";
+import { SiGoogleanalytics, SiGooglesearchconsole, SiSemrush,  SiYoast } from "react-icons/si";
 
 // FAQ Item Component with improved accessibility
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -60,11 +62,11 @@ export default function SEOOptimizationService() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "SEO Optimization Services",
-    "description": "Boost your search engine rankings and drive organic traffic with comprehensive SEO strategies that deliver measurable results",
+    "description": "Boost your search engine rankings and drive organic traffic with professional SEO strategies that deliver measurable results",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "SEO Optimization"
@@ -74,14 +76,14 @@ export default function SEOOptimizationService() {
     <>
       <SEOHead
         title="SEO Optimization Services - Boost Search Engine Rankings"
-        description="Boost your search engine rankings and drive organic traffic with comprehensive SEO strategies that deliver measurable results and increased visibility."
+        description="Boost your search engine rankings and drive organic traffic with professional SEO strategies that deliver measurable results and increased visibility."
         keywords="SEO optimization, search engine optimization, organic traffic, keyword research, link building, technical SEO"
         structuredData={structuredData}
       />
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -96,7 +98,7 @@ export default function SEOOptimizationService() {
                 
                 <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
                   At INFINIQODE, we boost your search engine rankings and drive organic traffic 
-                  with comprehensive SEO strategies that deliver measurable results. Our team 
+                  with professional SEO strategies that deliver measurable results. Our team 
                   creates data-driven optimization campaigns. From technical SEO to content strategy, 
                   we deliver search engine optimization that increases your online visibility.
                 </p>
@@ -171,7 +173,7 @@ export default function SEOOptimizationService() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Search, title: "SEO Audit & Research", step: "Step 1", desc: "Comprehensive analysis of current SEO performance, keyword research, and competitive landscape to identify optimization opportunities." },
+              { icon: Search, title: "SEO Audit & Research", step: "Step 1", desc: "professional analysis of current SEO performance, keyword research, and competitive landscape to identify optimization opportunities." },
               { icon: Settings, title: "Technical Optimization", step: "Step 2", desc: "Implement technical SEO improvements including site speed optimization, mobile responsiveness, and search engine crawlability." },
               { icon: FileText, title: "Content & On-Page SEO", step: "Step 3", desc: "Optimize existing content and create new SEO-focused content with proper keyword targeting and user intent alignment." },
               { icon: BarChart, title: "Monitoring & Reporting", step: "Step 4", desc: "Continuous performance monitoring, ranking tracking, and detailed reporting to measure success and refine strategies." }
@@ -224,7 +226,7 @@ export default function SEOOptimizationService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive SEO optimization service is designed to help businesses of all
+                Our professional SEO optimization service is designed to help businesses of all
                 sizes improve their search engine visibility and drive organic growth. We work closely with your
                 team to understand your unique goals and implement solutions that
                 deliver increased rankings, traffic, and conversions from search engines.
@@ -232,23 +234,42 @@ export default function SEOOptimizationService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Keyword Research & Strategy Development",
-                  "Technical SEO & Site Optimization", 
-                  "Content Creation & On-Page SEO",
-                  "Link Building & Off-Page SEO"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Keyword Research & Strategy Development</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We implement proven SEO strategies that are data-driven, sustainable, and 
-                        designed to improve your search rankings and organic visibility long-term.
+                        Identify high-intent keywords and develop targeted strategies to boost search rankings and traffic.
                       </p>
                     </div>
                   </div>
-                ))}
+                      <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Technical SEO & Site Optimization</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Enhance site performance, speed, and crawlability with technical audits and optimizations.
+                      </p>
+                    </div>
+                  </div>
+                      <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Content Creation & On-Page SEO</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Craft engaging, SEO-optimized content with strategic on-page elements to drive organic growth.
+                      </p>
+                    </div>
+                  </div>
+                      <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Link Building & Off-Page SEO</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Build authoritative backlinks and leverage off-page strategies to improve domain authority.
+                      </p>
+                    </div>
+                  </div>
               </div>
             </div>
             
@@ -318,7 +339,7 @@ export default function SEOOptimizationService() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "E-commerce SEO Growth", subtitle: "300% Organic Traffic Increase", desc: "Comprehensive SEO optimization for e-commerce platform resulting in 300% organic traffic growth, 150% keyword rankings improvement, and 40% revenue increase." },
+              { title: "E-commerce SEO Growth", subtitle: "300% Organic Traffic Increase", desc: "professional SEO optimization for e-commerce platform resulting in 300% organic traffic growth, 150% keyword rankings improvement, and 40% revenue increase." },
               { title: "Local Business Optimization", subtitle: "Top 3 Local Search Results", desc: "Local SEO strategy for service business achieving top 3 rankings in local search results, 200% increase in local inquiries, and 5-star review growth." },
               { title: "SaaS Platform SEO", subtitle: "500+ Keywords on Page 1", desc: "Technical SEO and content optimization for SaaS platform securing 500+ first-page keyword rankings and 250% increase in qualified organic leads." }
             ].map((item, index) => (
@@ -374,7 +395,7 @@ export default function SEOOptimizationService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive SEO optimization service combines data-driven keyword research with technical optimization and content strategy to improve 
+              Our professional SEO optimization service combines data-driven keyword research with technical optimization and content strategy to improve 
               your search engine visibility and drive organic growth. We specialize in implementing sustainable SEO practices including on-page optimization, 
               technical SEO improvements, content creation, and strategic link building. From local SEO to enterprise-level optimization, our search engine 
               optimization solutions are designed with long-term results in mind, focusing on improving rankings, increasing organic traffic, and delivering 
@@ -412,14 +433,14 @@ export default function SEOOptimizationService() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiGoogleanalytics, name: "Google Analytics", desc: "Comprehensive web analytics platform for tracking SEO performance and user behavior insights." },
+              { icon: SiGoogleanalytics, name: "Google Analytics", desc: "professional web analytics platform for tracking SEO performance and user behavior insights." },
               { icon: SiGooglesearchconsole, name: "Search Console", desc: "Google's search performance monitoring tool for tracking rankings, clicks, and indexing status." },
               { icon: SiSemrush, name: "SEMrush", desc: "All-in-one SEO toolkit for keyword research, competitor analysis, and ranking tracking." },
-              { icon: SiAhrefs, name: "Ahrefs", desc: "Professional SEO toolset for backlink analysis, keyword research, and content optimization." },
-              { icon: SiMoz, name: "Moz", desc: "SEO software suite providing keyword research, link building, and search ranking insights." },
-              { icon: SiScreaminggrog, name: "Screaming Frog", desc: "Website crawler for technical SEO audits and identifying optimization opportunities." },
+              { icon: Search, name: "Ahrefs", desc: "Professional SEO toolset for backlink analysis, keyword research, and content optimization." },
+              { icon: Search, name: "Moz", desc: "SEO software suite providing keyword research, link building, and search ranking insights." },
+              { icon: Eye, name: "Screaming Frog", desc: "Website crawler for technical SEO audits and identifying optimization opportunities." },
               { icon: SiYoast, name: "Yoast SEO", desc: "WordPress SEO plugin for on-page optimization and technical SEO improvements." },
-              { icon: SiGtmetrix, name: "GTmetrix", desc: "Website performance testing tool for analyzing page speed and technical optimization needs." }
+              { icon: Gauge, name: "GTmetrix", desc: "Website performance testing tool for analyzing page speed and technical optimization needs." }
             ].map((tech, index) => (
               <div key={index} className="text-center group">
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-white/5 group-hover:scale-110 transition-transform duration-300">
@@ -458,7 +479,7 @@ export default function SEOOptimizationService() {
             />
             <FAQItem 
               question="How do you measure SEO success?"
-              answer="We track keyword rankings, organic traffic growth, click-through rates, conversion rates, and business metrics like leads and revenue to measure comprehensive SEO success."
+              answer="We track keyword rankings, organic traffic growth, click-through rates, conversion rates, and business metrics like leads and revenue to measure professional SEO success."
             />
             <FAQItem 
               question="Can you help with local SEO?"

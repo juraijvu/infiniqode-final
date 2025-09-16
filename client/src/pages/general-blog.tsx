@@ -85,7 +85,7 @@ export default function GeneralBlog() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "DigitalCraft"
+      "name": "InfiniQode"
     },
     "datePublished": post.publishedAt,
     "image": post.featuredImage

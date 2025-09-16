@@ -1,4 +1,4 @@
-# DigitalCraft Platform - Local Installation Guide
+# InfiniQode Platform - Local Installation Guide
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ Before you begin, ensure you have the following installed on your system:
 
 ```bash
 git clone <your-repository-url>
-cd digitalcraft-platform
+cd InfiniQode-platform
 ```
 
 ## Step 2: Install Dependencies
@@ -43,13 +43,13 @@ npm install
    psql -U postgres
    
    # Create database
-   CREATE DATABASE digitalcraft_local;
+   CREATE DATABASE InfiniQode_local;
    
    # Create user (optional, you can use postgres user)
-   CREATE USER digitalcraft WITH PASSWORD 'your_secure_password';
+   CREATE USER InfiniQode WITH PASSWORD 'your_secure_password';
    
    # Grant privileges
-   GRANT ALL PRIVILEGES ON DATABASE digitalcraft_local TO digitalcraft;
+   GRANT ALL PRIVILEGES ON DATABASE InfiniQode_local TO InfiniQode;
    
    # Exit psql
    \q
@@ -78,10 +78,10 @@ If you prefer a file-based database for offline development:
    **For PostgreSQL:**
    ```env
    NODE_ENV=development
-   DATABASE_URL=postgresql://postgres:your_password@localhost:5432/digitalcraft_local
+   DATABASE_URL=postgresql://postgres:your_password@localhost:5432/InfiniQode_local
    PGUSER=postgres
    PGHOST=localhost
-   PGDATABASE=digitalcraft_local
+   PGDATABASE=InfiniQode_local
    PGPORT=5432
    PGPASSWORD=your_password
    PORT=5000
@@ -118,7 +118,7 @@ The application will be available at: `http://localhost:5000`
 ## Step 7: Verify Installation
 
 1. Open your browser and navigate to `http://localhost:5000`
-2. You should see the DigitalCraft homepage
+2. You should see the InfiniQode homepage
 3. Check that the API endpoints are working:
    - `http://localhost:5000/api/services`
    - `http://localhost:5000/api/blog`
@@ -169,8 +169,8 @@ If you need to reset the database:
 
 ```bash
 # Drop and recreate database (PostgreSQL)
-psql -U postgres -c "DROP DATABASE IF EXISTS digitalcraft_local;"
-psql -U postgres -c "CREATE DATABASE digitalcraft_local;"
+psql -U postgres -c "DROP DATABASE IF EXISTS InfiniQode_local;"
+psql -U postgres -c "CREATE DATABASE InfiniQode_local;"
 
 # Push schema again
 npm run db:push --force

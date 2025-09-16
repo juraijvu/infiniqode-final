@@ -200,8 +200,8 @@ export default function StandardServicePageLayout({ data }: StandardServicePageL
     "description": data.seo.description,
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": data.seo.serviceType
@@ -218,7 +218,7 @@ export default function StandardServicePageLayout({ data }: StandardServicePageL
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content - Text Section */}
@@ -644,7 +644,7 @@ export default function StandardServicePageLayout({ data }: StandardServicePageL
             <div className="text-center mb-10">
               <h2 className="text-5xl font-bold text-white mb-4">{data.testimonials.title || "Our Testimonials"}</h2>
               <p className="text-xl text-purple-100/80">
-                {data.testimonials.subtitle || "Our comprehensive range of services includes web design, mobile app development, SEO, social media marketing, and more. Whether you're a startup or an established enterprise, our experts will craft solutions that drive results."}
+                {data.testimonials.subtitle || "Our professional range of services includes web design, mobile app development, SEO, social media marketing, and more. Whether you're a startup or an established enterprise, our experts will craft solutions that drive results."}
               </p>
             </div>
             

@@ -30,8 +30,8 @@ export default function AIMachineLearningService() {
     "description": "Harness the power of artificial intelligence to transform your business operations and decision-making",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "AI & Machine Learning"
@@ -90,23 +90,23 @@ export default function AIMachineLearningService() {
     },
     includes: {
       title: "What Our AI & Machine Learning Service Includes",
-      description: "Our comprehensive AI and machine learning service is designed to help businesses of all sizes harness the power of artificial intelligence. We work closely with your team to understand your unique challenges and implement AI solutions that drive real business value and competitive advantage.",
+      description: "Our professional AI and machine learning service is designed to help businesses of all sizes harness the power of artificial intelligence. We work closely with your team to understand your unique challenges and implement AI solutions that drive real business value and competitive advantage.",
       features: [
         {
           title: "Custom AI Model Development",
-          description: "We develop intelligent systems that learn from your data to automate processes, improve decision-making, and unlock new business opportunities."
+          description: "Design tailored AI models to solve unique business challenges with high accuracy and efficiency."
         },
         {
           title: "Natural Language Processing",
-          description: "We develop intelligent systems that learn from your data to automate processes, improve decision-making, and unlock new business opportunities."
+          description: "Develop NLP solutions for text analysis, chatbots, and sentiment detection to enhance user interactions."
         },
         {
           title: "Computer Vision Solutions",
-          description: "We develop intelligent systems that learn from your data to automate processes, improve decision-making, and unlock new business opportunities."
+          description: "Create vision-based systems for image recognition, object detection, and automated visual inspections."
         },
         {
           title: "Predictive Analytics Implementation",
-          description: "We develop intelligent systems that learn from your data to automate processes, improve decision-making, and unlock new business opportunities."
+          description: "Implement predictive models to forecast trends, optimize decisions, and drive business growth."
         }
       ],
       stats: [
@@ -137,7 +137,7 @@ export default function AIMachineLearningService() {
       ]
     },
     serviceDetails: {
-      description: "Our comprehensive AI and machine learning service combines cutting-edge algorithms with deep business understanding to create intelligent solutions that transform operations. We specialize in developing custom neural networks, implementing computer vision systems, and building natural language processing applications that learn and adapt to your specific needs. From predictive analytics that forecast market trends to automated decision-making systems that optimize workflows, our AI solutions are designed to deliver measurable results and sustainable competitive advantages.",
+      description: "Our professional AI and machine learning service combines cutting-edge algorithms with deep business understanding to create intelligent solutions that transform operations. We specialize in developing custom neural networks, implementing computer vision systems, and building natural language processing applications that learn and adapt to your specific needs. From predictive analytics that forecast market trends to automated decision-making systems that optimize workflows, our AI solutions are designed to deliver measurable results and sustainable competitive advantages.",
       features: [
         { icon: Brain, title: "Machine", subtitle: "Learning Models" },
         { icon: Bot, title: "AI", subtitle: "Automation" },

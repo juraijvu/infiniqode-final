@@ -27,7 +27,7 @@ import {
   MapPin,
   Brush
 } from "lucide-react";
-import { SiAdobe, SiFigma, SiSketch, SiCanva, SiIllustrator, SiPhotoshop, SiXd, SiInvision } from "react-icons/si";
+import { SiAdobe, SiFigma, SiSketch, SiCanva, SiAdobeillustrator , SiAdobephotoshop , SiAdobexd , SiInvision } from "react-icons/si";
 
 // FAQ Item Component with improved accessibility
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -64,8 +64,8 @@ export default function BrandIdentityService() {
     "description": "Create a memorable brand identity that resonates with your audience and drives business growth through strategic design and visual identity",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Brand Identity Design"
@@ -82,7 +82,7 @@ export default function BrandIdentityService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -174,7 +174,7 @@ export default function BrandIdentityService() {
             {[
               { icon: Target, title: "Brand Strategy & Research", step: "Step 1", desc: "Deep dive into your market, competitors, and target audience to define brand positioning and unique value proposition." },
               { icon: Brush, title: "Visual Identity Creation", step: "Step 2", desc: "Design distinctive logo, color palette, typography, and visual elements that embody your brand personality." },
-              { icon: Layers, title: "Brand System Development", step: "Step 3", desc: "Create comprehensive brand guidelines, applications, and templates for consistent brand expression." },
+              { icon: Layers, title: "Brand System Development", step: "Step 3", desc: "Create professional brand guidelines, applications, and templates for consistent brand expression." },
               { icon: Globe, title: "Implementation & Launch", step: "Step 4", desc: "Deploy brand identity across all touchpoints and provide ongoing support for brand consistency." }
             ].map((item, index) => (
               <div key={index} className="group">
@@ -225,7 +225,7 @@ export default function BrandIdentityService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive brand identity service is designed to help businesses of all
+                Our professional brand identity service is designed to help businesses of all
                 sizes establish a strong, memorable presence in their market. We work closely with your
                 team to understand your vision and implement solutions that
                 deliver authentic brand expression, market differentiation, and lasting customer connections.
@@ -233,23 +233,48 @@ export default function BrandIdentityService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Strategic Brand Discovery & Positioning",
-                  "Logo Design & Visual Identity Systems", 
-                  "Brand Guidelines & Style Guides",
-                  "Brand Application & Implementation Support"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Strategic Brand Discovery & Positioning</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We create cohesive brand identities that are memorable, distinctive, and 
-                        strategically aligned with your business goals and target audience expectations.
+                        Conduct thorough research to define your brand’s unique positioning, ensuring alignment with
+                         market needs and competitive differentiation for impactful presence.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Logo Design & Visual Identity Systems</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Create memorable logos and cohesive visual identity systems that reflect your brand’s essence 
+                        and resonate with target audiences effectively.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Brand Guidelines & Style Guides</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Develop comprehensive brand guidelines and style guides to ensure consistent messaging,
+                         visuals, and tone across all platforms and touchpoints.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Brand Application & Implementation Support</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Provide expert support to apply and implement brand assets across digital and physical channels,
+                        ensuring seamless and effective brand execution.
+                      </p>
+                    </div>
+                  </div>
+
               </div>
             </div>
             
@@ -319,7 +344,7 @@ export default function BrandIdentityService() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Tech Startup Rebrand", subtitle: "Complete Visual Identity System", desc: "Developed comprehensive brand identity for emerging tech startup including logo design, color system, typography, and brand guidelines achieving 300% brand recognition increase." },
+              { title: "Tech Startup Rebrand", subtitle: "Complete Visual Identity System", desc: "Developed professional brand identity for emerging tech startup including logo design, color system, typography, and brand guidelines achieving 300% brand recognition increase." },
               { title: "Restaurant Chain Identity", subtitle: "Multi-location Brand Consistency", desc: "Created cohesive brand identity system for restaurant chain with scalable design elements, menu design, and location guidelines ensuring consistent brand experience across 15 locations." },
               { title: "Professional Services Brand", subtitle: "Premium Brand Positioning", desc: "Designed sophisticated brand identity for consulting firm including executive branding, presentation templates, and digital assets positioning them as industry leaders and increasing client acquisition by 200%." }
             ].map((item, index) => (
@@ -375,9 +400,9 @@ export default function BrandIdentityService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive brand identity design service combines strategic brand thinking with creative visual design to establish 
+              Our professional brand identity design service combines strategic brand thinking with creative visual design to establish 
               distinctive, memorable identities that resonate with target audiences and drive business growth. We specialize in developing 
-              complete brand systems including logo design, color palettes, typography, imagery style, and comprehensive brand guidelines. 
+              complete brand systems including logo design, color palettes, typography, imagery style, and professional brand guidelines. 
               From startup launches to established business rebrands, our brand identity solutions are designed with market differentiation, 
               customer connection, and long-term brand equity in mind, ensuring that every visual element communicates your brand values 
               authentically and creates lasting impressions across all customer touchpoints.
@@ -414,13 +439,13 @@ export default function BrandIdentityService() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { icon: SiAdobe, name: "Adobe Creative Suite", desc: "Professional design suite including Photoshop, Illustrator, and InDesign for comprehensive brand creation." },
+              { icon: SiAdobe, name: "Adobe Creative Suite", desc: "Professional design suite including Photoshop, Illustrator, and InDesign for professional brand creation." },
               { icon: SiFigma, name: "Figma", desc: "Collaborative design platform for creating scalable brand assets and design systems with team collaboration." },
               { icon: SiSketch, name: "Sketch", desc: "Vector graphics editor optimized for digital design and user interface brand element creation." },
               { icon: SiCanva, name: "Canva", desc: "User-friendly design platform for creating brand materials, presentations, and marketing collateral." },
-              { icon: SiIllustrator, name: "Adobe Illustrator", desc: "Industry-standard vector graphics software for logo design and scalable brand identity elements." },
-              { icon: SiPhotoshop, name: "Adobe Photoshop", desc: "Professional image editing software for photo manipulation and raster graphic brand elements." },
-              { icon: SiXd, name: "Adobe XD", desc: "User experience design tool for prototyping brand applications and digital brand experiences." },
+              { icon: SiAdobeillustrator, name: "Adobe Illustrator", desc: "Industry-standard vector graphics software for logo design and scalable brand identity elements." },
+              { icon: SiAdobephotoshop , name: "Adobe Photoshop", desc: "Professional image editing software for photo manipulation and raster graphic brand elements." },
+              { icon: SiAdobexd , name: "Adobe XD", desc: "User experience design tool for prototyping brand applications and digital brand experiences." },
               { icon: SiInvision, name: "InVision", desc: "Digital product design platform for prototyping brand interfaces and collaborative design reviews." }
             ].map((tool, index) => (
               <div key={index} className="text-center group">
@@ -456,7 +481,7 @@ export default function BrandIdentityService() {
             />
             <FAQItem 
               question="Do you provide trademark research for logos?"
-              answer="We conduct basic trademark searches during our design process, but we recommend professional trademark research and registration through a qualified attorney for comprehensive legal protection."
+              answer="We conduct basic trademark searches during our design process, but we recommend professional trademark research and registration through a qualified attorney for professional legal protection."
             />
             <FAQItem 
               question="Can you redesign an existing brand identity?"
@@ -464,7 +489,7 @@ export default function BrandIdentityService() {
             />
             <FAQItem 
               question="What file formats do you provide for the final brand assets?"
-              answer="We provide comprehensive file packages including vector formats (AI, EPS, SVG), high-resolution rasters (PNG, JPG), and print-ready PDFs. All files are optimized for different use cases and applications."
+              answer="We provide professional file packages including vector formats (AI, EPS, SVG), high-resolution rasters (PNG, JPG), and print-ready PDFs. All files are optimized for different use cases and applications."
             />
           </div>
         </div>

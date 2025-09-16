@@ -84,7 +84,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="font-semibold">Email</div>
-                  <div className="text-muted-foreground">hello@digitalcraft.agency</div>
+                  <div className="text-muted-foreground">info@theinfiniqode.com</div>
                 </div>
               </div>
 
@@ -94,7 +94,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="font-semibold">Phone</div>
-                  <div className="text-muted-foreground">+1 (555) 123-4567</div>
+                  <div className="text-muted-foreground">+91 9694 000 930</div>
                 </div>
               </div>
 
@@ -104,7 +104,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="font-semibold">Location</div>
-                  <div className="text-muted-foreground">San Francisco, CA</div>
+                  <div className="text-muted-foreground">B98, mangalam Vihar, harmada, Jaipur, Rajasthan, India</div>
                 </div>
               </div>
             </div>

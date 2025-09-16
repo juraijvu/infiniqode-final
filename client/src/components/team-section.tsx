@@ -5,10 +5,10 @@ import { Linkedin, Twitter, Github, Dribbble } from "lucide-react";
 const teamMembers = [
   {
     id: "1",
-    name: "Alex Thompson",
+    name: "Mukesh Raiya",
     position: "CEO & Founder",
     description: "Visionary leader with 10+ years in digital transformation",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
+    image: "https://orbitdigital.agency/wp-content/uploads/2025/03/Ahmed-Ali.png",
     social: {
       linkedin: "#",
       twitter: "#"
@@ -16,10 +16,10 @@ const teamMembers = [
   },
   {
     id: "2",
-    name: "Sarah Chen",
-    position: "CTO",
-    description: "Full-stack expert specializing in React and Python",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b112371c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
+    name: "Dyan Baguio",
+    position: "Sales Consultant",
+    description: "excels in crafting data-driven strategies, boosting conversions, and accelerating business growth through personalized, client-focused solutions.",
+    image: "https://orbitdigital.agency/wp-content/uploads/2025/03/Dyan.png",
     social: {
       linkedin: "#",
       github: "#"
@@ -27,10 +27,10 @@ const teamMembers = [
   },
   {
     id: "3",
-    name: "Marcus Rivera",
-    position: "Design Director",
-    description: "Creative visionary crafting exceptional user experiences",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
+    name: "Juraij V. U.",
+    position: "Development Expert",
+    description: "Full-stack expert specializing in React and Python",
+    image: "https://orbitdigital.agency/wp-content/uploads/2025/03/Juraij.png",
     social: {
       linkedin: "#",
       dribbble: "#"
@@ -38,10 +38,10 @@ const teamMembers = [
   },
   {
     id: "4",
-    name: "Emma Wilson",
-    position: "Marketing Director",
-    description: "Data-driven strategist with proven ROI optimization",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
+    name: "Girish Kumar",
+    position: "Digital Marketing Expert",
+    description: "With 8+ years of experience, our expert drives growth through strategic, data-driven digital marketing campaigns tailored to your business goals.",
+    image: "https://orbitdigital.agency/wp-content/uploads/2025/03/Girish-Kumar.png",
     social: {
       linkedin: "#",
       twitter: "#"

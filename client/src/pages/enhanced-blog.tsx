@@ -126,12 +126,12 @@ export default function EnhancedBlog() {
     "author": {
       "@type": "Person",
       "name": post.author,
-      "url": "https://digitalcraft.com/author/" + post.author.toLowerCase().replace(' ', '-')
+      "url": "https://InfiniQode.com/author/" + post.author.toLowerCase().replace(' ', '-')
     },
     "publisher": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "logo": "https://digitalcraft.com/logo.png"
+      "name": "InfiniQode",
+      "logo": "https://InfiniQode.com/logo.png"
     },
     "datePublished": post.publishedAt,
     "dateModified": post.updatedAt,
@@ -144,7 +144,7 @@ export default function EnhancedBlog() {
       <SEOHead
         title={`${post.title} - Enhanced Guide`}
         description={post.excerpt}
-        keywords={`${post.tags?.join(', ') || ''}, enhanced tutorial, comprehensive guide, advanced techniques`}
+        keywords={`${post.tags?.join(', ') || ''}, enhanced tutorial, professional guide, advanced techniques`}
         ogImage={post.featuredImage || undefined}
         structuredData={structuredData}
       />
@@ -934,7 +934,7 @@ export default function EnhancedBlog() {
           </div>
           <h2 className="text-3xl font-bold mb-4">Get the Complete Implementation Guide</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Download our comprehensive 75-page guide with detailed code examples, 
+            Download our professional 75-page guide with detailed code examples, 
             architecture diagrams, and step-by-step implementation instructions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">

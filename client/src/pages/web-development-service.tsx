@@ -57,8 +57,8 @@ export default function WebDevelopmentService() {
     "description": "Professional responsive websites and web applications built with modern technologies",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Web Development"
@@ -75,7 +75,7 @@ export default function WebDevelopmentService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -89,10 +89,11 @@ export default function WebDevelopmentService() {
                 </h1>
                 
                 <p className="text-lg md:text-xl text-purple-100/90 leading-relaxed max-w-2xl">
-                  At INFINIQODE, we believe in the transformative power of digital solutions. Our team 
-                  of experts is dedicated to helping businesses like yours thrive in the fast-paced 
-                  digital landscape. From captivating web design to data-driven development 
-                  strategies, we are committed to delivering results that exceed expectations.
+                  Infiniqode stands out as a leading provider of digital services, specializing in 
+                  cutting-edge web development services that blend creativity with technical excellence. 
+                  Our process ensures your website is not just visually stunning but also optimized for speed, 
+                  security, and search engines. With years of experience in full-stack development, 
+                  we help businesses like yours convert visitors into loyal customers.
                 </p>
               </div>
               
@@ -165,10 +166,10 @@ export default function WebDevelopmentService() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Settings, title: "Build Strategy Consulting", step: "Step 1", desc: "AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting" },
-              { icon: Palette, title: "Design Interactive Layouts", step: "Step 2", desc: "AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting" },
-              { icon: Code, title: "Development Web Application", step: "Step 3", desc: "AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting" },
-              { icon: Globe, title: "Deployment & Launching", step: "Step 4", desc: "AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Consulting AI Strategy Con AI Strategy Consulting AI Strategy Consulting" }
+              { icon: Settings, title: "Discovery & Planning", step: "Step 1", desc: "We start by understanding your vision. Our team conducts in-depth consultations to analyze your goals, target audience, and competitors. This phase includes creating wireframes, defining features, and outlining a project roadmap to align with your custom web development needs." },
+              { icon: Palette, title: "Design & Prototyping", step: "Step 2", desc: "Collaborating closely with you, our UI/UX designers craft intuitive layouts using tools like Figma. We focus on responsive web design for seamless performance across devices, incorporating your brand identity while prioritizing user engagement and accessibility." },
+              { icon: Code, title: "Development & Coding", step: "Step 3", desc: "Our developers bring the prototype to life using modern technologies like HTML5, CSS3, JavaScript, React, Node.js, and more. We build robust front-end and back-end systems, integrating APIs, databases, and e-commerce functionalities for a fully functional site." },
+              { icon: Globe, title: "Deployment & Launch", step: "Step 4", desc: "Once approved, we deploy your site on reliable hosting with SSL encryption. We provide training and handover documentation, ensuring a smooth transition." }
             ].map((item, index) => (
               <div key={index} className="group">
                 {/* Glass Card */}
@@ -213,36 +214,74 @@ export default function WebDevelopmentService() {
             {/* Left Content */}
             <div className="space-y-8">
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                What Our UI/UX Integration<br />
-                Service Includes
+                Benefits of Partnering with Infiniqode for <br />
+                Web Development
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive UI integration service is designed to help businesses of all
-                sizes harness the power of artificial intelligence. We work closely with your
-                team to understand your unique challenges and implement AI solutions that
-                drive real business value.
+                Unlock the full potential of your digital strategy with our professional 
+                web development services. Here's what sets us apart:
               </p>
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Needs Assessment & Strategy",
-                  "Needs Assessment & Strategy", 
-                  "Needs Assessment & Strategy",
-                  "Needs Assessment & Strategy"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">SEO-First Approach</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We analyze your business processes and identify 
-                        opportunities where AI can create the most impact.
+                        Every site we build is optimized for search engines, targeting high-intent keywords to drive organic traffic.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Mobile-Responsive Design</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        70% of users access sites via mobile—ours ensure pixel-perfect adaptation.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Security & Compliance</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        GDPR-ready with advanced encryption and regular vulnerability scans.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Cost-Effective Solutions</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Transparent pricing with no hidden fees; ROI-focused development saves you 30% on long-term maintenance.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">24/7 Support</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Dedicated account managers and post-launch assistance for peace of mind.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Proven Results</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Our clients see up to 40% increase in conversions within the first quarter.
+                      </p>
+                    </div>
+                  </div>
+                  
+                
               </div>
             </div>
             
@@ -312,9 +351,9 @@ export default function WebDevelopmentService() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Leads Productivity", subtitle: "Leads Generation and Quality of Leads", desc: "Using modern web technologies to create conversion-focused websites, reducing inventory costs by 32% while improving product reach." },
-              { title: "Leads Productivity", subtitle: "Leads Generation and Quality of Leads", desc: "Using modern web technologies to improve demand platforms, reducing inventory costs by 32% while improving product reach." },
-              { title: "Leads Productivity", subtitle: "Leads Generation and Quality of Leads", desc: "Using modern web technologies to create efficient platforms, reducing inventory costs by 32% while improving product reach." }
+              { title: "Use Case 1", subtitle: "Corporate Website for Brand Authority", desc: "Build a professional, SEO-optimized corporate website to establish your brand's credibility. Ideal for businesses aiming to showcase expertise, attract leads, and rank for keywords like 'professional web development services.' Features include responsive design, integrated blogs, and lead capture forms." },
+              { title: "Use Case 2", subtitle: "Online Portfolio for Creative Professionals", desc: "Create a visually stunning portfolio website to highlight your work, whether you're an artist, designer, or freelancer. With smooth animations, fast load times, and SEO for local searches like 'web development services near me,' attract clients and stand out in competitive markets." },
+              { title: "Use Case 3", subtitle: "Non-Profit Donation Platform", desc: "Develop a secure, user-friendly website for non-profits to collect donations and share their mission. Integrated with payment gateways and optimized for mobile, this solution drives engagement and maximizes donations through targeted SEO and compelling storytelling." }
             ].map((item, index) => (
               <div key={index} className="group">
                 <div className="h-full rounded-2xl md:rounded-3xl glass-card shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden">
@@ -343,7 +382,7 @@ export default function WebDevelopmentService() {
                   {/* Content */}
                   <div className="p-6 space-y-4">
                     <div className="space-y-2">
-                      <div className="text-xs text-purple-300 uppercase tracking-wider">Leads Productivity</div>
+                      <div className="text-xs text-purple-300 uppercase tracking-wider">{item.title}</div>
                       <h3 className="text-lg font-bold text-white">{item.subtitle}</h3>
                       <p className="text-sm text-purple-100/80 leading-relaxed">{item.desc}</p>
                     </div>
@@ -368,12 +407,11 @@ export default function WebDevelopmentService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our premium 3D web design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web design service combines cutting-edge 
-              technology with sleek aesthetics to Our premium 3D web design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web 
-              design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web design service combines cutting-edge technology with sleek 
-              aesthetics to Our premium 3D web design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web design service combines 
-              cutting-edge technology with sleek aesthetics to Our premium 3D web design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web 
-              design service combines cutting-edge technology with sleek aesthetics to Our premium 3D web design service combines cutting-edge technology with sleek aesthetics to.
+              Leverage our expertise in both front-end and back-end technologies to create seamless,
+               high-performance websites. From interactive user interfaces built with React or Vue.js to 
+               robust server-side solutions using Node.js or Django, our full-stack development ensures a 
+               cohesive digital experience. Optimized for scalability and SEO, we deliver end-to-end solutions that align
+               with your business objectives, enhancing user engagement and operational efficiency.
             </p>
           </div>
           
@@ -440,7 +478,7 @@ export default function WebDevelopmentService() {
             <p className="text-xl text-purple-100/90 max-w-3xl mx-auto">
               Discover how our web development services have transformed businesses across various industries.
             </p>
-            <Badge className="bg-gradient-to-r from-primary to-accent text-white px-8 py-3 text-lg font-semibold shadow-xl">
+            <Badge className="bg-gradient-to-r from-purple-500 to-purple-700 text-white px-8 py-3 text-lg font-semibold shadow-xl">
               Most Popular
             </Badge>
           </div>
@@ -490,7 +528,7 @@ export default function WebDevelopmentService() {
             {/* Professional Package */}
             <div className="group transform scale-105">
               <div className="h-full p-10 rounded-3xl bg-gradient-to-br from-background/90 to-primary/10 backdrop-blur-xl border-2 border-primary/30 shadow-3xl space-y-8 relative">
-                <Badge className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-accent text-white px-6 py-2 font-semibold">
+                <Badge className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-500 to-purple-700 text-white px-6 py-2 font-semibold">
                   Most Popular
                 </Badge>
                 
@@ -681,7 +719,7 @@ export default function WebDevelopmentService() {
           <div className="text-center mb-10">
             <h2 className="text-5xl font-bold text-white mb-4">Frequently Asked Question</h2>
             <p className="text-xl text-purple-100/80">
-              Our comprehensive range of services includes web design, mobile app development, SEO, social media marketing, and
+              Our professional range of services includes web design, mobile app development, SEO, social media marketing, and
               more. We focus on helping you establish and expand your online presence.
             </p>
           </div>
@@ -698,7 +736,7 @@ export default function WebDevelopmentService() {
               },
               { 
                 question: "Do you provide ongoing support and maintenance?", 
-                answer: "Yes, we offer comprehensive support and maintenance packages to ensure your website remains secure, updated, and performs optimally after launch."
+                answer: "Yes, we offer professional support and maintenance packages to ensure your website remains secure, updated, and performs optimally after launch."
               },
               { 
                 question: "Can you help with mobile-responsive design?", 
@@ -727,7 +765,7 @@ export default function WebDevelopmentService() {
           <div className="text-center mb-10">
             <h2 className="text-5xl font-bold text-white mb-4">Our Testimonials</h2>
             <p className="text-xl text-purple-100/80">
-              Our comprehensive range of services includes web design, mobile app development, SEO, social media marketing, and
+              Our professional range of services includes web design, mobile app development, SEO, social media marketing, and
               more. Whether you're a startup or an established enterprise, our experts will craft solutions that drive results.
             </p>
           </div>
@@ -735,9 +773,9 @@ export default function WebDevelopmentService() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: "Ashraf Khan",
-                position: "Founder of Marjan Group of Companies",
-                content: "Working with Infiniqode was a pleasure. Their web design team created a stunning website that perfectly represents our brand. The positive feedback from our customers has been overwhelmingly positive."
+                name: "Shabeer",
+                position: "Founder of WE Solar",
+                content: "Infiniqode transformed our outdated website into a sleek, SEO-optimized platform that doubled our lead generation within two months. Their full-stack development team was professional, responsive, and delivered beyond our expectations. Highly recommend their web development services for any business looking to scale!"
               },
               {
                 name: "Ashraf Khan", 
@@ -745,9 +783,9 @@ export default function WebDevelopmentService() {
                 content: "Working with Infiniqode was a pleasure. Their web design team created a stunning website that perfectly represents our brand. The positive feedback from our customers has been overwhelmingly positive."
               },
               {
-                name: "Ashraf Khan",
-                position: "Founder of Marjan Group of Companies", 
-                content: "Working with Infiniqode was a pleasure. Their web design team created a stunning website that perfectly represents our brand. The positive feedback from our customers has been overwhelmingly positive."
+                name: "Albin",
+                position: "Photographer", 
+                content: "I needed a portfolio website to showcase my photography and attract new clients. Infiniqode delivered a stunning, mobile-friendly site with seamless navigation and fast load times. Their SEO expertise helped me rank locally, and I’ve seen a 50% increase in inquiries. Truly a game-changer!"
               }
             ].map((testimonial, index) => (
               <div key={index} className="p-8 rounded-3xl bg-white/5 backdrop-blur-sm border border-purple-400/20 space-y-6">

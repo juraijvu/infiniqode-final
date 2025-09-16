@@ -25,9 +25,10 @@ import {
   Phone,
   MessageCircle,
   MapPin,
-  DollarSign
+  DollarSign,
+  Building2
 } from "lucide-react";
-import { SiGoogleads, SiFacebook, SiLinkedin, SiTwitter, SiMicrosoft, SiAmazon, SiSnapchat, SiTiktok } from "react-icons/si";
+import { SiGoogleads, SiFacebook, SiLinkedin, SiX, SiAmazon, SiSnapchat, SiTiktok } from "react-icons/si";
 
 // FAQ Item Component with improved accessibility
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -64,8 +65,8 @@ export default function PaidAdvertisingService() {
     "description": "Drive immediate traffic and conversions with strategic paid advertising campaigns across Google, Facebook, LinkedIn, and more",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Paid Advertising"
@@ -82,7 +83,7 @@ export default function PaidAdvertisingService() {
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -172,7 +173,7 @@ export default function PaidAdvertisingService() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Target, title: "Strategy & Planning", step: "Step 1", desc: "Analyze target audience, competitors, and goals to develop comprehensive paid advertising strategy and budget allocation." },
+              { icon: Target, title: "Strategy & Planning", step: "Step 1", desc: "Analyze target audience, competitors, and goals to develop professional paid advertising strategy and budget allocation." },
               { icon: Settings, title: "Campaign Setup & Launch", step: "Step 2", desc: "Create optimized campaigns with compelling ad copy, targeting parameters, and bidding strategies across platforms." },
               { icon: Eye, title: "Monitoring & Management", step: "Step 3", desc: "Continuous campaign monitoring, bid adjustments, and real-time optimization to maximize performance and ROI." },
               { icon: BarChart, title: "Analysis & Optimization", step: "Step 4", desc: "Detailed performance analysis, A/B testing, and strategic adjustments to improve conversion rates and reduce costs." }
@@ -225,7 +226,7 @@ export default function PaidAdvertisingService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive paid advertising service is designed to help businesses of all
+                Our professional paid advertising service is designed to help businesses of all
                 sizes generate immediate traffic and conversions through strategic campaigns. We work closely with your
                 marketing team to understand your goals and implement solutions that
                 deliver maximum ROI, qualified leads, and measurable business growth across all platforms.
@@ -233,23 +234,48 @@ export default function PaidAdvertisingService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "Google Ads & Search Campaign Management",
-                  "Social Media Advertising (Facebook, LinkedIn, Twitter)", 
-                  "Display & Retargeting Campaign Optimization",
-                  "Performance Analytics & ROI Reporting"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Google Ads & Search Campaign Management</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We create data-driven advertising campaigns that are strategically targeted, 
-                        continuously optimized, and designed to deliver immediate results and long-term growth.
+                        Strategically manage Google Ads and search campaigns to drive high-intent traffic 
+                        and maximize conversions with optimized bidding strategies.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Social Media Advertising (Facebook, LinkedIn, Twitter)</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Create targeted ad campaigns across Facebook, LinkedIn, and Twitter to 
+                        boost brand visibility and engage specific audience segments effectively.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Display & Retargeting Campaign Optimization</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Optimize display and retargeting ads to re-engage visitors, increase conversions, 
+                        and enhance brand recall with precise targeting techniques.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Performance Analytics & ROI Reporting</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Track ad performance with detailed analytics, delivering comprehensive ROI reports to refine strategies
+                         and ensure maximum campaign effectiveness.
+                      </p>
+                    </div>
+                  </div>
+
               </div>
             </div>
             
@@ -319,7 +345,7 @@ export default function PaidAdvertisingService() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "SaaS Lead Generation", subtitle: "500% Increase in Qualified Leads", desc: "Developed comprehensive Google Ads and LinkedIn campaigns for B2B SaaS platform with targeted keyword strategy and conversion optimization achieving 500% qualified lead increase." },
+              { title: "SaaS Lead Generation", subtitle: "500% Increase in Qualified Leads", desc: "Developed professional Google Ads and LinkedIn campaigns for B2B SaaS platform with targeted keyword strategy and conversion optimization achieving 500% qualified lead increase." },
               { title: "E-commerce Sales Growth", subtitle: "300% Revenue from Paid Ads", desc: "Created multi-platform advertising strategy for e-commerce store including Google Shopping, Facebook Ads, and retargeting campaigns resulting in 300% revenue growth from paid channels." },
               { title: "Local Business Expansion", subtitle: "10x Local Market Penetration", desc: "Implemented local advertising strategy for service business with geo-targeted campaigns across Google and Facebook achieving 10x increase in local market penetration and bookings." }
             ].map((item, index) => (
@@ -375,7 +401,7 @@ export default function PaidAdvertisingService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our comprehensive paid advertising service combines strategic campaign development with data-driven optimization to deliver 
+              Our professional paid advertising service combines strategic campaign development with data-driven optimization to deliver 
               immediate traffic, qualified leads, and measurable conversions across all major digital advertising platforms. We specialize 
               in creating high-performance campaigns for Google Ads, Facebook Advertising, LinkedIn Marketing, and other premium networks. 
               From keyword research to audience targeting, our paid advertising solutions are designed with conversion optimization, cost efficiency, 
@@ -417,8 +443,8 @@ export default function PaidAdvertisingService() {
               { icon: SiGoogleads, name: "Google Ads", desc: "Search, display, and shopping campaigns on the world's largest search platform for maximum reach." },
               { icon: SiFacebook, name: "Facebook Ads", desc: "Targeted social advertising with advanced audience segmentation and creative optimization for engagement." },
               { icon: SiLinkedin, name: "LinkedIn Ads", desc: "Professional B2B advertising platform for targeting decision-makers and industry professionals." },
-              { icon: SiTwitter, name: "Twitter Ads", desc: "Real-time advertising on Twitter for trend-based marketing and conversation engagement." },
-              { icon: SiMicrosoft, name: "Microsoft Ads", desc: "Bing search advertising platform reaching unique audiences with lower competition rates." },
+              { icon: SiX, name: "Twitter Ads", desc: "Real-time advertising on Twitter for trend-based marketing and conversation engagement." },
+              { icon:Building2, name: "Microsoft Ads", desc: "Bing search advertising platform reaching unique audiences with lower competition rates." },
               { icon: SiAmazon, name: "Amazon Ads", desc: "E-commerce advertising platform for product promotion and sponsored listings on Amazon marketplace." },
               { icon: SiSnapchat, name: "Snapchat Ads", desc: "Mobile-first advertising platform targeting younger demographics with creative, interactive formats." },
               { icon: SiTiktok, name: "TikTok Ads", desc: "Video-first advertising platform for reaching Gen Z and millennial audiences with viral content." }

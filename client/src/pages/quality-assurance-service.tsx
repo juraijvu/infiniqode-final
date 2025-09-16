@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Plus, X, Users, TrendingUp, Target, Zap, Bug, CheckCircle, TestTube, Monitor } from "lucide-react";
-import { SiSelenium, SiCypress, SiPlaywright, SiJest, SiMocha, SiPostman, SiJira, SiTestinglibrary } from "react-icons/si";
+import { SiSelenium, SiCypress, SiJest, SiMocha, SiPostman, SiJira, SiTestinglibrary } from "react-icons/si";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { SEOHead } from "@/components/seo-head";
 
 const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,10 +26,32 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
   );
 };
 
-export function QualityAssuranceService() {
+export default function QualityAssuranceService() {
   const [isContactOpen, setIsContactOpen] = useState(false);
+   const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Quality Assurance Services",
+    "description": "Ensure flawless software with our professional Quality Assurance services. We provide manual and automated testing, bug detection, and performance optimization to deliver reliable, high-quality applications.",
+    "provider": {
+      "@type": "Organization",
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
+    },
+    "areaServed": "Worldwide",
+    "serviceType": "Quality Assurance"
+  };
+
 
   return (
+      <>
+          <SEOHead
+            title="Quality Assurance Services | Software Testing & QA Company"
+            description="Ensure flawless software with our professional Quality Assurance services. We provide manual and automated testing, bug detection, and performance optimization to deliver reliable, high-quality applications."
+            keywords="quality assurance services, software testing company, QA testing, manual testing, automated testing, software quality control, QA consulting, application testing, performance testing, bug detection, QA outsourcing"
+            structuredData={structuredData}
+          />
+          <Navigation />
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden">
@@ -46,7 +71,7 @@ export function QualityAssuranceService() {
               </h1>
               
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Ensure flawless software delivery with comprehensive testing strategies that catch bugs early and maintain high-quality user experiences.
+                Ensure flawless software delivery with professional testing strategies that catch bugs early and maintain high-quality user experiences.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -90,7 +115,7 @@ export function QualityAssuranceService() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Our Quality Assurance Process</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive testing approach that ensures quality at every stage of development
+              professional testing approach that ensures quality at every stage of development
             </p>
           </div>
           
@@ -104,7 +129,7 @@ export function QualityAssuranceService() {
               {
                 step: "02", 
                 title: "Test Design",
-                description: "Create comprehensive test cases, scenarios, and automation scripts for thorough coverage."
+                description: "Create professional test cases, scenarios, and automation scripts for thorough coverage."
               },
               {
                 step: "03",
@@ -136,7 +161,7 @@ export function QualityAssuranceService() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-8">Comprehensive Testing Services</h2>
+              <h2 className="text-4xl font-bold mb-8">professional Testing Services</h2>
               
               <div className="space-y-6">
                 <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
@@ -202,14 +227,14 @@ export function QualityAssuranceService() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Quality Assurance Success Stories</h2>
-            <p className="text-xl text-gray-300">Real results from our comprehensive testing implementations</p>
+            <p className="text-xl text-gray-300">Real results from our professional testing implementations</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: "E-commerce Platform Testing",
-                description: "Comprehensive testing for major e-commerce platform, reducing production bugs by 90% and improving user satisfaction.",
+                description: "professional testing for major e-commerce platform, reducing production bugs by 90% and improving user satisfaction.",
                 metrics: ["90% fewer production bugs", "25% faster releases"]
               },
               {
@@ -250,7 +275,7 @@ export function QualityAssuranceService() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { icon: Users, title: "Expert QA Engineers", desc: "Certified testing professionals with expertise across multiple industries and technologies." },
-              { icon: TrendingUp, title: "Proven Methodologies", desc: "Industry-standard testing approaches that ensure comprehensive coverage and quality." },
+              { icon: TrendingUp, title: "Proven Methodologies", desc: "Industry-standard testing approaches that ensure professional coverage and quality." },
               { icon: Target, title: "Risk-Based Testing", desc: "Focus testing efforts on high-risk areas to maximize impact and efficiency." },
               { icon: Zap, title: "Fast Turnaround", desc: "Efficient testing processes that don't slow down your development cycles." }
             ].map((feature, index) => (
@@ -271,14 +296,14 @@ export function QualityAssuranceService() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Testing Tools & Frameworks</h2>
-            <p className="text-xl text-gray-300">Industry-leading testing tools for comprehensive quality assurance</p>
+            <p className="text-xl text-gray-300">Industry-leading testing tools for professional quality assurance</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
               { icon: SiSelenium, name: "Selenium", desc: "Popular open-source framework for automating web browser testing across platforms." },
               { icon: SiCypress, name: "Cypress", desc: "Modern end-to-end testing framework for web applications with real-time browser testing." },
-              { icon: SiPlaywright, name: "Playwright", desc: "Microsoft's cross-browser automation library for reliable end-to-end testing." },
+              { icon: TestTube, name: "Playwright", desc: "Microsoft's cross-browser automation library for reliable end-to-end testing." },
               { icon: SiJest, name: "Jest", desc: "JavaScript testing framework with built-in test runner, assertion library, and mocking." },
               { icon: SiMocha, name: "Mocha", desc: "Flexible JavaScript test framework for Node.js and browser testing with various assertion libraries." },
               { icon: SiPostman, name: "Postman", desc: "API testing platform for testing REST and GraphQL APIs with automated test suites." },
@@ -308,11 +333,11 @@ export function QualityAssuranceService() {
           <div className="space-y-4">
             <FAQItem 
               question="What types of testing do you provide?"
-              answer="We provide comprehensive testing including functional, performance, security, usability, compatibility, API testing, and test automation. We cover manual and automated testing approaches."
+              answer="We provide professional testing including functional, performance, security, usability, compatibility, API testing, and test automation. We cover manual and automated testing approaches."
             />
             <FAQItem 
               question="How do you ensure test coverage?"
-              answer="We use risk-based testing approaches, requirement traceability matrices, and code coverage analysis to ensure comprehensive test coverage of critical functionality and edge cases."
+              answer="We use risk-based testing approaches, requirement traceability matrices, and code coverage analysis to ensure professional test coverage of critical functionality and edge cases."
             />
             <FAQItem 
               question="Can you integrate with our development process?"
@@ -324,7 +349,7 @@ export function QualityAssuranceService() {
             />
             <FAQItem 
               question="How do you handle different environments and devices?"
-              answer="We test across multiple environments, browsers, operating systems, and devices. We maintain device labs and use cloud testing platforms for comprehensive compatibility testing."
+              answer="We test across multiple environments, browsers, operating systems, and devices. We maintain device labs and use cloud testing platforms for professional compatibility testing."
             />
             <FAQItem 
               question="What deliverables do you provide?"
@@ -344,7 +369,7 @@ export function QualityAssuranceService() {
                 <X className="w-6 h-6" />
               </button>
             </div>
-            <p className="text-gray-300 mb-6">Ready to ensure flawless software delivery? Let's implement comprehensive testing strategies.</p>
+            <p className="text-gray-300 mb-6">Ready to ensure flawless software delivery? Let's implement professional testing strategies.</p>
             <div className="space-y-4">
               <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300">
                 Get QA Strategy Consultation
@@ -357,5 +382,7 @@ export function QualityAssuranceService() {
         </div>
       )}
     </div>
+    <Footer />
+    </>
   );
 }

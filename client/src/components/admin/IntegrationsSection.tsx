@@ -151,9 +151,9 @@ export function IntegrationsSection() {
   const [schemaSettings, setSchemaSettings] = useState({
     organization: {
       enabled: true,
-      name: 'DigitalCraft Agency',
-      url: 'https://digitalcraft.com',
-      logo: 'https://digitalcraft.com/logo.png',
+      name: 'InfiniQode Agency',
+      url: 'https://InfiniQode.com',
+      logo: 'https://InfiniQode.com/logo.png',
       description: 'Professional digital marketing and web development services'
     },
     website: {

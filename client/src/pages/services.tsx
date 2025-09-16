@@ -19,7 +19,7 @@ export default function Services() {
     <>
       <SEOHead
         title="Our Services"
-        description="Comprehensive digital services including web development, SaaS development, digital marketing, mobile development, and SEO optimization. Transform your business with our expert solutions."
+        description="professional digital services including web development, SaaS development, digital marketing, mobile development, and SEO optimization. Transform your business with our expert solutions."
         keywords="web development, SaaS development, digital marketing, mobile apps, SEO, React TypeScript, Python Flask"
       />
       <Navigation />
@@ -34,7 +34,7 @@ export default function Services() {
             Our <span className="gradient-text">Services</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-            Comprehensive digital solutions to transform your business and drive real results
+            professional digital solutions to transform your business and drive real results
           </p>
           <ContactPopup 
             trigger={
@@ -160,7 +160,7 @@ export default function Services() {
               {
                 step: "02", 
                 title: "Strategy",
-                description: "Our team develops a comprehensive strategy and project roadmap tailored to your specific needs and objectives."
+                description: "Our team develops a professional strategy and project roadmap tailored to your specific needs and objectives."
               },
               {
                 step: "03",

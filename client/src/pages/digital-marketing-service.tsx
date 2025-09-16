@@ -55,8 +55,8 @@ export default function DigitalMarketingService() {
     "description": "Data-driven growth strategies that increase brand visibility and drive conversions",
     "provider": {
       "@type": "Organization",
-      "name": "DigitalCraft",
-      "url": "https://digitalcraft.agency"
+      "name": "InfiniQode",
+      "url": "https://theinfiniqode.com"
     },
     "areaServed": "Worldwide",
     "serviceType": "Digital Marketing"
@@ -67,14 +67,14 @@ export default function DigitalMarketingService() {
     <>
       <SEOHead
         title="Digital Marketing Services - Data-Driven Growth Strategies"
-        description="Data-driven growth strategies that increase brand visibility and drive conversions. SEO, social ads, conversion optimization, and comprehensive analytics."
+        description="Data-driven growth strategies that increase brand visibility and drive conversions. SEO, social ads, conversion optimization, and professional analytics."
         keywords="digital marketing, SEO, SEM, social media advertising, conversion optimization, growth marketing"
         structuredData={structuredData}
       />
       <Navigation />
       
       {/* Hero Section - Reference Design Match */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen mt-[150px] md:mt-[50px] flex items-center overflow-hidden">
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -164,10 +164,10 @@ export default function DigitalMarketingService() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Search, title: "Market Research & Analysis", step: "Step 1", desc: "Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy" },
-              { icon: Target, title: "Audience Targeting Strategy", step: "Step 2", desc: "Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy" },
-              { icon: TrendingUp, title: "Campaign Implementation", step: "Step 3", desc: "Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy" },
-              { icon: BarChart3, title: "Performance Optimization", step: "Step 4", desc: "Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy Research Digital Marketing Strategy" }
+              { icon: Search, title: "Market Research & Analysis", step: "Step 1", desc: "Analyze market trends and competitors to inform data-driven marketing strategies." },
+              { icon: Target, title: "Audience Targeting Strategy", step: "Step 2", desc: "Define and target ideal audiences with precision for maximum engagement." },
+              { icon: TrendingUp, title: "Campaign Implementation", step: "Step 3", desc: "Execute multi-channel campaigns with tailored content for optimal reach." },
+              { icon: BarChart3, title: "Performance Optimization", step: "Step 4", desc: "Monitor and optimize campaigns using analytics for enhanced ROI." }
             ].map((item, index) => (
               <div key={index} className="group">
                 {/* Glass Card */}
@@ -217,7 +217,7 @@ export default function DigitalMarketingService() {
               </h2>
               
               <p className="text-lg text-purple-100/90 leading-relaxed">
-                Our comprehensive digital marketing service is designed to help businesses of all
+                Our professional digital marketing service is designed to help businesses of all
                 sizes harness the power of data-driven strategies. We work closely with your
                 team to understand your unique challenges and implement marketing solutions that
                 drive real business value and measurable ROI.
@@ -225,23 +225,42 @@ export default function DigitalMarketingService() {
               
               {/* Service Features */}
               <div className="space-y-6">
-                {[
-                  "SEO & Content Strategy",
-                  "Paid Advertising Campaigns", 
-                  "Social Media Marketing",
-                  "Performance Analytics & Reporting"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">SEO & Content Strategy</h3>
                       <p className="text-purple-100/80 leading-relaxed">
-                        We analyze your market and identify 
-                        opportunities where digital marketing can create the most impact.
+                       Boost rankings with optimized content and targeted SEO strategies for organic growth.
                       </p>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Paid Advertising Campaigns</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Drive conversions with strategic PPC and ad campaigns across platforms.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Social Media Marketing</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Engage audiences with compelling social media strategies to build brand loyalty.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Performance Analytics & Reporting</h3>
+                      <p className="text-purple-100/80 leading-relaxed">
+                        Track KPIs and deliver detailed reports to maximize campaign effectiveness.
+                      </p>
+                    </div>
+                  </div>
               </div>
             </div>
             
@@ -367,12 +386,16 @@ export default function DigitalMarketingService() {
           {/* Service Description */}
           <div className="p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-purple-700/5 backdrop-blur-xl border border-purple-400/20 shadow-2xl">
             <p className="text-purple-100/90 leading-relaxed text-lg">
-              Our premium digital marketing service combines data-driven strategies with creative execution to Our premium digital marketing service combines 
-              data-driven strategies with creative execution to Our premium digital marketing service combines data-driven strategies with creative execution to 
-              Our premium digital marketing service combines data-driven strategies with creative execution to Our premium digital marketing service combines 
-              data-driven strategies with creative execution to Our premium digital marketing service combines data-driven strategies with creative execution to 
-              Our premium digital marketing service combines data-driven strategies with creative execution to Our premium digital marketing service combines 
-              data-driven strategies with creative execution to Our premium digital marketing service combines data-driven strategies with creative execution to.
+              Infiniqode’s digital marketing services empower businesses to dominate online landscapes through strategic, 
+              data-driven campaigns. We begin with in-depth market research and competitor analysis to craft tailored 
+              strategies, ensuring your brand reaches the right audience. Our SEO and content strategies boost organic 
+              visibility, targeting high-intent keywords to drive traffic. Paid advertising campaigns, including PPC 
+              and social ads, maximize ROI with precise targeting, while our social media marketing builds engagement 
+              and loyalty across platforms like Instagram and LinkedIn. We execute multi-channel campaigns with compelling 
+              content, continuously optimizing performance using advanced analytics to track KPIs like click-through rates 
+              and conversions. Our detailed reporting provides actionable insights, helping clients achieve up to 40% higher 
+              engagement within months. From startups to enterprises, Infiniqode delivers scalable, results-focused 
+              digital marketing that accelerates growth and strengthens brand presence in competitive markets.
             </p>
           </div>
           
@@ -410,7 +433,7 @@ export default function DigitalMarketingService() {
               { icon: SiFacebook, name: "Facebook", desc: "Social media advertising and audience targeting across Facebook and Instagram platforms." },
               { icon: SiLinkedin, name: "LinkedIn", desc: "Professional B2B marketing and lead generation through LinkedIn advertising platform." },
               { icon: SiInstagram, name: "Instagram", desc: "Visual storytelling and influencer marketing campaigns for brand awareness and engagement." },
-              { icon: SiHubspot, name: "HubSpot", desc: "Marketing automation, CRM integration, and comprehensive lead nurturing workflows." },
+              { icon: SiHubspot, name: "HubSpot", desc: "Marketing automation, CRM integration, and professional lead nurturing workflows." },
               { icon: SiGoogleanalytics, name: "Analytics", desc: "Advanced web analytics and conversion tracking for data-driven decision making." },
               { icon: Mail, name: "Email Marketing", desc: "Automated email campaigns and personalized customer journey optimization." },
               { icon: MessageSquare, name: "Content Tools", desc: "Content management and social media scheduling tools for consistent brand messaging." }

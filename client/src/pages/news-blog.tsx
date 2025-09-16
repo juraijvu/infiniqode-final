@@ -77,7 +77,7 @@ export default function NewsBlog() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "DigitalCraft"
+      "name": "InfiniQode"
     },
     "datePublished": post.publishedAt,
     "dateModified": post.updatedAt,
@@ -383,7 +383,7 @@ export default function NewsBlog() {
                       Industry Leaders React to Major Announcement
                     </h3>
                     <p className="text-muted-foreground text-sm">
-                      Comprehensive roundup of reactions from key industry figures and competitors...
+                      professional roundup of reactions from key industry figures and competitors...
                     </p>
                   </div>
                   <div className="text-sm text-muted-foreground ml-4">

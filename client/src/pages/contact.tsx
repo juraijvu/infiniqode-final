@@ -4,6 +4,7 @@ import { SEOHead } from "@/components/seo-head";
 import { ContactSection } from "@/components/contact-section";
 import { GlassCard } from "@/components/glass-card";
 import { Button } from "@/components/ui/button";
+import { ContactPopup } from "@/components/contact-popup";
 import { Link } from "wouter";
 import { 
   Mail, 
@@ -23,15 +24,15 @@ export default function Contact() {
       icon: <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25"><Mail className="w-8 h-8 text-white" /></div>,
       title: "Email Us",
       description: "Send us an email and we'll respond within 24 hours",
-      contact: "hello@digitalcraft.agency",
-      action: "mailto:hello@digitalcraft.agency"
+      contact: "info@theinfiniqode.com",
+      action: "mailto:info@theinfiniqode.com"
     },
     {
       icon: <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25"><Phone className="w-8 h-8 text-white" /></div>,
       title: "Call Us",
       description: "Speak directly with our team during business hours",
-      contact: "+1 (555) 123-4567",
-      action: "tel:+15551234567"
+      contact: "+91 9694 000 930",
+      action: "tel:+919694000930"
     },
     {
       icon: <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25"><MessageSquare className="w-8 h-8 text-white" /></div>,
@@ -64,11 +65,11 @@ export default function Contact() {
     },
     {
       question: "Do you provide ongoing support after project completion?",
-      answer: "Yes, we offer comprehensive post-launch support including maintenance, updates, hosting management, and technical assistance. We have various support packages to fit different needs and budgets."
+      answer: "Yes, we offer professional post-launch support including maintenance, updates, hosting management, and technical assistance. We have various support packages to fit different needs and budgets."
     },
     {
       question: "Can you help with digital marketing and SEO?",
-      answer: "Absolutely! We offer comprehensive digital marketing services including SEO optimization, content strategy, social media marketing, and PPC campaigns. We can help you grow your online presence and drive qualified traffic."
+      answer: "Absolutely! We offer professional digital marketing services including SEO optimization, content strategy, social media marketing, and PPC campaigns. We can help you grow your online presence and drive qualified traffic."
     },
     {
       question: "What's your pricing structure?",
@@ -85,7 +86,7 @@ export default function Contact() {
     {
       step: "02",
       title: "Proposal & Planning",
-      description: "We create a comprehensive proposal with timeline, deliverables, and pricing for your review."
+      description: "We create a professional proposal with timeline, deliverables, and pricing for your review."
     },
     {
       step: "03",
@@ -103,7 +104,7 @@ export default function Contact() {
     <>
       <SEOHead
         title="Contact Us"
-        description="Get in touch with DigitalCraft for your next digital project. We offer web development, SaaS development, digital marketing, and more. Free consultation available."
+        description="Get in touch with InfiniQode for your next digital project. We offer web development, SaaS development, digital marketing, and more. Free consultation available."
         keywords="contact us, digital agency contact, web development consultation, project quote"
       />
       <Navigation />
@@ -121,14 +122,26 @@ export default function Contact() {
             Ready to transform your digital presence? We're here to help you achieve your goals with cutting-edge solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <ContactPopup 
+                          trigger={
             <Button className="glass-button px-8 py-4 text-lg" data-testid="button-start-project">
               <Rocket className="mr-2 h-5 w-5" />
               Start Your Project
             </Button>
+             }
+              title="Ready to Transform Your Digital Presence?"
+              description="Tell us about your project goals and let's create something amazing together. Get a free consultation and custom proposal."
+            />
+            <ContactPopup 
+                          trigger={
             <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white px-8 py-4 text-lg transition-all duration-300" data-testid="button-schedule-call">
               <Calendar className="mr-2 h-5 w-5" />
               Schedule a Call
             </Button>
+             }
+              title="Ready to Transform Your Digital Presence?"
+              description="Tell us about your project goals and let's create something amazing together. Get a free consultation and custom proposal."
+            />
           </div>
         </div>
       </section>
@@ -186,9 +199,9 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold mb-1">Address</h3>
                     <p className="text-muted-foreground">
-                      123 Innovation Drive<br />
-                      San Francisco, CA 94105<br />
-                      United States
+                      B98, mangalam Vihar<br />
+                      harmada, Jaipur, Rajasthan PIN-302013<br />
+                      India
                     </p>
                   </div>
                 </div>
@@ -216,7 +229,7 @@ export default function Contact() {
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Visit Our Office</h3>
                 <p className="text-muted-foreground mb-6">
-                  Located in the heart of San Francisco's tech district, our office is easily accessible 
+                  Located in the heart of Jaipur district, our office is easily accessible 
                   by public transportation and offers convenient parking.
                 </p>
                 <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white transition-all duration-300" data-testid="button-get-directions">
@@ -276,9 +289,15 @@ export default function Contact() {
             <p className="text-muted-foreground mb-6">
               Don't see your question answered here?
             </p>
+            <ContactPopup 
+              trigger={
             <Button className="glass-button" data-testid="button-contact-support">
               Contact Support
             </Button>
+              }
+            title="You can Submit your Request?"
+              description="Tell us more about your project and the request, we will look into it"
+            />
           </div>
         </div>
       </section>
@@ -297,10 +316,16 @@ export default function Contact() {
                 Let's discuss your project and explore how we can help you succeed.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <ContactPopup 
+              trigger={
                 <Button className="glass-button px-8 py-4 text-lg" data-testid="button-free-consultation">
                   <MessageSquare className="mr-2 h-5 w-5" />
                   Free Consultation
                 </Button>
+                 }
+            title="You can Submit your Request?"
+              description="Tell us more about your project and the request, we will look into it"
+            />
                 <Link href="/portfolio">
                   <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white px-8 py-4 text-lg transition-all duration-300" data-testid="button-view-our-work">
                     View Our Work

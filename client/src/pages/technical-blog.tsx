@@ -80,7 +80,7 @@ export default function TechnicalBlog() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "DigitalCraft"
+      "name": "InfiniQode"
     },
     "datePublished": post.publishedAt,
     "proficiencyLevel": "Intermediate"

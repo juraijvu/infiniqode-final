@@ -18,7 +18,7 @@ const portfolioItems = [
   {
     id: "2",
     title: "Analytics SaaS Platform",
-    description: "Comprehensive analytics dashboard with real-time data visualization and reporting",
+    description: "professional analytics dashboard with real-time data visualization and reporting",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
     category: "SaaS",
     technologies: ["React", "D3.js", "SQL"],
@@ -45,7 +45,7 @@ const portfolioItems = [
   {
     id: "5",
     title: "Digital Marketing Success",
-    description: "Comprehensive digital marketing campaign that increased ROI by 300%",
+    description: "professional digital marketing campaign that increased ROI by 300%",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
     category: "Marketing",
     technologies: ["SEO", "PPC", "Analytics"],

@@ -33,14 +33,14 @@ export default function Home() {
   // Counter refs for animated numbers
   const projectsCountRef = useCountAnimation(150, 2, '+');
   const satisfactionCountRef = useCountAnimation(98, 2, '%');
-  const experienceCountRef = useCountAnimation(5, 1.5, '+');
+  const experienceCountRef = useCountAnimation(2, 1.5, '+');
   
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "DigitalCraft",
-    "url": "https://digitalcraft.agency",
-    "logo": "https://digitalcraft.agency/logo.png",
+    "name": "InfiniQode",
+    "url": "https://theinfiniqode.com",
+    "logo": "https://theinfiniqode.com/logo.png",
     "description": "Premium digital agency specializing in React TypeScript development, Python Flask backends, and cutting-edge digital marketing solutions.",
     "address": {
       "@type": "PostalAddress",
@@ -54,9 +54,9 @@ export default function Home() {
       "contactType": "customer service"
     },
     "sameAs": [
-      "https://linkedin.com/company/digitalcraft",
-      "https://twitter.com/digitalcraft",
-      "https://github.com/digitalcraft"
+      "https://linkedin.com/company/InfiniQode",
+      "https://twitter.com/InfiniQode",
+      "https://github.com/InfiniQode"
     ]
   };
 
@@ -64,7 +64,7 @@ export default function Home() {
     <>
       <SEOHead
         title="Home"
-        description="DigitalCraft is a premium digital agency specializing in React TypeScript development, Python Flask backends, and cutting-edge digital marketing solutions. Transform your business with our world-class solutions."
+        description="InfiniQode is a premium digital agency specializing in React TypeScript development, Python Flask backends, and cutting-edge digital marketing solutions. Transform your business with our world-class solutions."
         keywords="digital agency, web development, digital marketing, React TypeScript, Python Flask, SaaS development, SEO optimization"
         structuredData={structuredData}
       />
@@ -115,7 +115,7 @@ export default function Home() {
               </div>
               <div ref={experienceCountRef as any} className="text-5xl md:text-6xl font-display font-bold text-white mb-4">0+</div>
               <div className="font-body text-muted-foreground text-lg mb-4">Years Experience</div>
-              <div className="text-sm text-muted-foreground/70">Since 2019</div>
+              <div className="text-sm text-muted-foreground/70">Since 2023</div>
             </div>
             
             <div className="stat-item glass-card  p-8 text-center group" data-testid="stat-support">
@@ -372,7 +372,7 @@ export default function Home() {
                   <h3 className="font-heading text-2xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Development & Integration</h3>
                   <p className="font-body text-muted-foreground mb-4 leading-relaxed">
                     Using cutting-edge technologies and best practices, we build scalable, secure solutions 
-                    with clean code architecture and comprehensive testing protocols.
+                    with clean code architecture and professional testing protocols.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
@@ -433,7 +433,7 @@ export default function Home() {
       <section id="about" className="py-3 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-4">
-            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">About DigitalCraft</h2>
+            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">About InfiniQode</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We're a team of passionate developers, designers, and digital strategists who believe in 
               crafting exceptional digital experiences that drive real business results and transform how people interact with technology.
@@ -587,7 +587,7 @@ export default function Home() {
               </div>
               
               <p className="font-body text-muted-foreground mb-6 leading-relaxed">
-                Built a comprehensive e-commerce platform serving 2M+ customers with real-time inventory, 
+                Built a professional e-commerce platform serving 2M+ customers with real-time inventory, 
                 personalized recommendations, and seamless checkout experience.
               </p>
               
@@ -666,10 +666,11 @@ export default function Home() {
       
       {/* Simple section divider for mobile performance */}
       <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
-      
+      {/* 
       <TestimonialsSection />
       
       <PartnersSection />
+      */}
       
       {/* Simple section divider for mobile performance */}
       <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
@@ -690,37 +691,37 @@ export default function Home() {
               {
                 title: 'E-commerce & Retail',
                 description: 'Custom platforms, inventory management, payment processing, and customer analytics',
-                projects: '45+',
+                projects: '5+',
                 icon: <Monitor className="w-8 h-8" />
               },
               {
                 title: 'Healthcare & MedTech',
                 description: 'HIPAA-compliant systems, patient portals, telemedicine, and data analytics',
-                projects: '25+',
+                projects: '6+',
                 icon: <Shield className="w-8 h-8" />
               },
               {
                 title: 'FinTech & Banking',
                 description: 'Secure payment systems, trading platforms, KYC/AML compliance, and blockchain',
-                projects: '30+',
+                projects: '12+',
                 icon: <TrendingUp className="w-8 h-8" />
               },
               {
                 title: 'Education & E-learning',
                 description: 'Learning management systems, virtual classrooms, and assessment platforms',
-                projects: '20+',
+                projects: '15+',
                 icon: <Users className="w-8 h-8" />
               },
               {
                 title: 'SaaS & Enterprise',
                 description: 'Scalable platforms, API integrations, workflow automation, and analytics',
-                projects: '35+',
+                projects: '3+',
                 icon: <Server className="w-8 h-8" />
               },
               {
                 title: 'Media & Entertainment',
                 description: 'Streaming platforms, content management, user engagement, and monetization',
-                projects: '15+',
+                projects: '6+',
                 icon: <PlayCircle className="w-8 h-8" />
               }
             ].map((industry, index) => (
@@ -754,7 +755,7 @@ export default function Home() {
           <div className="text-center mb-4">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">Knowledge Hub</h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Stay ahead with our comprehensive resources, whitepapers, and technical insights 
+              Stay ahead with our professional resources, whitepapers, and technical insights 
               covering the latest trends in web development and digital transformation.
             </p>
           </div>
@@ -891,7 +892,7 @@ export default function Home() {
       <section className="py-16 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h3 className="text-4xl md:text-5xl font-bold mb-6 text-white">Why Choose DigitalCraft?</h3>
+            <h3 className="text-4xl md:text-5xl font-bold mb-6 text-white">Why Choose InfiniQode?</h3>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We deliver exceptional results that drive your business forward
             </p>

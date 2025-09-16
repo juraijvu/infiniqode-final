@@ -42,7 +42,7 @@
   	height: 109px;
   	flex-shrink: 0;
 }
-.ourComprehensiveAi {
+.ourprofessionalAi {
   	align-self: stretch;
   	position: relative;
   	font-size: 18px;

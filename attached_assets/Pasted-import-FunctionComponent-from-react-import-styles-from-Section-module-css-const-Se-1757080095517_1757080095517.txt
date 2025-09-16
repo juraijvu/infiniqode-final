@@ -8,7 +8,7 @@ const Section:FunctionComponent = () => {
       			<div className={styles.aboutService}>
         				<div className={styles.whatOurUiuxIntegrationSerParent}>
           					<div className={styles.whatOurUiux}>What Our UI/UX Integration Service Includes</div>
-          					<div className={styles.ourComprehensiveAi}>Our comprehensive AI integration service is designed to help businesses of all sizes harness the power of artificial intelligence. We work closely with your team to understand your unique challenges and implement AI solutions that drive real business value.</div>
+          					<div className={styles.ourprofessionalAi}>Our professional AI integration service is designed to help businesses of all sizes harness the power of artificial intelligence. We work closely with your team to understand your unique challenges and implement AI solutions that drive real business value.</div>
         				</div>
         				<div className={styles.frame1st}>
           					<img className={styles.frame1stChild} alt="" src="Group 2.svg" />

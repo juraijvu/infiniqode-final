@@ -92,7 +92,7 @@ export default function MarketingBlog() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "DigitalCraft"
+      "name": "InfiniQode"
     },
     "datePublished": post.publishedAt,
     "articleSection": "Marketing"
@@ -453,7 +453,7 @@ export default function MarketingBlog() {
           <Download className="h-16 w-16 text-primary mx-auto mb-6" />
           <h2 className="text-3xl font-bold mb-4">Get the Complete Marketing Guide</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Download our comprehensive 50-page marketing optimization guide with actionable strategies, 
+            Download our professional 50-page marketing optimization guide with actionable strategies, 
             templates, and case studies you can implement immediately.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

@@ -6,6 +6,7 @@ import { ContactPopup } from "@/components/contact-popup";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Menu, Code, ChevronDown, Globe, Server, TrendingUp, Cloud, X, Home, Briefcase, User, FileText, Mail } from "lucide-react";
+import myImage from '../Logo.svg';
 
 export function Navigation() {
   const [location] = useLocation();
@@ -58,7 +59,7 @@ export function Navigation() {
       services: [
         { href: "/services/cloud-migration", label: "Cloud Migration", icon: Cloud, description: "Seamless cloud platform migration" },
         { href: "/services/devops-automation", label: "DevOps Automation", icon: Server, description: "Automated CI/CD pipelines" },
-        { href: "/services/cybersecurity", label: "Cybersecurity", icon: TrendingUp, description: "Comprehensive security solutions" },
+        { href: "/services/cybersecurity", label: "Cybersecurity", icon: TrendingUp, description: "professional security solutions" },
         { href: "/services/quality-assurance", label: "Quality Assurance", icon: Code, description: "Complete testing services" },
       ]
     },
@@ -132,15 +133,15 @@ export function Navigation() {
       <div className="mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <div className="flex items-center space-x-2 cursor-pointer" data-testid="logo">
-              <div ref={logoRef} className="w-8 h-8 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center">
-                <Code className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white">DigitalCraft</span>
-            </div>
+             <img 
+                  src={myImage} 
+                  alt="Logo"
+                  width={100}
+                  height={50}
+                />
           </Link>
           
-          <div ref={navLinksRef} className="hidden md:flex items-center space-x-8">
+          <div ref={navLinksRef} className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
@@ -190,7 +191,7 @@ export function Navigation() {
             </DropdownMenu>
           </div>
 
-          <div ref={ctaButtonRef} className="hidden md:block">
+          <div ref={ctaButtonRef} className="hidden lg:block">
             <ContactPopup 
               trigger={
                 <Button variant="glass" size="default" data-testid="button-get-started">
@@ -204,7 +205,7 @@ export function Navigation() {
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden relative z-10" data-testid="button-mobile-menu">
+              <Button variant="ghost" size="icon" className="lg:hidden relative z-10" data-testid="button-mobile-menu">
                 <div className="relative w-6 h-6 transform transition-transform duration-200">
                   {isOpen ? (
                     <X className="w-6 h-6" />
@@ -221,15 +222,17 @@ export function Navigation() {
               {/* Mobile Menu Header */}
               <div className="flex items-center justify-between p-6 border-b border-purple-500/50">
                 <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center">
-                    <Code className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-lg font-bold text-white">DigitalCraft</span>
+                   <img 
+      src={myImage} 
+      alt="Logo"
+      width={100}
+      height={50}
+    />
                 </div>
               </div>
 
               {/* Mobile Menu Content */}
-              <div className="flex flex-col h-full">
+              <div className="flex flex-col h-full overflow-auto">
                 <div className="flex-1 px-6 py-4 space-y-2">
                   {/* Main Navigation */}
                   {navItems.map((item) => (

@@ -432,7 +432,7 @@ function AdminDashboardContent() {
           <CardContent className="space-y-4">
             <div>
               <Label className="text-gray-300">Site Title</Label>
-              <Input className="bg-slate-900/50 border-slate-600 text-white" placeholder="DigitalCraft Agency" />
+              <Input className="bg-slate-900/50 border-slate-600 text-white" placeholder="InfiniQode Agency" />
             </div>
             <div>
               <Label className="text-gray-300">Site Description</Label>
@@ -525,7 +525,7 @@ function AdminDashboardContent() {
               <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
                 <span className="text-sm font-bold text-white">DC</span>
               </div>
-              <span className="font-semibold text-lg">DigitalCraft CMS</span>
+              <span className="font-semibold text-lg">InfiniQode CMS</span>
             </div>
           </div>
           
