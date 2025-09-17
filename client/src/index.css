@@ -150,7 +150,7 @@
     .glass-card:hover,
     .glass-project-card:hover,
     .glass-blog-card:hover {
-      transform: none !important;
+      
       box-shadow: inherit !important;
       background: rgba(139, 92, 246, 0.18) !important;
     }

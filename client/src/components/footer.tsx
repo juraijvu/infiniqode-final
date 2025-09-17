@@ -97,7 +97,6 @@ export function Footer() {
             <p className="text-muted-foreground text-sm">
               © 2023 InfiniQode. All rights reserved.
             </p>
-
           </div>
         </div>
       </div>
