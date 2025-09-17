@@ -445,7 +445,981 @@ export default function Services() {
                     />
                   </div>
                 </GlassCard>
-                
+                  <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">AI & Machine Learning Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we harness the power of artificial intelligence
+                     to transform business operations and unlock new possibilities. Our team creates intelligent solutions that 
+                    learn, adapt, and evolve. 
+                    From predictive analytics to automated decision-making systems, we deliver AI that drives real business value.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/ai-machine-learning">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for AI & Machine Learning Services`}
+                      description={`Interested in our AI & Machine Learning services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="AI & Machine Learning Services"
+                    />
+                  </div>
+                </GlassCard>
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Data Analytics Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we transform raw data into actionable insights 
+                    that drive strategic business decisions and competitive advantages. Our team creates powerful analytics
+                     solutions that reveal hidden opportunities. From business intelligence to predictive modeling,
+                     we deliver data analytics that accelerate your business growth.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/data-analytics">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Data Analytics Services`}
+                      description={`Interested in our Data Analytics services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Data Analytics Services"
+                    />
+                  </div>
+                </GlassCard>
+                                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Cloud Migration Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">Seamlessly migrate your infrastructure to the
+                     cloud with minimal downtime,
+                     enhanced security, and improved scalability.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/cloud-migration">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Cloud Migration Services`}
+                      description={`Interested in our Cloud Migration services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Cloud Migration Services"
+                    />
+                  </div>
+                </GlassCard>
+                 <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">DevOps Automation Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">Streamline development workflows with automated 
+                    CI/CD pipelines, infrastructure as
+                     code, and monitoring solutions that accelerate delivery.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/devops-automation">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for DevOps Automation Services`}
+                      description={`Interested in our DevOps Automation services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="DevOps Automation Services"
+                    />
+                  </div>
+                </GlassCard>
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Cybersecurity Solutions</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we protect your business from cyber threats with
+                     professional security solutions that safeguard your data, systems, and reputation. Our team provides advanced 
+                     threat detection and prevention. From security audits to compliance frameworks, 
+                    we deliver cybersecurity solutions that keep your business secure.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/cybersecurity">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Cybersecurity Solutions`}
+                      description={`Interested in our Cybersecurity solutions ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Cybersecurity solutions"
+                    />
+                  </div>
+                </GlassCard>
+                          <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Quality Assurance</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">Ensure flawless software delivery with professional 
+                    testing strategies that catch 
+                    bugs early and maintain high-quality user experiences.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/quality-assurance">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Quality Assurance`}
+                      description={`Interested in our Quality Assurance ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Quality Assurance"
+                    />
+                  </div>
+                </GlassCard>
+                                  <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Digital Marketing Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we believe in the transformative power of 
+                    data-driven marketing solutions. Our team of experts is dedicated to helping businesses like yours thrive 
+                    in the competitive digital landscape. From strategic SEO optimization to performance-driven advertising campaigns, 
+                    we are committed to delivering results that exceed expectations.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/digital-marketing">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Digital Marketing Services`}
+                      description={`Interested in our Digital Marketing services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Digital Marketing services"
+                    />
+                  </div>
+                </GlassCard>
+                  
+                    <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">SEO Optimization Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we boost your search engine rankings and 
+                    drive organic traffic with professional SEO strategies that deliver measurable results. Our team creates 
+                    data-driven optimization campaigns. From technical SEO to content strategy, we deliver 
+                    search engine optimization that increases your online visibility.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/seo-optimization">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for SEO Optimization Services`}
+                      description={`Interested in our SEO Optimization services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="SEO Optimization services"
+                    />
+                  </div>
+                </GlassCard>
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Content Marketing Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we create compelling content that engages 
+                    your audience, builds trust, and drives conversions across all marketing channels. Our team crafts strategic
+                     content that resonates with your audience. From blog writing to video production, we deliver content marketing that 
+                    amplifies your brand and drives measurable results.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/content-marketing">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Content Marketing Services`}
+                      description={`Interested in our Content Marketing services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Content Marketing services"
+                    />
+                  </div>
+                </GlassCard>
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Email Marketing Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we build lasting relationships and 
+                    drive revenue through strategic email marketing campaigns. Our team creates personalized experiences 
+                    that convert subscribers into loyal customers. From automation workflows to advanced 
+                    segmentation strategies, we deliver results that exceed expectations.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/email-marketing">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Email Marketing Services`}
+                      description={`Interested in our Email Marketing services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Email Marketing services"
+                    />
+                  </div>
+                </GlassCard>
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Social Media Management Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we build engaged communities and drive 
+                    meaningful interactions across all social platforms with professional social media management services. 
+                    Our team creates authentic social experiences. From content creation to community management, we deliver 
+                    social media 
+                    strategies that build brand loyalty and drive conversions.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/social-media-management">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Social Media Management Services`}
+                      description={`Interested in our social media management services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Social Media Management services"
+                    />
+                  </div>
+                </GlassCard>
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Paid Advertising Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we drive immediate traffic and conversions 
+                    with strategic paid advertising campaigns across Google, Facebook, LinkedIn, and more. Our team creates 
+                    high-performing ad campaigns that deliver results. From PPC management to social advertising, we deliver 
+                    paid advertising solutions that maximize ROI and accelerate growth.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/paid-advertising">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Paid Advertising Services`}
+                      description={`Interested in our Paid Advertising services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Paid Advertising services"
+                    />
+                  </div>
+                </GlassCard>
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Marketing Automation Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we scale your marketing efforts with 
+                    intelligent automation that nurtures leads, personalizes experiences, and drives conversions on autopilot.
+                     Our team creates sophisticated marketing workflows. From lead nurturing to personalization, 
+                    we deliver automation solutions that maximize efficiency and ROI.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/marketing-automation">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Marketing Automation Services`}
+                      description={`Interested in our Marketing Automation services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Marketing Automation services"
+                    />
+                  </div>
+                </GlassCard>
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">UI/UX Design Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we create intuitive, beautiful user 
+                    experiences that delight users and drive business results through research-driven design. Our team 
+                    crafts digital experiences that users love. From user research to interactive prototypes, we deliver design 
+                    solutions that enhance usability and increase conversions.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/ui-ux-design">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for UI/UX Design Services`}
+                      description={`Interested in our UI/UX Design services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="UI/UX Design services"
+                    />
+                  </div>
+                </GlassCard>
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Brand Identity Design Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we create memorable brand identities 
+                    that resonate with your audience and drive business growth. Our team crafts distinctive visual identities 
+                    that tell your story. From logo design to complete brand guidelines, we deliver brand identity solutions 
+                    that establish strong market presence and authentic connections.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/brand-identity">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Brand Identity Design Services`}
+                      description={`Interested in our Brand Identity Design services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Brand Identity Design services"
+                    />
+                  </div>
+                </GlassCard>
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Business Consulting Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we provide strategic business consulting that 
+                    transforms operations, accelerates growth, and drives sustainable competitive advantages. Our team delivers 
+                    expert guidance for business transformation. From strategy development to process optimization, 
+                    we deliver consulting solutions that drive measurable business results.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/business-consulting">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Business Consulting Services`}
+                      description={`Interested in our Business Consulting services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Business Consulting services"
+                    />
+                  </div>
+                </GlassCard>
              {/* ))} */}
             </div>
         {/*  )} */}
