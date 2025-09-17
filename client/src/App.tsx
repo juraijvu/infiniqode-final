@@ -1,4 +1,5 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
+import { useEffect } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -45,50 +46,72 @@ import { PageBuilderPage } from "@/pages/PageBuilderPage";
 import { AdminDashboard } from "@/pages/AdminDashboard";
 import Login from "@/pages/login";
 
+// ScrollToTop component that handles scroll restoration
+function ScrollToTop() {
+  const [location] = useLocation();
+  const lenis = useLenis();
+
+  useEffect(() => {
+    // Scroll to top when route changes
+    if (lenis) {
+      // Use Lenis smooth scroll to top
+      lenis.scrollTo(0, { duration: 0, immediate: true });
+    } else {
+      // Fallback to native scroll
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }, [location, lenis]);
+
+  return null;
+}
+
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/services" component={Services} />
-      <Route path="/services/web-development" component={WebDevelopmentService} />
-      <Route path="/services/mobile-app-development" component={MobileAppDevelopmentService} />
-      <Route path="/services/api-development" component={ApiDevelopmentService} />
-      <Route path="/services/digital-marketing" component={DigitalMarketingService} />
-      <Route path="/services/saas-solutions" component={SaaSSolutionsService} />
-      <Route path="/services/ecommerce-development" component={EcommerceDevelopmentService} />
-      <Route path="/services/blockchain-development" component={BlockchainDevelopmentService} />
-      <Route path="/services/ai-machine-learning" component={AiMachineLearningService} />
-      <Route path="/services/data-analytics" component={DataAnalyticsService} />
-      <Route path="/services/cloud-migration" component={CloudMigrationService} />
-      <Route path="/services/devops-automation" component={DevopsAutomationService} />
-      <Route path="/services/cybersecurity" component={CybersecurityService} />
-      <Route path="/services/quality-assurance" component={QualityAssuranceService} />
-      <Route path="/services/seo-optimization" component={SeoOptimizationService} />
-      <Route path="/services/content-marketing" component={ContentMarketingService} />
-      <Route path="/services/email-marketing" component={EmailMarketingService} />
-      <Route path="/services/social-media-management" component={SocialMediaManagementService} />
-      <Route path="/services/paid-advertising" component={PaidAdvertisingService} />
-      <Route path="/services/marketing-automation" component={MarketingAutomationService} />
-      <Route path="/services/ui-ux-design" component={UiUxDesignService} />
-      <Route path="/services/brand-identity" component={BrandIdentityService} />
-      <Route path="/services/business-consulting" component={BusinessConsultingService} />
-      <Route path="/services/:slug" component={ServiceDetail} />
-      <Route path="/portfolio" component={Portfolio} />
-      <Route path="/portfolio/:slug" component={PortfolioDetailStatic} />
-      <Route path="/privacypolicy" component={PrivacyPolicy} />
-      <Route path="/about" component={About} />
-      <Route path="/blog" component={Blog} />
-      <Route path="/blog/technical" component={TechnicalBlog} />
-      <Route path="/blog/general" component={GeneralBlog} />
-      <Route path="/blog/marketing" component={MarketingBlog} />
-      <Route path="/blog/news" component={NewsBlog} />
-      <Route path="/blog/:slug" component={BlogPost} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/login" component={Login} />
-      <Route path="/admin" component={AdminDashboard} />
-      <Route path="/admin/page-builder/:templateId?" component={PageBuilderPage} />
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/services" component={Services} />
+        <Route path="/services/web-development" component={WebDevelopmentService} />
+        <Route path="/services/mobile-app-development" component={MobileAppDevelopmentService} />
+        <Route path="/services/api-development" component={ApiDevelopmentService} />
+        <Route path="/services/digital-marketing" component={DigitalMarketingService} />
+        <Route path="/services/saas-solutions" component={SaaSSolutionsService} />
+        <Route path="/services/ecommerce-development" component={EcommerceDevelopmentService} />
+        <Route path="/services/blockchain-development" component={BlockchainDevelopmentService} />
+        <Route path="/services/ai-machine-learning" component={AiMachineLearningService} />
+        <Route path="/services/data-analytics" component={DataAnalyticsService} />
+        <Route path="/services/cloud-migration" component={CloudMigrationService} />
+        <Route path="/services/devops-automation" component={DevopsAutomationService} />
+        <Route path="/services/cybersecurity" component={CybersecurityService} />
+        <Route path="/services/quality-assurance" component={QualityAssuranceService} />
+        <Route path="/services/seo-optimization" component={SeoOptimizationService} />
+        <Route path="/services/content-marketing" component={ContentMarketingService} />
+        <Route path="/services/email-marketing" component={EmailMarketingService} />
+        <Route path="/services/social-media-management" component={SocialMediaManagementService} />
+        <Route path="/services/paid-advertising" component={PaidAdvertisingService} />
+        <Route path="/services/marketing-automation" component={MarketingAutomationService} />
+        <Route path="/services/ui-ux-design" component={UiUxDesignService} />
+        <Route path="/services/brand-identity" component={BrandIdentityService} />
+        <Route path="/services/business-consulting" component={BusinessConsultingService} />
+        <Route path="/services/:slug" component={ServiceDetail} />
+        <Route path="/portfolio" component={Portfolio} />
+        <Route path="/portfolio/:slug" component={PortfolioDetailStatic} />
+        <Route path="/privacypolicy" component={PrivacyPolicy} />
+        <Route path="/about" component={About} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/technical" component={TechnicalBlog} />
+        <Route path="/blog/general" component={GeneralBlog} />
+        <Route path="/blog/marketing" component={MarketingBlog} />
+        <Route path="/blog/news" component={NewsBlog} />
+        <Route path="/blog/:slug" component={BlogPost} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/login" component={Login} />
+        <Route path="/admin" component={AdminDashboard} />
+        <Route path="/admin/page-builder/:templateId?" component={PageBuilderPage} />
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 
