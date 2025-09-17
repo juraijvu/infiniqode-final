@@ -97,14 +97,7 @@ export function Footer() {
             <p className="text-muted-foreground text-sm">
               © 2023 InfiniQode. All rights reserved.
             </p>
-            <div className="flex items-center space-x-6 mt-4 md:mt-0">
-              <span className="text-muted-foreground text-sm">Made with</span>
-              <div className="flex items-center space-x-2">
-                <FaReact className="text-white w-4 h-4" />
-                <span className="text-muted-foreground text-sm">+</span>
-                <FaPython className="text-white w-4 h-4" />
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

@@ -136,8 +136,8 @@ export function Navigation() {
              <img 
                   src={myImage} 
                   alt="Logo"
-                  width={100}
-                  height={50}
+                  width={150}
+                  height={75}
                 />
           </Link>
           
@@ -220,7 +220,7 @@ export function Navigation() {
               className="w-full sm:w-[400px] glass-card border-2 border-purple-500/50 bg-gradient-to-r from-purple-500/10 to-purple-700/10 p-0 backdrop-blur-xl transform-gpu"
             >
               {/* Mobile Menu Header */}
-              <div className="flex items-center justify-between p-6 border-b border-purple-500/50">
+              <div className="flex items-center justify-between p-6 ">
                 <div className="flex items-center space-x-2">
                    <img 
       src={myImage} 
