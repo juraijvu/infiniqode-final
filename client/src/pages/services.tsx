@@ -11,9 +11,9 @@ import { Check, ArrowRight, Rocket } from "lucide-react";
 import type { Service } from "@shared/schema";
 
 export default function Services() {
-  const { data: services = [], isLoading } = useQuery<Service[]>({
+{/*   const { data: services = [], isLoading } = useQuery<Service[]>({
     queryKey: ["/api/services"],
-  });
+  }); */}
 
   return (
     <>
@@ -52,7 +52,7 @@ export default function Services() {
       {/* Services Grid */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          {isLoading ? (
+         {/*  {isLoading ? ( 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {[...Array(4)].map((_, i) => (
                 <GlassCard key={i} className="p-8 animate-pulse">
@@ -73,26 +73,30 @@ export default function Services() {
                 </GlassCard>
               ))}
             </div>
-          ) : (
+         ) : (  */} 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {services.map((service, index) => (
-                <GlassCard key={service.id} className="p-8 hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+            {/*  {services.map((service, index) => (*/} 
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
                     <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
-                  </div>
+                  </div>*/}
                   
-                  <h2 className="text-3xl font-bold mb-4">{service.name}</h2>
-                  <p className="text-muted-foreground mb-6 text-lg">{service.fullDescription}</p>
+                  <h2 className="text-3xl font-bold mb-4">Web Development Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">Infiniqode stands out as a leading provider of digital services
+                    , specializing in cutting-edge web development services that blend creativity with technical excellence. 
+                    Our process ensures your website is not just visually stunning but also optimized for speed, security, 
+                    and search engines. With years of experience in full-stack development, 
+                    we help businesses like yours convert visitors into loyal customers.</p>
                   
-                  {service.pricing && (
+                 {/* {service.pricing && (
                     <div className="mb-6">
                       <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
                         {service.pricing}
                       </Badge>
                     </div>
-                  )}
+                  )}  */}
 
-                  <div className="mb-8">
+                {/*<div className="mb-8">
                     <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
                     <ul className="space-y-3">
                       {service.features.map((feature, featureIndex) => (
@@ -102,9 +106,9 @@ export default function Services() {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </div> */}  
 
-                  <div className="mb-8">
+              {/*  <div className="mb-8">
                     <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
                     <div className="flex flex-wrap gap-2">
                       {service.technologies.map((tech) => (
@@ -113,30 +117,338 @@ export default function Services() {
                         </Badge>
                       ))}
                     </div>
-                  </div>
+                  </div>*/}  
 
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Link href={`/services/${service.slug}`}>
-                      <Button className="glass-button flex-1" data-testid={`button-learn-more-${service.slug}`}>
+                    <Link href="/services/web-development">
+                      <Button className="glass-button flex-1" >
                         Learn More
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </Link>
                     <ContactPopup 
                       trigger={
-                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" data-testid={`button-get-quote-${service.slug}`}>
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
                           Get Quote
                         </Button>
                       }
-                      title={`Get a Quote for ${service.name}`}
-                      description={`Interested in our ${service.name.toLowerCase()} services? Let's discuss your project requirements and provide a tailored quote.`}
-                      defaultService={service.name}
+                      title={`Get a Quote for Web Development Services`}
+                      description={`Interested in our web development services? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Web Development Services"
                     />
                   </div>
                 </GlassCard>
-              ))}
+
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Mobile App Development Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we create native and cross-platform mobile 
+                    applications that engage users and drive business growth. Our team delivers apps that perform flawlessly 
+                    across all devices. From innovative concept to successful App Store deployment, we turn your 
+                    vision into reality with cutting-edge mobile solutions.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/mobile-app-development">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Mobile App Development Services`}
+                      description={`Interested in our mobile app development services? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Mobile App Development Services"
+                    />
+                  </div>
+                </GlassCard>
+                
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">API Development Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we build robust, scalable APIs that power 
+                    modern applications with secure, high-performance backend services. Our team creates seamless integrations 
+                    and microservices architectures. From REST APIs to GraphQL endpoints, 
+                    we deliver backend solutions that scale with your business.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/api-development">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for API Development Services`}
+                      description={`Interested in our API development services? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="API Development Services"
+                    />
+                  </div>
+                </GlassCard>
+                  <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">SaaS Solutions Development</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we believe in the transformative power of 
+                    scalable software solutions. Our team of experts is dedicated to helping businesses like yours thrive in 
+                    the cloud-first digital landscape. From MVP development to enterprise-grade platforms solutions, 
+                    we are committed to delivering results that exceed expectations.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/saas-solutions">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for SaaS Solutions Development`}
+                      description={`Interested in our SaaS solutions development ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="SaaS Solutions Development"
+                    />
+                  </div>
+                </GlassCard>
+                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">E-commerce Development Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we create powerful online stores that convert 
+                    visitors into customers. Our team specializes in building secure, scalable e-commerce solutions that drive
+                     sales and grow your business. From custom shopping experiences to payment 
+                    integration strategies, we deliver results that exceed expectations.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/ecommerce-development">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for E-commerce Development Services`}
+                      description={`Interested in our E-commerce development services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="E-commerce Development Services"
+                    />
+                  </div>
+                </GlassCard>
+                                <GlassCard className="p-8 hover:scale-105 transition-all duration-300">
+                  {/*<div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-3xl" role="img" aria-label={service.name}>{service.icon}</span>
+                  </div>*/}
+                  
+                  <h2 className="text-3xl font-bold mb-4">Blockchain Development Services</h2>
+                  <p className="text-muted-foreground mb-6 text-lg">At INFINIQODE, we build decentralized applications, 
+                    smart contracts, and blockchain solutions that revolutionize industries with transparency and security. 
+                    Our team creates Web3 applications that empower users. From DeFi platforms to NFT marketplaces,
+                     we deliver blockchain solutions that shape the future of digital interaction.</p>
+                  
+                 {/* {service.pricing && (
+                    <div className="mb-6">
+                      <Badge variant="secondary" className="bg-primary/20 text-accent text-lg px-4 py-2">
+                        {service.pricing}
+                      </Badge>
+                    </div>
+                  )}  */}
+
+                {/*<div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center">
+                          <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}  
+
+              {/*  <div className="mb-8">
+                    <h3 className="font-semibold mb-4 text-lg">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-accent text-accent">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>*/}  
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/services/blockchain-development">
+                      <Button className="glass-button flex-1" >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <ContactPopup 
+                      trigger={
+                        <Button variant="outline" className="border-2 border-purple-400/50 text-purple-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white flex-1 transition-all duration-300" >
+                          Get Quote
+                        </Button>
+                      }
+                      title={`Get a Quote for Blockchain Development Services`}
+                      description={`Interested in our Blockchain development services ? Let's discuss your project requirements and provide a tailored quote.`}
+                      defaultService="Blockchain Development Services"
+                    />
+                  </div>
+                </GlassCard>
+                
+             {/* ))} */}
             </div>
-          )}
+        {/*  )} */}
         </div>
       </section>
 
