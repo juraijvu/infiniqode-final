@@ -232,16 +232,18 @@ export function Navigation() {
               </div>
 
               {/* Mobile Menu Content */}
-              <div className="flex flex-col h-full overflow-auto">
-                <div className="flex-1 px-6 py-4 space-y-2">
+              <div className="flex flex-col h-full">
+                <div className="flex-shrink-0 px-6 py-4 space-y-2">
                   {/* Main Navigation */}
                   {navItems.map((item) => (
                     <MobileNavLink key={item.href} {...item} />
                   ))}
-                  
-                  {/* Services Section */}
-                  <div className="pt-4">
-                    <div className="text-sm font-medium text-muted-foreground mb-3 px-4">Services</div>
+                </div>
+                
+                {/* Services Section - Scrollable */}
+                <div className="flex-1 overflow-y-auto px-6">
+                  <div className="text-sm font-medium text-muted-foreground mb-3 px-4">Services</div>
+                  <div className="pb-4">
                     {servicesCategories.map((category) => (
                       <div key={category.title} className="mb-4">
                         <div className="text-xs font-semibold text-white mb-2 px-4">{category.title}</div>
