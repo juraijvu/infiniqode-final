@@ -24,11 +24,11 @@ export default function Home() {
     return cleanup;
   }, []);
 
-  // Animation refs
-  const heroRef = useFadeInUp(0);
-  const statsRef = useStaggerAnimation('.stat-item', 0.2);
-  const featuresRef = useStaggerAnimation('.feature-item', 0.1);
-  const methodologyRef = useStaggerAnimation('.methodology-step', 0.3);
+  // Animation refs removed - instant display
+  // const heroRef = useFadeInUp(0);
+  // const statsRef = useStaggerAnimation('.stat-item', 0.2);
+  // const featuresRef = useStaggerAnimation('.feature-item', 0.1);
+  // const methodologyRef = useStaggerAnimation('.methodology-step', 0.3);
   
   // Counter refs for animated numbers
   const projectsCountRef = useCountAnimation(150, 2, '+');
@@ -69,12 +69,12 @@ export default function Home() {
         structuredData={structuredData}
       />
       <Navigation />
-      <div ref={heroRef as any}>
+      <div >
         <HeroSection />
       </div>
       
       {/* Enhanced Stats Section with Depth */}
-      <section className="py-3 relative" ref={statsRef as any}>
+      <section className="py-3 relative" >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-4">
             <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">Proven Excellence</h2>
@@ -170,7 +170,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-4" ref={featuresRef as any}>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-4">
             <div className="feature-item glass-card  p-8 group">
               <div className="mb-6">
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500/20 to-purple-700/20 backdrop-blur-lg border border-purple-500/30 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
@@ -298,7 +298,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-4" ref={methodologyRef as any}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-4">
             <div className="methodology-step glass-card p-10 group border-2 border-purple-400/30 bg-gradient-to-br from-purple-500/5 to-purple-700/3 hover:border-purple-400/50 transition-all duration-500">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0">
