@@ -44,13 +44,13 @@ export default function Home() {
     "description": "Premium digital agency specializing in React TypeScript development, Python Flask backends, and cutting-edge digital marketing solutions.",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "San Francisco",
-      "addressRegion": "CA",
-      "addressCountry": "US"
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "addressCountry": "India"
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-555-123-4567",
+      "telephone": "+91 9694 000 930",
       "contactType": "customer service"
     },
     "sameAs": [
