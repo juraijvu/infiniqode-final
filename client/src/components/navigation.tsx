@@ -16,6 +16,28 @@ export function Navigation() {
   const navLinksRef = useRef<HTMLDivElement>(null);
   const ctaButtonRef = useRef<HTMLDivElement>(null);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.height = '100%';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    };
+  }, [isOpen]);
+
   useEffect(() => {
     if (logoRef.current) {
       logoAnimation(logoRef.current);
@@ -165,9 +187,9 @@ export function Navigation() {
   );
 
   const ServicesList = ({ category, onBack }) => (
-    <div className="h-full flex flex-col">
-      {/* Header */}
-      <div className="flex-shrink-0 p-4 border-b border-purple-500/30">
+    <div className="flex flex-col h-full">
+      {/* Header - Fixed */}
+      <div className="flex-shrink-0 p-4 border-b border-purple-500/30 bg-gradient-to-r from-purple-500/10 to-purple-700/10">
         <div className="flex items-center gap-3">
           <Button 
             variant="ghost" 
@@ -184,8 +206,16 @@ export function Navigation() {
         </div>
       </div>
 
-      {/* Services List */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-2" style={{ WebkitOverflowScrolling: 'touch' }}>
+      {/* Services List - Scrollable */}
+      <div 
+        className="flex-1 overflow-y-auto overscroll-contain p-4 space-y-2"
+        style={{ 
+          WebkitOverflowScrolling: 'touch',
+          overscrollBehavior: 'contain'
+        }}
+        onTouchStart={(e) => e.stopPropagation()}
+        onTouchMove={(e) => e.stopPropagation()}
+      >
         {category.services.map((service) => (
           <Link key={service.href} href={service.href}>
             <div
@@ -295,10 +325,9 @@ export function Navigation() {
             </SheetTrigger>
             <SheetContent 
               side="right" 
-              className="w-full sm:w-[400px] glass-card border-2 border-purple-500/50 bg-gradient-to-r from-purple-500/10 to-purple-700/10 p-0 backdrop-blur-xl transform-gpu"
-              style={{ touchAction: 'pan-y' }}
+              className="w-full sm:w-[400px] glass-card border-2 border-purple-500/50 bg-gradient-to-r from-purple-500/10 to-purple-700/10 p-0 backdrop-blur-xl overflow-hidden flex flex-col fixed inset-y-0 right-0 h-full"
             >
-              {/* Mobile Menu Header */}
+              {/* Mobile Menu Header - Fixed */}
               <div className="flex-shrink-0 flex items-center justify-between p-6 border-b border-purple-500/30">
                 <div className="flex items-center space-x-2">
                    <img 
@@ -310,15 +339,23 @@ export function Navigation() {
                 </div>
               </div>
 
-              {/* Mobile Menu Content */}
-              <div className="flex flex-col h-[calc(100vh-120px)]">
+              {/* Mobile Menu Content - Scrollable */}
+              <div 
+                className="flex-1 overflow-y-auto overscroll-contain" 
+                style={{ 
+                  WebkitOverflowScrolling: 'touch',
+                  overscrollBehavior: 'contain'
+                }}
+                onTouchStart={(e) => e.stopPropagation()}
+                onTouchMove={(e) => e.stopPropagation()}
+              >
                 {activeCategory ? (
                   <ServicesList 
                     category={activeCategory} 
                     onBack={() => setActiveCategory(null)} 
                   />
                 ) : (
-                  <>
+                  <div className="flex flex-col min-h-full pb-32">
                     {/* Main Navigation */}
                     <div className="flex-shrink-0 p-6 space-y-2">
                       {navItems.map((item) => (
@@ -327,7 +364,7 @@ export function Navigation() {
                     </div>
 
                     {/* Services Categories */}
-                    <div className="flex-1 overflow-y-auto px-6 pb-4" style={{ WebkitOverflowScrolling: 'touch' }}>
+                    <div className="flex-1 px-6 pb-6">
                       <div className="text-sm font-medium text-muted-foreground mb-4">Services</div>
                       <div className="space-y-3">
                         {servicesCategories.map((category) => (
@@ -351,27 +388,27 @@ export function Navigation() {
                         </Link>
                       </div>
                     </div>
-                  </>
-                )}
-
-                {/* Mobile Menu Footer */}
-                {!activeCategory && (
-                  <div className="flex-shrink-0 p-6 border-t border-purple-500/50 space-y-4">
-                    <ContactPopup 
-                      trigger={
-                        <Button className="glass-button text-white font-medium w-full h-12 text-base" data-testid="button-mobile-get-started">
-                          Get Started
-                        </Button>
-                      }
-                      title="Let's Start Your Project"
-                      description="Ready to transform your business with a custom digital solution? Tell us about your project and we'll create a tailored proposal."
-                    />
-                    <div className="text-center text-sm text-muted-foreground">
-                      Ready to transform your business?
-                    </div>
                   </div>
                 )}
               </div>
+
+              {/* Mobile Menu Footer - Fixed */}
+              {!activeCategory && (
+                <div className="flex-shrink-0 p-6 border-t border-purple-500/50 space-y-4 bg-gradient-to-r from-purple-500/10 to-purple-700/10">
+                  <ContactPopup 
+                    trigger={
+                      <Button className="glass-button text-white font-medium w-full h-12 text-base" data-testid="button-mobile-get-started">
+                        Get Started
+                      </Button>
+                    }
+                    title="Let's Start Your Project"
+                    description="Ready to transform your business with a custom digital solution? Tell us about your project and we'll create a tailored proposal."
+                  />
+                  <div className="text-center text-sm text-muted-foreground">
+                    Ready to transform your business?
+                  </div>
+                </div>
+              )}
             </SheetContent>
           </Sheet>
         </div>
